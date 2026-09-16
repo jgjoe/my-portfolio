@@ -2,12 +2,12 @@
 
 **IT시스템·SI·전산과 소프트웨어 품질을 중심으로, 백엔드·AI 솔루션까지 지원하는 개인 포트폴리오**
 
-[![Live](https://img.shields.io/badge/live-crushonyou2.github.io-success)](https://crushonyou2.github.io/my-portfolio/)
+[![Live](https://img.shields.io/badge/live-jgjoe.github.io-success)](https://jgjoe.github.io/my-portfolio/)
 [![Stack](https://img.shields.io/badge/React-Tailwind%20CSS-61DAFB?logo=react&logoColor=black)](#기술-스택)
 [![Deploy](https://img.shields.io/badge/deploy-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](.github/workflows/deploy.yml)
 [![i18n](https://img.shields.io/badge/i18n-한국어%20%2F%20English-informational)](#설계-판단)
 
-**[포트폴리오 바로가기](https://crushonyou2.github.io/my-portfolio/)**
+**[포트폴리오 바로가기](https://jgjoe.github.io/my-portfolio/)**
 
 프로젝트를 단순히 나열하는 대신 **어떤 문제를 맡았고, 무엇을 판단했으며, 결과를 어떻게 검증했는지**가 보이도록 구성했습니다.
 첫 화면에서는 IT시스템·SI·전산과 소프트웨어 품질을 주 지원 방향으로 두고, 백엔드·AI 솔루션 직무까지 지원 범위를 확장합니다.
@@ -101,5 +101,5 @@ npm install && npm start
 
 **조지관 (Jigwan Joe)**
 
-- GitHub: [@crushonyou2](https://github.com/crushonyou2)
+- GitHub: [@jgjoe](https://github.com/jgjoe)
 - Email: jigwan.joe@gmail.com
