@@ -73,13 +73,13 @@ export const portfolio = {
         ] },
       },
       {
-        title: "길동이 · AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: { ko: "7인 팀 · 백엔드/DB 담당", en: "Team of 7 · Backend/DB owner" }, period: "2025.03 — 2025.06",
+        title: "길동이 · AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: { ko: "6인 팀 · 백엔드/DB 담당", en: "Team of 6 · Backend/DB owner" }, period: "2025.03 — 2025.06",
         lead: { ko: "서로 다른 장치와 앱의 차량 데이터를 사용자별로 저장·가공하는 Spring Boot 백엔드를 맡았습니다.", en: "I owned the Spring Boot backend that stored and processed per-user vehicle data from multiple devices and apps." },
         tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치마다 데이터 형태가 달랐고, 차량·소모품·주행패턴을 사용자별로 분리해 다룰 서버가 필요했습니다.", en: "Device payloads varied, and the team needed a backend for per-user vehicle, consumable, and driving-pattern data." } },
           { label: { ko: "기여", en: "Ownership" }, copy: { ko: "차량·차종·소모품·주행패턴·사용자 REST API와 MongoDB 모델, 카카오 사용자 조회·등록 흐름, 주간 평균 집계를 구현했습니다.", en: "I built REST APIs and MongoDB models for vehicles, models, consumables, driving patterns, and users, plus Kakao user registration and weekly aggregates." } },
-          { label: { ko: "담당 범위", en: "My scope" }, copy: { ko: "7인 팀에서 차량 도메인 백엔드와 MongoDB 데이터 모델을 담당했습니다.", en: "In a seven-person team, I owned the vehicle-domain backend and MongoDB data model." } },
+          { label: { ko: "담당 범위", en: "My scope" }, copy: { ko: "6인 팀에서 차량 도메인 백엔드와 MongoDB 데이터 모델을 담당했습니다.", en: "In a six-person team, I owned the vehicle-domain backend and MongoDB data model." } },
         ],
         results: [{ value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "1편", en: "1" }, label: { ko: "학회 논문", en: "Conference paper" } }, { value: { ko: "5개", en: "5" }, label: { ko: "백엔드 도메인", en: "backend domains" } }],
         links: [{ href: "https://github.com/jgjoe/gildongE", label: { ko: "백엔드 코드 보기", en: "View backend code" } }],
