@@ -20,7 +20,7 @@ export const portfolio = {
     ],
   },
   proof: { title: { ko: "핵심 성과", en: "Key outcomes" }, items: [
-    { value: "40 → 52%", label: { ko: "RAG 1순위 정답률 — 평가셋 60문항으로 직접 측정", en: "RAG top-1 accuracy, measured on a 60-question set I built" } },
+    { value: "10% → 100%", label: { ko: "API canary 검증 후 단계적 production 승격", en: "API canary validated before full production promotion" } },
     { value: { ko: "보류 → 재출시", en: "Held, then re-shipped" }, label: { ko: "잔여 OCR 오답으로 배포를 보류하고, 사용자 확인 흐름을 도입해 재출시", en: "Held a release over residual OCR errors, then re-shipped with a user-confirmation flow" } },
     { value: { ko: "논문 2편 · 수상 2회", en: "2 papers · 2 awards" }, label: { ko: "한국정보기술학회 공저 · 캡스톤 은상 · 우수논문상", en: "KIIT co-authorship · Capstone Silver · Outstanding Paper Award" } },
     { value: { ko: "검증 근거 공개", en: "Validation evidence published" }, label: { ko: "평가셋·측정 스크립트·QA·릴리스 기록을 저장소에 공개", en: "Published evaluation sets, measurement scripts, QA records, and release evidence in the repositories" } },
@@ -29,7 +29,7 @@ export const portfolio = {
     eyebrow: { ko: "HOW I WORK", en: "HOW I WORK" }, title: { ko: "기술을 넓게 연결하고\n결과는 끝까지 책임집니다.", en: "Connect the stack\nown the outcome." },
     copy: { ko: "백엔드 구현에 머무르지 않고 데이터 흐름, 배포 환경, 테스트와 실제 사용자 경험을 함께 봅니다. 아래 세 가지 방식으로 프로젝트를 완성해 왔습니다.", en: "I look beyond backend implementation to data flows, deployment environments, testing, and real user experience. Three habits shape how I deliver projects." },
     strengths: [
-      { title: { ko: "측정하고 개선합니다", en: "Measure, then improve" }, copy: { ko: "RAG 검색 품질을 평가셋으로 수치화하고, 리랭킹 전후를 비교해 개선 효과를 검증했습니다.", en: "I quantified RAG retrieval quality with an evaluation set and verified the impact of reranking." } },
+      { title: { ko: "측정하고 판단합니다", en: "Measure, then decide" }, copy: { ko: "RAG 검색 품질을 production-parity 조건에서 비교하고, 일부 지표가 좋아져도 필수 지표가 퇴행한 변경은 production에 넣지 않았습니다.", en: "I compare RAG retrieval changes under production-parity conditions and keep them out of production when required metrics regress, even if some metrics improve." } },
       { title: { ko: "경계를 명확히 설계합니다", en: "Design clear boundaries" }, copy: { ko: "Spring Boot 비즈니스 API와 Python ML 서비스를 분리하고, 팀 프로젝트에서는 담당 범위와 인터페이스를 분명히 했습니다.", en: "I separated business APIs from ML services and kept ownership boundaries explicit in team projects." } },
       { title: { ko: "운영과 품질까지 책임집니다", en: "Own operations and quality" }, copy: { ko: "CI/CD, 테스트, 온디바이스 개인정보 보호와 백그라운드 동작까지 챙기며 실제 배포·운영 가능한 상태를 목표로 합니다.", en: "I account for CI/CD, testing, on-device privacy, and background behavior with real deployment in mind." } },
     ],
@@ -39,16 +39,17 @@ export const portfolio = {
     copy: { ko: "기술 목록보다 어떤 문제를 맡았고, 무엇을 판단했으며, 결과를 어떻게 검증했는지에 집중했습니다.", en: "Each case focuses on the problem, the decision, my ownership, and how the result was verified." },
     featured: [
       {
-        title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: { ko: "개인 · 대표 프로젝트", en: "Solo · Flagship project" }, period: "2026.06 — 2026.07",
-        lead: { ko: "흩어진 청년정책을 자연어로 찾을 수 있도록, 데이터 수집부터 검색 품질 평가까지 직접 만든 RAG 서비스입니다.", en: "A RAG service I built end-to-end, from public-data ingestion to measured retrieval quality, so users can find youth policies in natural language." },
-        tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Cross-encoder"],
+        title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: { ko: "개인 · 대표 프로젝트", en: "Personal · Flagship project" }, period: "2026.06 — 2026.09",
+        lead: { ko: "온통청년·정부24의 공식 정책을 한 경로에서 자연어로 찾고, 검색된 정책만 근거로 답하도록 설계·구현·검증한 RAG 서비스입니다.", en: "A RAG service I designed, implemented, and verified end-to-end to search official Youth and Gov24 policies in one natural-language path and answer only from retrieved policy evidence." },
+        tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "수천 개 정책이 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "Thousands of policies were fragmented, and keyword search made relevant programs hard to discover." } },
-          { label: { ko: "기여", en: "Ownership" }, copy: { ko: "2,631건 수집·정제, 임베딩, 벡터 검색, 리랭킹, 근거 기반 답변까지 전 파이프라인을 구현했습니다.", en: "I owned 2,631-record ingestion and cleaning, embeddings, vector search, reranking, and grounded generation." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "원본 데이터의 지역 코드에 다른 지역 값이 섞여 있어 지역 검색을 사용자 노출에서 제외하고 토픽 검색으로 범위를 좁혔습니다. 필터 코드는 데이터 정제 후 재검증할 수 있게 남겨 뒀고, 60문항 평가셋으로 리랭킹 효과를 검증했습니다.", en: "Region codes in the source data were mixed with values from other regions, so I took region search out of the user-facing path and narrowed the scope to topic search. The filter code stays in place for re-verification once the data is cleaned. Reranking was validated with a 60-question evaluation set." } },
-          { label: { ko: "운영 관측", en: "Observability" }, copy: { ko: "요청 ID와 Prometheus 지표로 API·ML·DB 구간을 나눠 보도록 구성했습니다. 콜드 요청과 웜 검색을 따로 재고 구간을 분해한 결과, 주요 병목이 무료 인스턴스의 ML scale-from-zero 및 모델 준비 대기 구간에 있음을 확인했습니다.", en: "Request IDs and Prometheus metrics separate the API, ML, and database stages. Measuring cold and warm requests separately showed that the main bottleneck in this deployment was the free instance's ML scale-from-zero and model-readiness wait." } },
+          { label: { ko: "기여", en: "Ownership" }, copy: { ko: "온통청년 2,631건과 정부24 10,958건을 같은 스키마·검색 경로로 통합해 13,589개 정책 / 17,609개 청크를 적재하고 임베딩 누락 0건을 확인했습니다.", en: "I integrated 2,631 Youth and 10,958 Gov24 policies into one schema and search path, yielding 13,589 policies and 17,609 chunks with zero missing embeddings." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "원본 지역 데이터가 신뢰할 수준이 아니어서 public region search를 노출하지 않았고, production-parity 비교에서 일부 Gov24 지표를 높인 리랭커가 Youth Recall@5·@10과 MRR을 악화시켜 전체 적용을 No-Go로 판정했습니다. 공개 경로는 RERANK=0을 유지합니다.", en: "I kept public region search disabled because the source region data was not trustworthy enough, and rejected global reranking after production-parity evaluation showed Youth Recall@5/@10 and MRR regressions despite some Gov24 gains. The public path remains RERANK=0." } },
+          { label: { ko: "배포·운영", en: "Delivery & operations" }, copy: { ko: "0% no-traffic 검증 뒤 API 10% canary를 거쳐 100%로 승격하고 rollback 경로를 보존했습니다. 요청 ID·Prometheus로 API·ML·DB 구간을 나눠 관측했고, scale-to-zero cold start는 비용과의 trade-off로 명시적으로 수용했습니다.", en: "I validated the stack at 0% traffic, promoted the API through a 10% canary to 100%, and preserved rollback. Request IDs and Prometheus split API, ML, and DB timing, while scale-to-zero cold start remains an explicit cost trade-off." } },
+          { label: { ko: "검증 원칙", en: "Validation boundary" }, copy: { ko: "더 강한 사용자 의도 평가 프로그램도 설계했지만 valid canonical dev evaluation까지 도달하지 못해 성능 결론이나 production change로 승격하지 않았습니다.", en: "I also designed a stronger user-intent evaluation program, but it did not reach a valid canonical dev evaluation, so I did not turn it into a performance claim or production change." } },
         ],
-        results: [{ value: "40 → 52%", label: { ko: "recall@1", en: "recall@1" } }, { value: "0.535 → 0.614", label: { ko: "MRR", en: "MRR" } }, { value: "3,083", label: { ko: "검색 청크", en: "search chunks" } }],
+        results: [{ value: "13,589", label: { ko: "공식 정책", en: "official policies" } }, { value: "17,609", label: { ko: "검색 청크", en: "search chunks" } }, { value: "0", label: { ko: "임베딩 누락", en: "missing embeddings" } }],
         links: [{ href: "https://jgjoe.github.io/benefit-compass", label: { ko: "데모 보기", en: "View demo" } }, { href: "https://github.com/jgjoe/benefit-compass", label: { ko: "코드 보기", en: "View code" } }, { href: "https://github.com/jgjoe/benefit-compass/tree/main/eval", label: { ko: "평가셋·측정 스크립트", en: "Evaluation set & scripts" } }, { href: "https://github.com/jgjoe/benefit-compass/blob/main/docs/operations/PRODUCTION_LAB_2_2026-07-21.md", label: { ko: "운영 실험 기록", en: "Production lab record" } }, { href: "https://github.com/jgjoe/benefit-compass/blob/main/docs/operations/RUNBOOK.md", label: { ko: "운영 런북", en: "Runbook" } }],
         media: { type: "image", src: "/benefit-compass-demo.png", alt: { ko: "혜택나침반의 월세 지원 검색 결과", en: "BenefitCompass search results for rental support" }, caption: { ko: "실제 배포 환경에서 확인한 검색 결과", en: "Search result captured from the live deployment" } },
       },

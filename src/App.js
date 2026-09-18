@@ -93,7 +93,7 @@ function App() {
         <section id="contact" className="section-shell pb-20 pt-24 sm:pb-28">
           <motion.div {...reveal} className="contact-panel">
             <div><p className="eyebrow">{t(portfolio.contact.eyebrow)}</p><h2>{t(portfolio.contact.title)}</h2><p>{t(portfolio.contact.copy)}</p></div>
-            <div className="flex flex-wrap gap-3 lg:justify-end"><a href={`mailto:${portfolio.contact.email}`} className="button button-primary">{portfolio.contact.email}</a><a href={publicAsset("/jigwan-joe-portfolio-2026.pdf")} target="_blank" rel="noreferrer" className="button button-secondary">{t(portfolio.ui.resume)} ↗</a><a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="button button-secondary">GitHub ↗</a></div>
+            <div className="flex flex-wrap gap-3 lg:justify-end"><a href={`mailto:${portfolio.contact.email}`} className="button button-primary">{portfolio.contact.email}</a><a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="button button-secondary">GitHub ↗</a></div>
           </motion.div>
         </section>
       </main>
