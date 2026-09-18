@@ -53,7 +53,7 @@ export const portfolio = {
         media: { type: "image", src: "/benefit-compass-demo.png", alt: { ko: "혜택나침반의 월세 지원 검색 결과", en: "BenefitCompass search results for rental support" }, caption: { ko: "실제 배포 환경에서 확인한 검색 결과", en: "Search result captured from the live deployment" } },
       },
       {
-        title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: { ko: "개인 · Android 공개 출시 · Closed Alpha", en: "Solo · Android releases · Closed Alpha" }, period: "2025.09 — 진행 중",
+        title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: { ko: "개인 · Android 공개 출시 · Closed Alpha", en: "Solo · Android releases · Closed Alpha" }, period: { ko: "2025.09 — 진행 중", en: "2025.09 — Present" },
         lead: { ko: "식품 유통기한 입력 부담을 OCR로 줄이고 이미지를 서버로 보내지 않는 Android 앱을 기획해 ONEstore에 v1.0·v1.0.2·v2.0.0을 공개 배포하고, 같은 v2를 Google Play closed Alpha까지 진행했습니다.", en: "I built an Android expiry-date app that reduces input effort with OCR without sending images to a server, shipped v1.0, v1.0.2, and v2.0.0 publicly on ONEstore, and advanced the same v2 to Google Play closed Alpha." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
         details: [
