@@ -72,7 +72,7 @@ function App() {
           <motion.div {...reveal} className="mt-12">
             <p className="eyebrow">{t(portfolio.projects.moreEyebrow)}</p><h3 className="more-title mt-2 text-2xl font-bold">{t(portfolio.projects.moreTitle)}</h3>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {portfolio.projects.more.map((project) => <ArchiveProject key={project.title} project={project} t={t} />)}
+              {portfolio.projects.more.map((project) => <ArchiveProject key={t(project.title)} project={project} t={t} />)}
             </div>
           </motion.div>
         </section>
@@ -133,10 +133,10 @@ function ProjectMedia({ media, t }) {
 function ArchiveProject({ project, t }) {
   const [open, setOpen] = useState(false);
   if (!project.media && project.link) {
-    return <a href={project.link} target="_blank" rel="noreferrer" className="archive-card"><div><span>{project.type}</span><h4>{project.title}</h4><p>{t(project.copy)}</p></div><span aria-hidden="true" className="archive-arrow">↗</span></a>;
+    return <a href={project.link} target="_blank" rel="noreferrer" className="archive-card"><div><span>{project.type}</span><h4>{t(project.title)}</h4><p>{t(project.copy)}</p></div><span aria-hidden="true" className="archive-arrow">↗</span></a>;
   }
 
-  return <article className={`archive-card archive-card-static ${open ? "media-open" : ""}`}><div><span>{project.type}</span><h4>{project.title}</h4><p>{t(project.copy)}</p>{project.media && <button type="button" className="archive-media-button" onClick={() => setOpen(!open)} aria-expanded={open}>{open ? t(portfolio.projects.posterClose) : t(portfolio.projects.posterOpen)}</button>}</div>{open && project.media && <img className="archive-poster" src={publicAsset(project.media.src)} alt={t(project.media.alt)} loading="lazy" />}</article>;
+  return <article className={`archive-card archive-card-static ${open ? "media-open" : ""}`}><div><span>{project.type}</span><h4>{t(project.title)}</h4><p>{t(project.copy)}</p>{project.media && <button type="button" className="archive-media-button" onClick={() => setOpen(!open)} aria-expanded={open}>{open ? t(portfolio.projects.posterClose) : t(portfolio.projects.posterOpen)}</button>}</div>{open && project.media && <img className="archive-poster" src={publicAsset(project.media.src)} alt={t(project.media.alt)} loading="lazy" />}</article>;
 }
 
 export default App;
