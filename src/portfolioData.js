@@ -28,7 +28,7 @@ export const portfolio = {
     ],
   },
   proof: { title: { ko: "핵심 성과", en: "Key outcomes" }, items: [
-    { kicker: { ko: "운영", en: "DELIVERY" }, value: { ko: "Canary 10% → 100%", en: "Canary 10% → 100%" }, label: { ko: "검증 후 API 전면 배포", en: "Promoted the API to full production after staged validation" } },
+    { kicker: { ko: "프로세스 인텔리전스", en: "PROCESS INTELLIGENCE" }, value: { ko: "13,087 cases / 48 tests", en: "13,087 cases / 48 tests" }, label: { ko: "하나의 deterministic Core를 Web·Power BI·Agent·MCP까지 일관되게 검증", en: "Verified one deterministic Core consistently across Web, Power BI, Agent, and MCP" } },
     { kicker: { ko: "품질", en: "QUALITY" }, value: { ko: "OCR 배포 보류 → 재출시", en: "OCR held → re-shipped" }, label: { ko: "잔여 오답을 근거로 보류하고 확인 흐름 개선 후 재출시", en: "Held the release over residual OCR errors, then re-shipped after improving the confirmation flow" } },
     { kicker: { ko: "성과", en: "RECOGNITION" }, value: { ko: "논문 2편과 수상 2회", en: "2 papers and 2 awards" }, label: { ko: "학회 논문 공저와 두 차례 수상", en: "Conference co-authorship and two awards" } },
   ] },
@@ -46,7 +46,34 @@ export const portfolio = {
     copy: { ko: "맡은 문제와 판단 과정에 집중하고 결과에는 검증 근거를 연결했습니다.", en: "Each project focuses on the problem I owned, the decision I made, and the evidence behind the result." },
     featured: [
       {
-        title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "대표 프로젝트", en: "Flagship project" }], period: "2026.06 — 2026.09",
+        title: "TraceVerity", titleLines: ["TraceVerity", { ko: "Process Intelligence Workbench", en: "Process Intelligence Workbench" }], type: [{ ko: "개인", en: "Personal" }, { ko: "대표 프로젝트", en: "Flagship project" }], period: "2026.09",
+        lead: { ko: "BPI Challenge 2012 이벤트 로그를 deterministic Core로 재구성해 프로세스 흐름·재작업·처리시간을 분석하고, Web·Power BI·Agent·MCP가 같은 사실을 소비하도록 만든 로컬 Process Intelligence 워크벤치입니다.", en: "A local Process Intelligence workbench that reconstructs BPI Challenge 2012 through a deterministic Core, then serves the same process facts to Web, Power BI, a grounded Agent, and MCP." },
+        tech: ["Python", "DuckDB", "FastAPI", "React", "Power BI", "MCP"],
+        visibleDetailIndexes: [1, 2],
+        details: [
+          { label: { ko: "문제", en: "Problem" }, copy: { ko: "이벤트 로그 지표를 UI·BI·LLM이 각자 계산하면 같은 프로세스를 서로 다르게 해석할 수 있습니다. 분석 기능보다 먼저 하나의 신뢰 가능한 process truth 경계가 필요했습니다.", en: "If UI, BI, and LLM layers calculate event-log metrics independently, the same process can acquire conflicting interpretations. I needed one trustworthy process-truth boundary before adding analytical surfaces." } },
+          { label: { ko: "기여", en: "Ownership" }, copy: { ko: "Python/DuckDB Core에서 XES ingest, canonical ordering, 전환·variant·cycle time·rework·설정형 SLA 지표를 버전 계약으로 구현했습니다. 같은 Core 위에 FastAPI/React, deterministic Power BI export, bounded Agent, stdio MCP를 연결했습니다.", en: "I implemented XES ingest, canonical ordering, transitions, variants, cycle time, rework, and configured-SLA metrics as versioned Python/DuckDB contracts, then wired FastAPI/React, deterministic Power BI export, a bounded Agent, and stdio MCP to the same Core." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "AI는 숫자를 계산하지 않고 정확히 5개의 read-only 도구가 반환한 fact만 사용하도록 제한했습니다. Web과 Power BI도 지표를 재구현하지 않게 해 deterministic Core만 authoritative metric engine으로 유지했습니다.", en: "I constrained AI to facts returned by exactly five read-only tools and prohibited it from calculating authoritative metrics. Web and Power BI also avoid reimplementing metric logic, keeping the deterministic Core as the only authoritative metric engine." } },
+          { label: { ko: "검증", en: "Verification" }, copy: { ko: "Python 48/48, Web Playwright 1/1, direct Agent 10/10, MCP 10/10을 통과했습니다. 한국어 test-only 화면의 supervised usability에서는 유효 참가자 3명이 각 3개 고정 과제를 모두 통과했고 진행자 힌트와 중대한 오해는 0건이었습니다.", en: "The project passed 48/48 Python tests, 1/1 focused Playwright E2E, 10/10 direct-Agent cases, and 10/10 MCP cases. In supervised usability on the Korean test-only surface, three valid participants each passed all three fixed tasks with zero facilitator hints and zero material misunderstandings." } },
+          { label: { ko: "경계", en: "Boundary" }, copy: { ko: "v1은 BPIC12 adapter와 로컬 실행에 집중합니다. observed event gap을 실제 queue waiting으로 보지 않고, 7일 threshold도 실제 업무 SLA가 아닌 설정형 테스트 시나리오로 명시했습니다.", en: "v1 stays focused on the BPIC12 adapter and local execution. Observed event gap is not presented as true queue waiting, and the seven-day threshold is explicitly a configured test scenario rather than a real business SLA." } },
+        ],
+        results: [{ value: "13,087", label: { ko: "분석 케이스", en: "analyzed cases" } }, { value: "48 / 48", label: { ko: "Python regression", en: "Python regression" } }, { value: "10 / 10 × 2", label: { ko: "Agent / MCP 평가", en: "Agent / MCP evals" } }],
+        architecture: {
+          title: { ko: "하나의 process truth", en: "One process-truth boundary" },
+          sources: ["BPI Challenge 2012 XES"],
+          stages: [
+            { name: "Python / DuckDB Core", copy: { ko: "authoritative metrics", en: "authoritative metrics" } },
+            { name: "5 read-only tools", copy: { ko: "버전 계약 / provenance", en: "versioned contracts / provenance" } },
+            { name: "FastAPI / React", copy: { ko: "로컬 analyst workbench", en: "local analyst workbench" } },
+            { name: "Agent / MCP / Power BI", copy: { ko: "같은 Core 사실 소비", en: "consume the same Core facts" } },
+          ],
+          note: { ko: "AI와 presentation layer는 authoritative process metric을 독립 계산하지 않음", en: "AI and presentation layers do not independently calculate authoritative process metrics." },
+        },
+        links: [{ href: "https://github.com/jgjoe/TraceVerity", label: { ko: "코드 보기", en: "View code" } }, { href: "https://github.com/jgjoe/TraceVerity/blob/main/evidence/public-verification-summary.json", label: { ko: "공개 검증 요약", en: "Public verification summary" } }, { href: "https://github.com/jgjoe/TraceVerity/blob/main/docs/ARCHITECTURE.md", label: { ko: "아키텍처", en: "Architecture" } }, { href: "https://github.com/jgjoe/TraceVerity/blob/main/docs/REPRODUCTION.md", label: { ko: "재현 가이드", en: "Reproduction guide" } }],
+        media: { type: "image", src: "/traceverity-overview.png", host: "github.com/jgjoe/TraceVerity", alt: { ko: "TraceVerity의 polished English Process Intelligence 워크벤치 개요 화면", en: "TraceVerity polished English Process Intelligence workbench overview" }, caption: { ko: "deterministic Core의 집계 지표를 표시하는 공개 포트폴리오 화면", en: "Public portfolio view rendering aggregate facts from the deterministic Core" } },
+      },
+      {
+        title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
         lead: { ko: "공식 정책을 한 검색 경로로 통합한 RAG 서비스입니다. 검색된 정책만 근거로 답하도록 설계했습니다.", en: "A RAG service that unifies official policies into one search path and answers only from retrieved policy evidence." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
         visibleDetailIndexes: [1, 2],
@@ -127,8 +154,8 @@ export const portfolio = {
   },
   skills: [
     { title: { ko: "언어와 백엔드", en: "Languages & Backend" }, items: ["Java", "Kotlin", "Python", "Spring Boot", "FastAPI", "REST API", "JSP/Servlet"] },
-    { title: { ko: "데이터와 AI", en: "Data & AI" }, items: ["PostgreSQL / pgvector", "MongoDB", "MySQL", "RAG", { ko: "임베딩 / 리랭킹", en: "Embedding & reranking" }] },
-    { title: { ko: "품질과 배포", en: "Quality & Delivery" }, items: [{ ko: "회귀 테스트 환경", en: "Regression harness" }, { ko: "CI 품질 게이트", en: "CI quality gates" }, "JUnit", "GitHub Actions", "Docker", "Google Cloud Run", "Prometheus"] },
+    { title: { ko: "데이터와 AI", en: "Data & AI" }, items: ["DuckDB", "PostgreSQL / pgvector", "MongoDB", "MySQL", "RAG", "MCP", "Power BI"] },
+    { title: { ko: "품질과 배포", en: "Quality & Delivery" }, items: [{ ko: "회귀 테스트 환경", en: "Regression harness" }, { ko: "CI 품질 게이트", en: "CI quality gates" }, "Pytest", "Playwright", "JUnit", "GitHub Actions", "Docker", "Google Cloud Run", "Prometheus"] },
   ],
   contact: { eyebrow: { ko: "LET'S TALK", en: "LET'S TALK" }, title: { ko: "안정적인 서비스를 함께 만듭니다", en: "Let's build reliable services together" }, copy: { ko: "프로젝트나 포지션 제안은 이메일로 연락해 주세요.", en: "For project or role opportunities, feel free to reach out by email." }, email: "jigwan.joe@gmail.com", github: "https://github.com/jgjoe" },
 };

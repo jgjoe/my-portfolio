@@ -13,9 +13,10 @@
 
 대표 프로젝트는 다음 순서로 배치했습니다.
 
-1. **혜택나침반** — RAG, 백엔드, 데이터, 운영 관측, 정량 평가
-2. **오늘도 신선** — Android 제품 개발, 회귀 검증, 릴리스 판단
-3. **길동이** — 6인 팀 백엔드, MongoDB, OpenAPI, 수상/논문
+1. **TraceVerity** — Process Intelligence, deterministic Python/DuckDB Core, Web/Power BI/Agent/MCP, usability·regression 검증
+2. **혜택나침반** — RAG, 백엔드, 데이터, 운영 관측, 정량 평가
+3. **오늘도 신선** — Android 제품 개발, 회귀 검증, 릴리스 판단
+4. **길동이** — 6인 팀 백엔드, MongoDB, OpenAPI, 수상/논문
 
 ---
 
@@ -54,7 +55,7 @@
 
 상단 핵심 성과는 다음 세 축으로 구성합니다.
 
-- API **10% → 100%** — staging/no-traffic 검증 뒤 canary를 거쳐 production 승격
+- **13,087 cases / 48 tests** — 하나의 deterministic Core를 Web·Power BI·Agent·MCP까지 일관되게 검증
 - **배포 보류 → 재출시** — OCR 잔여 오답을 근거로 보류하고 사용자 확인 흐름 도입
 - **논문 2편과 수상 2회**
 
