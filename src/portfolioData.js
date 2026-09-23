@@ -73,6 +73,32 @@ export const portfolio = {
         media: { type: "image", src: "/traceverity-overview.png", host: "github.com/jgjoe/TraceVerity", alt: { ko: "TraceVerity의 polished English Process Intelligence 워크벤치 개요 화면", en: "TraceVerity polished English Process Intelligence workbench overview" }, caption: { ko: "deterministic Core의 집계 지표를 표시하는 공개 포트폴리오 화면", en: "Public portfolio view rendering aggregate facts from the deterministic Core" } },
       },
       {
+        title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 엔지니어링", en: "Data Engineering" }], period: "2026.09",
+        lead: { ko: "서울 공공자전거 실제 원천의 revision을 추적하고, 품질 문제가 있는 행·논리 그룹을 격리하며, 변경된 월만 재처리할 수 있게 만든 재현 가능한 배치 데이터 파이프라인입니다.", en: "A reproducible batch data pipeline for Seoul Public Bike data that tracks source revisions, quarantines row/group quality issues, and rebuilds only affected months." },
+        tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
+        visibleDetailIndexes: [1, 2],
+        details: [
+          { label: { ko: "문제", en: "Problem" }, copy: { ko: "연·월 단위 원천 파일이 수정될 수 있고 대여소 정보는 snapshot으로만 관측됩니다. 단순 ETL보다 어떤 입력으로 무엇을 만들었는지와 수정 시 어디까지 다시 계산할지를 증명하는 구조가 필요했습니다.", en: "Yearly/monthly source files can be revised, while station information is observed only through snapshots. The system needed provable lineage and bounded recomputation rather than a one-off ETL." } },
+          { label: { ko: "기여", en: "Ownership" }, copy: { ko: "파일 크기·SHA-256·기간을 manifest에 고정하고 immutable Raw/Clean을 구성했습니다. row DQ와 (bike_id, rent_at) logical-group DQ를 분리하고, 충돌 그룹은 임의 winner 없이 quarantine한 뒤 trusted fact와 station-day·OD·source-quality mart를 만들었습니다.", en: "I registered source size, SHA-256, and logical period, then built immutable Raw/Clean layers. I separated row DQ from logical-group DQ, quarantined conflicting groups without choosing an arbitrary winner, and materialized trusted facts plus station-day, OD, and source-quality marts." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "yearly ZIP 수정 시 member 내용이 실제로 바뀐 월만 rebuild하도록 영향 범위를 계산했습니다. Airflow는 transformation을 복제하지 않고 동일 Python business layer의 month/range backfill과 failed-month retry를 제어하는 control plane으로만 사용했습니다.", en: "For yearly ZIP revisions, I rebuild only months whose member content actually changed. Airflow remains a control plane for month/range backfill and failed-month retry over the same Python business layer instead of duplicating transformation logic." } },
+          { label: { ko: "검증", en: "Verification" }, copy: { ko: "2020-01~2026-06 Clean 78/78을 처리해 source/Clean 241,350,472행 = trusted 241,320,806 + quarantine 29,666으로 reconciliation을 확인했습니다. 대표 2020-09 warehouse에서도 fact·station-day·OD·source-quality grain과 집계가 일치했고, 최종 release-candidate 회귀는 WSL 139 passed / 1 skipped와 Windows 3 passed를 통과했습니다.", en: "I processed all 78 Clean months from 2020-01 through 2026-06 and reconciled 241,350,472 source/Clean rows into 241,320,806 trusted plus 29,666 quarantined rows. A representative 2020-09 warehouse slice reconciled fact, station-day, OD, and source-quality grains; the final release-candidate regression passed 139 WSL tests with 1 skipped and 3 Windows state tests." } },
+          { label: { ko: "경계", en: "Boundary" }, copy: { ko: "대여소 이력은 실제 변경일을 안다고 가정하지 않고 observed snapshot history로만 사용했습니다. downstream acceptance는 Fact/Quality/OD 9개월과 Station-day 1개월의 실제 materialization 근거이며, 78개월 전체 downstream이나 cloud production 운영으로 확대하지 않습니다.", en: "Station history is modeled only from observed snapshots rather than invented change dates. Downstream acceptance uses real materialization evidence for 9 Fact/Quality/OD months and 1 Station-day month; it is not presented as 78-month downstream materialization or cloud production operation." } },
+        ],
+        results: [{ value: "78 / 78", label: { ko: "production Clean 월", en: "production Clean months" } }, { value: "241.35M", label: { ko: "source / Clean 행", en: "source / Clean rows" } }, { value: "29,666", label: { ko: "quarantine 행", en: "quarantined rows" } }],
+        architecture: {
+          title: { ko: "revision-aware data reliability flow", en: "Revision-aware data reliability flow" },
+          sources: [{ ko: "서울 공공자전거 대여이력", en: "Seoul bike rental history" }, { ko: "대여소 snapshot", en: "Station snapshots" }],
+          stages: [
+            { name: "Immutable Raw", copy: { ko: "manifest / SHA-256 / source version", en: "manifest / SHA-256 / source version" } },
+            { name: "Clean + DQ", copy: { ko: "row/group quarantine + provenance", en: "row/group quarantine + provenance" } },
+            { name: "Trusted Warehouse", copy: { ko: "fact + observed station history", en: "fact + observed station history" } },
+            { name: "Marts + Airflow", copy: { ko: "changed-only backfill / retry", en: "changed-only backfill / retry" } },
+          ],
+          note: { ko: "검증된 immutable version만 atomic current pointer로 승격", en: "Only validated immutable versions are promoted through atomic current pointers." },
+        },
+        links: [{ href: "https://github.com/jgjoe/seoul-bike-data-pipeline", label: { ko: "코드 보기", en: "View code" } }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/production-validation.md", label: { ko: "Production 검증", en: "Production validation" } }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/prd-v1.0-final.md", label: { ko: "Frozen PRD", en: "Frozen PRD" } }],
+      },
+      {
         title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
         lead: { ko: "공식 정책을 한 검색 경로로 통합한 RAG 서비스입니다. 검색된 정책만 근거로 답하도록 설계했습니다.", en: "A RAG service that unifies official policies into one search path and answers only from retrieved policy evidence." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
@@ -154,8 +180,8 @@ export const portfolio = {
   },
   skills: [
     { title: { ko: "언어와 백엔드", en: "Languages & Backend" }, items: ["Java", "Kotlin", "Python", "Spring Boot", "FastAPI", "REST API", "JSP/Servlet"] },
-    { title: { ko: "데이터와 AI", en: "Data & AI" }, items: ["DuckDB", "PostgreSQL / pgvector", "MongoDB", "MySQL", "RAG", "MCP", "Power BI"] },
-    { title: { ko: "품질과 배포", en: "Quality & Delivery" }, items: [{ ko: "회귀 테스트 환경", en: "Regression harness" }, { ko: "CI 품질 게이트", en: "CI quality gates" }, "Pytest", "Playwright", "JUnit", "GitHub Actions", "Docker", "Google Cloud Run", "Prometheus"] },
+    { title: { ko: "데이터와 AI", en: "Data & AI" }, items: ["DuckDB", "Parquet", "PostgreSQL / pgvector", "MongoDB", "MySQL", "RAG", "MCP", "Power BI"] },
+    { title: { ko: "품질과 배포", en: "Quality & Delivery" }, items: [{ ko: "회귀 테스트 환경", en: "Regression harness" }, { ko: "CI 품질 게이트", en: "CI quality gates" }, "Apache Airflow", "Pytest", "Playwright", "JUnit", "GitHub Actions", "Docker", "Google Cloud Run", "Prometheus"] },
   ],
   contact: { eyebrow: { ko: "LET'S TALK", en: "LET'S TALK" }, title: { ko: "안정적인 서비스를 함께 만듭니다", en: "Let's build reliable services together" }, copy: { ko: "프로젝트나 포지션 제안은 이메일로 연락해 주세요.", en: "For project or role opportunities, feel free to reach out by email." }, email: "jigwan.joe@gmail.com", github: "https://github.com/jgjoe" },
 };

@@ -14,9 +14,10 @@
 대표 프로젝트는 다음 순서로 배치했습니다.
 
 1. **TraceVerity** — Process Intelligence, deterministic Python/DuckDB Core, Web/Power BI/Agent/MCP, usability·regression 검증
-2. **혜택나침반** — RAG, 백엔드, 데이터, 운영 관측, 정량 평가
-3. **오늘도 신선** — Android 제품 개발, 회귀 검증, 릴리스 판단
-4. **길동이** — 6인 팀 백엔드, MongoDB, OpenAPI, 수상/논문
+2. **서울 공공자전거 데이터 파이프라인** — 78개월 real-data 처리, source revision, DQ/quarantine, changed-only backfill, Airflow orchestration
+3. **혜택나침반** — RAG, 백엔드, 데이터, 운영 관측, 정량 평가
+4. **오늘도 신선** — Android 제품 개발, 회귀 검증, 릴리스 판단
+5. **길동이** — 6인 팀 백엔드, MongoDB, OpenAPI, 수상/논문
 
 ---
 
