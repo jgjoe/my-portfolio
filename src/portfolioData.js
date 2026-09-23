@@ -115,11 +115,11 @@ export const portfolio = {
             { name: { ko: "분석용 집계", en: "Analytical marts" }, copy: { ko: "이동 구간 · 대여소/일자 · 품질", en: "OD · station/day · quality" } },
           ],
           callouts: [
-            { value: "78 / 78", label: { ko: "처리 완료 월", en: "months processed" } },
-            { value: { ko: "변경 월만", en: "Changed only" }, label: { ko: "다시 처리", en: "reprocessed" } },
-            { value: "Airflow", label: { ko: "자동화 · 재시도", en: "automation · retry" } },
+            { value: "SHA-256", label: { ko: "원천 변경 추적", en: "source change tracking" } },
+            { value: { ko: "검증된 버전만", en: "Validated only" }, label: { ko: "분석 데이터로 전달", en: "published for analysis" } },
+            { value: "Airflow", label: { ko: "backfill · 재시도 자동화", en: "backfill · retry automation" } },
           ],
-          caption: { ko: "원천이 수정되면 바뀐 월만 찾아 다시 처리하고, 품질 검사를 통과한 데이터만 분석에 사용합니다.", en: "When sources change, only affected months are rebuilt and only validated data is used for analysis." },
+          caption: { ko: "원천 버전과 품질 검사를 기준으로 검증된 데이터만 신뢰 데이터와 분석용 집계로 전달합니다.", en: "Source versions and quality checks gate what moves into trusted data and analytical marts." },
         },
       },
       {
