@@ -181,7 +181,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   min-height: 10.5rem; padding: 1.45rem;
   border: 1px solid var(--line); border-radius: 1.15rem; background: var(--surface);
 }
+.proof-item-topline { display: flex; align-items: center; justify-content: space-between; gap: .8rem; }
 .proof-kicker { display: block; color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .12em; }
+.proof-project-link {
+  flex: 0 0 auto; color: var(--muted); font-size: .7rem; font-weight: 800; text-decoration: none;
+  transition: color .18s ease, transform .18s ease;
+}
+.proof-project-link:hover { color: var(--blue-strong); transform: translateY(1px); }
 .proof-item strong { display: block; margin-top: 1.5rem; font-size: clamp(1.25rem, 2vw, 1.55rem); letter-spacing: -.035em; white-space: nowrap; }
 .proof-item p { margin: .55rem 0 0; color: var(--muted); font-size: .84rem; line-height: 1.55; word-break: keep-all; }
 
@@ -209,6 +215,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .project-card {
   display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
   border: 1px solid var(--line); border-radius: 1.5rem; background: var(--surface); overflow: hidden;
+  scroll-margin-top: 7rem;
 }
 .project-main { padding: clamp(1.5rem, 3.6vw, 2.6rem); }
 .project-visual {

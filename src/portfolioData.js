@@ -2,7 +2,7 @@ export const pick = (value, lang) => value && typeof value === "object" && !Arra
 
 export const portfolio = {
   name: { ko: "조지관", en: "Jigwan Joe" },
-  role: { ko: "IT 시스템 및 소프트웨어 품질 엔지니어", en: "IT Systems & Software Quality Engineer" },
+  role: { ko: "백엔드 · 데이터 시스템 · 소프트웨어 품질", en: "Backend · Data Systems · Software Quality" },
   ui: {
     about: { ko: "소개", en: "About" }, projects: { ko: "프로젝트", en: "Projects" }, credentials: { ko: "이력", en: "Credentials" }, contact: { ko: "연락", en: "Contact" },
     viewWork: { ko: "대표 프로젝트 보기", en: "View selected work" }, resume: { ko: "PDF로 저장", en: "Save as PDF" }, skipToContent: { ko: "본문으로 바로가기", en: "Skip to content" }, languageLabel: { ko: "영문으로 보기", en: "View in Korean" },
@@ -28,12 +28,12 @@ export const portfolio = {
     ],
   },
   proof: { title: { ko: "핵심 성과", en: "Key outcomes" }, items: [
-    { kicker: { ko: "시스템 설계", en: "SYSTEM DESIGN" }, value: { ko: "실데이터 2종 · 190/190", en: "2 datasets · 190/190" }, label: { ko: "웹 화면과 AI 도구가 같은 기준으로 같은 결과를 내는지 검증했습니다.", en: "Verified that the web and AI tools return consistent results from the same calculation rules." } },
-    { kicker: { ko: "데이터 엔지니어링", en: "DATA ENGINEERING" }, value: { ko: "78개월 · 2.41억 행 처리", en: "78 months · 241.35M rows" }, label: { ko: "실제 공공데이터의 수정과 품질 문제를 추적하며 필요한 기간만 다시 처리하도록 만들었습니다.", en: "Built the pipeline to track source changes and data-quality issues, then reprocess only affected periods." } },
-    { kicker: { ko: "소프트웨어 품질", en: "SOFTWARE QUALITY" }, value: { ko: "OCR 오류 개선 후 재출시", en: "OCR improved · re-shipped" }, label: { ko: "측정 결과를 근거로 출시를 멈추고 사용자 확인 과정을 보완한 뒤 다시 배포했습니다.", en: "Paused a release based on measured errors, improved the confirmation flow, and shipped again." } },
+    { kicker: { ko: "시스템 설계", en: "SYSTEM DESIGN" }, value: { ko: "실데이터 2종 · 190/190", en: "2 datasets · 190/190" }, label: { ko: "웹 화면과 AI 도구가 같은 기준으로 같은 결과를 내는지 검증했습니다.", en: "Verified that the web and AI tools return consistent results from the same calculation rules." }, project: "TraceVerity", target: "project-traceverity", projectAria: { ko: "TraceVerity 프로젝트로 이동", en: "Jump to the TraceVerity project" } },
+    { kicker: { ko: "데이터 엔지니어링", en: "DATA ENGINEERING" }, value: { ko: "78개월 · 2.41억 행 처리", en: "78 months · 241.35M rows" }, label: { ko: "실제 공공데이터의 수정과 품질 문제를 추적하며 필요한 기간만 다시 처리하도록 만들었습니다.", en: "Built the pipeline to track source changes and data-quality issues, then reprocess only affected periods." }, project: { ko: "서울 공공자전거", en: "Seoul Bike" }, target: "project-seoul-bike", projectAria: { ko: "서울 공공자전거 데이터 파이프라인 프로젝트로 이동", en: "Jump to the Seoul Public Bike data pipeline project" } },
+    { kicker: { ko: "소프트웨어 품질", en: "SOFTWARE QUALITY" }, value: { ko: "OCR 오류 개선 후 재출시", en: "OCR improved · re-shipped" }, label: { ko: "측정 결과를 근거로 출시를 멈추고 사용자 확인 과정을 보완한 뒤 다시 배포했습니다.", en: "Paused a release based on measured errors, improved the confirmation flow, and shipped again." }, project: { ko: "오늘도 신선", en: "Fridge D-Day" }, target: "project-today-fresh", projectAria: { ko: "오늘도 신선 프로젝트로 이동", en: "Jump to the Fridge D-Day project" } },
   ] },
   about: {
-    eyebrow: { ko: "HOW I WORK", en: "HOW I WORK" }, title: { ko: "경계를 설계하고 근거로 검증합니다", en: "I design boundaries and verify with evidence" },
+    eyebrow: { ko: "HOW I WORK", en: "HOW I WORK" }, title: { ko: "역할을 나누고 근거로 검증합니다", en: "I separate responsibilities and verify with evidence" },
     copy: { ko: "복잡한 시스템도 역할을 나눠 단순하게 설계하고, 테스트와 실제 데이터로 결과를 확인합니다.", en: "I simplify complex systems by separating responsibilities, then verify the result with tests and real data." },
     strengths: [
       { title: { ko: "역할과 계산 기준을 분리합니다", en: "Separate roles and calculation rules" }, copy: { ko: "백엔드, 데이터 처리, AI가 각자 맡는 역할을 나누고 핵심 계산은 한 곳에서 관리합니다.", en: "I separate backend, data, and AI responsibilities while keeping critical calculations in one authoritative path." } },
@@ -45,7 +45,7 @@ export const portfolio = {
     copy: { ko: "맡은 문제와 판단 과정에 집중하고 결과에는 검증 근거를 연결했습니다.", en: "Each project focuses on the problem I owned, the decision I made, and the evidence behind the result." },
     featured: [
       {
-        title: "TraceVerity", titleLines: ["TraceVerity"], subtitle: { ko: "로컬 프로세스 분석 워크벤치", en: "Process Intelligence Workbench" }, type: [{ ko: "개인", en: "Personal" }, { ko: "프로세스 분석", en: "Process Intelligence" }], period: "2026.09",
+        anchor: "project-traceverity", title: "TraceVerity", titleLines: ["TraceVerity"], subtitle: { ko: "로컬 프로세스 분석 워크벤치", en: "Process Intelligence Workbench" }, type: [{ ko: "개인", en: "Personal" }, { ko: "프로세스 분석", en: "Process Intelligence" }], period: "2026.09",
         lead: { ko: "CSV/XES 이벤트 로그를 브라우저에서 가져와 바로 분석하고, 웹 화면과 AI 도구가 같은 계산 결과를 사용하도록 만든 로컬 프로세스 분석 도구입니다. 두 실제 업무 데이터로 검증했습니다.", en: "A local process-analysis tool that imports CSV/XES event logs in the browser and keeps the web and AI tools on the same calculated results. Verified with two real business datasets." },
         tech: ["Python", "DuckDB", "FastAPI", "React", "Power BI", "MCP"],
         visibleDetailIndexes: [1, 2],
@@ -78,7 +78,7 @@ export const portfolio = {
         ] },
       },
       {
-        title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 엔지니어링", en: "Data Engineering" }], period: "2026.09",
+        anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 엔지니어링", en: "Data Engineering" }], period: "2026.09",
         lead: { ko: "서울 공공자전거 실제 데이터를 78개월 동안 처리하면서 원천 파일 수정과 품질 문제를 추적하고, 바뀐 기간만 다시 처리할 수 있게 만든 배치 데이터 파이프라인입니다.", en: "A batch data pipeline that processed 78 months of real Seoul Public Bike data, tracks source changes and quality issues, and rebuilds only affected periods." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
         visibleDetailIndexes: [1, 2],
@@ -153,7 +153,7 @@ export const portfolio = {
         media: { type: "image", src: "/benefit-compass-demo.png", host: "jgjoe.github.io/benefit-compass", alt: { ko: "혜택나침반의 월세 지원 검색 결과", en: "BenefitCompass search results for rental support" }, caption: { ko: "실제 배포 환경에서 확인한 검색 결과", en: "Search result captured from the live deployment" } },
       },
       {
-        title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }, "Closed Alpha"], period: { ko: "2025.09 — 진행 중", en: "2025.09 — Present" },
+        anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }, "Closed Alpha"], period: { ko: "2025.09 — 진행 중", en: "2025.09 — Present" },
         lead: { ko: "OCR로 유통기한 입력을 줄이고 이미지는 기기 안에서 처리하는 Android 앱입니다. ONEstore v2.0.0과 Google Play Closed Alpha까지 출시했습니다.", en: "An Android expiry-date app with on-device OCR, publicly shipped as ONEstore v2.0.0 and Google Play Closed Alpha." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
         visibleDetailIndexes: [1, 2],

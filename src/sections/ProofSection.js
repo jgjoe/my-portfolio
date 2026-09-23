@@ -8,7 +8,12 @@ export default function ProofSection({ t }) {
       <motion.div {...reveal} className="proof-grid">
         {portfolio.proof.items.map((item) => (
           <article key={t(item.label)} className="proof-item">
-            <span className="proof-kicker">{t(item.kicker)}</span>
+            <div className="proof-item-topline">
+              <span className="proof-kicker">{t(item.kicker)}</span>
+              <a href={`#${item.target}`} aria-label={t(item.projectAria)} className="proof-project-link">
+                {t(item.project)} <span aria-hidden="true">↓</span>
+              </a>
+            </div>
             <strong>{t(item.value)}</strong>
             <p>{t(item.label)}</p>
           </article>

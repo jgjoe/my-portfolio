@@ -50,7 +50,7 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
   const typeItems = Array.isArray(project.type) ? project.type : [project.type];
 
   return (
-    <motion.article {...reveal} className="project-card">
+    <motion.article {...reveal} id={project.anchor} className="project-card">
       <div className="project-main">
         <div className="project-meta">
           <div className="project-meta-primary">
