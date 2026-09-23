@@ -70,20 +70,20 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
           {project.tech.slice(0, 6).map((tech) => <span key={tech}>{tech}</span>)}
         </div>
 
-        <div className="project-facts">
-          {visibleDetails.map((detail) => (
-            <div key={t(detail.label)}>
-              <span>{t(detail.label)}</span>
-              <p>{t(detail.copy)}</p>
-            </div>
-          ))}
-        </div>
-
         <div className="result-grid">
           {project.results.map((result) => (
             <div key={t(result.label)}>
               <strong>{t(result.value)}</strong>
               <span>{t(result.label)}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="project-facts">
+          {visibleDetails.map((detail) => (
+            <div key={t(detail.label)}>
+              <span>{t(detail.label)}</span>
+              <p>{t(detail.copy)}</p>
             </div>
           ))}
         </div>
@@ -112,10 +112,10 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
               rel="noreferrer"
               className={linkIndex === 0 ? "primary" : ""}
             >
-              {t(link.label)} ↗
+              {t(link.label)} <span aria-hidden="true">↗</span>
             </a>
           ))}
-          {index < 2 && evidenceLinks.length > 0 && (
+          {evidenceLinks.length > 0 && (
             <button type="button" onClick={() => onOpenEvidence(project)} className="evidence-button">
               {t(portfolio.ui.viewEvidence)}
             </button>

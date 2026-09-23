@@ -195,7 +195,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .section-copy {
   margin: 1.2rem 0 0; color: var(--muted); font-size: 1.02rem; line-height: 1.8; word-break: keep-all;
 }
-.strength-grid { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
+.strength-grid { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
 .strength-card {
   min-height: 12rem; padding: 1.5rem;
   border-top: 1px solid var(--line);
@@ -278,6 +278,33 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   z-index: 2; color: var(--blue); font-size: .85rem; font-weight: 800;
 }
 .architecture-block > p { margin: .75rem 0 0; color: var(--muted); font-size: .72rem; line-height: 1.5; word-break: keep-all; }
+.architecture-hub-grid {
+  margin-top: .8rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto auto auto; gap: .55rem; align-items: stretch;
+}
+.architecture-hub-core, .architecture-hub-spoke {
+  min-height: 4.5rem; padding: .75rem; border-radius: .7rem; background: var(--surface);
+  display: flex; flex-direction: column; justify-content: center; text-align: center;
+}
+.architecture-hub-core {
+  grid-column: 2; grid-row: 2; border: 1px solid color-mix(in srgb, var(--blue) 45%, var(--line));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue-soft) 60%, transparent);
+}
+.architecture-hub-spoke-1 { grid-column: 2; grid-row: 1; }
+.architecture-hub-spoke-2 { grid-column: 1; grid-row: 2; }
+.architecture-hub-spoke-3 { grid-column: 3; grid-row: 2; }
+.architecture-hub-spoke-4 { grid-column: 2; grid-row: 3; }
+.architecture-hub-core strong, .architecture-hub-spoke strong { font-size: .78rem; font-weight: 800; word-break: keep-all; }
+.architecture-hub-core span, .architecture-hub-spoke span { margin-top: .25rem; color: var(--muted); font-size: .7rem; line-height: 1.35; word-break: keep-all; }
+.architecture-decision-flow { margin-top: .8rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(11rem, .42fr); gap: .65rem; }
+.architecture-decision-stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; }
+.architecture-decision-card {
+  min-height: 4.5rem; padding: .8rem; border: 1px solid color-mix(in srgb, var(--blue) 42%, var(--line));
+  border-radius: .7rem; background: var(--blue-soft); display: flex; flex-direction: column; justify-content: center;
+}
+.architecture-decision-card span { color: var(--muted); font-size: .68rem; font-weight: 800; }
+.architecture-decision-card strong { margin-top: .28rem; font-size: .78rem; line-height: 1.35; word-break: keep-all; }
+.architecture-decision-card small { margin-top: .32rem; color: var(--blue-strong); font-size: .68rem; font-weight: 800; line-height: 1.35; }
 .project-links { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: .8rem 1rem; }
 .project-links a { color: var(--muted); font-size: .78rem; font-weight: 800; }
 .project-links a.primary { color: var(--blue); }
@@ -285,6 +312,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   padding: 0; border: 0; background: none; color: var(--blue);
   cursor: pointer; font-size: .78rem; font-weight: 850;
 }
+.project-links a, .evidence-button { min-height: 2.5rem; display: inline-flex; align-items: center; gap: .22rem; }
+.project-links a:hover, .evidence-button:hover { color: var(--blue-strong); text-decoration: underline; text-underline-offset: .2em; }
 
 .browser-shot, .poster-frame, .phone-frame { margin: 0; }
 .browser-shot { width: 100%; max-width: 34rem; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); box-shadow: var(--shadow); }
@@ -312,6 +341,31 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   width: 100%; min-height: 18rem; border: 1px dashed var(--line); border-radius: 1rem;
   background: linear-gradient(145deg, var(--surface), var(--surface-soft));
 }
+.data-flow-visual {
+  width: 100%; max-width: 34rem; margin: 0; padding: 1rem;
+  border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); box-shadow: var(--shadow);
+}
+.data-flow-sources { display: flex; flex-wrap: wrap; gap: .4rem; }
+.data-flow-sources span {
+  padding: .3rem .5rem; border-radius: .5rem; background: var(--surface-soft);
+  color: var(--muted); font-size: .68rem; font-weight: 750;
+}
+.data-flow-track { margin-top: .85rem; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .5rem; }
+.data-flow-step {
+  position: relative; min-height: 6.4rem; padding: .75rem; border: 1px solid var(--line); border-radius: .75rem;
+  display: flex; flex-direction: column; justify-content: center; background: var(--surface-soft);
+}
+.data-flow-step strong { font-size: .76rem; line-height: 1.35; }
+.data-flow-step > span:not(.data-flow-arrow) { margin-top: .35rem; color: var(--muted); font-size: .66rem; line-height: 1.4; word-break: keep-all; }
+.data-flow-arrow {
+  position: absolute; top: 50%; right: -.42rem; z-index: 2; transform: translate(50%,-50%);
+  color: var(--blue); font-size: .8rem; font-weight: 900;
+}
+.data-flow-callouts { margin-top: .75rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .45rem; }
+.data-flow-callouts > div { padding: .7rem; border-top: 1px solid var(--line); }
+.data-flow-callouts strong { display: block; font-size: .82rem; }
+.data-flow-callouts span { display: block; margin-top: .2rem; color: var(--muted); font-size: .64rem; line-height: 1.35; }
+.data-flow-visual figcaption { margin-top: .75rem; color: var(--muted); font-size: .68rem; line-height: 1.5; word-break: keep-all; }
 
 .more-work { margin-top: 4.5rem; }
 .more-work > h3 { margin: .6rem 0 0; font-size: 1.8rem; font-weight: 700; letter-spacing: -.035em; word-break: keep-all; }
@@ -419,6 +473,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .evidence-result-grid { grid-template-columns: 1fr; }
   .architecture-flow { grid-template-columns: 1fr 1fr; }
   .architecture-stage:nth-child(2) .architecture-arrow { display: none; }
+  .architecture-decision-flow { grid-template-columns: 1fr; }
+  .data-flow-track { grid-template-columns: 1fr 1fr; }
+  .data-flow-step:nth-child(2) .data-flow-arrow { display: none; }
   .phone-gallery { gap: .35rem; }
   .phone-frame { border-width: 3px; border-radius: .85rem; }
   .contact-panel { border-radius: 1.1rem; }
@@ -435,6 +492,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .architecture-sources { justify-content: flex-start; }
   .architecture-flow { grid-template-columns: 1fr; }
   .architecture-arrow { display: none; }
+  .architecture-hub-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+  .architecture-hub-core, .architecture-hub-spoke { grid-column: 1; grid-row: auto; text-align: left; }
+  .architecture-decision-stages { grid-template-columns: 1fr; }
+  .architecture-decision-stages .architecture-arrow { display: none; }
+  .data-flow-track { grid-template-columns: 1fr; }
+  .data-flow-arrow { display: none; }
+  .data-flow-callouts { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
