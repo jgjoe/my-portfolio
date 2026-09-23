@@ -57,7 +57,7 @@ export const portfolio = {
           { label: { ko: "범위", en: "Scope" }, copy: { ko: "CSV/XES 브라우저 가져오기는 범용으로 지원하고, Power BI 화면은 BPIC12 분석용으로 범위를 분리했습니다. 이벤트 간격과 임계값은 실제 업무 SLA가 아니라 분석 지표로 다룹니다.", en: "Browser CSV/XES import is generic, while the Power BI view remains BPIC12-specific. Event gaps and thresholds are analytical measures rather than operational SLAs." } },
           { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "같은 지표를 여러 화면에서 보여줄수록 계산 책임을 한 곳에 두어야 결과 일관성을 검증할 수 있다는 점을 확인했습니다.", en: "When multiple interfaces show the same metrics, keeping calculation ownership in one place makes consistency verifiable." } },
         ],
-        results: [{ value: "2", label: { ko: "실제 업무 데이터", en: "real business datasets" } }, { value: "190 / 190", label: { ko: "핵심 회귀 테스트", en: "core regression tests" } }, { value: { ko: "각 12 / 12", en: "12 / 12 each" }, label: { ko: "Agent · MCP 검증", en: "Agent · MCP checks" } }],
+        results: [{ value: "Web · BI · AI", label: { ko: "같은 계산 결과 사용", en: "same calculated results" } }, { value: "190 / 190", label: { ko: "핵심 회귀 테스트", en: "core regression tests" } }, { value: "22 / 22", label: { ko: "AI 연결 두 경로 결과 일치", en: "two AI paths matched" } }],
         architecture: {
           variant: "hub",
           title: { ko: "하나의 공통 계산 기준", en: "One shared calculation path" },
@@ -91,7 +91,7 @@ export const portfolio = {
           { label: { ko: "범위", en: "Scope" }, copy: { ko: "대여소 변경일을 임의로 추정하지 않고 실제로 관측된 스냅샷만 이력으로 사용했습니다. 대규모 전체 처리와 대표 warehouse 구간을 각각 검증했습니다.", en: "Station history uses only observed snapshots rather than invented change dates. Full-period source processing and representative warehouse slices were verified separately." } },
           { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "대규모 배치는 한 번 끝까지 처리하는 것만큼, 원천이 바뀌었을 때 무엇을 다시 처리해야 하는지 추적할 수 있는 구조가 중요하다는 점을 확인했습니다.", en: "For large batch pipelines, knowing exactly what must be rebuilt when sources change is as important as completing the initial run." } },
         ],
-        results: [{ value: "78 / 78", label: { ko: "처리 완료 월", en: "months processed" } }, { value: "241.35M", label: { ko: "처리한 원천 행", en: "source rows processed" } }, { value: "29,666", label: { ko: "품질 문제 분리", en: "quality-issue rows isolated" } }],
+        results: [{ value: "241.35M", label: { ko: "처리한 원천 행", en: "source rows processed" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "변경 월만", en: "Changed only" }, label: { ko: "다시 처리", en: "reprocessed" } }],
         architecture: {
           title: { ko: "원천 수정과 품질 문제를 추적하는 흐름", en: "Track source changes and data-quality issues" },
           sources: [{ ko: "서울 공공자전거 대여이력", en: "Seoul bike rental history" }, { ko: "대여소 정보", en: "Station data" }],
@@ -135,7 +135,7 @@ export const portfolio = {
           { label: { ko: "운영 기준", en: "Operating principle" }, copy: { ko: "첫 요청 지연은 scale-to-zero로 비용을 줄인 선택의 결과입니다. 성능 개선은 실제 비교 평가로 확인된 결과만 표시합니다.", en: "Cold-start latency is the trade-off for scale-to-zero cost savings. I only present performance improvements that hold up in like-for-like evaluation." } },
           { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "새 기술을 추가했다는 사실보다 같은 조건의 비교 결과가 실제로 좋아졌는지를 배포 기준으로 삼아야 한다는 점을 배웠습니다.", en: "A new component is worth shipping only when like-for-like evaluation shows that it actually improves the system." } },
         ],
-        results: [{ value: "13,589", label: { ko: "공식 정책", en: "official policies" } }, { value: "17,609", label: { ko: "검색 청크", en: "search chunks" } }, { value: "0", label: { ko: "임베딩 누락", en: "missing embeddings" } }],
+        results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: "0", label: { ko: "임베딩 누락", en: "missing embeddings" } }, { value: { ko: "기존 검색 유지", en: "Kept validated search" }, label: { ko: "비교 평가 후 배포 판단", en: "release decision after comparison" } }],
         architecture: {
           variant: "decision",
           title: { ko: "검색 품질을 확인하고 더 나은 경로만 배포", en: "Measure retrieval quality before shipping changes" },
@@ -168,7 +168,7 @@ export const portfolio = {
           { label: { ko: "그 다음", en: "What followed" }, copy: { ko: "인식 날짜를 사용자가 확인해야 저장되도록 바꿔 v1.0.2로 재출시한 뒤, bundled Korean OCR과 실기기 회귀를 검증했습니다. 이어 4명 usability에서 반복 마찰을 찾아 수정하고 affected user 재검증을 거쳐 v2.0.0/code5를 ONEstore에 공개 배포하고 Google Play closed Alpha에도 출시했습니다. Play의 14일 요건과 Production 공개는 아직 진행 중입니다.", en: "I required users to confirm recognized dates before saving and re-released v1.0.2, then verified bundled Korean OCR and same-device regression. After a four-person usability round exposed repeated friction, I fixed those flows, retested them with affected users, publicly shipped v2.0.0/code5 on ONEstore, and released it to Google Play closed Alpha. Play's 14-day requirement and Production release are still in progress." } },
           { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "자동 테스트를 통과해도 사용자 입력 품질이 보장되는 것은 아니며, 오류 가능성이 남으면 사용자가 확인할 수 있는 안전장치가 필요하다는 점을 확인했습니다.", en: "Passing automated checks does not guarantee input quality; when error risk remains, the product needs a user-verifiable safeguard." } },
         ],
-        results: [{ value: { ko: "검증 통과", en: "All checks passed" }, label: { ko: "JVM 107/107\nA32 65/65", en: "JVM 107/107\nA32 65/65" } }, { value: { ko: "Closed Alpha", en: "Closed Alpha" }, label: { ko: "Google Play v2.0.0/code5", en: "Google Play v2.0.0/code5" } }, { value: { ko: "공개 3버전", en: "3 public versions" }, label: { ko: "ONEstore v1.0 → v1.0.2 → v2.0.0", en: "ONEstore v1.0 → v1.0.2 → v2.0.0" } }],
+        results: [{ value: "ONEstore v2.0.0", label: { ko: "공개 배포", en: "public release" } }, { value: "Google Play", label: { ko: "비공개 테스트 출시", en: "closed test release" } }, { value: "107/107 · 65/65", label: { ko: "자동·실기기 테스트 통과", en: "automated · device checks passed" } }],
         links: [{ href: "https://m.onestore.co.kr/v2/ko-kr/app/0001003331", label: { ko: "스토어에서 보기", en: "View in store" } }, { href: "https://github.com/jgjoe/Fridge-D-Day", label: { ko: "코드 보기", en: "View code" } }, { href: "https://github.com/jgjoe/Fridge-D-Day/blob/main/QA_RELEASE_RECORD.md", label: { ko: "QA와 릴리스 기록", en: "QA & release record" } }, { href: "https://github.com/jgjoe/Fridge-D-Day/blob/main/docs/qa/OCR_BENCHMARK.md", label: { ko: "OCR 벤치마크", en: "OCR benchmark" } }, { href: "https://github.com/jgjoe/Fridge-D-Day/blob/main/.github/workflows/android-ci.yml", label: { ko: "CI 설정", en: "CI workflow" } }],
         media: { type: "gallery", label: { ko: "오늘도 신선 v2 대표 화면", en: "Fridge D-Day v2 highlights" }, images: [
           { src: "/today-fresh-1.png", alt: { ko: "오늘도 신선 v2 Today 화면", en: "Fridge D-Day v2 Today screen" } },
@@ -188,7 +188,7 @@ export const portfolio = {
           { label: { ko: "담당 범위", en: "My scope" }, copy: { ko: "6인 팀에서 차량 도메인 백엔드와 MongoDB 데이터 모델을 담당했습니다.", en: "In a six-person team, I owned the vehicle-domain backend and MongoDB data model." } },
           { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "서로 다른 장치에서 들어오는 데이터를 바로 저장하기보다 도메인 경계를 먼저 나누면 API와 저장 모델을 일관되게 정리할 수 있다는 점을 배웠습니다.", en: "I learned that defining domain boundaries first makes heterogeneous device data easier to expose through APIs and store consistently." } },
         ],
-        results: [{ value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "1편", en: "1" }, label: { ko: "학회 논문", en: "Conference paper" } }, { value: { ko: "5개", en: "5" }, label: { ko: "백엔드 도메인", en: "backend domains" } }],
+        results: [{ value: { ko: "5개", en: "5" }, label: { ko: "담당 백엔드 도메인", en: "backend domains owned" } }, { value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "1편", en: "1" }, label: { ko: "학회 논문 공저", en: "conference paper co-author" } }],
         links: [{ href: "https://github.com/jgjoe/gildongE", label: { ko: "백엔드 코드 보기", en: "View backend code" } }],
         media: { type: "poster", src: "/gildongE_poster.jpg", alt: { ko: "길동이 프로젝트 포스터", en: "GildongE project poster" } },
       },
