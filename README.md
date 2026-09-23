@@ -13,7 +13,7 @@
 
 대표 프로젝트는 다음 순서로 배치했습니다.
 
-1. **TraceVerity** — Process Intelligence, deterministic Python/DuckDB Core, Web/Power BI/Agent/MCP, usability·regression 검증
+1. **TraceVerity** — 로컬 CSV/XES 브라우저 온보딩, 두 실제 업무 프로세스, deterministic Python/DuckDB Core, Web/Agent/MCP 공유 사실 경로, BPIC12 Power BI 역사적 증명
 2. **서울 공공자전거 데이터 파이프라인** — 78개월 real-data 처리, source revision, DQ/quarantine, changed-only backfill, Airflow orchestration
 3. **혜택나침반** — RAG, 백엔드, 데이터, 운영 관측, 정량 평가
 4. **오늘도 신선** — Android 제품 개발, 회귀 검증, 릴리스 판단
@@ -56,7 +56,7 @@
 
 상단 핵심 성과는 다음 세 축으로 구성합니다.
 
-- **13,087 cases / 48 tests** — 하나의 deterministic Core를 Web·Power BI·Agent·MCP까지 일관되게 검증
+- **2 real datasets / 190 tests** — 브라우저 온보딩·Web·Agent·MCP가 하나의 deterministic Core 사실을 사용하도록 검증
 - **배포 보류 → 재출시** — OCR 잔여 오답을 근거로 보류하고 사용자 확인 흐름 도입
 - **논문 2편과 수상 2회**
 
@@ -93,6 +93,7 @@ npm install && npm start
 ## 범위와 조건
 
 - 프로젝트 카드의 수치는 **각 프로젝트 저장소의 README·평가 기록을 근거**로 합니다.
+- TraceVerity는 로컬 우선 단일 사용자 제품입니다. generic CSV/XES 브라우저 온보딩은 지원하지만 Power BI 증명은 BPIC12 전용이며, observed event gap은 실제 queue/waiting이 아니고 설정 threshold는 실제 업무 SLA가 아닙니다. 현재 브라우저 온보딩 human cohort는 실행하지 않았습니다.
 - 혜택나침반의 지연 원인은 콜드/웜 요청과 구간을 나눠 측정한 해당 배포 환경의 결과로 표현하며, 일반적인 코드 원인까지 배제하는 식으로 단정하지 않습니다.
 - 오늘도 신선의 OCR 수치는 독립 한국 라벨 55장·D-30 시나리오 기준의 회귀 측정값이며, 실사용 전체 정확도로 일반화하지 않습니다.
 - `검증 근거 공개`는 평가셋·측정 스크립트·QA·릴리스 기록의 공개를 뜻하며, 비공개 원본 이미지나 사설 QA 데이터까지 공개한다는 의미는 아닙니다.
