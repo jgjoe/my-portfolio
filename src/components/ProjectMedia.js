@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { publicAsset } from "../publicAsset";
 
 export default function ProjectMedia({ media, t, onOpen }) {
   if (!media) return <div className="media-placeholder" aria-hidden="true" />;
+
+  if (media.type === "browser-gallery") {
+    return <BrowserGallery media={media} t={t} onOpen={onOpen} />;
+  }
 
   if (media.type === "data-flow") {
     return (
@@ -78,5 +83,41 @@ export default function ProjectMedia({ media, t, onOpen }) {
     >
       <img src={publicAsset(media.src)} alt={t(media.alt)} loading="lazy" />
     </button>
+  );
+}
+
+function BrowserGallery({ media, t, onOpen }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = media.images[activeIndex];
+
+  return (
+    <figure className="browser-shot browser-gallery">
+      <div className="browser-bar" aria-hidden="true">
+        <span /><span /><span />
+        <div>{media.host || "Project preview"}</div>
+      </div>
+      <button
+        type="button"
+        className="media-button browser-gallery-main"
+        onClick={() => onOpen({ src: active.src, title: t(active.alt) })}
+        aria-label={t(active.alt)}
+      >
+        <img src={publicAsset(active.src)} alt={t(active.alt)} loading="lazy" />
+      </button>
+      <div className="browser-gallery-tabs" aria-label={t(media.label)}>
+        {media.images.map((item, index) => (
+          <button
+            type="button"
+            key={item.src}
+            className={index === activeIndex ? "active" : ""}
+            aria-pressed={index === activeIndex}
+            onClick={() => setActiveIndex(index)}
+          >
+            {t(item.tab)}
+          </button>
+        ))}
+      </div>
+      {active.caption && <figcaption>{t(active.caption)}</figcaption>}
+    </figure>
   );
 }

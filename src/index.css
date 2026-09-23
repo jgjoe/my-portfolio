@@ -182,7 +182,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   border: 1px solid var(--line); border-radius: 1.15rem; background: var(--surface);
 }
 .proof-kicker { display: block; color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .12em; }
-.proof-item strong { display: block; margin-top: 1.5rem; font-size: clamp(1.35rem, 2.4vw, 1.85rem); letter-spacing: -.035em; }
+.proof-item strong { display: block; margin-top: 1.5rem; font-size: clamp(1.25rem, 2vw, 1.55rem); letter-spacing: -.035em; white-space: nowrap; }
 .proof-item p { margin: .55rem 0 0; color: var(--muted); font-size: .84rem; line-height: 1.55; word-break: keep-all; }
 
 /* generic section */
@@ -225,6 +225,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   word-break: keep-all;
 }
 .project-card h3 > span { display: block; }
+.project-subtitle { margin: .45rem 0 0; color: var(--blue); font-size: .9rem; font-weight: 800; letter-spacing: .01em; }
 .project-lead { margin: 1rem 0 0; color: var(--muted); line-height: 1.7; word-break: keep-all; }
 .tech-row { margin-top: 1.15rem; display: flex; flex-wrap: wrap; gap: .42rem; }
 .tech-row span {
@@ -319,6 +320,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .browser-shot { width: 100%; max-width: 34rem; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); box-shadow: var(--shadow); }
 .browser-bar { height: 2rem; display: flex; align-items: center; gap: .35rem; padding: 0 .7rem; border-bottom: 1px solid var(--line); }
 .browser-bar > span { width: .48rem; height: .48rem; border-radius: 50%; background: #c7cdd4; }
+.browser-bar > span:nth-child(1) { background: #e07a75; }
+.browser-bar > span:nth-child(2) { background: #d9ae62; }
+.browser-bar > span:nth-child(3) { background: #78ad7b; }
 .browser-bar > div {
   margin-left: .45rem; width: min(14rem, 65%); padding: .22rem .55rem;
   border-radius: .4rem; background: var(--surface-soft); color: var(--muted); font-size: .58rem;
@@ -329,6 +333,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .media-button { width: 100%; display: block; }
 .media-button img { display: block; width: 100%; }
 .browser-shot figcaption { padding: .65rem .8rem; color: var(--muted); font-size: .66rem; }
+.browser-gallery-main { aspect-ratio: 2.55 / 1; overflow: hidden; background: var(--surface); }
+.browser-gallery-main img { height: 100%; object-fit: cover; object-position: center; }
+.browser-gallery-tabs {
+  padding: .7rem .8rem 0; display: flex; flex-wrap: wrap; gap: .4rem;
+  border-top: 1px solid var(--line);
+}
+.browser-gallery-tabs button {
+  min-height: 2rem; padding: .35rem .6rem; border: 1px solid var(--line); border-radius: .55rem;
+  background: var(--surface); color: var(--muted); cursor: pointer; font-size: .68rem; font-weight: 800;
+}
+.browser-gallery-tabs button:hover { border-color: color-mix(in srgb, var(--blue) 35%, var(--line)); color: var(--blue-strong); }
+.browser-gallery-tabs button.active {
+  border-color: color-mix(in srgb, var(--blue) 55%, var(--line)); background: var(--blue-soft); color: var(--blue-strong);
+}
 .phone-gallery { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; gap: .55rem; width: 100%; max-width: 31rem; }
 .phone-frame {
   overflow: hidden; border: 5px solid #252a31; border-radius: 1.35rem;
@@ -467,6 +485,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .floating-header { width: calc(100% - 1rem); top: .5rem; }
   .nav-capsule { border-radius: .95rem; }
   .hero-copy h1 { font-size: clamp(2.55rem, 11vw, 3.55rem); }
+  .proof-item strong { white-space: normal; }
   .quick-facts, .proof-grid, .project-facts, .archive-grid { grid-template-columns: 1fr 1fr; }
   .project-meta { flex-direction: column; gap: .35rem; }
   .result-grid { grid-template-columns: 1fr; }

@@ -43,8 +43,8 @@ export default function ArchitectureDiagram({ architecture, t }) {
         <div className="architecture-decision-flow">
           <div className="architecture-decision-stages">
             {architecture.stages.map((stage, index) => (
-              <div className="architecture-stage" key={stage.name}>
-                <strong>{stage.name}</strong>
+              <div className="architecture-stage" key={t(stage.name)}>
+                <strong>{t(stage.name)}</strong>
                 <span>{t(stage.copy)}</span>
                 {index < architecture.stages.length - 1 && (
                   <span className="architecture-arrow" aria-hidden="true">→</span>
@@ -75,8 +75,8 @@ export default function ArchitectureDiagram({ architecture, t }) {
       </div>
       <div className="architecture-flow">
         {architecture.stages.map((stage, index) => (
-          <div className="architecture-stage" key={stage.name}>
-            <strong>{stage.name}</strong>
+          <div className="architecture-stage" key={t(stage.name)}>
+            <strong>{t(stage.name)}</strong>
             <span>{t(stage.copy)}</span>
             {index < architecture.stages.length - 1 && (
               <span className="architecture-arrow" aria-hidden="true">→</span>

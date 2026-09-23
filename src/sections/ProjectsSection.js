@@ -64,6 +64,7 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
             ? project.titleLines.map((line) => <span key={t(line)}>{t(line)}</span>)
             : project.title}
         </h3>
+        {project.subtitle && <p className="project-subtitle">{t(project.subtitle)}</p>}
         <p className="project-lead">{t(project.lead)}</p>
 
         <div className="tech-row">
