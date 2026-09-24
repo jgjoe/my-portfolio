@@ -30,7 +30,7 @@ export const portfolio = {
   proof: { title: { ko: "핵심 성과", en: "Key outcomes" }, items: [
     { kicker: { ko: "시스템 설계", en: "SYSTEM DESIGN" }, value: { ko: "실데이터 2종 · 190/190", en: "2 datasets · 190/190" }, label: { ko: "웹 화면과 AI 도구가 같은 기준으로 같은 결과를 내는지 검증했습니다.", en: "Verified that the web and AI tools return consistent results from the same calculation rules." }, project: "TraceVerity", target: "project-traceverity", projectAria: { ko: "TraceVerity 프로젝트로 이동", en: "Jump to the TraceVerity project" } },
     { kicker: { ko: "데이터 엔지니어링", en: "DATA ENGINEERING" }, value: { ko: "78개월 · 2.41억 행 처리", en: "78 months · 241.35M rows" }, label: { ko: "실제 공공데이터의 수정과 품질 문제를 추적하며 필요한 기간만 다시 처리하도록 만들었습니다.", en: "Built the pipeline to track source changes and data-quality issues, then reprocess only affected periods." }, project: { ko: "서울 공공자전거", en: "Seoul Bike" }, target: "project-seoul-bike", projectAria: { ko: "서울 공공자전거 데이터 파이프라인 프로젝트로 이동", en: "Jump to the Seoul Public Bike data pipeline project" } },
-    { kicker: { ko: "소프트웨어 품질", en: "SOFTWARE QUALITY" }, value: { ko: "OCR 오류 개선 후 재출시", en: "OCR improved · re-shipped" }, label: { ko: "측정 결과를 근거로 출시를 멈추고 사용자 확인 과정을 보완한 뒤 다시 배포했습니다.", en: "Paused a release based on measured errors, improved the confirmation flow, and shipped again." }, project: { ko: "오늘도 신선", en: "Fridge D-Day" }, target: "project-today-fresh", projectAria: { ko: "오늘도 신선 프로젝트로 이동", en: "Jump to the Fridge D-Day project" } },
+    { kicker: { ko: "소프트웨어 품질", en: "SOFTWARE QUALITY" }, value: { ko: "확인·저장 흐름 개선 후 재출시", en: "Safer OCR flow · re-shipped" }, label: { ko: "측정 결과를 근거로 출시를 멈추고 사용자 확인 과정을 보완한 뒤 다시 배포했습니다.", en: "Paused a release based on measured errors, improved the confirmation flow, and shipped again." }, project: { ko: "오늘도 신선", en: "Fridge D-Day" }, target: "project-today-fresh", projectAria: { ko: "오늘도 신선 프로젝트로 이동", en: "Jump to the Fridge D-Day project" } },
   ] },
   about: {
     eyebrow: { ko: "HOW I WORK", en: "HOW I WORK" }, title: { ko: "역할을 나누고 근거로 검증합니다", en: "I separate responsibilities and verify with evidence" },
@@ -80,13 +80,13 @@ export const portfolio = {
       },
       {
         anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 엔지니어링", en: "Data Engineering" }], period: "2026.09",
-        lead: { ko: "서울 공공자전거 실제 데이터를 78개월 동안 처리하면서 원천 파일 수정과 품질 문제를 추적하고, 바뀐 기간만 다시 처리할 수 있게 만든 배치 데이터 파이프라인입니다.", en: "A batch data pipeline that processed 78 months of real Seoul Public Bike data, tracks source changes and quality issues, and rebuilds only affected periods." },
+        lead: { ko: "2020년 1월~2026년 6월의 서울 공공자전거 78개월분 실제 데이터를 처리하며 원천 파일 수정과 품질 문제를 추적하고, 바뀐 기간만 다시 처리할 수 있게 만든 배치 데이터 파이프라인입니다.", en: "A batch data pipeline that processed 78 months of real Seoul Public Bike data from Jan. 2020 to Jun. 2026, tracks source changes and quality issues, and rebuilds only affected periods." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
         visibleDetailIndexes: [0, 2],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "연·월 단위 원천 파일은 나중에 수정될 수 있고 대여소 정보도 시점별 자료로만 확인됩니다. 어떤 입력으로 결과를 만들었고 수정 시 어느 기간을 다시 처리해야 하는지 추적할 구조가 필요했습니다.", en: "Yearly and monthly source files can change later, while station data is observed only at specific points in time. The pipeline needed to trace each output back to its input and identify which periods require reprocessing." } },
           { label: { ko: "기여", en: "Ownership" }, copy: { ko: "원천 파일의 버전과 해시를 기록하고, 데이터 품질 검사·문제 행 분리·분석용 fact/mart 생성을 한 파이프라인으로 구현했습니다.", en: "I recorded source versions and hashes, then built data-quality checks, issue isolation, trusted facts, and analytical marts in one pipeline." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "원천 파일이 수정돼도 전체를 다시 돌리지 않고 실제로 바뀐 월만 찾아 재처리하도록 설계했습니다. Airflow는 backfill과 재시도를 자동화합니다.", en: "When source files change, the pipeline finds and rebuilds only the affected months. Airflow automates backfill and retry." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "원천 파일이 수정돼도 실제로 바뀐 월만 다시 처리하고, 논리 키가 충돌한 데이터는 신뢰 데이터에 섞지 않고 격리했습니다. Airflow는 backfill과 재시도를 자동화합니다.", en: "When source files change, the pipeline rebuilds only affected months and quarantines logical-key conflicts instead of mixing them into trusted data. Airflow automates backfill and retry." } },
           { label: { ko: "검증", en: "Verification" }, copy: { ko: "2020-01~2026-06의 78개월, 241,350,472행을 처리해 241,320,806행은 분석 가능한 데이터로, 29,666행은 품질 문제 데이터로 분리했습니다. 대표 warehouse 집계와 최종 회귀 테스트도 일치했습니다.", en: "Across 78 months from 2020-01 to 2026-06, the pipeline processed 241,350,472 rows, retaining 241,320,806 trusted rows and isolating 29,666 quality-issue rows. Representative warehouse aggregates and final regression checks also matched." } },
           { label: { ko: "범위", en: "Scope" }, copy: { ko: "대여소 변경일을 임의로 추정하지 않고 실제로 관측된 스냅샷만 이력으로 사용했습니다. 대규모 전체 처리와 대표 warehouse 구간을 각각 검증했습니다.", en: "Station history uses only observed snapshots rather than invented change dates. Full-period source processing and representative warehouse slices were verified separately." } },
           { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "대규모 배치는 한 번 끝까지 처리하는 것만큼, 원천이 바뀌었을 때 무엇을 다시 처리해야 하는지 추적할 수 있는 구조가 중요하다는 점을 확인했습니다.", en: "For large batch pipelines, knowing exactly what must be rebuilt when sources change is as important as completing the initial run." } },
@@ -103,7 +103,7 @@ export const portfolio = {
           ],
           note: { ko: "검증된 버전만 공개하고, Airflow가 변경 월 재처리와 실패 재시도를 제어합니다.", en: "Only validated versions are published; Airflow controls changed-month backfill and failed-run retry." },
         },
-        links: [{ href: "https://github.com/jgjoe/seoul-bike-data-pipeline", label: { ko: "코드 보기", en: "View code" } }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/production-validation.md", label: { ko: "Production 검증", en: "Production validation" } }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/prd-v1.0-final.md", label: { ko: "Frozen PRD", en: "Frozen PRD" } }],
+        links: [{ href: "https://github.com/jgjoe/seoul-bike-data-pipeline", label: { ko: "코드 보기", en: "View code" } }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/production-validation.md", label: { ko: "실데이터 규모 검증", en: "Real-data scale validation" } }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/prd-v1.0-final.md", label: { ko: "Frozen PRD", en: "Frozen PRD" } }],
         media: {
           type: "data-flow",
           label: { ko: "서울 공공자전거 데이터 신뢰성 흐름", en: "Seoul Public Bike data reliability flow" },
@@ -124,7 +124,7 @@ export const portfolio = {
       },
       {
         title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
-        lead: { ko: "공식 정책을 한 검색 경로로 통합한 RAG 서비스입니다. 검색된 정책만 근거로 답하도록 설계했습니다.", en: "A RAG service that unifies official policies into one search path and answers only from retrieved policy evidence." },
+        lead: { ko: "Spring Boot API와 Python 검색 서비스를 연결해 공식 정책을 통합하고, 검색 품질과 API·ML·DB 구간을 관측하며 단계적으로 배포한 RAG 서비스입니다.", en: "A RAG service connecting a Spring Boot API and Python retrieval service, with measured retrieval quality, API/ML/DB observability, and staged deployment." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
         visibleDetailIndexes: [0, 2],
         details: [
@@ -157,7 +157,7 @@ export const portfolio = {
       },
       {
         anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }, "Closed Alpha"], period: { ko: "2025.09 — 진행 중", en: "2025.09 — Present" },
-        lead: { ko: "OCR로 유통기한 입력을 줄이고 이미지는 기기 안에서 처리하는 Android 앱입니다. ONEstore v2.0.0과 Google Play Closed Alpha까지 출시했습니다.", en: "An Android expiry-date app with on-device OCR, publicly shipped as ONEstore v2.0.0 and Google Play Closed Alpha." },
+        lead: { ko: "OCR로 유통기한 입력을 줄이되 인식 날짜는 사용자가 확인한 뒤 저장하도록 설계하고, 사용성 수정·재검증을 거쳐 ONEstore v2.0.0과 Google Play Closed Alpha까지 출시한 Android 앱입니다.", en: "An Android expiry-date app with on-device OCR that requires confirmation before saving recognized dates, then shipped to ONEstore v2.0.0 and Google Play Closed Alpha after usability fixes and revalidation." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
         visibleDetailIndexes: [0, 2],
         details: [
@@ -178,7 +178,7 @@ export const portfolio = {
       },
       {
         title: "길동이 AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: [{ ko: "6인 팀", en: "Team of 6" }, { ko: "백엔드 / DB 담당", en: "Backend / DB owner" }], period: "2025.03 — 2025.06",
-        lead: { ko: "여러 장치의 차량 데이터를 처리하는 Spring Boot 백엔드를 맡았습니다.", en: "I owned the Spring Boot backend that processed vehicle data from multiple devices." },
+        lead: { ko: "6인 팀에서 Spring Boot 백엔드와 MongoDB 데이터 모델을 맡고, OpenAPI 계약에 맞춰 여러 장치의 차량 데이터를 제공했습니다.", en: "In a six-person team, I owned the Spring Boot backend and MongoDB data model, exposing multi-device vehicle data through an OpenAPI contract." },
         tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
         visibleDetailIndexes: [0, 2],
         details: [
