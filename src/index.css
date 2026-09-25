@@ -504,16 +504,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 @media (max-width: 480px) {
   .proof-grid, .project-facts, .archive-grid { grid-template-columns: 1fr; }
   .theme-switch { display: none; }
-  .hero-section { padding-top: 5.9rem; padding-bottom: 2.4rem; gap: 1.35rem; }
-  .hero-copy h1 { font-size: clamp(2.45rem, 11vw, 3rem); }
-  .hero-summary { margin-top: .9rem; line-height: 1.6; }
-  .hero-actions { margin-top: 1.25rem; }
-  .profile-card { padding: 1rem; }
-  .profile-top { gap: .8rem; }
-  .profile-top img { width: 4.7rem; height: 4.7rem; border-radius: .9rem; }
-  .quick-facts { margin-top: .8rem; gap: .4rem; }
-  .quick-fact { min-height: 4.15rem; padding: .7rem; }
-  .quick-fact-items { margin-top: .3rem; }
+  .hero-section { padding-top: 4.8rem; padding-bottom: 1.9rem; gap: .85rem; }
+  .hero-copy h1 { font-size: clamp(2.1rem, 9.5vw, 2.45rem); line-height: 1.03; }
+  .hero-summary { margin-top: .7rem; font-size: .98rem; line-height: 1.5; }
+  .hero-actions { margin-top: 1rem; }
+  .profile-card { padding: .8rem; }
+  .profile-top { gap: .65rem; }
+  .profile-top img { width: 4rem; height: 4rem; border-radius: .8rem; }
+  .profile-name { font-size: 1.1rem; }
+  .quick-facts { margin-top: .6rem; gap: .35rem; }
+  .quick-fact { min-height: 3.85rem; padding: .6rem; }
+  .quick-fact strong { font-size: .82rem; }
+  .quick-fact span { font-size: .69rem; }
+  .quick-fact-items { margin-top: .22rem; display: flex; flex-wrap: wrap; gap: .14rem .3rem; }
+  .quick-fact-items span { padding: 0; margin: 0; border: 0 !important; font-size: .66rem; }
   .phone-gallery { grid-template-columns: repeat(3, minmax(0,1fr)); }
   .architecture-heading { align-items: flex-start; flex-direction: column; }
   .architecture-sources { justify-content: flex-start; }

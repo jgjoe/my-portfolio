@@ -118,7 +118,7 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
           ))}
           {(project.evidenceNotes?.length > 0 || evidenceLinks.length > 0) && (
             <button type="button" onClick={() => onOpenEvidence(project)} className="evidence-button">
-              {t(portfolio.ui.viewEvidence)}
+              {t(project.evidenceButtonLabel || portfolio.ui.viewEvidence)}
             </button>
           )}
         </div>

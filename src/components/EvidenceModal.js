@@ -7,13 +7,14 @@ export default function EvidenceModal({ project, t, onClose }) {
   const title = project.titleLines
     ? project.titleLines.map((line) => t(line)).join(" ")
     : t(project.title);
+  const evidenceTitle = t(project.evidenceTitle || portfolio.ui.evidenceLinks);
   const evidenceLinks = project.links.slice(2);
 
   return (
     <AccessibleModal
       open={Boolean(project)}
       onClose={onClose}
-      title={`${title} ${t(portfolio.ui.evidenceLinks)}`}
+      title={`${title} ${evidenceTitle}`}
       closeLabel={t(portfolio.ui.closeDialog)}
     >
       <div className="evidence-modal-body">
