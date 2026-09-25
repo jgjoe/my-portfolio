@@ -5,7 +5,6 @@ export default function FloatingNav({ lang, theme, setLang, setTheme, t }) {
   const [open, setOpen] = useState(false);
   const menuButtonRef = useRef(null);
   const links = [
-    ["#about", portfolio.ui.about],
     ["#projects", portfolio.ui.projects],
     ["#credentials", portfolio.ui.credentials],
     ["#contact", portfolio.ui.contact],

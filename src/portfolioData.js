@@ -2,9 +2,8 @@ export const pick = (value, lang) => value && typeof value === "object" && !Arra
 
 export const portfolio = {
   name: { ko: "조지관", en: "Jigwan Joe" },
-  role: { ko: "백엔드 · 데이터 시스템 · 소프트웨어 품질", en: "Backend · Data Systems · Software Quality" },
   ui: {
-    about: { ko: "소개", en: "About" }, projects: { ko: "프로젝트", en: "Projects" }, credentials: { ko: "이력", en: "Credentials" }, contact: { ko: "연락", en: "Contact" },
+    projects: { ko: "프로젝트", en: "Projects" }, credentials: { ko: "이력", en: "Credentials" }, contact: { ko: "연락", en: "Contact" },
     viewWork: { ko: "대표 프로젝트 보기", en: "View selected work" }, resume: { ko: "PDF로 저장", en: "Save as PDF" }, skipToContent: { ko: "본문으로 바로가기", en: "Skip to content" }, languageLabel: { ko: "영문으로 보기", en: "View in Korean" },
     themeToLight: { ko: "라이트 모드로 보기", en: "Use light mode" }, themeToDark: { ko: "다크 모드로 보기", en: "Use dark mode" },
     menuOpen: { ko: "메뉴 열기", en: "Open menu" }, menuClose: { ko: "메뉴 닫기", en: "Close menu" },
@@ -17,8 +16,8 @@ export const portfolio = {
   },
   hero: {
     eyebrow: ["BACKEND", "DATA SYSTEMS", "SOFTWARE QUALITY"],
-    title: { ko: "만들고 검증해 배포합니다", en: "Build and verify before shipping" },
-    summary: { ko: "백엔드와 데이터 시스템을 만들고 테스트와 운영 지표로 확인합니다.", en: "I build backend and data systems, then verify them with tests and operational signals." },
+    title: { ko: "구현하고, 실제 데이터로 검증해 배포합니다", en: "Build, verify with real data, and ship" },
+    summary: { ko: "API, 데이터 파이프라인, RAG, Android 앱을 직접 구현하고 실제 데이터와 테스트로 결과를 확인했습니다.", en: "I built APIs, data pipelines, RAG services, and an Android app, then verified the results with real data and tests." },
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
       { value: "4.04 / 4.5", label: { ko: "학점", en: "GPA" } },
@@ -28,21 +27,13 @@ export const portfolio = {
     ],
   },
   proof: { title: { ko: "핵심 성과", en: "Key outcomes" }, items: [
-    { kicker: { ko: "시스템 설계", en: "SYSTEM DESIGN" }, value: { ko: "실데이터 2종에서 190/190", en: "190/190 across 2 datasets" }, label: { ko: "서로 다른 실제 업무 데이터에서도 같은 계산 기준을 검증했습니다.", en: "Verified the same calculation rules across two different real business datasets." }, project: "TraceVerity", target: "project-traceverity", projectAria: { ko: "TraceVerity 프로젝트로 이동", en: "Jump to the TraceVerity project" } },
-    { kicker: { ko: "데이터 엔지니어링", en: "DATA ENGINEERING" }, value: { ko: "2.41억 행, 78개월 처리", en: "241.35M rows across 78 months" }, label: { ko: "실제 공공데이터의 수정과 품질 문제를 추적하고 변경된 기간만 다시 처리합니다.", en: "Tracks real-data revisions and quality issues, then rebuilds only affected periods." }, project: { ko: "서울 공공자전거", en: "Seoul Bike" }, target: "project-seoul-bike", projectAria: { ko: "서울 공공자전거 데이터 파이프라인 프로젝트로 이동", en: "Jump to the Seoul Public Bike data pipeline project" } },
-    { kicker: { ko: "소프트웨어 품질", en: "SOFTWARE QUALITY" }, value: { ko: "확인 후 저장하도록 개선해 재출시", en: "Confirm-before-save, then re-shipped" }, label: { ko: "남은 OCR 오답을 근거로 출시를 멈추고 사용자 확인 과정을 보완한 뒤 다시 배포했습니다.", en: "Paused a release over residual OCR errors, added a user-confirmation safeguard, and shipped again." }, project: { ko: "오늘도 신선", en: "Fridge D-Day" }, target: "project-today-fresh", projectAria: { ko: "오늘도 신선 프로젝트로 이동", en: "Jump to the Fridge D-Day project" } },
+    { kicker: { ko: "프로세스 일관성", en: "PROCESS CONSISTENCY" }, value: { ko: "실데이터 2종, Python 190/190", en: "2 datasets, Python 190/190" }, label: { ko: "웹과 Agent, MCP가 같은 계산 결과를 사용하도록 검증했습니다.", en: "Verified that the web, Agent, and MCP paths use the same calculated results." }, project: "TraceVerity", target: "project-traceverity", projectAria: { ko: "TraceVerity 프로젝트로 이동", en: "Jump to the TraceVerity project" } },
+    { kicker: { ko: "데이터 신뢰성", en: "DATA RELIABILITY" }, value: { ko: "2.41억 행, 78개월", en: "241.35M rows, 78 months" }, label: { ko: "원천 변경을 추적하고 변경된 월만 다시 처리합니다.", en: "Tracks source revisions and rebuilds only changed months." }, project: { ko: "서울 공공자전거", en: "Seoul Bike" }, target: "project-seoul-bike", projectAria: { ko: "서울 공공자전거 데이터 파이프라인 프로젝트로 이동", en: "Jump to the Seoul Public Bike data pipeline project" } },
+    { kicker: { ko: "출시 품질", en: "RELEASE QUALITY" }, value: { ko: "사용자 확인 후 저장, 재출시", en: "Confirm before save, re-shipped" }, label: { ko: "OCR 오답 때문에 출시를 보류하고 저장 흐름을 개선한 뒤 다시 배포했습니다.", en: "Paused release over OCR errors, improved the save flow, then shipped again." }, project: { ko: "오늘도 신선", en: "Fridge D-Day" }, target: "project-today-fresh", projectAria: { ko: "오늘도 신선 프로젝트로 이동", en: "Jump to the Fridge D-Day project" } },
   ] },
-  about: {
-    eyebrow: { ko: "HOW I WORK", en: "HOW I WORK" }, title: { ko: "역할을 나누고 근거로 검증합니다", en: "I separate responsibilities and verify with evidence" },
-    copy: { ko: "복잡한 시스템도 역할을 나눠 단순하게 설계하고, 테스트와 실제 데이터로 결과를 확인합니다.", en: "I simplify complex systems by separating responsibilities, then verify the result with tests and real data." },
-    strengths: [
-      { title: { ko: "역할과 계산 기준을 분리합니다", en: "Separate roles and calculation rules" }, copy: { ko: "백엔드, 데이터 처리, AI가 각자 맡는 역할을 나누고 핵심 계산은 한 곳에서 관리합니다.", en: "I separate backend, data, and AI responsibilities while keeping critical calculations in one authoritative path." } },
-      { title: { ko: "검증 가능한 상태로 끝냅니다", en: "Finish with verifiable evidence" }, copy: { ko: "테스트, 실제 데이터, 배포 기록으로 결과를 다시 확인할 수 있게 남깁니다.", en: "I leave tests, real-data checks, and release records so the result can be verified again." } },
-    ],
-  },
   projects: {
-    eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "판단과 결과가 보이는 프로젝트", en: "Projects built around decisions and results" },
-    copy: { ko: "맡은 문제와 판단 과정에 집중하고 결과에는 검증 근거를 연결했습니다.", en: "Each project focuses on the problem I owned, the decision I made, and the evidence behind the result." },
+    eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "직접 구현하고 검증한 대표 프로젝트", en: "Selected projects I built and verified" },
+    copy: { ko: "개인 프로젝트는 구현부터 검증과 배포까지, 팀 프로젝트는 제가 맡은 백엔드와 DB 범위를 구분해 표시했습니다.", en: "Solo projects show the path from implementation through verification and release; the team project separates my backend and database scope." },
     featured: [
       {
         anchor: "project-traceverity", title: "TraceVerity", titleLines: ["TraceVerity"], subtitle: { ko: "로컬 프로세스 분석 워크벤치", en: "Process Intelligence Workbench" }, type: [{ ko: "개인", en: "Personal" }, { ko: "프로세스 분석", en: "Process Intelligence" }], period: "2026.09",
@@ -89,22 +80,22 @@ export const portfolio = {
           { label: { ko: "검증", en: "Verification" }, copy: { ko: "2020-01~2026-06의 78개월, 241,350,472행을 처리해 241,320,806행은 분석 가능한 데이터로, 29,666행은 품질 문제 데이터로 분리했습니다. 대표 warehouse 집계와 최종 회귀 테스트도 일치했습니다.", en: "Across 78 months from 2020-01 to 2026-06, the pipeline processed 241,350,472 rows, retaining 241,320,806 trusted rows and isolating 29,666 quality-issue rows. Representative warehouse aggregates and final regression checks also matched." } },
           { label: { ko: "범위", en: "Scope" }, copy: { ko: "대여소 변경일을 임의로 추정하지 않고 실제로 관측된 스냅샷만 이력으로 사용했습니다. 대규모 전체 처리와 대표 warehouse 구간을 각각 검증했습니다.", en: "Station history uses only observed snapshots rather than invented change dates. Full-period source processing and representative warehouse slices were verified separately." } },
         ],
-        results: [{ value: { ko: "2.41억 행", en: "241.35M rows" }, label: { ko: "원천 및 Clean 처리", en: "source and Clean processing" } }, { value: "78 / 78", label: { ko: "Clean 검증 완료 월", en: "validated Clean months" } }, { value: { ko: "변경 월만", en: "Changed months only" }, label: { ko: "다시 처리", en: "reprocessed" } }],
+        results: [{ value: { ko: "2.41억 행", en: "241.35M rows" }, label: { ko: "원천부터 정제까지 처리", en: "processed from source to cleaned data" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "변경 월만", en: "Changed months only" }, label: { ko: "다시 처리", en: "reprocessed" } }],
         links: [{ href: "https://github.com/jgjoe/seoul-bike-data-pipeline", label: "GitHub" }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/production-validation.md", label: { ko: "실데이터 규모 검증", en: "Real-data scale validation" } }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/prd-v1.0-final.md", label: { ko: "Frozen PRD", en: "Frozen PRD" } }],
         media: {
           type: "data-flow",
           label: { ko: "서울 공공자전거 데이터 신뢰성 흐름", en: "Seoul Public Bike data reliability flow" },
           sources: [{ ko: "대여이력 원천", en: "Rental history" }, { ko: "대여소 정보", en: "Station data" }],
           steps: [
-            { name: { ko: "원천 보관", en: "Raw source" }, copy: { ko: "파일 버전 · SHA-256 기록", en: "file version · SHA-256" } },
-            { name: { ko: "정리·품질 검사", en: "Clean & quality check" }, copy: { ko: "오류 행·그룹 분리", en: "isolate invalid rows/groups" } },
+            { name: { ko: "원천 보관", en: "Raw source" }, copy: { ko: "파일 버전과 SHA-256 기록", en: "file version and SHA-256" } },
+            { name: { ko: "정리와 품질 검사", en: "Clean & quality check" }, copy: { ko: "오류 행과 그룹 분리", en: "isolate invalid rows/groups" } },
             { name: { ko: "신뢰 데이터 저장", en: "Trusted warehouse" }, copy: { ko: "분석 가능한 데이터만 저장", en: "store validated analytical data" } },
-            { name: { ko: "분석용 집계", en: "Analytical marts" }, copy: { ko: "이동 구간 · 대여소/일자 · 품질", en: "OD · station/day · quality" } },
+            { name: { ko: "분석용 집계", en: "Analytical marts" }, copy: { ko: "이동 구간, 대여소/일자, 품질", en: "OD, station/day, quality" } },
           ],
           callouts: [
             { value: "SHA-256", label: { ko: "원천 변경 추적", en: "source change tracking" } },
             { value: { ko: "검증된 버전만", en: "Validated only" }, label: { ko: "분석 데이터로 전달", en: "published for analysis" } },
-            { value: "Airflow", label: { ko: "backfill · 재시도 자동화", en: "backfill · retry automation" } },
+            { value: "Airflow", label: { ko: "과거 기간 재처리와 재시도 자동화", en: "backfill and retry automation" } },
           ],
           caption: { ko: "원천 버전과 품질 검사를 기준으로 검증된 데이터만 신뢰 데이터와 분석용 집계로 전달합니다.", en: "Source versions and quality checks gate what moves into trusted data and analytical marts." },
         },
@@ -118,7 +109,7 @@ export const portfolio = {
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "수천 개 정책이 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "Thousands of policies were fragmented, and keyword search made relevant programs hard to discover." } },
           { label: { ko: "기여", en: "Ownership" }, copy: { ko: "두 공식 출처의 13,589개 정책을 하나의 검색 경로로 통합했습니다. 17,609개 청크에서 임베딩 누락 0건을 확인했습니다.", en: "I unified 13,589 policies from two official sources into one search path and verified zero missing embeddings across 17,609 chunks." } },
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "지역 필터는 데이터 신뢰도를 확인한 뒤 사용자 노출에서 제외했습니다. 리랭커는 같은 조건에서 비교했을 때 검색 품질이 떨어져 검증된 기존 검색 방식을 유지했습니다.", en: "I removed the regional filter from the user-facing path after checking data reliability. When the reranker reduced retrieval quality in like-for-like evaluation, I kept the validated existing search path." } },
-          { label: { ko: "배포와 운영", en: "Delivery & operations" }, copy: { ko: "무트래픽 검증 뒤 API를 10% canary에서 100%로 승격하고 rollback 경로를 보존했습니다. 요청 ID와 메트릭으로 API / ML / DB 구간을 나눠 관측했습니다.", en: "I promoted the API from a 10% canary to 100% after no-traffic validation, preserved rollback, and separated API, ML, and DB observability." } },
+          { label: { ko: "배포와 운영", en: "Delivery & operations" }, copy: { ko: "실제 사용자 트래픽을 보내기 전에 후보 버전을 확인한 뒤 API를 10%에서 100%로 단계 배포하고, 이전 버전으로 되돌릴 경로를 유지했습니다. 요청 ID와 메트릭으로 API, ML, DB 구간을 나눠 관측했습니다.", en: "I verified the candidate before sending real user traffic, then rolled the API from 10% to 100% while keeping a rollback path. Request IDs and metrics separate the API, ML, and DB segments." } },
           { label: { ko: "운영 기준", en: "Operating principle" }, copy: { ko: "첫 요청 지연은 scale-to-zero로 비용을 줄인 선택의 결과입니다. 성능 개선은 실제 비교 평가로 확인된 결과만 표시합니다.", en: "Cold-start latency is the trade-off for scale-to-zero cost savings. I only present performance improvements that hold up in like-for-like evaluation." } },
         ],
         results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: "17,609", label: { ko: "검색 단위", en: "search chunks" } }, { value: "10% → 100%", label: { ko: "검증 후 API 배포", en: "API rollout after validation" } }],
@@ -177,16 +168,16 @@ export const portfolio = {
     ],
     posterOpen: { ko: "프로젝트 포스터 보기", en: "View project poster" },
     posterClose: { ko: "프로젝트 포스터 닫기", en: "Hide project poster" },
-    moreEyebrow: { ko: "MORE WORK", en: "MORE WORK" }, moreTitle: { ko: "다른 환경에서도 문제를 풀어봤습니다", en: "More problems, different environments" },
+    moreEyebrow: { ko: "MORE WORK", en: "MORE WORK" }, moreTitle: { ko: "추가 프로젝트", en: "Additional projects" },
     more: [
       { title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "실시간 객체 탐지와 로봇 연동을 맡아 2024 한국정보기술학회 대학생 논문경진대회 우수논문상을 받았습니다.", en: "I handled real-time object detection and robot integration in a project that received a 2024 KIIT student paper award." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
-      { title: "movie_diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie_diary", copy: { ko: "감정 기반 영화 추천 서비스로 외부 API 연동과 Cloud Run 배포 자동화를 구현했습니다.", en: "I built an emotion-based film recommendation service with third-party APIs and Cloud Run deployment automation." } },
-      { title: "Build-Your-Health", type: ["JSP/Servlet", "MySQL"], link: "https://github.com/jgjoe/Build-Your-Health", copy: { ko: "건강 기록부터 쇼핑과 게시판, 관리자 기능까지 단독 구현한 MVC 웹 애플리케이션입니다.", en: "Solo MVC web app spanning health logs, commerce, community, and admin CRUD." } },
+      { title: "Movie Diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie_diary", copy: { ko: "감정 기반 영화 추천 서비스로 외부 API 연동과 Cloud Run 배포 자동화를 구현했습니다.", en: "I built an emotion-based film recommendation service with third-party APIs and Cloud Run deployment automation." } },
+      { title: "Build Your Health", type: ["JSP/Servlet", "MySQL"], link: "https://github.com/jgjoe/Build-Your-Health", copy: { ko: "건강 기록부터 쇼핑과 게시판, 관리자 기능까지 단독 구현한 MVC 웹 애플리케이션입니다.", en: "Solo MVC web app spanning health logs, commerce, community, and admin CRUD." } },
       { title: { ko: "Kubernetes 운영 실습", en: "Kubernetes Operations Lab" }, type: ["Kubernetes", "kind", "Docker"], link: "https://github.com/jgjoe/kubernetes-ops-lab", copy: { ko: "Kubernetes에서 Pod 장애와 잘못된 배포를 직접 재현하고, 상태 변화와 복구 과정을 확인한 운영 실습입니다.", en: "A local Kubernetes lab that reproduces pod failures and failed rollouts, then verifies state transitions and recovery." } },
     ],
   },
   credentials: {
-    eyebrow: { ko: "CREDENTIALS", en: "CREDENTIALS" }, title: { ko: "기본기를 증명하는 이력", en: "Credentials that support the work" }, skillsTitle: { ko: "핵심 기술", en: "CORE STACK" },
+    eyebrow: { ko: "CREDENTIALS", en: "CREDENTIALS" }, title: { ko: "학력과 자격, 연구 및 수상", en: "Education, certifications, research & awards" }, skillsTitle: { ko: "핵심 기술", en: "CORE STACK" },
     groups: [
       { title: { ko: "학력", en: "Education" }, items: [{ ko: "경기대학교 컴퓨터공학부 졸업", en: "B.S. in Computer Engineering, Kyonggi University" }, { ko: "2020.03 — 2026.02 / 학점 4.04/4.5", en: "Mar. 2020 — Feb. 2026 / GPA 4.04/4.5" }] },
       { title: { ko: "자격증", en: "Certificates" }, items: ["정보처리기사", "SQLD", "ADsP", "CSTS Foundation Level"] },

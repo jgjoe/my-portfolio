@@ -6,7 +6,6 @@ import AccessibleModal from "./components/AccessibleModal";
 import EvidenceModal from "./components/EvidenceModal";
 import HeroSection from "./sections/HeroSection";
 import ProofSection from "./sections/ProofSection";
-import AboutSection from "./sections/AboutSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import CredentialsSection from "./sections/CredentialsSection";
 import ContactSection from "./sections/ContactSection";
@@ -48,7 +47,6 @@ function App() {
         <main id="main-content">
           <HeroSection t={t} />
           <ProofSection t={t} />
-          <AboutSection t={t} />
           <ProjectsSection
             t={t}
             onOpenMedia={setModalMedia}

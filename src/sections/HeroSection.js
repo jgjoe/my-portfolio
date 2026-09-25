@@ -23,10 +23,7 @@ export default function HeroSection({ t }) {
       <motion.aside {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="profile-card">
         <div className="profile-top">
           <img src={profileImage} alt={t(portfolio.hero.photoAlt)} />
-          <div>
-            <p className="profile-name">{t(portfolio.name)}</p>
-            <p className="profile-role">{t(portfolio.role)}</p>
-          </div>
+          <p className="profile-name">{t(portfolio.name)}</p>
         </div>
         <div className="quick-facts">
           {portfolio.hero.quickFacts.map((fact) => (

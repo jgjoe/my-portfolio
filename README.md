@@ -1,6 +1,6 @@
 # 포트폴리오 사이트
 
-**백엔드와 IT 시스템을 만들고 검증해 배포하는 과정을 보여주는 개인 포트폴리오**
+**직접 구현한 서비스와 데이터 시스템을 실제 데이터와 테스트로 검증하고 배포한 결과를 보여주는 개인 포트폴리오**
 
 [![Live](https://img.shields.io/badge/live-jgjoe.github.io-success)](https://jgjoe.github.io/my-portfolio/)
 [![Stack](https://img.shields.io/badge/React-Tailwind%20CSS-61DAFB?logo=react&logoColor=black)](#기술-스택)
@@ -25,8 +25,7 @@
 
 | 기능 | 내용 |
 |---|---|
-| **About** | 구현부터 운영까지 이어지는 일하는 방식 |
-| **Key outcomes** | 공통 계산 기준, 실데이터 변경·품질 처리, 사용자 확인 흐름 개선 후 재출시 |
+| **Key outcomes** | 프로세스 일관성, 데이터 신뢰성, 출시 품질을 대표 수치와 사례로 요약 |
 | **Projects** | 프로젝트별 문제, 기여, 판단, 결과, 검증 근거 |
 | **Credentials** | 학력, 자격증, 연구와 수상, 핵심 기술 |
 | **Contact** | 이메일과 GitHub 연결 |
@@ -54,11 +53,11 @@
 대표 프로젝트는 핵심 기여와 판단을 기본 화면에서 먼저 보여주고, 품질 검증과 운영 관측 같은 세부 내용은 펼쳐서 볼 수 있게 했습니다.
 측정값은 본문과 분리해 결과 타일로 제시하고 저장소, 평가셋, QA 기록, 런북 같은 검증 근거로 바로 이동할 수 있게 했습니다.
 
-상단 핵심 성과는 다음 세 축으로 구성합니다.
+상단 핵심 성과는 다음 세 가지 증거로 구성합니다.
 
-- **2 real datasets / 190 tests** — 브라우저 온보딩·Web·Agent·MCP가 하나의 deterministic Core 사실을 사용하도록 검증
-- **78개월 / 2.41억 행** — 실제 공공데이터의 수정·품질 문제를 추적하고 바뀐 기간만 재처리
-- **확인·저장 흐름 개선 후 재출시** — OCR 잔여 오답을 근거로 보류하고 사용자 확인 흐름을 도입해 다시 배포
+- **실데이터 2종 / Python 190/190** — Web, Agent, MCP가 같은 계산 결과를 사용하도록 검증
+- **2.41억 행 / 78개월** — 원천 변경을 추적하고 바뀐 월만 재처리
+- **사용자 확인 후 저장 / 재출시** — OCR 오답을 근거로 출시를 보류하고 저장 흐름을 개선한 뒤 다시 배포
 
 ## 기술 스택
 
@@ -76,7 +75,7 @@ src/
 ├── App.js               전체 화면 조합
 ├── portfolioData.js     포트폴리오 내용 + 한/영 번역
 ├── components/          내비게이션, 모달, 프로젝트 미디어
-├── sections/            Hero, About, Projects, Credentials, Contact
+├── sections/            Hero, Projects, Credentials, Contact
 ├── assets/              프로필 이미지
 └── index.css             공통 디자인 토큰과 반응형 스타일
 public/                프로젝트 이미지, OG 이미지
