@@ -23,14 +23,14 @@ export const portfolio = {
     quickFacts: [
       { value: "4.04 / 4.5", label: { ko: "학점", en: "GPA" } },
       { value: { ko: "경기대 컴퓨터공학부", en: "Computer Engineering" }, label: { ko: "2026.02 졸업", en: "Graduated 2026.02" } },
-      { kind: "list", label: { ko: "자격증", en: "Certificates" }, items: ["정보처리기사", "SQLD", "ADsP", "CSTS"] },
+      { kind: "list", label: { ko: "자격증", en: "Certificates" }, items: [{ ko: "정보처리기사", en: "Engineer Information Processing" }, "SQLD", "ADsP", "CSTS"] },
       { kind: "list", label: { ko: "어학", en: "Language" }, items: ["OPIc IH", "TOEIC 765"] },
     ],
   },
   proof: { title: { ko: "핵심 성과", en: "Key outcomes" }, items: [
-    { kicker: { ko: "결과 일관성 검증", en: "CONSISTENT RESULTS" }, value: { ko: "실데이터 2종 · 회귀 테스트 190건", en: "2 datasets · 190 regression tests" }, label: { ko: "웹과 AI 연결 경로가 같은 계산 결과를 사용하도록 만들고 검증했습니다.", en: "Built and verified the web and AI paths to use the same calculated results." }, project: "TraceVerity", target: "project-traceverity", projectAria: { ko: "TraceVerity 프로젝트로 이동", en: "Jump to the TraceVerity project" } },
-    { kicker: { ko: "변경 추적과 부분 재처리", en: "CHANGE-AWARE REPROCESSING" }, value: { ko: "2.41억 행 · 78개월", en: "241.35M rows · 78 months" }, label: { ko: "원천 데이터가 바뀌면 변경된 월만 다시 처리하도록 설계했습니다.", en: "Designed the pipeline to rebuild only the months affected by source changes." }, project: { ko: "서울 공공자전거", en: "Seoul Bike" }, target: "project-seoul-bike", projectAria: { ko: "서울 공공자전거 데이터 파이프라인 프로젝트로 이동", en: "Jump to the Seoul Public Bike data pipeline project" } },
-    { kicker: { ko: "검증 결과로 출시 판단", en: "EVIDENCE-BASED RELEASES" }, value: { ko: "OCR 확인 후 저장 · 재출시", en: "Confirm before save · re-shipped" }, label: { ko: "남은 오답을 이유로 출시를 보류하고 확인 단계를 추가한 뒤 다시 배포했습니다.", en: "Paused release over residual OCR errors, added confirmation, then shipped again." }, project: { ko: "오늘도 신선", en: "Fridge D-Day" }, target: "project-today-fresh", projectAria: { ko: "오늘도 신선 프로젝트로 이동", en: "Jump to the Fridge D-Day project" } },
+    { kicker: { ko: "결과 일관성 검증", en: "CONSISTENT RESULTS" }, value: { ko: "실데이터 2종 / 회귀 테스트 190건", en: "2 datasets / 190 regression tests" }, label: { ko: "웹과 AI 연결 경로가 같은 계산 결과를 사용하도록 만들고 검증했습니다.", en: "Built and verified the web and AI paths to use the same calculated results." }, project: "TraceVerity", target: "project-traceverity", projectAria: { ko: "TraceVerity 프로젝트로 이동", en: "Jump to the TraceVerity project" } },
+    { kicker: { ko: "변경 추적과 부분 재처리", en: "CHANGE-AWARE REPROCESSING" }, value: { ko: "2.41억 행 / 78개월", en: "241.35M rows / 78 months" }, label: { ko: "원천 데이터가 바뀌면 변경된 월만 다시 처리하도록 설계했습니다.", en: "Designed the pipeline to rebuild only the months affected by source changes." }, project: { ko: "서울 공공자전거", en: "Seoul Bike" }, target: "project-seoul-bike", projectAria: { ko: "서울 공공자전거 데이터 파이프라인 프로젝트로 이동", en: "Jump to the Seoul Public Bike data pipeline project" } },
+    { kicker: { ko: "검증 결과로 출시 판단", en: "EVIDENCE-BASED RELEASES" }, value: { ko: "OCR 확인 후 저장 / 재출시", en: "Confirm before save / re-shipped" }, label: { ko: "남은 오답을 이유로 출시를 보류하고 확인 단계를 추가한 뒤 다시 배포했습니다.", en: "Paused release over residual OCR errors, added confirmation, then shipped again." }, project: { ko: "오늘도 신선", en: "Fridge D-Day" }, target: "project-today-fresh", projectAria: { ko: "오늘도 신선 프로젝트로 이동", en: "Jump to the Fridge D-Day project" } },
   ] },
   projects: {
     eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "직접 구현하고 검증한 대표 프로젝트", en: "Selected projects I built and verified" },
@@ -45,8 +45,9 @@ export const portfolio = {
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "여러 화면과 AI 도구가 같은 프로세스 지표를 따로 계산하면 동일한 데이터에서도 결과가 달라질 수 있습니다.", en: "If multiple interfaces and AI tools calculate the same process metrics independently, identical data can produce conflicting results." } },
           { label: { ko: "기여", en: "Ownership" }, copy: { ko: "CSV/XES 가져오기와 검증 흐름을 구현하고, 웹 화면과 5개 분석 도구, Agent와 MCP를 하나의 Python/DuckDB 계산 결과에 연결했습니다.", en: "I built the CSV/XES import and validation flow, then connected the web UI, five analysis tools, Agent, and MCP to one Python/DuckDB result path." } },
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "핵심 지표는 Python/DuckDB Core에서 한 번만 계산하고 웹과 AI는 그 결과만 읽도록 설계했습니다.", en: "Core process metrics are calculated once in the Python/DuckDB Core, while the web and AI layers only consume those results." } },
-          { label: { ko: "검증", en: "Verification" }, copy: { ko: "두 실제 데이터셋에서 회귀·UI·Agent/MCP 검증을 통과했고 결과 불일치는 0건이었습니다.", en: "Across two real datasets, regression, UI, and Agent/MCP checks passed with zero result mismatches." } },
+          { label: { ko: "검증", en: "Verification" }, copy: { ko: "두 실제 데이터셋에서 회귀, UI, Agent/MCP 검증을 통과했고 결과 불일치는 0건이었습니다.", en: "Across two real datasets, regression, UI, and Agent/MCP checks passed with zero result mismatches." } },
           { label: { ko: "범위", en: "Scope" }, copy: { ko: "CSV/XES 가져오기는 범용으로 지원하고 Power BI 화면은 BPIC12 분석용으로 범위를 분리했습니다.", en: "CSV/XES import is generic, while the Power BI view remains scoped to BPIC12 analysis." } },
+          { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "계산 책임을 한 곳에 두면 화면과 AI 경로가 늘어나도 같은 결과 기준을 유지할 수 있다는 점을 확인했습니다.", en: "I learned that keeping calculation ownership in one place preserves a consistent result standard even as web and AI paths expand." } },
         ],
         results: [{ value: { ko: "실데이터 2종", en: "2 real datasets" }, label: { ko: "같은 계산 기준 검증", en: "same calculation rules verified" } }, { value: "190 / 190", label: { ko: "Python 회귀 테스트", en: "Python regression tests" } }, { value: "22 / 22", label: { ko: "AI 연결 경로 결과 일치", en: "AI paths matched" } }],
         evidenceNotes: [
@@ -68,10 +69,10 @@ export const portfolio = {
           note: { ko: "핵심 계산은 Core가 담당하고 웹과 AI는 검증된 결과를 소비합니다.", en: "The Core owns metric calculation; the web and AI layers consume the verified results." },
         },
         links: [{ href: "https://github.com/jgjoe/TraceVerity", label: "GitHub" }, { href: "https://github.com/jgjoe/TraceVerity/blob/main/evidence/public-verification-summary.json", label: { ko: "검증 요약", en: "Verification summary" } }, { href: "https://github.com/jgjoe/TraceVerity/blob/main/docs/ARCHITECTURE.md", label: { ko: "아키텍처", en: "Architecture" } }, { href: "https://github.com/jgjoe/TraceVerity/blob/main/docs/REPRODUCTION.md", label: { ko: "재현 가이드", en: "Reproduction guide" } }],
-        media: { type: "browser-gallery", host: "TraceVerity · local", label: { ko: "TraceVerity 대표 화면 선택", en: "Choose a TraceVerity view" }, images: [
+        media: { type: "browser-gallery", host: "TraceVerity / local", label: { ko: "TraceVerity 대표 화면 선택", en: "Choose a TraceVerity view" }, images: [
           { src: "/traceverity-import.png", tab: { ko: "가져오기", en: "Import" }, alt: { ko: "TraceVerity 이벤트 로그 가져오기와 핵심 요약 화면", en: "TraceVerity event-log import and core summary" }, caption: { ko: "CSV/XES 파일을 가져와 검증한 뒤 같은 화면에서 핵심 지표를 확인합니다.", en: "Import and validate CSV/XES files, then review core metrics in the same workspace." } },
           { src: "/traceverity-variants.png", tab: { ko: "프로세스 흐름", en: "Process flow" }, alt: { ko: "TraceVerity 주요 프로세스 흐름과 직접 전이 분석 화면", en: "TraceVerity process variants and direct-follow transitions" }, caption: { ko: "주요 업무 흐름과 단계 간 이동을 실제 데이터에서 비교합니다.", en: "Compare major process paths and direct transitions from real event data." } },
-          { src: "/traceverity-activity.png", tab: { ko: "활동·재작업", en: "Activity & rework" }, alt: { ko: "TraceVerity 활동별 재작업과 개별 케이스 조회 화면", en: "TraceVerity activity rework and case-trace lookup" }, caption: { ko: "활동별 재작업 수와 개별 케이스 흐름을 확인할 수 있습니다.", en: "Inspect rework by activity and drill into an individual case trace." } },
+          { src: "/traceverity-activity.png", tab: { ko: "활동 / 재작업", en: "Activity & rework" }, alt: { ko: "TraceVerity 활동별 재작업과 개별 케이스 조회 화면", en: "TraceVerity activity rework and case-trace lookup" }, caption: { ko: "활동별 재작업 수와 개별 케이스 흐름을 확인할 수 있습니다.", en: "Inspect rework by activity and drill into an individual case trace." } },
         ] },
       },
       {
@@ -80,11 +81,12 @@ export const portfolio = {
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
         visibleDetailIndexes: [0, 2],
         details: [
-          { label: { ko: "문제", en: "Problem" }, copy: { ko: "원천 파일은 나중에 수정될 수 있고 대여소 정보도 스냅샷 형태라, 어떤 입력으로 결과를 만들었고 어디까지 다시 처리해야 하는지 추적할 필요가 있었습니다.", en: "Source files can be revised later and station data is only observed as snapshots, so the pipeline must trace each result to its input and know exactly what needs rebuilding." } },
+          { label: { ko: "문제", en: "Problem" }, copy: { ko: "원천 파일이 수정될 수 있고 대여소 정보도 스냅샷 형태라, 입력 변경을 추적하고 필요한 월만 다시 처리해야 했습니다.", en: "Source files can be revised and station data arrives as snapshots, so the pipeline needed to track input changes and rebuild only affected months." } },
           { label: { ko: "기여", en: "Ownership" }, copy: { ko: "원천 파일 버전과 SHA-256을 기록하고, 품질 검사와 문제 행 격리, 분석용 fact/mart 생성을 하나의 파이프라인으로 구현했습니다.", en: "I recorded source versions and SHA-256 hashes, then built quality checks, issue isolation, analytical facts, and marts in one pipeline." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "원천이 수정되면 전체가 아니라 바뀐 월만 재처리하고, 논리 키 충돌 데이터는 분석용 데이터에서 분리했습니다. Airflow는 과거 기간 재처리와 실패 재시도를 제어합니다.", en: "When a source changes, the pipeline rebuilds only affected months and isolates logical-key conflicts from trusted analytical data. Airflow controls historical backfill and failed-run retry." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "원천이 바뀌면 해당 월만 재처리하고, 키 충돌 데이터는 분석 대상에서 분리했습니다. Airflow는 재처리와 재시도를 맡겼습니다.", en: "When a source changes, the pipeline rebuilds only that month and isolates key conflicts from analytical data. Airflow handles reprocessing and retries." } },
           { label: { ko: "검증", en: "Verification" }, copy: { ko: "78개월 약 2.41억 행을 처리하고 품질 문제 29,666행을 별도로 분리했으며 대표 집계와 회귀 테스트 결과를 확인했습니다.", en: "Processed about 241.35M rows across 78 months, isolated 29,666 quality-issue rows, and verified representative aggregates and regression checks." } },
           { label: { ko: "범위", en: "Scope" }, copy: { ko: "대여소 변경일을 임의로 추정하지 않고 실제로 관측된 스냅샷만 사용했습니다. 78개월 정제는 전 기간에서 확인하고, 분석용 집계는 대표 구간에서 별도로 검증했습니다.", en: "Station changes use only observed snapshots rather than inferred dates. Cleaning was checked across all 78 months, while analytical aggregates were verified on representative slices." } },
+          { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "대규모 데이터에서는 처리 속도뿐 아니라 입력 버전과 재처리 단위를 먼저 설계해야 결과를 다시 만들 수 있다는 점을 배웠습니다.", en: "I learned that reproducible large-scale data work depends on designing source versioning and reprocessing boundaries, not just processing speed." } },
         ],
         results: [{ value: { ko: "2.41억 행", en: "241.35M rows" }, label: { ko: "원천부터 정제까지 처리", en: "processed from source to cleaned data" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "변경 월만", en: "Changed months only" }, label: { ko: "다시 처리", en: "reprocessed" } }],
         evidenceNotes: [
@@ -119,22 +121,23 @@ export const portfolio = {
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "수천 개 정책이 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "Thousands of policies were fragmented, and keyword search made relevant programs hard to discover." } },
           { label: { ko: "기여", en: "Ownership" }, copy: { ko: "두 공식 출처의 13,589개 정책을 통합하고, production 검색은 bi-encoder에 최소 어휘 보정을 적용했습니다.", en: "I unified 13,589 policies from two official sources and used a bi-encoder with a minimal lexical bias on the production search path." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "지역 필터는 데이터 신뢰도가 부족해 사용자 노출에서 제외했습니다. 리랭커는 Gov24 일부 결과를 높였지만 청년정책 검색 품질을 떨어뜨려 배포하지 않았습니다.", en: "I kept the regional filter out of the user-facing path because its source data was not reliable enough. The reranker improved some Gov24 results but hurt Youth retrieval quality, so I did not ship it." } },
-          { label: { ko: "배포와 운영", en: "Delivery & operations" }, copy: { ko: "후보 검증 후 API를 10%에서 100%로 단계 배포했고, 요청 ID와 메트릭으로 API·검색·DB 구간을 나눠 관측했습니다.", en: "After candidate validation, I rolled the API from 10% to 100% and used request IDs and metrics to separate API, retrieval, and DB segments." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "Recall@10이 개선된 bi-encoder + 어휘 보정을 최종 검색 방식으로 채택했습니다. 지역 필터는 원천 신뢰도가 낮아 제외하고, 리랭커는 청년정책 품질이 떨어져 적용하지 않았습니다.", en: "I kept the bi-encoder plus lexical bias because it improved Recall@10. I excluded the regional filter over source reliability and did not adopt the reranker because it hurt Youth retrieval quality." } },
+          { label: { ko: "배포와 운영", en: "Delivery & operations" }, copy: { ko: "후보 검증 후 API를 10%에서 100%로 단계 배포했고, 요청 ID와 메트릭으로 API, 검색, DB 구간을 나눠 관측했습니다.", en: "After candidate validation, I rolled the API from 10% to 100% and used request IDs and metrics to separate API, retrieval, and DB segments." } },
+          { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "새 기능을 추가하는 것보다 같은 조건에서 실제로 개선된 변경만 채택하는 것이 중요하다는 점을 확인했습니다.", en: "I learned to prefer changes that improve measured results under the same conditions over adding a new component for its own sake." } },
         ],
-        results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: { ko: "Recall@10 개선", en: "Recall@10 improved" }, label: { ko: "어휘 보정 전→후 · 청년정책 60문항 46.7→51.7% · 정부24 21문항 61.9→76.2%", en: "lexical bias before→after · Youth 60 queries 46.7→51.7% · Gov24 21 queries 61.9→76.2%" } }, { value: "API 10% → 100%", label: { ko: "단계 배포 완료", en: "staged rollout completed" } }],
+        results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: { ko: "Recall@10 개선", en: "Recall@10 improved" }, label: { ko: "어휘 보정 전→후, 청년정책 60문항 46.7→51.7%, 정부24 21문항 61.9→76.2%", en: "lexical bias before→after, Youth 60 queries 46.7→51.7%, Gov24 21 queries 61.9→76.2%" } }, { value: "API 10% → 100%", label: { ko: "단계 배포 완료", en: "staged rollout completed" } }],
         evidenceNotes: [
           { label: { ko: "지표 뜻", en: "Metric meaning" }, copy: { ko: "Recall@10은 각 질문의 정답 정책이 상위 10개 검색 결과 안에 포함된 비율입니다.", en: "Recall@10 is the share of queries whose labeled gold policy appears within the top 10 search results." } },
           { label: { ko: "비교 조건", en: "Comparison" }, copy: { ko: "직접 라벨링한 Youth 60문항과 Gov24 21문항에서 production과 같은 검색 조건으로 어휘 보정 전후와 리랭커 후보를 비교했습니다.", en: "On 60 labeled Youth queries and 21 Gov24 queries, lexical-bias and reranker candidates were compared under production-parity retrieval conditions." } },
           { label: { ko: "채택한 변경", en: "Adopted change" }, copy: { ko: "최소 어휘 보정은 Recall@10을 Youth 46.7→51.7%, Gov24 61.9→76.2%로 높여 유지했습니다.", en: "The minimal lexical bias improved Recall@10 from 46.7→51.7% on Youth and 61.9→76.2% on Gov24, so it was kept." } },
-          { label: { ko: "채택하지 않은 변경", en: "Rejected change" }, copy: { ko: "cross-encoder 리랭커는 Gov24 일부 지표를 개선했지만 Youth Recall@5·@10과 MRR을 악화시켜 No-Go로 판정했습니다. 표본이 작아 전체 검색 품질 향상으로 일반화하지 않습니다.", en: "The cross-encoder reranker improved some Gov24 metrics but hurt Youth Recall@5, Recall@10, and MRR, so it was a No-Go. The small evaluation sets are not treated as proof of broad search-quality improvement." } },
+          { label: { ko: "채택하지 않은 변경", en: "Rejected change" }, copy: { ko: "cross-encoder 리랭커는 Gov24 일부 지표를 개선했지만 Youth Recall@5, Recall@10, MRR을 악화시켜 No-Go로 판정했습니다. 표본이 작아 전체 검색 품질 향상으로 일반화하지 않습니다.", en: "The cross-encoder reranker improved some Gov24 metrics but hurt Youth Recall@5, Recall@10, and MRR, so it was a No-Go. The small evaluation sets are not treated as proof of broad search-quality improvement." } },
         ],
         architecture: {
           variant: "decision",
           title: { ko: "검색 품질을 확인하고 더 나은 경로만 배포", en: "Measure retrieval quality before shipping changes" },
           sources: [{ ko: "온통청년", en: "Youth policies" }, { ko: "정부24", en: "Gov24" }],
           stages: [
-            { name: { ko: "정책 정리", en: "Prepare policies" }, copy: { ko: "13,589개 정책 · 17,609개 검색 단위", en: "13,589 policies · 17,609 search chunks" } },
+            { name: { ko: "정책 정리", en: "Prepare policies" }, copy: { ko: "13,589개 정책 / 17,609개 검색 단위", en: "13,589 policies / 17,609 search chunks" } },
             { name: { ko: "검색 품질 평가", en: "Evaluate retrieval" }, copy: { ko: "같은 조건에서 결과 비교", en: "compare under the same conditions" } },
             { name: { ko: "근거 기반 답변", en: "Grounded answer" }, copy: { ko: "검색된 정책만 근거로 응답", en: "answer from retrieved policies only" } },
           ],
@@ -156,11 +159,12 @@ export const portfolio = {
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "기존 앱은 수동 입력이 번거롭고 인터넷 연결과 개인정보 수집에 대한 부담이 있었습니다.", en: "Existing apps relied on tedious manual input and raised concerns around connectivity and personal data." } },
           { label: { ko: "기여", en: "Ownership" }, copy: { ko: "OCR 기반 입력과 로컬 저장을 구현했습니다. 알림부터 위젯과 백업/복원까지 단독으로 완성했습니다.", en: "I built OCR input and local storage, then completed notifications, widgets, and backup/restore solo." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "이미지는 기기 안에서만 처리했습니다. OCR 오답이 남아 출시를 보류하고, 인식 날짜를 사용자가 확인한 뒤 저장하도록 바꿨습니다.", en: "Images stay on-device. Residual OCR errors led me to pause release and require users to confirm recognized dates before saving." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "이미지는 기기 안에서 처리하고 OCR 결과는 사용자가 확인한 뒤 저장하도록 최종 흐름을 정했습니다. 잔여 오답이 확인된 후보는 이 흐름을 적용한 뒤 재출시했습니다.", en: "Images stay on-device, and users confirm recognized dates before saving. I applied this flow after residual OCR errors were found, then re-released the app." } },
           { label: { ko: "품질 검증", en: "Quality gate" }, copy: { ko: "55장 고정 회귀셋과 Galaxy A32 실기기 테스트로 OCR 변경과 주요 기능의 퇴행을 확인했습니다.", en: "A fixed 55-image regression set and Galaxy A32 device tests checked OCR changes and key flows for regressions." } },
-          { label: { ko: "결과", en: "Outcome" }, copy: { ko: "사용성 검증에서 발견한 반복 마찰을 수정·재검증한 뒤 ONEstore v2.0.0과 Google Play Closed Alpha를 출시했습니다. Play Production은 진행 중입니다.", en: "After fixing and retesting repeated usability friction, I shipped ONEstore v2.0.0 and Google Play Closed Alpha. Play Production is still in progress." } },
+          { label: { ko: "결과", en: "Outcome" }, copy: { ko: "사용성 검증에서 발견한 반복 마찰을 수정하고 다시 확인한 뒤 ONEstore v2.0.0과 Google Play Closed Alpha를 출시했습니다. Play Production은 진행 중입니다.", en: "After fixing and retesting repeated usability friction, I shipped ONEstore v2.0.0 and Google Play Closed Alpha. Play Production is still in progress." } },
+          { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "자동 테스트 통과만으로 출시 품질이 보장되지는 않으며, 모델 오차가 남을 때는 사용자 확인 흐름까지 함께 설계해야 한다는 점을 배웠습니다.", en: "I learned that passing automated tests does not guarantee release quality, and residual model errors require a user-confirmation flow as part of the product design." } },
         ],
-        results: [{ value: "ONEstore v2.0.0", label: { ko: "공개 배포", en: "public release" } }, { value: "Google Play", label: { ko: "Closed Alpha", en: "Closed Alpha" } }, { value: { ko: "4명", en: "4 people" }, label: { ko: "32개 과업 관찰 후 사용성 개선", en: "usability fixes after 32 task observations" } }],
+        results: [{ value: "ONEstore v2.0.0", label: { ko: "공개 배포", en: "public release" } }, { value: "Google Play", label: { ko: "Closed Alpha", en: "Closed Alpha" } }, { value: { ko: "사용성 검증 후 개선", en: "Usability-tested improvements" }, label: { ko: "4명 / 32개 과업 관찰 후 반복 마찰 수정 및 재검증", en: "4 people / 32 task observations, followed by fixes and retesting" } }],
         evidenceNotes: [
           { label: { ko: "OCR 확인", en: "OCR check" }, copy: { ko: "서로 다른 한국 식품 라벨 55장을 고정 회귀셋으로 사용해 OCR 변경 전후의 퇴행을 확인했습니다.", en: "A fixed regression set of 55 different Korean food labels was used to check OCR changes for regressions." } },
           { label: { ko: "출시 판단", en: "Release decision" }, copy: { ko: "남은 오답과 표본 공백 때문에 후보 출시를 보류했고, 저장 전 사용자 확인 단계를 추가한 뒤 재배포했습니다.", en: "Residual errors and coverage gaps triggered a release hold; I added confirm-before-save before re-releasing." } },
@@ -180,15 +184,15 @@ export const portfolio = {
         visibleDetailIndexes: [0, 2],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
-          { label: { ko: "기여", en: "Ownership" }, copy: { ko: "백엔드·DB 담당으로 차량 관련 5개 도메인의 REST API와 MongoDB 모델을 구현했습니다.", en: "As the backend and DB owner, I implemented REST APIs and MongoDB models across five vehicle-related domains." } },
+          { label: { ko: "기여", en: "Ownership" }, copy: { ko: "백엔드/DB 담당으로 차량 관련 5개 도메인의 REST API와 MongoDB 모델을 구현했습니다.", en: "As the backend and DB owner, I implemented REST APIs and MongoDB models across five vehicle-related domains." } },
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "장치와 기능마다 데이터 형태가 달라 5개 도메인으로 분리하고 MongoDB 문서 모델로 구조화했습니다.", en: "Because data shapes differed by device and feature, I split the backend into five domains and structured them as MongoDB documents." } },
-          { label: { ko: "완료 범위", en: "Completed scope" }, copy: { ko: "사용자별 주간 평균 집계와 카카오 사용자 흐름을 서버에 연결하고, 프론트·장치가 맞춰 쓸 요청·응답·오류 계약을 OpenAPI 3.0으로 정리했습니다.", en: "I connected per-user weekly aggregates and Kakao user flows on the server, then fixed request, response, and error contracts in OpenAPI 3.0 for frontend and device integration." } },
-          { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "6인 팀에서는 저장 구조만큼 프론트·장치와 공유하는 요청·응답·오류 계약을 명시적으로 고정하는 일이 중요하다는 점을 배웠습니다.", en: "In a six-person team, I learned that explicitly fixing shared request, response, and error contracts is as important as the storage model when integrating with frontend and device work." } },
+          { label: { ko: "완료 범위", en: "Completed scope" }, copy: { ko: "사용자별 주간 평균 집계와 카카오 사용자 흐름을 서버에 연결하고, 프론트와 장치가 맞춰 쓸 요청, 응답, 오류 계약을 OpenAPI 3.0으로 정리했습니다.", en: "I connected per-user weekly aggregates and Kakao user flows on the server, then fixed request, response, and error contracts in OpenAPI 3.0 for frontend and device integration." } },
+          { label: { ko: "배운 점", en: "Lesson" }, copy: { ko: "6인 팀에서는 저장 구조만큼 프론트와 장치가 공유하는 요청, 응답, 오류 계약을 명확히 고정하는 일이 중요하다는 점을 배웠습니다.", en: "In a six-person team, I learned that explicitly fixing shared request, response, and error contracts is as important as the storage model when integrating with frontend and device work." } },
         ],
         results: [{ value: { ko: "5개", en: "5" }, label: { ko: "담당 백엔드 도메인", en: "backend domains owned" } }, { value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "학회 논문 공저", en: "Conference paper co-author" }, label: { ko: "한국정보기술학회", en: "KIIT" } }],
         evidenceNotes: [
           { label: { ko: "개인 구현 범위", en: "My implementation scope" }, copy: { ko: "차량 관련 5개 도메인 REST API와 MongoDB 모델, 사용자별 주간 평균 집계, 카카오 사용자 흐름을 구현했습니다.", en: "I implemented REST APIs and MongoDB models across five vehicle-related domains, per-user weekly aggregates, and Kakao user flows." } },
-          { label: { ko: "팀 연동 기준", en: "Team integration" }, copy: { ko: "프론트·장치와 맞추기 위해 요청·응답 스키마와 오류 응답을 OpenAPI 3.0 문서로 고정했습니다.", en: "Request/response schemas and error responses were fixed in OpenAPI 3.0 so frontend and device work could integrate against one contract." } },
+          { label: { ko: "팀 연동 기준", en: "Team integration" }, copy: { ko: "프론트와 장치가 맞춰 쓰도록 요청, 응답 스키마와 오류 응답을 OpenAPI 3.0 문서로 고정했습니다.", en: "Request/response schemas and error responses were fixed in OpenAPI 3.0 so frontend and device work could integrate against one contract." } },
           { label: { ko: "범위", en: "Scope" }, copy: { ko: "팀 전체의 RAG 모델과 검색 파이프라인은 별도 컴포넌트이며 제 구현 범위로 포함하지 않습니다.", en: "The team's RAG model and retrieval pipeline were separate components and are not presented as my implementation scope." } },
         ],
         evidenceButtonLabel: { ko: "구현 범위와 연동 기준", en: "Implementation scope & integration" },
@@ -211,7 +215,7 @@ export const portfolio = {
     eyebrow: { ko: "CREDENTIALS", en: "CREDENTIALS" }, title: { ko: "학력과 자격, 연구 및 수상", en: "Education, certifications, research & awards" }, skillsTitle: { ko: "핵심 기술", en: "CORE STACK" },
     groups: [
       { title: { ko: "학력", en: "Education" }, items: [{ ko: "경기대학교 컴퓨터공학부 졸업", en: "B.S. in Computer Engineering, Kyonggi University" }, { ko: "2020.03 — 2026.02 / 학점 4.04/4.5", en: "Mar. 2020 — Feb. 2026 / GPA 4.04/4.5" }] },
-      { title: { ko: "자격증", en: "Certificates" }, items: ["정보처리기사", "SQLD", "ADsP", "CSTS Foundation Level"] },
+      { title: { ko: "자격증", en: "Certificates" }, items: [{ ko: "정보처리기사", en: "Engineer Information Processing" }, "SQLD", "ADsP", "CSTS Foundation Level"] },
       { title: { ko: "연구와 수상", en: "Research & awards" }, items: [{ ko: "한국정보기술학회 논문 2편 공저", en: "Co-author of 2 KIIT conference papers" }, { ko: "2025 산학협력 캡스톤디자인 경진대회 심화캡스톤디자인 부문 은상", en: "2025 Industry-Academia Capstone Design Competition, Advanced Division Silver Prize" }, { ko: "2024 한국정보기술학회 대학생 논문경진대회 우수논문상", en: "2024 KIIT Student Paper Competition, Outstanding Paper Award" }] },
     ],
   },
