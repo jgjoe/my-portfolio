@@ -249,7 +249,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   color: var(--ink); font-size: .74rem; font-weight: 800;
 }
 .project-facts p, .deep-dive-list p {
-  margin: .45rem 0 0; color: var(--muted); font-size: .82rem; line-height: 1.65; word-break: keep-all;
+  margin: .45rem 0 0; color: var(--muted); font-size: .875rem; line-height: 1.65; word-break: keep-all;
 }
 .result-grid { margin-top: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .55rem; }
 .result-grid > div { min-height: 5.2rem; padding: .85rem; border-radius: .8rem; background: var(--surface-soft); }
