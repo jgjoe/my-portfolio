@@ -147,6 +147,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .profile-top { display: flex; align-items: center; gap: 1rem; }
 .profile-top img { width: 6.15rem; height: 6.15rem; border-radius: 1.1rem; object-fit: cover; }
 .profile-name { margin: 0; font-size: 1.25rem; font-weight: 800; }
+.profile-role { margin: .3rem 0 0; color: var(--muted); font-size: .8rem; line-height: 1.5; word-break: keep-all; }
 .quick-facts { margin-top: 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
 .quick-fact {
   min-height: 5.2rem; padding: .9rem; border-radius: .9rem;

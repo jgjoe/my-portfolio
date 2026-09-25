@@ -67,8 +67,13 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
         {project.subtitle && <p className="project-subtitle">{t(project.subtitle)}</p>}
         <p className="project-lead">{t(project.lead)}</p>
 
-        <div className="tech-row">
-          {project.tech.slice(0, 6).map((tech) => <span key={tech}>{tech}</span>)}
+        <div className="project-facts">
+          {visibleDetails.map((detail) => (
+            <div key={t(detail.label)}>
+              <span>{t(detail.label)}</span>
+              <p>{t(detail.copy)}</p>
+            </div>
+          ))}
         </div>
 
         <div className="result-grid">
@@ -80,13 +85,8 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
           ))}
         </div>
 
-        <div className="project-facts">
-          {visibleDetails.map((detail) => (
-            <div key={t(detail.label)}>
-              <span>{t(detail.label)}</span>
-              <p>{t(detail.copy)}</p>
-            </div>
-          ))}
+        <div className="tech-row">
+          {project.tech.slice(0, 6).map((tech) => <span key={tech}>{tech}</span>)}
         </div>
 
         {deepDetails.length > 0 && (
