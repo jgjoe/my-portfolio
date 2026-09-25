@@ -116,7 +116,7 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
               {t(link.label)} <span aria-hidden="true">↗</span>
             </a>
           ))}
-          {evidenceLinks.length > 0 && (
+          {(project.evidenceNotes?.length > 0 || evidenceLinks.length > 0) && (
             <button type="button" onClick={() => onOpenEvidence(project)} className="evidence-button">
               {t(portfolio.ui.viewEvidence)}
             </button>
