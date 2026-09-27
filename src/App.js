@@ -9,6 +9,7 @@ import ProofSection from "./sections/ProofSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import CredentialsSection from "./sections/CredentialsSection";
 import ContactSection from "./sections/ContactSection";
+import PrintDocument from "./print/PrintDocument";
 import { publicAsset } from "./publicAsset";
 
 function App() {
@@ -31,27 +32,6 @@ function App() {
     document.documentElement.classList.toggle("dark", theme === "dark");
     localStorage.setItem("portfolio-demo-theme", theme);
   }, [theme]);
-
-  useEffect(() => {
-    const closedBeforePrint = [];
-    const openDeepDives = () => {
-      if (closedBeforePrint.length) return;
-      document.querySelectorAll("details.deep-dive").forEach((node) => {
-        closedBeforePrint.push([node, node.open]);
-        node.open = true;
-      });
-    };
-    const restoreDeepDives = () => {
-      closedBeforePrint.forEach(([node, open]) => { node.open = open; });
-      closedBeforePrint.length = 0;
-    };
-    window.addEventListener("beforeprint", openDeepDives);
-    window.addEventListener("afterprint", restoreDeepDives);
-    return () => {
-      window.removeEventListener("beforeprint", openDeepDives);
-      window.removeEventListener("afterprint", restoreDeepDives);
-    };
-  }, []);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -103,6 +83,8 @@ function App() {
           t={t}
           onClose={() => setEvidenceProject(null)}
         />
+
+        <PrintDocument t={t} />
       </div>
     </MotionConfig>
   );

@@ -339,7 +339,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .media-stack { width: 100%; display: grid; justify-items: center; gap: .5rem; }
 .media-hint { margin: 0; color: var(--muted); font-size: .75rem; font-weight: 700; }
-.print-only { display: none; }
 .media-button { width: 100%; display: block; }
 .media-button img { display: block; width: 100%; }
 .browser-shot figcaption { padding: .65rem .8rem; color: var(--muted); font-size: .66rem; }
@@ -559,159 +558,200 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 
 /* ---------------------------------------------------------------------------
-   Print (Chromium "Save as PDF", A4)
-   The screen design is a themed two-column card layout driven by scroll
-   animations and modals. The sheet below resets all of it: light colors on
-   white paper, animation state forced visible, every <details> open, one
-   column per project, and the modal-only evidence rendered as text.
+   print document
+   A dedicated six-page A4 document built from portfolioData.js. It is hidden
+   on screen; under print media every other part of the app is hidden instead
+   and these pages are the whole sheet.
    --------------------------------------------------------------------------- */
-@page { size: A4 portrait; margin: 12mm 12mm 14mm; }
+.print-document { display: none; }
+
+@page { size: A4; margin: 0; }
 
 @media print {
-  /* always light theme, exact backgrounds */
-  :root, .dark {
-    color-scheme: light;
-    --page: #ffffff;
-    --surface: #ffffff;
-    --surface-soft: #f1f3f5;
-    --ink: #191f28;
-    --muted: #5f6977;
-    --line: #e5e8eb;
-    --blue: #2563eb;
-    --blue-strong: #1d4ed8;
-    --blue-soft: #edf4ff;
-    --nav: transparent;
-    --shadow: none;
-  }
-  html { font-size: 11pt; background: #ffffff; }
-  body { background: #ffffff; color: var(--ink); }
-  * {
+  html, body { background: #ffffff !important; color-scheme: light; }
+  .portfolio-app > *:not(.print-document) { display: none !important; }
+
+  .print-document {
+    display: block !important;
+    --print-ink: #191f28;
+    --print-muted: #5f6977;
+    --print-line: #e5e8eb;
+    --print-soft: #f1f3f5;
+    --print-blue: #2563eb;
+    --print-blue-strong: #1d4ed8;
+    color: var(--print-ink);
+    font-family: Pretendard, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 9pt;
+    line-height: 1.55;
+    word-break: keep-all;
+    text-wrap: pretty;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
-    box-shadow: none !important; text-shadow: none !important;
+  }
+  .print-document, .print-document * { box-shadow: none !important; text-shadow: none !important; }
+
+  .print-page {
+    display: flex; flex-direction: column;
+    width: 210mm; height: 297mm; padding: 14mm 14mm 12mm;
+    box-sizing: border-box; overflow: hidden;
+    background: #ffffff; color: var(--print-ink);
+    break-after: page;
+  }
+  .print-page:last-child { break-after: auto; }
+
+  .print-footer {
+    margin-top: auto; padding-top: 2.5mm;
+    display: flex; align-items: baseline; justify-content: space-between; gap: 6mm;
+    border-top: 1px solid var(--print-line); color: var(--print-muted); font-size: 7.6pt;
   }
 
-  /* framer-motion leaves opacity/transform on elements never scrolled into view */
-  .portfolio-app * { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .architecture-arrow, .data-flow-arrow { transform: translate(50%, -50%) !important; }
-
-  /* screen-only chrome */
-  .floating-header, .skip-link, .hero-actions, .browser-gallery-tabs, .media-hint,
-  .modal-backdrop, .evidence-button, .archive-static button,
-  .deep-dive summary { display: none !important; }
-  .media-placeholder { background: var(--surface-soft); }
-
-  /* page shell */
-  .section-shell { width: 100% !important; margin: 0 !important; }
-  .section-gap, .contact-section, .proof-section { padding: 0 !important; }
-  .site-footer { margin-top: 6mm; }
-  .footer-inner { min-height: 0; }
-  h1, h2, h3, h4, .section-heading, .more-work > h3 { break-after: avoid; break-inside: avoid; }
-
-  /* page 1: hero + proof cards */
-  .hero-section {
-    display: grid !important; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) !important;
-    align-items: start; gap: 8mm; min-height: 0 !important; padding: 0 0 7mm !important;
+  /* shared atoms */
+  .print-eyebrow { margin: 0; color: var(--print-blue); font-size: 7.6pt; font-weight: 800; letter-spacing: .14em; }
+  .print-section-title { margin: 5.5mm 0 0; font-size: 11.5pt; font-weight: 800; letter-spacing: -.015em; }
+  .print-subtitle { margin: 0 0 2.5mm; color: var(--print-ink); font-size: 9.8pt; font-weight: 800; }
+  .print-tags { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+  .print-tags span {
+    padding: .9mm 2mm; border-radius: 1.2mm; background: var(--print-soft);
+    color: var(--print-muted); font-size: 7.6pt; line-height: 1.4;
   }
-  .hero-section { padding-top: 6mm !important; }
-  .hero-copy h1 { font-size: 25pt; line-height: 1.18; }
-  .hero-summary { margin-top: 4mm; font-size: 11pt; line-height: 1.6; }
-  .profile-card { padding: 4mm; border-radius: 2.5mm; }
-  .profile-top { gap: 3mm; }
-  .profile-top img { width: 19mm; height: 19mm; border-radius: 2mm; }
-  .profile-name { font-size: 12pt; }
-  .profile-role { font-size: 8pt; }
-  .quick-facts { grid-template-columns: 1fr 1fr !important; gap: 2mm; margin-top: 3mm; }
-  .quick-fact { min-height: 0; padding: 2.5mm; border-radius: 2mm; }
-  .quick-fact strong, .quick-fact span, .quick-fact-items span { font-size: 8.5pt; }
-  .quick-fact-items { margin-top: 1mm; }
-  .quick-fact-items span { padding: .6mm 1.4mm; }
 
-  .proof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 3mm; }
-  .proof-item { min-height: 0; padding: 4mm; break-inside: avoid; }
-  .proof-item strong { margin-top: 4mm; font-size: 13pt; white-space: normal; }
-  .proof-item p, .proof-kicker, .proof-project-link { font-size: 8.5pt; }
-
-  /* projects: one column, one page each */
-  .project-stack { display: block !important; margin: 0 !important; }
-  .project-card {
-    display: grid !important; grid-template-columns: 1fr !important;
-    gap: 0; padding: 0 !important; border: 0; border-radius: 0;
-    overflow: visible; break-before: page;
+  /* page 1: summary */
+  .print-summary-top { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 5.5mm; align-items: start; }
+  .print-headline {
+    margin: 3mm 0 0; font-size: 22pt; font-weight: 800; line-height: 1.15;
+    letter-spacing: -.025em; white-space: pre-line;
   }
-  .project-main { display: contents !important; }
-  .project-meta { order: 1; flex-direction: row !important; gap: 4mm; font-size: 8.5pt; }
-  .project-card h3 { order: 2; margin: 2mm 0 0; font-size: 15pt; line-height: 1.15; }
-  .project-subtitle { order: 3; font-size: 9.5pt; }
-  .project-lead { order: 4; font-size: 10pt; margin-top: 2mm; }
-  .project-visual { order: 5; }
-  .project-facts { order: 6; }
-  .result-grid { order: 7; }
-  .tech-row { order: 8; }
-  .deep-dive { order: 9; }
-  .project-links { order: 10; }
-  .print-evidence { order: 11; }
+  .print-summary-text { margin: 3mm 0 0; color: var(--print-muted); font-size: 9.2pt; line-height: 1.55; }
+  .print-profile { padding: 4mm; border: 1px solid var(--print-line); border-radius: 3mm; background: var(--print-soft); }
+  .print-profile-top { display: flex; align-items: center; gap: 4mm; }
+  .print-photo { width: 26mm; height: 26mm; border-radius: 2.6mm; object-fit: cover; }
+  .print-name { margin: 0; font-size: 12.5pt; font-weight: 800; }
+  .print-role { margin: 1mm 0 0; color: var(--print-muted); font-size: 8pt; }
+  .print-facts { margin-top: 3mm; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5mm; }
+  .print-fact { padding: 2.2mm; border-radius: 2mm; background: #ffffff; }
+  .print-fact strong { display: block; font-size: 8.6pt; font-weight: 800; line-height: 1.35; }
+  .print-fact span { display: block; margin-top: .8mm; color: var(--print-muted); font-size: 7.5pt; line-height: 1.35; }
 
-  .project-visual {
-    position: static !important; display: block; align-self: auto;
-    margin: 4mm 0; padding: 0; border: 0 !important; background: transparent; break-inside: avoid;
+  .print-proof-row { margin-top: 3mm; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4mm; }
+  .print-proof-card {
+    display: flex; flex-direction: column;
+    padding: 3.8mm; border: 1px solid var(--print-line); border-radius: 3mm; background: var(--print-soft);
   }
-  .media-stack { display: block; }
-  .project-visual .browser-shot, .project-visual .data-flow-visual, .project-visual .phone-gallery { max-width: none; }
-  .project-visual img { max-height: 74mm; object-fit: contain; }
-  .project-visual .poster-frame { display: block; margin: 0 auto; }
-  .browser-shot { width: 100%; }
-  .browser-bar { height: auto; padding: 1.4mm 2mm; }
-  .browser-gallery-main { aspect-ratio: auto; overflow: visible; }
-  .browser-gallery-main img { height: auto; width: 100%; }
-  .phone-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; justify-items: center; gap: 3mm; }
-  .phone-frame { width: auto; }
-  .phone-frame img { height: 66mm; width: auto; max-width: 100%; }
-  .poster-frame { max-width: none; }
-  .poster-frame img { width: auto; max-width: 100%; }
+  .print-proof-kicker { margin: 0; color: var(--print-blue); font-size: 7.6pt; font-weight: 800; letter-spacing: .1em; }
+  .print-proof-value { margin: 3mm 0 0; font-size: 13pt; font-weight: 800; letter-spacing: -.02em; }
+  .print-proof-label { margin: 1.8mm 0 0; color: var(--print-muted); font-size: 8.2pt; line-height: 1.5; }
+  .print-proof-project { margin: auto 0 0; padding-top: 2.5mm; color: var(--print-blue-strong); font-size: 7.8pt; font-weight: 800; }
 
-  .project-facts { grid-template-columns: 1fr !important; gap: 1.6mm; margin-top: 3mm; }
-  .project-facts > div, .deep-dive-list > div { padding: 2.4mm 3mm; }
-  .project-facts p, .deep-dive-list p { font-size: 9.5pt; line-height: 1.5; margin-top: 1mm; }
-  .project-facts > div, .deep-dive-list > div, .result-grid > div, .tech-row span,
-  .architecture-block, .data-flow-step, .architecture-stage, .credential-card,
-  .archive-card, .skills-panel, .contact-panel, .print-evidence li { break-inside: avoid; }
-  .result-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 2mm; margin-top: 3mm; }
-  .result-grid > div { min-height: 0; padding: 3mm; }
-  .tech-row { margin-top: 3mm; }
-  .tech-row span { font-size: 8.5pt; }
-  .deep-dive { margin-top: 4mm; border-top: 1px solid var(--line); border-bottom: 0; }
-  details.deep-dive:not([open])::details-content { content-visibility: visible !important; } /* fallback for renderers that do not fire beforeprint */
-  .architecture-block { margin: 3mm 0; padding: 3mm; }
-  .architecture-flow { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
-  .architecture-hub-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
-  .architecture-decision-flow { grid-template-columns: minmax(0, 1fr) minmax(0, .42fr) !important; }
-  .architecture-decision-stages { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
-  .data-flow-track { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
-  .data-flow-callouts { display: grid; }
-  .project-links { margin-top: 3mm; gap: 1mm 4mm; }
-
-  /* modal-only evidence, listed as text */
-  .print-only { display: block !important; }
-  .print-evidence { margin-top: 4mm; padding-top: 3mm; border-top: 1px solid var(--line); }
-  .print-evidence-title { margin: 0 0 2mm; color: var(--blue); font-size: 10pt; font-weight: 800; }
-  .print-evidence-notes, .print-evidence-links {
-    margin: 0; padding: 0; list-style: none; display: grid; gap: 1.5mm;
+  .print-columns { margin-top: 5.5mm; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 8mm; align-items: start; }
+  .print-credential + .print-credential { margin-top: 3.5mm; }
+  .print-credential ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 1.2mm; }
+  .print-credential li { position: relative; padding-left: 3.4mm; color: var(--print-muted); font-size: 8.4pt; line-height: 1.5; }
+  .print-credential li::before {
+    content: ""; position: absolute; left: 0; top: 1.8mm;
+    width: 1.3mm; height: 1.3mm; border-radius: 50%; background: var(--print-blue);
   }
-  .print-evidence-notes li { color: var(--muted); font-size: 9pt; line-height: 1.45; }
-  .print-evidence-notes strong { color: var(--ink); }
-  .print-evidence-links { margin-top: 3mm; }
-  .print-evidence-links li { color: var(--muted); font-size: 8.5pt; line-height: 1.4; overflow-wrap: anywhere; }
-  .print-evidence-links a { color: var(--blue-strong); }
+  .print-skill-group + .print-skill-group { margin-top: 2.5mm; }
+  .print-skill-title { margin: 0 0 1.2mm; color: var(--print-ink); font-size: 8pt; font-weight: 800; }
 
-  /* trailing sections */
-  .more-work { margin-top: 8mm; }
-  .archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 3mm; margin-top: 3mm; }
-  .archive-card { min-height: 0; padding: 4mm; }
-  .credential-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 3mm; margin-top: 4mm; }
-  .credential-card { padding: 4mm; }
-  .credential-card li { padding: 2mm 0; font-size: 8.5pt; }
-  .skill-groups { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 3mm; }
-  .contact-panel { padding: 6mm; border-radius: 3mm; }
-  .contact-panel h2 { font-size: 16pt; }
-  .contact-panel p:not(.eyebrow), .archive-card p { font-size: 9pt; }
+  .print-contact {
+    margin-top: 5.5mm; padding: 4mm 6mm; border-radius: 3mm;
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 8mm;
+    background: var(--print-ink); color: #ffffff;
+  }
+  .print-contact-eyebrow { margin: 0; color: #ffffff; font-size: 7.6pt; font-weight: 800; letter-spacing: .14em; }
+  .print-contact-title { margin: 1.5mm 0 0; font-size: 13pt; font-weight: 800; letter-spacing: -.02em; }
+  .print-contact-lines { display: grid; gap: 1.2mm; text-align: right; font-size: 8.6pt; }
+  .print-contact-lines a { color: #ffffff; }
+
+  /* pages 2-6: one featured project each */
+  .print-project-meta {
+    margin: 0; display: flex; flex-wrap: wrap; gap: 4mm;
+    color: var(--print-muted); font-size: 8pt; font-weight: 800; letter-spacing: .02em;
+  }
+  .print-project-meta span:first-child { color: var(--print-blue); }
+  .print-project-title { margin: 3mm 0 0; font-size: 21pt; font-weight: 800; line-height: 1.12; letter-spacing: -.025em; }
+  .print-project-subtitle { margin: 1.6mm 0 0; color: var(--print-blue); font-size: 9.5pt; font-weight: 800; }
+  .print-project-lead { margin: 3mm 0 0; color: var(--print-muted); font-size: 9.2pt; line-height: 1.6; }
+
+  .print-project-body { margin-top: 6mm; display: grid; grid-template-columns: minmax(0, 57fr) minmax(0, 43fr); gap: 6mm; align-items: start; }
+  .print-detail { padding: 3.2mm 0; border-top: 1px solid var(--print-line); break-inside: avoid; }
+  .print-detail:first-child { padding-top: 0; border-top: 0; }
+  .print-detail-label { margin: 0; font-size: 7.8pt; font-weight: 800; }
+  .print-detail-copy { margin: 1.2mm 0 0; color: var(--print-muted); font-size: 9.2pt; line-height: 1.6; }
+
+  .print-shot { margin: 0; }
+  .print-shot img {
+    display: block; width: 100%; max-height: 62mm; object-fit: contain;
+    border: 1px solid var(--print-line); border-radius: 2mm;
+  }
+  .print-shot figcaption { margin-top: 2mm; color: var(--print-muted); font-size: 7.6pt; line-height: 1.45; }
+  .print-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5mm; }
+  .print-gallery img {
+    display: block; width: 100%; max-height: 62mm; object-fit: contain;
+    border: 1px solid var(--print-line); border-radius: 2mm;
+  }
+  .print-poster { margin: 0; display: flex; justify-content: center; }
+  .print-poster img { display: block; max-width: 100%; max-height: 70mm; object-fit: contain; }
+
+  .print-results { margin-top: 4.5mm; display: grid; gap: 2mm; }
+  .print-result { padding: 2.4mm 3mm; border-radius: 2mm; background: var(--print-soft); break-inside: avoid; }
+  .print-result strong { display: block; font-size: 9.4pt; font-weight: 800; letter-spacing: -.015em; }
+  .print-result span { display: block; margin-top: .8mm; color: var(--print-muted); font-size: 7.8pt; line-height: 1.4; }
+  .print-tech { margin-top: 4.5mm; }
+
+  .print-flow-sources { margin-bottom: 3mm; }
+  .print-flow-steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 1.8mm; }
+  .print-flow-steps li {
+    display: flex; align-items: flex-start; gap: 2.5mm;
+    padding: 2.2mm 2.6mm; border: 1px solid var(--print-line); border-radius: 2mm; break-inside: avoid;
+  }
+  .print-flow-index {
+    flex: none; width: 4.8mm; height: 4.8mm; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--print-blue); color: #ffffff; font-size: 7.6pt; font-weight: 800;
+  }
+  .print-flow-steps strong { display: block; font-size: 8.4pt; font-weight: 800; }
+  .print-flow-steps div > span { display: block; margin-top: .5mm; color: var(--print-muted); font-size: 7.6pt; line-height: 1.4; }
+  .print-flow-callouts { margin-top: 3.5mm; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5mm; }
+  .print-flow-callouts > div { padding-top: 2mm; border-top: 1px solid var(--print-line); }
+  .print-flow-callouts strong { display: block; font-size: 8.4pt; font-weight: 800; }
+  .print-flow-callouts span { display: block; margin-top: .6mm; color: var(--print-muted); font-size: 7.6pt; line-height: 1.35; }
+  .print-caption { margin: 3mm 0 0; color: var(--print-muted); font-size: 7.6pt; line-height: 1.45; }
+
+  .print-evidence-band { margin-top: 6mm; padding-top: 4mm; border-top: 1px solid var(--print-line); }
+  .print-evidence-notes { display: grid; gap: 2mm; }
+  .print-evidence-notes p { margin: 0; color: var(--print-muted); font-size: 8.2pt; line-height: 1.45; }
+  .print-evidence-notes strong { color: var(--print-ink); }
+  .print-evidence-links { margin-top: 2.5mm; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6mm 6mm; }
+  .print-link { display: block; break-inside: avoid; }
+  .print-link a { display: block; color: var(--print-blue-strong); font-size: 8pt; font-weight: 800; }
+  .print-link-url { display: block; color: var(--print-muted); font-size: 7.6pt; line-height: 1.35; overflow-wrap: anywhere; }
+
+  /* page 6 extra: remaining projects */
+  .print-more { margin-top: 6mm; padding-top: 4mm; border-top: 1px solid var(--print-line); }
+  .print-more-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm; }
+  .print-more-card { padding: 3mm; border: 1px solid var(--print-line); border-radius: 2mm; background: var(--print-soft); break-inside: avoid; }
+  .print-more-title { margin: 0; font-size: 9.4pt; font-weight: 800; }
+  .print-more-type { margin: 1mm 0 0; color: var(--print-blue); font-size: 7.6pt; font-weight: 800; }
+  .print-more-copy { margin: 1.6mm 0 0; color: var(--print-muted); font-size: 8.2pt; line-height: 1.5; }
+  .print-more-link { margin: 1.6mm 0 0; color: var(--print-muted); font-size: 7.6pt; overflow-wrap: anywhere; }
+
+  /* page 6 also carries the remaining projects, so it runs tighter */
+  .print-page-last .print-project-body { margin-top: 4mm; }
+  .print-page-last .print-project-lead { margin-top: 2.2mm; line-height: 1.5; }
+  .print-page-last .print-detail { padding: 1.4mm 0; }
+  .print-page-last .print-detail-copy { font-size: 8.7pt; line-height: 1.4; }
+  .print-page-last .print-poster img { max-height: 44mm; }
+  .print-page-last .print-results { margin-top: 3.5mm; }
+  .print-page-last .print-result { padding: 2mm 3mm; }
+  .print-page-last .print-result span { font-size: 7.6pt; }
+  .print-page-last .print-tech { margin-top: 3.5mm; }
+  .print-page-last .print-evidence-band { margin-top: 4mm; padding-top: 2.5mm; }
+  .print-page-last .print-evidence-links { margin-top: 2.5mm; }
+  .print-page-last .print-more { margin-top: 4mm; padding-top: 2.5mm; }
+  .print-page-last .print-more-grid { gap: 2mm; }
+  .print-page-last .print-more-card { padding: 2mm; }
+  .print-page-last .print-more-title { font-size: 9pt; }
+  .print-page-last .print-more-type, .print-page-last .print-more-link { font-size: 7.5pt; }
+  .print-page-last .print-more-type, .print-page-last .print-more-link { margin-top: 1.2mm; }
+  .print-page-last .print-more-copy { margin-top: 1.2mm; font-size: 7.5pt; line-height: 1.38; }
 }

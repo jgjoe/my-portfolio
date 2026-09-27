@@ -46,8 +46,7 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
     .filter(Boolean);
   const deepDetails = project.details.filter((_, detailIndex) => !visibleIndexes.includes(detailIndex));
   const primaryLinks = project.links.slice(0, 2);
-  const evidenceLinks = project.links.slice(2);
-  const hasEvidence = project.evidenceNotes?.length > 0 || evidenceLinks.length > 0;
+  const hasEvidence = project.evidenceNotes?.length > 0 || project.links.length > 2;
   const typeItems = Array.isArray(project.type) ? project.type : [project.type];
 
   return (
@@ -117,30 +116,6 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
             </button>
           )}
         </div>
-
-        {hasEvidence && (
-          <div className="print-only print-evidence">
-            <p className="print-evidence-title">{t(project.evidenceTitle || portfolio.ui.evidenceLinks)}</p>
-            {project.evidenceNotes?.length > 0 && (
-              <ul className="print-evidence-notes">
-                {project.evidenceNotes.map((note) => (
-                  <li key={t(note.label)}>
-                    <strong>{t(note.label)}</strong>: {t(note.copy)}
-                  </li>
-                ))}
-              </ul>
-            )}
-            {evidenceLinks.length > 0 && (
-              <ul className="print-evidence-links">
-                {evidenceLinks.map((link) => (
-                  <li key={link.href}>
-                    <a href={link.href}>{t(link.label)}</a> — {link.href}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        )}
       </div>
 
       <div className="project-visual">
