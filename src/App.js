@@ -32,6 +32,27 @@ function App() {
     localStorage.setItem("portfolio-demo-theme", theme);
   }, [theme]);
 
+  useEffect(() => {
+    const closedBeforePrint = [];
+    const openDeepDives = () => {
+      if (closedBeforePrint.length) return;
+      document.querySelectorAll("details.deep-dive").forEach((node) => {
+        closedBeforePrint.push([node, node.open]);
+        node.open = true;
+      });
+    };
+    const restoreDeepDives = () => {
+      closedBeforePrint.forEach(([node, open]) => { node.open = open; });
+      closedBeforePrint.length = 0;
+    };
+    window.addEventListener("beforeprint", openDeepDives);
+    window.addEventListener("afterprint", restoreDeepDives);
+    return () => {
+      window.removeEventListener("beforeprint", openDeepDives);
+      window.removeEventListener("afterprint", restoreDeepDives);
+    };
+  }, []);
+
   return (
     <MotionConfig reducedMotion="user">
       <div className="portfolio-app">

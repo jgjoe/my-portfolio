@@ -1,12 +1,10 @@
-import { motion } from "framer-motion";
 import profileImage from "../assets/profile.jpg";
 import { portfolio } from "../portfolioData";
-import { reveal } from "../motionPresets";
 
 export default function HeroSection({ t }) {
   return (
     <section id="top" className="section-shell hero-section">
-      <motion.div {...reveal} className="hero-copy">
+      <div className="hero-copy">
         <p className="eyebrow hero-eyebrow">
           {portfolio.hero.eyebrow.map((item) => <span key={item}>{item}</span>)}
         </p>
@@ -17,10 +15,13 @@ export default function HeroSection({ t }) {
           <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="button button-secondary">
             GitHub ↗
           </a>
+          <button type="button" className="button button-ghost" onClick={() => window.print()}>
+            {t(portfolio.ui.resume)}
+          </button>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.aside {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="profile-card">
+      <aside className="profile-card">
         <div className="profile-top">
           <img src={profileImage} alt={t(portfolio.hero.photoAlt)} />
           <div>
@@ -47,7 +48,7 @@ export default function HeroSection({ t }) {
             </div>
           ))}
         </div>
-      </motion.aside>
+      </aside>
     </section>
   );
 }

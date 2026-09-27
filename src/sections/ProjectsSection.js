@@ -47,6 +47,7 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
   const deepDetails = project.details.filter((_, detailIndex) => !visibleIndexes.includes(detailIndex));
   const primaryLinks = project.links.slice(0, 2);
   const evidenceLinks = project.links.slice(2);
+  const hasEvidence = project.evidenceNotes?.length > 0 || evidenceLinks.length > 0;
   const typeItems = Array.isArray(project.type) ? project.type : [project.type];
 
   return (
@@ -105,23 +106,41 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
         )}
 
         <div className="project-links">
-          {primaryLinks.map((link, linkIndex) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              className={linkIndex === 0 ? "primary" : ""}
-            >
+          {primaryLinks.map((link) => (
+            <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
               {t(link.label)} <span aria-hidden="true">↗</span>
             </a>
           ))}
-          {(project.evidenceNotes?.length > 0 || evidenceLinks.length > 0) && (
+          {hasEvidence && (
             <button type="button" onClick={() => onOpenEvidence(project)} className="evidence-button">
               {t(project.evidenceButtonLabel || portfolio.ui.viewEvidence)}
             </button>
           )}
         </div>
+
+        {hasEvidence && (
+          <div className="print-only print-evidence">
+            <p className="print-evidence-title">{t(project.evidenceTitle || portfolio.ui.evidenceLinks)}</p>
+            {project.evidenceNotes?.length > 0 && (
+              <ul className="print-evidence-notes">
+                {project.evidenceNotes.map((note) => (
+                  <li key={t(note.label)}>
+                    <strong>{t(note.label)}</strong>: {t(note.copy)}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {evidenceLinks.length > 0 && (
+              <ul className="print-evidence-links">
+                {evidenceLinks.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href}>{t(link.label)}</a> — {link.href}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="project-visual">
