@@ -18,7 +18,7 @@ export const portfolio = {
   hero: {
     eyebrow: ["BACKEND", "DATA SYSTEMS", "SOFTWARE QUALITY"],
     title: { ko: "데이터가 바뀌어도\n같은 답을 내는 시스템을 만듭니다", en: "I build systems that give the same answer even when the data changes" },
-    summary: { ko: "2.41억 행 데이터 파이프라인, 공식 정책 13,589건을 검색하는 RAG 서비스, 스토어에 출시한 Android 앱을 직접 만들었습니다. 결과는 테스트와 실제 데이터로 확인한 뒤 배포했습니다.", en: "I built a data pipeline over 241M rows, a RAG service that searches 13,589 official policies, and an Android app released on a store. I verified the results with tests and real data before shipping." },
+    summary: { ko: "2.41억 행 데이터 파이프라인부터 스토어에 출시한 Android 앱까지, 직접 만들고 실제 데이터로 검증했습니다.", en: "From a 241M-row data pipeline to an Android app on a store, I build it myself and verify it with real data." },
     profileRole: "Software Engineer",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
@@ -41,7 +41,7 @@ export const portfolio = {
         anchor: "project-traceverity", title: "TraceVerity", titleLines: ["TraceVerity"], subtitle: { ko: "로컬 프로세스 분석 워크벤치", en: "Process Intelligence Workbench" }, type: [{ ko: "개인", en: "Personal" }, { ko: "프로세스 분석", en: "Process Intelligence" }], period: "2026.09",
         lead: { ko: "업무 처리 기록만으로 주요 흐름과 반복 작업을 확인하기 위해 만든 로컬 프로세스 분석 도구입니다. CSV/XES 파일을 브라우저에서 가져와 바로 분석합니다.", en: "A local process-analysis tool built to inspect workflow paths and rework directly from event logs. CSV/XES files can be imported and analyzed in the browser." },
         tech: ["Python", "DuckDB", "FastAPI", "React", "Power BI", "MCP"],
-        visibleDetailIndexes: [0, 1, 5],
+        visibleDetailIndexes: [0, 1],
         details: [
           { label: { ko: "왜 만들었나", en: "Why I built it" }, copy: { ko: "여러 화면과 AI 도구가 같은 프로세스 지표를 따로 계산하면 동일한 데이터에서도 결과가 달라질 수 있습니다.", en: "If multiple interfaces and AI tools calculate the same process metrics independently, identical data can produce conflicting results." } },
           { label: { ko: "내가 한 일", en: "What I did" }, copy: { ko: "CSV/XES 파일 가져오기와 형식 검증을 구현하고, 웹 화면과 5개 분석 도구, AI 에이전트(Agent/MCP)가 모두 하나의 Python/DuckDB 계산 결과를 쓰도록 연결했습니다.", en: "I built CSV/XES import and format validation, then connected the web UI, five analysis tools, and the AI agent (Agent/MCP) to one Python/DuckDB calculation path." } },
@@ -80,7 +80,7 @@ export const portfolio = {
         anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 엔지니어링", en: "Data Engineering" }], period: "2026.09",
         lead: { ko: "서울 공공자전거 78개월 약 2.41억 행을 정제해 분석용 데이터로 만드는 배치 파이프라인입니다.", en: "A batch pipeline that cleans about 241.35M rows across 78 months of Seoul Public Bike data into analytical datasets." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
-        visibleDetailIndexes: [0, 1, 5],
+        visibleDetailIndexes: [0, 1],
         details: [
           { label: { ko: "왜 만들었나", en: "Why I built it" }, copy: { ko: "원천 파일이 수정될 수 있고 대여소 정보도 스냅샷 형태라, 입력 변경을 추적하고 필요한 월만 다시 처리해야 했습니다.", en: "Source files can be revised and station data arrives as snapshots, so the pipeline needed to track input changes and rebuild only affected months." } },
           { label: { ko: "내가 한 일", en: "What I did" }, copy: { ko: "원천 파일마다 버전과 SHA-256 지문을 기록하고, 품질 검사, 문제 행 분리, 분석용 집계 테이블 생성까지 하나의 파이프라인으로 구현했습니다.", en: "I recorded a version and SHA-256 fingerprint for every source file, then built quality checks, problem-row isolation, and analytical tables in one pipeline." } },
@@ -104,7 +104,7 @@ export const portfolio = {
             { name: { ko: "원천 보관", en: "Raw source" }, copy: { ko: "파일 버전과 SHA-256 기록", en: "file version and SHA-256" } },
             { name: { ko: "정리와 품질 검사", en: "Clean & quality check" }, copy: { ko: "오류 행과 그룹 분리", en: "isolate invalid rows/groups" } },
             { name: { ko: "신뢰 데이터 저장", en: "Trusted warehouse" }, copy: { ko: "분석 가능한 데이터만 저장", en: "store validated analytical data" } },
-            { name: { ko: "분석용 집계", en: "Analytical marts" }, copy: { ko: "이동 구간, 대여소/일자, 품질", en: "OD, station/day, quality" } },
+            { name: { ko: "분석용 집계", en: "Analytical marts" }, copy: { ko: "이동 구간, 대여소 일별, 품질", en: "OD, station/day, quality" } },
           ],
           callouts: [
             { value: "SHA-256", label: { ko: "원천 변경 추적", en: "source change tracking" } },
@@ -118,7 +118,7 @@ export const portfolio = {
         title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
         lead: { ko: "온통청년과 정부24의 공식 정책을 통합 검색하고, 검색된 정책을 근거로 답하는 RAG 서비스입니다.", en: "A RAG service that searches official policies from Youth Policy and Gov24 in one place and answers from retrieved policy evidence." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
-        visibleDetailIndexes: [0, 1, 4],
+        visibleDetailIndexes: [0, 1],
         details: [
           { label: { ko: "왜 만들었나", en: "Why I built it" }, copy: { ko: "수천 개 정책이 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "Thousands of policies were fragmented, and keyword search made relevant programs hard to discover." } },
           { label: { ko: "내가 한 일", en: "What I did" }, copy: { ko: "두 공식 출처의 정책 13,589개를 하나로 통합하고, 의미 기반 검색(bi-encoder)에 최소한의 키워드 보정을 더한 검색 방식을 실제 서비스에 적용했습니다.", en: "I unified 13,589 policies from two official sources and shipped semantic search (bi-encoder) with a minimal keyword bias." } },
@@ -156,7 +156,7 @@ export const portfolio = {
         anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }, "Closed Alpha"], period: { ko: "2025.09 — 진행 중", en: "2025.09 — Present" },
         lead: { ko: "유통기한을 촬영하거나 입력해 식품을 등록하고 D-Day, 알림, 위젯으로 관리하는 Android 앱입니다.", en: "An Android app for registering expiry dates by camera or manual entry, then managing them with D-Day status, notifications, and a widget." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
-        visibleDetailIndexes: [0, 1, 5],
+        visibleDetailIndexes: [0, 1],
         details: [
           { label: { ko: "왜 만들었나", en: "Why I built it" }, copy: { ko: "기존 앱은 수동 입력이 번거롭고 인터넷 연결과 개인정보 수집에 대한 부담이 있었습니다.", en: "Existing apps relied on tedious manual input and raised concerns around connectivity and personal data." } },
           { label: { ko: "내가 한 일", en: "What I did" }, copy: { ko: "OCR 기반 입력과 로컬 저장을 구현했습니다. 알림부터 위젯과 백업/복원까지 단독으로 완성했습니다.", en: "I built OCR input and local storage, then completed notifications, widgets, and backup/restore solo." } },
@@ -182,7 +182,7 @@ export const portfolio = {
         title: "길동이 AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: [{ ko: "6인 팀", en: "Team of 6" }, { ko: "백엔드 / DB 담당", en: "Backend / DB owner" }], period: "2025.03 — 2025.06",
         lead: { ko: "졸음 감지 장치와 모바일 앱 등에서 들어오는 차량 데이터를 사용자 단위로 관리하는 AI 차량 어시스턴트 백엔드입니다.", en: "The backend for an AI vehicle assistant that manages per-user vehicle data from sources such as a drowsiness-detection device and mobile app." },
         tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
-        visibleDetailIndexes: [0, 1, 4],
+        visibleDetailIndexes: [0, 1],
         details: [
           { label: { ko: "왜 만들었나", en: "Why I built it" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
           { label: { ko: "내가 한 일", en: "What I did" }, copy: { ko: "백엔드/DB 담당으로 차량 관련 5개 도메인의 REST API와 MongoDB 모델을 구현했습니다.", en: "As the backend and DB owner, I implemented REST APIs and MongoDB models across five vehicle-related domains." } },
