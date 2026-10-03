@@ -17,7 +17,7 @@ export const portfolio = {
   },
   hero: {
     eyebrow: ["BACKEND", "DATA ENGINEERING", "SOFTWARE QUALITY"],
-    title: { ko: "데이터가 바뀌어도\n같은 답을 내는 시스템을 만듭니다", en: "I build systems that give the same answer even when the data changes" },
+    title: { ko: "바뀐 데이터는 추적하고\n같은 입력엔 같은 답을 내는 시스템을 만듭니다", en: "I build systems that track every data change and give the same answer to the same input" },
     summary: { ko: "2.41억 행 데이터 파이프라인부터 스토어에 출시한 Android 앱까지, 직접 만들고 실제 데이터로 검증했습니다.", en: "From a 241M-row data pipeline to an Android app on a store, I build it myself and verify it with real data." },
     profileRole: "Backend & Data Engineer",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
@@ -198,7 +198,7 @@ export const portfolio = {
     more: [
       { title: "Build Your Health", type: ["Spring Boot", "MyBatis", "Oracle"], link: "https://github.com/jgjoe/build-your-health", copy: { ko: "JSP 웹 애플리케이션의 주문 흐름을 Spring Boot·MyBatis·Oracle로 재구축하고, 주문 60만 건에서 인덱스 후보를 측정해 주문 상세 조회를 20.1ms에서 0.70ms로 줄였습니다.", en: "I rebuilt a JSP web app's order flows on Spring Boot, MyBatis, and Oracle, then measured index candidates on 600K orders and cut order-detail lookups from 20.1 ms to 0.70 ms." } },
       { title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "대화형 쓰레기통 로봇에서 실시간 객체 탐지와 로봇 연동을 맡아 2024 한국정보기술학회 대학생 논문경진대회 우수논문상을 받았습니다.", en: "I handled real-time object detection and robot integration for an interactive trash-bin robot that received a 2024 KIIT student paper award." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
-      { title: "Movie Diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie-diary", copy: { ko: "감정 기반 영화 추천 서비스로 외부 API 연동과 Cloud Run 배포 자동화를 구현했습니다.", en: "I built an emotion-based film recommendation service with third-party APIs and Cloud Run deployment automation." } },
+      { title: "Movie Diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie-diary", copy: { ko: "감정 기반 영화 추천 서비스로 외부 API를 연동해 백엔드는 Cloud Run에 배포하고, 프론트엔드는 GitHub Actions로 자동 배포했습니다.", en: "I built an emotion-based film recommendation service with third-party APIs, deployed the backend on Cloud Run, and automated frontend deployment with GitHub Actions." } },
       { title: { ko: "Kubernetes 운영 실습", en: "Kubernetes Operations Lab" }, type: ["Kubernetes", "kind", "Docker"], link: "https://github.com/jgjoe/kubernetes-ops-lab", copy: { ko: "Kubernetes에서 Pod 장애와 잘못된 배포를 직접 재현하고, 상태 변화와 복구 과정을 확인한 운영 실습입니다.", en: "A local Kubernetes lab that reproduces pod failures and failed rollouts, then verifies state transitions and recovery." } },
     ],
   },
