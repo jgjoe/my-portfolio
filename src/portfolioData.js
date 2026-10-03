@@ -18,7 +18,7 @@ export const portfolio = {
   hero: {
     eyebrow: ["BACKEND", "DATA ENGINEERING", "SOFTWARE QUALITY"],
     title: { ko: "결과를 믿을 수 있는\n데이터 시스템을 만듭니다", en: "I build data systems whose results you can trust" },
-    summary: { ko: "2.41억 행 데이터 파이프라인부터 스토어에 출시한 Android 앱까지, 직접 만들고 실제 데이터로 검증했습니다.", en: "From a 241M-row data pipeline to an Android app on a store, I build it myself and verify it with real data." },
+    summary: { ko: "2.41억 행 데이터 파이프라인부터 스토어에 출시한 Android 앱까지, 만든 결과를 실제 데이터로 검증했습니다.", en: "From a 241M-row data pipeline to an Android app on a store, I verify what I build with real data." },
     profileRole: "Backend & Data Engineer",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
@@ -34,8 +34,8 @@ export const portfolio = {
     { kicker: { ko: "검증 결과로 출시 판단", en: "EVIDENCE-BASED RELEASES" }, value: { ko: "출시 보류 → 재출시", en: "Release held → re-shipped" }, label: { ko: "남은 OCR 오답을 확인하고 출시를 멈춘 뒤, 저장 전 확인 단계를 넣어 다시 배포했습니다.", en: "Held the release over residual OCR errors, added a confirm-before-save step, then shipped again." }, project: { ko: "오늘도 신선", en: "Fridge D-Day" }, target: "project-today-fresh", projectAria: { ko: "오늘도 신선 프로젝트로 이동", en: "Jump to the Fridge D-Day project" } },
   ] },
   projects: {
-    eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "직접 구현하고 검증한 대표 프로젝트", en: "Selected projects I built and verified" },
-    copy: { ko: "개인 프로젝트는 구현부터 검증과 배포까지, 팀 프로젝트는 제가 맡은 백엔드와 DB 범위를 구분해 표시했습니다.", en: "Solo projects show the path from implementation through verification and release; the team project separates my backend and database scope." },
+    eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "구현하고 검증한 대표 프로젝트", en: "Selected projects I built and verified" },
+    copy: { ko: "개인 프로젝트는 구현부터 검증과 배포까지, 팀 프로젝트는 제가 맡은 백엔드와 DB 범위를 구분해 표시했습니다. TraceVerity와 서울 공공자전거는 AI 코딩 에이전트로 짧은 기간에 구현하고, 저는 목표와 검증 기준을 정해 결과를 확인했습니다.", en: "Solo projects show the path from implementation through verification and release; the team project separates my backend and database scope. TraceVerity and Seoul Public Bike were implemented quickly with AI coding agents while I set the goals and verification criteria and checked the results." },
     featured: [
       {
         anchor: "project-traceverity", title: "TraceVerity", titleLines: ["TraceVerity"], subtitle: { ko: "로컬 프로세스 분석 워크벤치", en: "Process Intelligence Workbench" }, type: [{ ko: "개인", en: "Personal" }, { ko: "프로세스 분석", en: "Process Intelligence" }], period: "2026.09",
@@ -44,7 +44,7 @@ export const portfolio = {
         visibleDetailIndexes: [0, 1],
         details: [
           { label: { ko: "왜 만들었나", en: "Why I built it" }, copy: { ko: "여러 화면과 AI 도구가 같은 프로세스 지표를 따로 계산하면 동일한 데이터에서도 결과가 달라질 수 있습니다.", en: "If multiple interfaces and AI tools calculate the same process metrics independently, identical data can produce conflicting results." } },
-          { label: { ko: "내가 한 일", en: "What I did" }, copy: { ko: "기록 파일을 올리고 형식을 검사하는 기능을 만들고, 웹 화면과 AI 질의응답이 모두 Python/DuckDB로 만든 하나의 계산 모듈 결과만 쓰도록 연결했습니다.", en: "I built log upload and format checks, then connected the web view and AI question answering so both use only the results of one Python/DuckDB calculation module." } },
+          { label: { ko: "내가 한 일", en: "What I did" }, copy: { ko: "목표와 검증 기준을 정하고 AI 코딩 에이전트의 구현을 검토해 채택했습니다. 웹 화면과 AI 질의응답이 하나의 계산 결과만 쓰도록 했습니다.", en: "I set the goals and verification criteria and reviewed and adopted what an AI coding agent implemented, so the web view and AI answers use one calculation result." } },
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "핵심 지표는 Python/DuckDB Core에서 한 번만 계산하고 웹과 AI는 그 결과만 읽도록 설계했습니다.", en: "Core process metrics are calculated once in the Python/DuckDB Core, while the web and AI layers only consume those results." } },
           { label: { ko: "검증", en: "Verification" }, copy: { ko: "두 실제 데이터셋에서 회귀, UI, Agent/MCP 검증을 통과했고 결과 불일치는 0건이었습니다.", en: "Across two real datasets, regression, UI, and Agent/MCP checks passed with zero result mismatches." } },
           { label: { ko: "배운 점", en: "What I learned" }, copy: { ko: "계산 책임을 한 곳에 두면 화면과 AI 경로가 늘어나도 같은 결과 기준을 유지할 수 있다는 점을 확인했습니다.", en: "I learned that keeping calculation ownership in one place preserves a consistent result standard even as web and AI paths expand." } },
@@ -80,7 +80,7 @@ export const portfolio = {
         visibleDetailIndexes: [0, 1],
         details: [
           { label: { ko: "왜 만들었나", en: "Why I built it" }, copy: { ko: "서울시가 이미 올린 월별 파일을 나중에 고치기도 하고 대여소 정보는 시점별로만 제공돼서, 무엇이 바뀌었는지 추적해 바뀐 달만 다시 처리해야 했습니다.", en: "The city sometimes revises monthly files it has already published, and station data is only available as point-in-time snapshots, so the pipeline had to track what changed and rebuild only those months." } },
-          { label: { ko: "내가 한 일", en: "What I did" }, copy: { ko: "파일마다 버전과 해시를 기록해 바뀐 파일을 찾고, 품질 검사와 문제 데이터 분리, 분석용 집계 테이블까지 하나의 파이프라인으로 만들었습니다.", en: "I recorded a version and hash for every file to detect changes, then built quality checks, problem-data isolation, and analytical tables into one pipeline." } },
+          { label: { ko: "내가 한 일", en: "What I did" }, copy: { ko: "재처리 단위와 품질 기준을 정하고 AI 코딩 에이전트의 구현을 검토해, 바뀐 파일만 찾아 품질 검사부터 분석용 집계까지 잇는 파이프라인을 완성했습니다.", en: "I set the reprocessing units and quality rules and reviewed the AI coding agent's implementation, completing a pipeline that finds changed files and carries them from quality checks to analytical tables." } },
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "원천이 바뀌면 해당 월만 재처리하고, 키 충돌 데이터는 분석 대상에서 분리했습니다. Airflow는 재처리와 재시도를 맡겼습니다.", en: "When a source changes, the pipeline rebuilds only that month and isolates key conflicts from analytical data. Airflow handles reprocessing and retries." } },
           { label: { ko: "검증", en: "Verification" }, copy: { ko: "78개월 약 2.41억 행을 처리하고 품질 문제 29,666행을 별도로 분리했으며 대표 집계와 회귀 테스트 결과를 확인했습니다.", en: "Processed about 241.35M rows across 78 months, isolated 29,666 quality-issue rows, and verified representative aggregates and regression checks." } },
           { label: { ko: "배운 점", en: "What I learned" }, copy: { ko: "대규모 데이터에서는 처리 속도뿐 아니라 입력 버전과 재처리 단위를 먼저 설계해야 결과를 다시 만들 수 있다는 점을 배웠습니다.", en: "I learned that reproducible large-scale data work depends on designing source versioning and reprocessing boundaries, not just processing speed." } },
