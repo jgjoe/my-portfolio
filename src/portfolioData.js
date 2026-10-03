@@ -17,7 +17,7 @@ export const portfolio = {
   },
   hero: {
     eyebrow: ["BACKEND", "DATA ENGINEERING", "SOFTWARE QUALITY"],
-    title: { ko: "바뀐 데이터는 추적하고\n같은 입력엔 같은 답을 내는 시스템을 만듭니다", en: "I build systems that track every data change and give the same answer to the same input" },
+    title: { ko: "결과를 믿을 수 있는\n데이터 시스템을 만듭니다", en: "I build data systems whose results you can trust" },
     summary: { ko: "2.41억 행 데이터 파이프라인부터 스토어에 출시한 Android 앱까지, 직접 만들고 실제 데이터로 검증했습니다.", en: "From a 241M-row data pipeline to an Android app on a store, I build it myself and verify it with real data." },
     profileRole: "Backend & Data Engineer",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
