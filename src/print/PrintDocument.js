@@ -1,4 +1,5 @@
 import profileImage from "../assets/profile.jpg";
+import ArchitectureDiagram from "../components/ArchitectureDiagram";
 import { portfolio } from "../portfolioData";
 import { publicAsset } from "../publicAsset";
 
@@ -23,13 +24,7 @@ export default function PrintDocument({ t }) {
     <div className="print-document" aria-hidden="true">
       <SummaryPage t={t} />
       {portfolio.projects.featured.map((project, index) => (
-        <ProjectPage
-          key={project.title}
-          project={project}
-          index={index}
-          t={t}
-          withMoreWork={index === portfolio.projects.featured.length - 1}
-        />
+        <ProjectPage key={project.title} project={project} index={index} t={t} />
       ))}
     </div>
   );
@@ -142,14 +137,14 @@ function SummaryPage({ t }) {
   );
 }
 
-function ProjectPage({ project, index, t, withMoreWork }) {
+function ProjectPage({ project, index, t }) {
   const typeItems = Array.isArray(project.type) ? project.type : [project.type];
   const title = project.titleLines
     ? project.titleLines.map((line) => t(line)).join(" ")
     : t(project.title);
 
   return (
-    <section className={`print-page print-project-page${withMoreWork ? " print-page-last" : ""}`}>
+    <section className="print-page print-project-page">
       <header className="print-project-head">
         <p className="print-project-meta">
           <span>0{index + 1}</span>
@@ -172,7 +167,14 @@ function ProjectPage({ project, index, t, withMoreWork }) {
         </div>
 
         <div className="print-project-side">
-          <PrintMedia media={project.media} t={t} />
+          {/* A diagram explains the solution better than a screenshot, so it wins when both exist. */}
+          {project.architecture ? (
+            <div className="print-architecture">
+              <ArchitectureDiagram architecture={project.architecture} t={t} />
+            </div>
+          ) : (
+            <PrintMedia media={project.media} t={t} />
+          )}
           <div className="print-results">
             {project.results.map((result) => (
               <div className="print-result" key={t(result.label)}>
@@ -207,8 +209,6 @@ function ProjectPage({ project, index, t, withMoreWork }) {
           ))}
         </div>
       </div>
-
-      {withMoreWork && <MoreWork t={t} />}
 
       <PageFooter t={t} page={index + 2} />
     </section>
@@ -283,26 +283,5 @@ function PrintMedia({ media, t }) {
     <figure className="print-poster">
       <img src={publicAsset(media.src)} alt={t(media.alt)} />
     </figure>
-  );
-}
-
-function MoreWork({ t }) {
-  return (
-    <div className="print-more">
-      <h3 className="print-subtitle">{t(portfolio.projects.moreTitle)}</h3>
-      <div className="print-more-grid">
-        {portfolio.projects.more.map((project) => {
-          const typeItems = Array.isArray(project.type) ? project.type : [project.type];
-          return (
-            <div className="print-more-card" key={t(project.title)}>
-              <p className="print-more-title">{t(project.title)}</p>
-              <p className="print-more-type">{typeItems.join(" · ")}</p>
-              <p className="print-more-copy">{t(project.copy)}</p>
-              {project.link && <p className="print-more-link"><a href={project.link}>{displayUrl(project.link)}</a></p>}
-            </div>
-          );
-        })}
-      </div>
-    </div>
   );
 }
