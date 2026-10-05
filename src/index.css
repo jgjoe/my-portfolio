@@ -726,32 +726,31 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-link a { display: block; color: var(--print-blue-strong); font-size: 8pt; font-weight: 800; }
   .print-link-url { display: block; color: var(--print-muted); font-size: 7.6pt; line-height: 1.35; overflow-wrap: anywhere; }
 
-  /* page 6 extra: remaining projects */
-  .print-more { margin-top: 6mm; padding-top: 4mm; border-top: 1px solid var(--print-line); }
-  .print-more-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm; }
-  .print-more-card { padding: 3mm; border: 1px solid var(--print-line); border-radius: 2mm; background: var(--print-soft); break-inside: avoid; }
-  .print-more-title { margin: 0; font-size: 9.4pt; font-weight: 800; }
-  .print-more-type { margin: 1mm 0 0; color: var(--print-blue); font-size: 7.6pt; font-weight: 800; }
-  .print-more-copy { margin: 1.6mm 0 0; color: var(--print-muted); font-size: 8.2pt; line-height: 1.5; }
-  .print-more-link { margin: 1.6mm 0 0; color: var(--print-muted); font-size: 7.6pt; overflow-wrap: anywhere; }
-
-  /* page 6 also carries the remaining projects, so it runs tighter */
-  .print-page-last .print-project-body { margin-top: 4mm; }
-  .print-page-last .print-project-lead { margin-top: 2.2mm; line-height: 1.5; }
-  .print-page-last .print-detail { padding: 1.4mm 0; }
-  .print-page-last .print-detail-copy { font-size: 8.7pt; line-height: 1.4; }
-  .print-page-last .print-poster img { max-height: 44mm; }
-  .print-page-last .print-results { margin-top: 3.5mm; }
-  .print-page-last .print-result { padding: 2mm 3mm; }
-  .print-page-last .print-result span { font-size: 7.6pt; }
-  .print-page-last .print-tech { margin-top: 3.5mm; }
-  .print-page-last .print-evidence-band { margin-top: 4mm; padding-top: 2.5mm; }
-  .print-page-last .print-evidence-links { margin-top: 2.5mm; }
-  .print-page-last .print-more { margin-top: 4mm; padding-top: 2.5mm; }
-  .print-page-last .print-more-grid { gap: 2mm; }
-  .print-page-last .print-more-card { padding: 2mm; }
-  .print-page-last .print-more-title { font-size: 9pt; }
-  .print-page-last .print-more-type, .print-page-last .print-more-link { font-size: 7.5pt; }
-  .print-page-last .print-more-type, .print-page-last .print-more-link { margin-top: 1.2mm; }
-  .print-page-last .print-more-copy { margin-top: 1.2mm; font-size: 7.5pt; line-height: 1.38; }
+  /* project diagram in the side column (replaces the screenshot when present) */
+  .print-architecture .architecture-block {
+    margin: 0; padding: 3mm; border: 1px solid var(--print-line); border-radius: 2.5mm; background: var(--print-soft);
+  }
+  .print-architecture .architecture-heading { display: block; }
+  .print-architecture .architecture-heading > span { display: block; color: var(--print-ink); font-size: 8.4pt; font-weight: 800; }
+  .print-architecture .architecture-sources { margin-top: 1.5mm; justify-content: flex-start; gap: 1mm; }
+  .print-architecture .architecture-sources span { padding: .6mm 1.6mm; border-radius: 1mm; background: #ffffff; color: var(--print-muted); font-size: 7pt; }
+  .print-architecture .architecture-hub-grid { margin-top: 2.5mm; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr); gap: 1.5mm; }
+  .print-architecture .architecture-hub-core,
+  .print-architecture .architecture-hub-spoke,
+  .print-architecture .architecture-stage,
+  .print-architecture .architecture-decision-card { min-height: 0; padding: 2mm; border-radius: 1.6mm; background: #ffffff; }
+  .print-architecture .architecture-hub-core,
+  .print-architecture .architecture-decision-card { border: 1px solid var(--print-blue); }
+  .print-architecture .architecture-decision-card { background: #eff4ff; }
+  .print-architecture .architecture-decision-flow { margin-top: 2.5mm; grid-template-columns: minmax(0, 1fr); gap: 1.5mm; }
+  .print-architecture .architecture-decision-stages { grid-template-columns: minmax(0, 1fr); gap: 1.5mm; }
+  .print-architecture .architecture-arrow { display: none; }
+  .print-architecture strong { color: var(--print-ink); font-size: 7.6pt; line-height: 1.35; overflow-wrap: anywhere; }
+  .print-architecture .architecture-hub-core strong { white-space: normal; font-size: 7.6pt !important; }
+  .print-architecture .architecture-hub-core span,
+  .print-architecture .architecture-hub-spoke span,
+  .print-architecture .architecture-stage > span,
+  .print-architecture .architecture-decision-card span,
+  .print-architecture .architecture-decision-card small { margin-top: .5mm; color: var(--print-muted); font-size: 6.8pt; line-height: 1.35; }
+  .print-architecture .architecture-block > p { margin: 2mm 0 0; color: var(--print-muted); font-size: 7pt; line-height: 1.4; }
 }
