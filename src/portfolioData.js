@@ -26,7 +26,7 @@ export const portfolio = {
       { value: "4.04 / 4.5", label: { ko: "학점", en: "GPA" } },
       { value: { ko: "경기대 컴퓨터공학부", en: "Computer Engineering" }, label: { ko: "2026.02 졸업", en: "Graduated 2026.02" } },
       { kind: "list", label: { ko: "자격증", en: "Certificates" }, items: [{ ko: "정보처리기사", en: "Engineer Information Processing" }, "SQLD", "ADsP", "CSTS"] },
-      { kind: "list", label: { ko: "어학", en: "Language" }, items: ["OPIc IH", "TOEIC 765"] },
+      { kind: "list", label: { ko: "어학", en: "Language" }, items: ["OPIc IH"] },
     ],
   },
   proof: {
@@ -120,8 +120,8 @@ export const portfolio = {
         ],
         results: [{ value: { ko: "5개 도메인", en: "5 domains" }, label: { ko: "API·DB 모델 설계", en: "API and DB model design" } }, { value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "학회 논문 공저", en: "Conference paper co-author" }, label: { ko: "한국정보기술학회", en: "KIIT" } }],
         evidenceNotes: [
-          { label: { ko: "개인 구현 범위", en: "My implementation scope" }, copy: { ko: "차량 관련 5개 도메인 REST API와 MongoDB 모델, 사용자별 주간 평균 집계, 카카오 사용자 흐름을 구현했습니다.", en: "I implemented REST APIs and MongoDB models across five vehicle-related domains, per-user weekly aggregates, and Kakao user flows." } },
-          { label: { ko: "팀 연동 기준", en: "Team integration" }, copy: { ko: "프론트와 장치가 맞춰 쓰도록 요청, 응답 스키마와 오류 응답을 OpenAPI 3.0 문서로 고정했습니다.", en: "Request/response schemas and error responses were fixed in OpenAPI 3.0 so frontend and device work could integrate against one contract." } },        ],
+          { showInPrint: false, label: { ko: "개인 구현 범위", en: "My implementation scope" }, copy: { ko: "차량 관련 5개 도메인 REST API와 MongoDB 모델, 사용자별 주간 평균 집계, 카카오 사용자 흐름을 구현했습니다.", en: "I implemented REST APIs and MongoDB models across five vehicle-related domains, per-user weekly aggregates, and Kakao user flows." } },
+          { showInPrint: false, label: { ko: "팀 연동 기준", en: "Team integration" }, copy: { ko: "프론트와 장치가 맞춰 쓰도록 요청, 응답 스키마와 오류 응답을 OpenAPI 3.0 문서로 고정했습니다.", en: "Request/response schemas and error responses were fixed in OpenAPI 3.0 so frontend and device work could integrate against one contract." } },        ],
         evidenceButtonLabel: { ko: "구현 범위와 연동 기준", en: "Implementation scope & integration" },
         evidenceTitle: { ko: "구현 범위와 연동 기준", en: "Implementation scope & integration" },
         links: [{ href: "https://github.com/jgjoe/gildonge-backend", label: { ko: "GitHub (백엔드)", en: "GitHub (backend)" } }],
@@ -485,7 +485,7 @@ export const portfolio = {
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "1만 개가 넘는 정책이 두 사이트에 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "More than 10,000 policies were spread across two sites, and keyword search made relevant programs hard to find." } },
           { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "두 사이트의 정책 13,589개를 하나로 합치고, 뜻으로 찾는 검색에 키워드 일치 점수를 더한 방식을 같은 평가셋으로 비교해 정확도가 오른 경우에만 적용했습니다.", en: "I merged 13,589 policies from the two sites, compared meaning-based search with an added keyword-match score on the same evaluation set, and shipped it only where accuracy improved." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "Recall@10이 개선된 bi-encoder + 어휘 보정을 최종 검색 방식으로 채택했습니다. 지역 필터는 원천 신뢰도가 낮아 제외하고, 리랭커는 청년정책 품질이 떨어져 적용하지 않았습니다.", en: "I kept the bi-encoder plus lexical bias because it improved Recall@10. I excluded the regional filter over source reliability and did not adopt the reranker because it hurt Youth retrieval quality." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "검색 결과를 다시 정렬하는 후보는 청년정책 평가에서 품질이 떨어져 적용하지 않았습니다. 원본의 지역 정보를 서비스 적용 지역으로 신뢰하기 어려워 지역 필터도 공개하지 않았습니다.", en: "I did not adopt the candidate that reordered search results because it reduced quality in the Youth Policy evaluation. I also kept the regional filter out of the public service because the source region data could not reliably identify where each policy applied." } },
           { label: { ko: "배포와 운영", en: "Delivery & operations" }, copy: { ko: "후보 검증 후 API를 10%에서 100%로 단계 배포했고, 요청 ID와 메트릭으로 API, 검색, DB 구간을 나눠 관측했습니다.", en: "After candidate validation, I rolled the API from 10% to 100% and used request IDs and metrics to separate API, retrieval, and DB segments." } },
         ],
         results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: { ko: "정답 검색률 상승", en: "Higher hit rate" }, label: { ko: "상위 10개 안 정답 포함률 청년 60문항 46.7%→51.7%, 정부24 21문항 61.9%→76.2%", en: "correct policy in the top 10: Youth 60 queries 46.7%→51.7%, Gov24 21 queries 61.9%→76.2%" } }, { value: "10% → 100%", label: { ko: "새 검색을 요청 일부부터 단계적으로 전환", en: "new search rolled out gradually from a share of requests" } }],

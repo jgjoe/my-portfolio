@@ -137,6 +137,7 @@ function SummaryPage({ t }) {
 
 function ProjectPage({ project, index, t }) {
   const typeItems = Array.isArray(project.type) ? project.type : [project.type];
+  const evidenceNotes = project.evidenceNotes.filter((note) => note.showInPrint !== false);
   const title = project.titleLines
     ? project.titleLines.map((line) => t(line)).join(" ")
     : t(project.title);
@@ -191,13 +192,13 @@ function ProjectPage({ project, index, t }) {
 
       <div className="print-evidence-band">
         <h3 className="print-subtitle">{t(project.evidenceTitle || portfolio.ui.evidenceLinks)}</h3>
-        <div className="print-evidence-notes">
-          {project.evidenceNotes.map((note) => (
+        {evidenceNotes.length > 0 && <div className="print-evidence-notes">
+          {evidenceNotes.map((note) => (
             <p key={t(note.label)}>
               <strong>{t(note.label)}</strong>: {t(note.copy)}
             </p>
           ))}
-        </div>
+        </div>}
         <div className="print-evidence-links">
           {project.links.map((link) => (
             <span className="print-link" key={link.href}>
