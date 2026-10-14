@@ -68,8 +68,8 @@ export const portfolio = {
           "en": "Indexes chosen by read cost"
         },
         "label": {
-          "ko": "로컬 Oracle의 생성 주문 60만 건에서 상세 조회 논리 읽기 6,285에서 14를 검증하고 두 조회를 고려해 인덱스를 골랐습니다.",
-          "en": "Verified order-detail logical reads from 6,285 to 14 on 600K generated local Oracle orders; selected indexes for both queries."
+          "ko": "로컬 Oracle의 생성 주문 60만 건에서 상세 조회의 논리 블록 읽기가 6,285에서 14로 줄어든 것을 확인하고 두 조회를 고려해 인덱스를 골랐습니다.",
+          "en": "Confirmed that order-detail logical block reads fell from 6,285 to 14 on 600K generated local Oracle orders; selected indexes for both queries."
         },
         "project": "Build Your Health",
         "target": "project-build-health",
@@ -201,8 +201,8 @@ export const portfolio = {
               "en": "Validation conditions"
             },
             "copy": {
-              "ko": "고정 시드 데이터로 쿼리 3종과 인덱스 후보 5개를 비교했습니다. 워밍업 5회 뒤 30회씩 두 회차를 측정한 웜 캐시 시험에서 논리 읽기와 실행계획은 두 회차가 같았습니다. 회차 간 편차가 있는 ms 수치 대신 이 근거로 선정했습니다.",
-              "en": "I compared three queries and five index candidates on fixed-seed data. Warm-cache runs used five warmups and 30 measurements in each of two rounds; logical reads and plans matched between rounds. These were the selection evidence instead of variable millisecond measurements."
+              "ko": "고정 시드 데이터로 쿼리 3종을 인덱스 미적용 기준선을 포함한 다섯 구성에서 비교했습니다. 워밍업 5회 뒤 30회씩 두 회차를 측정한 웜 캐시 시험에서 논리 읽기와 실행계획은 두 회차가 같았습니다. 회차 간 편차가 있는 ms 수치 대신 이 근거로 선정했습니다.",
+              "en": "I compared three queries across five configurations, including a baseline without indexes, on fixed-seed data. Warm-cache runs used five warmups and 30 measurements in each of two rounds; logical reads and plans matched between rounds. These were the selection evidence instead of variable millisecond measurements."
             }
           }
         ],
@@ -242,8 +242,8 @@ export const portfolio = {
               "en": "Measurement scope"
             },
             "copy": {
-              "ko": "결과는 로컬 Oracle의 생성 데이터와 지정 쿼리 범위입니다. 앱 API 응답시간이나 운영 DB 성능으로 확대하지 않습니다.",
-              "en": "Results cover designated queries and generated data in local Oracle, not app API latency or production-database performance."
+              "ko": "로컬 Oracle의 생성 데이터에서 지정 쿼리의 논리 블록 읽기와 실행계획을 확인한 결과입니다.",
+              "en": "These results cover logical block reads and execution plans for the designated queries on generated data in local Oracle."
             }
           },
           {
@@ -297,8 +297,8 @@ export const portfolio = {
                 "en": "Fix criteria"
               },
               "copy": {
-                "ko": "쿼리 3종 / 후보 5개",
-                "en": "3 queries / 5 candidates"
+                "ko": "쿼리 3종 / 미적용 기준선 포함 5개 구성",
+                "en": "3 queries / 5 configurations including a no-index baseline"
               }
             },
             {
@@ -351,8 +351,8 @@ export const portfolio = {
                 "en": "Fix scope"
               },
               "copy": {
-                "ko": "쿼리 3종과 인덱스 후보 5개",
-                "en": "3 queries and 5 index candidates"
+                "ko": "쿼리 3종 / 미적용 기준선 포함 5개 구성",
+                "en": "3 queries / 5 configurations including a no-index baseline"
               }
             },
             {
@@ -403,8 +403,8 @@ export const portfolio = {
             }
           ],
           "caption": {
-            "ko": "측정 설계·검증·해석·채택이 본인 기여이며, 쿼리 측정과 서비스 성능은 구분합니다.",
-            "en": "My contribution is measurement design, validation, interpretation, and selection; query measurements are distinct from service performance."
+            "ko": "측정 설계, 검증, 실행계획 해석과 인덱스 채택 결정을 맡았습니다.",
+            "en": "My contribution is measurement design, validation, execution-plan interpretation, and index selection."
           }
         }
       },
@@ -456,7 +456,7 @@ export const portfolio = {
         results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with one calculation rule" } }, { value: { ko: "22개 항목 일치", en: "22 matching checks" }, label: { ko: "두 데이터셋의 Direct/MCP 비교", en: "Direct/MCP comparisons on two datasets" } }, { value: { ko: "AI 권한 제한", en: "Limited AI access" }, label: { ko: "계산 결과 조회만 허용", en: "may only read computed results" } }],
         evidenceNotes: [
           { label: { ko: "검증 대상", en: "What was checked" }, copy: { ko: "케이스 수, 이벤트 수, 주요 흐름, 단계 간 이동, 재작업 집계를 두 실제 이벤트 로그에서 독립 재계산해 Core 결과와 대조했습니다.", en: "Case counts, event counts, major paths, direct transitions, and rework aggregates were independently re-derived on two real event logs and compared with Core results." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "정본 독립 회귀 190/190과 공개 저장소 회귀 168/168은 서로 다른 검증 범위입니다. 두 데이터셋의 Direct/MCP 비교는 22/22 일치했으며 이 범위를 AI 전체의 정확성으로 확대하지 않습니다.", en: "Canonical independent regression passed 190/190 and public-repository regression passed 168/168 in separate scopes. Direct/MCP comparison passed 22/22 across two datasets; this does not establish universal AI accuracy." } },        ],
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "개발본의 독립 회귀 테스트 190/190과 공개 저장소의 회귀 테스트 168/168을 각각 통과했습니다. 두 데이터셋에서 Direct/MCP 결과를 비교한 22개 항목은 모두 일치했습니다.", en: "Independent regression testing of the development version passed 190/190, and the public repository passed its 168/168 regression tests. All 22 Direct/MCP result comparisons matched across two datasets." } },        ],
         architecture: {
           variant: "hub",
           title: { ko: "하나의 공통 계산 기준", en: "One shared calculation path" },
@@ -530,7 +530,7 @@ export const portfolio = {
         evidenceNotes: [
           { label: { ko: "OCR 확인", en: "OCR check" }, copy: { ko: "서로 다른 한국 식품 라벨 55장을 고정 회귀셋으로 사용해 OCR 변경 전후의 퇴행을 확인했습니다.", en: "A fixed regression set of 55 different Korean food labels was used to check OCR changes for regressions." } },
           { label: { ko: "출시 판단", en: "Release decision" }, copy: { ko: "남은 오답과 표본 공백 때문에 후보 출시를 보류했고, 저장 전 사용자 확인 단계를 추가한 뒤 재배포했습니다.", en: "Residual errors and coverage gaps triggered a release hold; I added confirm-before-save before re-releasing." } },
-          { label: { ko: "사용성 재확인", en: "Usability retest" }, copy: { ko: "초기 4명 × 8과업의 32개 관찰 후 결함을 겪은 2명이 네 수정 흐름을 재수행했습니다. 8개 관찰의 완료는 해당 수정 범위의 결과이며 전체 사용자 성공률이 아닙니다.", en: "After 32 observations from 4 people × 8 tasks, two affected users repeated four corrected flows. Completion of those eight observations applies to the fixes, not an overall user success rate." } },
+          { label: { ko: "사용성 재확인", en: "Usability retest" }, copy: { ko: "초기 4명 × 8과업의 32개 관찰 후 결함을 겪은 2명이 네 수정 흐름을 재수행했고, 이 8개 관찰에서 모두 과업을 완료했습니다.", en: "After 32 observations from 4 people × 8 tasks, two affected users repeated four corrected flows and completed the tasks in all eight retest observations." } },
         ],
         links: [{ href: "https://m.onestore.co.kr/v2/ko-kr/app/0001003331", label: { ko: "ONEstore에서 보기", en: "View on ONEstore" } }, { href: "https://play.google.com/store/apps/details?id=app.fridgedday", label: { ko: "Google Play에서 보기", en: "View on Google Play" } }, { href: "https://github.com/jgjoe/fridge-d-day", label: "GitHub" }, { href: "https://github.com/jgjoe/fridge-d-day/blob/main/QA_RELEASE_RECORD.md", label: { ko: "QA와 릴리스 기록", en: "QA & release record" } }, { href: "https://github.com/jgjoe/fridge-d-day/blob/main/docs/qa/OCR_BENCHMARK.md", label: { ko: "OCR 벤치마크", en: "OCR benchmark" } }, { href: "https://github.com/jgjoe/fridge-d-day/blob/main/.github/workflows/android-ci.yml", label: { ko: "CI 설정", en: "CI workflow" } }],
         media: { type: "gallery", label: { ko: "오늘도 신선 v2 대표 화면", en: "Fridge D-Day v2 highlights" }, images: [
