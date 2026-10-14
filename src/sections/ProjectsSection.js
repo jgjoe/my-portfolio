@@ -89,21 +89,6 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
           {project.tech.slice(0, 6).map((tech) => <span key={tech}>{tech}</span>)}
         </div>
 
-        {deepDetails.length > 0 && (
-          <details className="deep-dive">
-            <summary>{t(portfolio.ui.projectDeepDive)}</summary>
-            <div className="deep-dive-list">
-              {deepDetails.map((detail) => (
-                <div key={t(detail.label)}>
-                  <span>{t(detail.label)}</span>
-                  <p>{t(detail.copy)}</p>
-                </div>
-              ))}
-            </div>
-            <ArchitectureDiagram architecture={project.architecture} t={t} />
-          </details>
-        )}
-
         <div className="project-links">
           {primaryLinks.map((link) => (
             <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
@@ -121,6 +106,22 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
       <div className="project-visual">
         <ProjectMedia media={project.media} t={t} onOpen={onOpenMedia} />
       </div>
+      {deepDetails.length > 0 && (
+        <details className="deep-dive">
+          <summary>{t(portfolio.ui.projectDeepDive)}</summary>
+          <div className="deep-dive-list">
+            {deepDetails.map((detail) => (
+              <div key={t(detail.label)}>
+                <span>{t(detail.label)}</span>
+                <p>{t(detail.copy)}</p>
+              </div>
+            ))}
+          </div>
+          {project.architectureInDetails !== false && (
+            <ArchitectureDiagram architecture={project.architecture} t={t} />
+          )}
+        </details>
+      )}
     </motion.article>
   );
 }

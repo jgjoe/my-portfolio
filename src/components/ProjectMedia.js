@@ -28,7 +28,7 @@ function DataFlow({ media, t }) {
       <div className="data-flow-sources">
         {media.sources.map((source) => <span key={t(source)}>{t(source)}</span>)}
       </div>
-      <div className="data-flow-track">
+      <div className="data-flow-track" style={{ "--step-count": media.steps.length }}>
         {media.steps.map((step, index) => (
           <div className="data-flow-step" key={t(step.name)}>
             <strong>{t(step.name)}</strong>

@@ -239,7 +239,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   color: var(--muted); font-size: .68rem; font-weight: 700;
 }
 .project-facts {
-  margin-top: 1.4rem; display: grid; grid-template-columns: 1fr 1fr; gap: .7rem;
+  margin-top: 1.4rem; display: grid; grid-template-columns: 1fr; gap: .7rem;
 }
 .project-facts > div {
   padding: 1rem; border-top: 1px solid var(--line); background: color-mix(in srgb, var(--surface-soft) 58%, transparent);
@@ -254,12 +254,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .result-grid > div { min-height: 5.2rem; padding: .85rem; border-radius: .8rem; background: var(--surface-soft); }
 .result-grid strong { display: block; font-size: 1rem; font-weight: 700; letter-spacing: -.02em; word-break: keep-all; }
 .result-grid span { display: block; margin-top: .32rem; color: var(--muted); font-size: .75rem; line-height: 1.4; word-break: keep-all; white-space: pre-line; }
-.deep-dive { margin-top: 1rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.deep-dive { grid-column: 1 / -1; padding: 0 clamp(1.5rem, 3.6vw, 2.6rem); border-top: 1px solid var(--line); }
 .deep-dive summary {
   padding: .9rem 0; cursor: pointer; color: var(--blue); font-size: .8rem; font-weight: 850; list-style-position: inside;
 }
 .deep-dive-list { padding-bottom: .9rem; display: grid; gap: .8rem; }
-.deep-dive-list > div { padding-left: 1rem; border-left: 2px solid var(--line); }
+.deep-dive-list > div { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--line); }
+.deep-dive-list p { margin: 0; }
 .architecture-block {
   margin: .25rem 0 1rem; padding: 1rem;
   border: 1px solid var(--line); border-radius: .9rem;
@@ -304,7 +305,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .architecture-hub-core strong, .architecture-hub-spoke strong { font-size: .78rem; font-weight: 800; word-break: keep-all; }
 .architecture-hub-core span, .architecture-hub-spoke span { margin-top: .25rem; color: var(--muted); font-size: .7rem; line-height: 1.35; word-break: keep-all; }
 .architecture-decision-flow { margin-top: .8rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(11rem, .42fr); gap: .65rem; }
-.architecture-decision-stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; }
+.architecture-decision-stages { display: grid; grid-template-columns: repeat(var(--stage-count), minmax(0, 1fr)); gap: .55rem; }
 .architecture-decision-card {
   min-height: 4.5rem; padding: .8rem; border: 1px solid color-mix(in srgb, var(--blue) 42%, var(--line));
   border-radius: .7rem; background: var(--blue-soft); display: flex; flex-direction: column; justify-content: center;
@@ -342,8 +343,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .media-button { width: 100%; display: block; }
 .media-button img { display: block; width: 100%; }
 .browser-shot figcaption { padding: .65rem .8rem; color: var(--muted); font-size: .66rem; }
-.browser-gallery-main { aspect-ratio: 2.55 / 1; overflow: hidden; background: var(--surface); }
-.browser-gallery-main img { height: 100%; object-fit: cover; object-position: center; }
+.browser-gallery-main { background: var(--surface); }
+.browser-gallery-main img { height: auto; }
 .browser-gallery-tabs {
   padding: .7rem .8rem 0; display: flex; flex-wrap: wrap; gap: .4rem;
   border-top: 1px solid var(--line);
@@ -358,10 +359,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .phone-gallery { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; gap: .55rem; width: 100%; max-width: 31rem; }
 .phone-frame {
-  overflow: hidden; border: 5px solid #252a31; border-radius: 1.35rem;
+  overflow: hidden; border: 1px solid var(--line); border-radius: .65rem;
   box-shadow: 0 12px 28px rgba(25,31,40,.15);
 }
-.phone-frame img { display: block; width: 100%; aspect-ratio: 9 / 19; object-fit: cover; }
+.phone-frame img { display: block; width: 100%; height: auto; }
 .poster-frame { max-width: 28rem; border: 1px solid var(--line); border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow); }
 .poster-frame img { display: block; width: 100%; max-height: 30rem; object-fit: contain; background: var(--surface); }
 .media-placeholder {
@@ -377,7 +378,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   padding: .3rem .5rem; border-radius: .5rem; background: var(--surface-soft);
   color: var(--muted); font-size: .68rem; font-weight: 750;
 }
-.data-flow-track { margin-top: .85rem; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .5rem; }
+.data-flow-track { margin-top: .85rem; display: grid; grid-template-columns: repeat(var(--step-count), minmax(0,1fr)); gap: .5rem; }
 .data-flow-step {
   position: relative; min-height: 6.4rem; padding: .75rem; border: 1px solid var(--line); border-radius: .75rem;
   display: flex; flex-direction: column; justify-content: center; background: var(--surface-soft);
@@ -411,8 +412,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 
 /* credentials */
-.credential-grid { margin-top: 2.4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
-.hero-approach { margin: .8rem 0 0; color: var(--muted); font-size: .95rem; line-height: 1.65; max-width: 44rem; word-break: keep-all; }
+.credential-grid { margin-top: 2.4rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; }
+#projects > .section-heading .section-copy { max-width: none; }
 .credential-evidence { display: inline-block; margin-top: .6rem; color: var(--accent); font-size: .82rem; font-weight: 700; }
 .credential-card { padding: 1.25rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
 .credential-card h3 { margin: 0; font-size: 1.05rem; font-weight: 700; }
@@ -483,7 +484,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .hero-section { min-height: auto; padding-top: 8.5rem; }
   .profile-card { max-width: 32rem; }
   .project-visual { border-left: 0; border-top: 1px solid var(--line); }
-  .credential-grid { grid-template-columns: 1fr; }
+  .credential-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .skill-groups { grid-template-columns: 1fr; }
   .contact-actions { justify-content: flex-start; }
 }
@@ -499,23 +500,25 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .nav-capsule { border-radius: .95rem; }
   .hero-copy h1 { font-size: clamp(2.55rem, 11vw, 3.55rem); }
   .proof-item strong { white-space: normal; }
-  .quick-facts, .proof-grid, .project-facts, .archive-grid { grid-template-columns: 1fr 1fr; }
+  .quick-facts, .proof-grid, .archive-grid { grid-template-columns: 1fr 1fr; }
+  .deep-dive-list > div { grid-template-columns: 1fr; gap: .45rem; }
   .project-meta { flex-direction: column; gap: .35rem; }
   .result-grid { grid-template-columns: 1fr; }
   .evidence-result-grid { grid-template-columns: 1fr; }
   .architecture-flow { grid-template-columns: 1fr 1fr; }
   .architecture-stage:nth-child(2) .architecture-arrow { display: none; }
   .architecture-decision-flow { grid-template-columns: 1fr; }
-  .data-flow-track { grid-template-columns: 1fr 1fr; }
-  .data-flow-step:nth-child(2) .data-flow-arrow { display: none; }
+  .data-flow-track { grid-template-columns: 1fr; }
+  .data-flow-arrow { display: none; }
   .phone-gallery { gap: .35rem; }
-  .phone-frame { border-width: 3px; border-radius: .85rem; }
+  .phone-frame { border-radius: .45rem; }
   .contact-panel { border-radius: 1.1rem; }
   .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; }
 }
 
 @media (max-width: 640px) {
   .section-shell { width: min(100% - 2rem, 1160px); }
+  .credential-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
@@ -669,7 +672,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-summary-page .print-proof-project { padding-top: 1.5mm; }
   .print-summary-page .print-section-title { margin-top: 4mm; }
   .print-summary-page .print-columns { margin-top: 4mm; }
-  .print-summary-page .print-credential + .print-credential { margin-top: 2.5mm; }
+  .print-summary-page .print-credential + .print-credential { margin-top: 2mm; }
+  .print-summary-page .print-credential .print-subtitle { margin-bottom: 1.5mm; }
   .print-summary-page .print-contact { margin-top: 3mm; padding: 3mm; }
   .print-summary-page .print-contact-lines { width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; text-align: left; gap: 2mm; font-size: 8pt; }
 
@@ -704,10 +708,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-poster img { display: block; max-width: 100%; max-height: 70mm; object-fit: contain; }
 
   .print-results { margin-top: 4.5mm; display: grid; gap: 2mm; }
-  .print-result { padding: 2.4mm 3mm; border-radius: 2mm; background: var(--print-soft); break-inside: avoid; }
+  .print-result { padding: 2mm 3mm; border-radius: 2mm; background: var(--print-soft); break-inside: avoid; }
   .print-result strong { display: block; font-size: 9.4pt; font-weight: 800; letter-spacing: -.015em; }
   .print-result span { display: block; margin-top: .8mm; color: var(--print-muted); font-size: 7.8pt; line-height: 1.4; }
-  .print-tech { margin-top: 4.5mm; }
+  .print-tech { margin-top: 3.5mm; }
 
   .print-flow-sources { margin-bottom: 3mm; }
   .print-flow-steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 1.8mm; }
@@ -739,7 +743,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
   /* project diagram in the side column (replaces the screenshot when present) */
   .print-architecture .architecture-block {
-    margin: 0; padding: 3mm; border: 1px solid var(--print-line); border-radius: 2.5mm; background: var(--print-soft);
+    margin: 0; padding: 2.5mm; border: 1px solid var(--print-line); border-radius: 2.5mm; background: var(--print-soft);
   }
   .print-architecture .architecture-heading { display: block; }
   .print-architecture .architecture-heading > span { display: block; color: var(--print-ink); font-size: 8.4pt; font-weight: 800; }
@@ -749,12 +753,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-architecture .architecture-hub-core,
   .print-architecture .architecture-hub-spoke,
   .print-architecture .architecture-stage,
-  .print-architecture .architecture-decision-card { min-height: 0; padding: 2mm; border-radius: 1.6mm; background: #ffffff; }
+  .print-architecture .architecture-decision-card { min-height: 0; padding: 1.5mm; border-radius: 1.6mm; background: #ffffff; }
   .print-architecture .architecture-hub-core,
   .print-architecture .architecture-decision-card { border: 1px solid var(--print-blue); }
   .print-architecture .architecture-decision-card { background: #eff4ff; }
-  .print-architecture .architecture-decision-flow { margin-top: 2.5mm; grid-template-columns: minmax(0, 1fr); gap: 1.5mm; }
-  .print-architecture .architecture-decision-stages { grid-template-columns: minmax(0, 1fr); gap: 1.5mm; }
+  .print-architecture .architecture-decision-flow { margin-top: 2mm; grid-template-columns: minmax(0, 1fr); gap: 1mm; }
+  .print-architecture .architecture-decision-stages { grid-template-columns: minmax(0, 1fr); gap: 1mm; }
   .print-architecture .architecture-arrow { display: none; }
   .print-architecture strong { color: var(--print-ink); font-size: 7.6pt; line-height: 1.35; overflow-wrap: anywhere; }
   .print-architecture .architecture-hub-core strong { white-space: normal; font-size: 7.6pt !important; }

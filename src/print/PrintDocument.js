@@ -51,7 +51,6 @@ function SummaryPage({ t }) {
           <p className="print-eyebrow">{portfolio.hero.eyebrow.join(" · ")}</p>
           <h1 className="print-headline">{t(portfolio.hero.title)}</h1>
           <p className="print-summary-text">{t(portfolio.hero.summary)}</p>
-          <p className="print-summary-text">{t(portfolio.hero.approach)}</p>
         </div>
         <aside className="print-profile">
           <div className="print-profile-top">
@@ -82,6 +81,7 @@ function SummaryPage({ t }) {
       </div>
 
       <h2 className="print-section-title">{t(portfolio.proof.title)}</h2>
+      <p className="print-summary-text">{t(portfolio.projects.copy)}</p>
       <div className="print-proof-row">
         {portfolio.proof.items.map((item) => (
           <article className="print-proof-card" key={t(item.label)}>

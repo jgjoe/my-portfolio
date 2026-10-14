@@ -41,7 +41,7 @@ export default function ArchitectureDiagram({ architecture, t }) {
           </div>
         </div>
         <div className="architecture-decision-flow">
-          <div className="architecture-decision-stages">
+          <div className="architecture-decision-stages" style={{ "--stage-count": architecture.stages.length }}>
             {architecture.stages.map((stage, index) => (
               <div className="architecture-stage" key={t(stage.name)}>
                 <strong>{t(stage.name)}</strong>

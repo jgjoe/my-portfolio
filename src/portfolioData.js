@@ -18,8 +18,7 @@ export const portfolio = {
   hero: {
     eyebrow: ["BACKEND", "DATA ENGINEERING", "SOFTWARE QUALITY"],
     title: { ko: "업무 시스템의 API와\n데이터 흐름을 만듭니다", en: "I build APIs and data flows\nfor business systems" },
-    summary: { ko: "Spring Boot로 차량 API와 실시간 알림을 구현하고, 주문 조회의 실행계획을 비교해 인덱스를 골랐습니다. 서울 공공자전거 대여 기록 약 2억 4천만 행을 정제하고 원본과 처리 결과를 대조한 신입 개발자입니다.", en: "A new-graduate developer who built vehicle APIs and real-time alerts with Spring Boot, selected indexes by comparing query plans, and reconciled cleaned data with about 240 million Seoul bike rental source rows." },
-    approach: { ko: "AI 코딩 도구를 활용하되 요구사항과 검증 기준을 먼저 정하고, 확인한 결과를 바탕으로 변경을 채택합니다.", en: "I use AI coding tools, define requirements and validation criteria first, and adopt changes based on checked results." },
+    summary: { ko: "Spring Boot로 차량 API와 실시간 알림을 구현한 신입 개발자입니다. 주문 조회의 실행계획을 비교해 인덱스를 고르고, 서울 공공자전거 대여 기록 약 2억 4천만 행을 정제해 원본과 대조했습니다.", en: "A new-graduate developer who built vehicle APIs and real-time alerts with Spring Boot. I compared query plans to select indexes and cleaned about 240 million Seoul bike rental rows, checking them against the source." },
     profileRole: "Backend & Data Engineer",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
@@ -105,7 +104,7 @@ export const portfolio = {
   },
   projects: {
     eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "개발과 검증의 핵심 경험", en: "Selected development and validation work" },
-    copy: { ko: "팀 프로젝트에서는 차량 도메인 백엔드를 맡았습니다. 개인 프로젝트는 AI 코딩 도구와 함께 구현하며 요구사항, 검증 기준과 변경 채택을 판단했습니다.", en: "I owned the vehicle-domain backend in a team project. For personal projects, I worked with AI coding tools and made decisions on requirements, validation criteria, and which changes to adopt." },
+    copy: { ko: "개인 프로젝트는 AI 코딩 도구를 활용하며 요구사항, 검증 기준과 변경 채택을 직접 판단했습니다.", en: "For personal projects, I used AI coding tools and decided the requirements, validation criteria, and changes to adopt." },
     featured: [
       {
         anchor: "project-gildong", title: "길동이 AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: [{ ko: "6인 팀", en: "Team of 6" }, { ko: "백엔드 / DB 담당", en: "Backend / DB owner" }], period: "2025.03 — 2025.06",
@@ -129,6 +128,7 @@ export const portfolio = {
       },
       {
         "anchor": "project-build-health",
+        "architectureInDetails": false,
         "title": "Build Your Health",
         "subtitle": {
           "ko": "웹 주문 시스템 재구축과 SQL 인덱스 검증",
@@ -472,9 +472,9 @@ export const portfolio = {
         },
         links: [{ href: "https://github.com/jgjoe/traceverity", label: "GitHub" }, { href: "https://github.com/jgjoe/traceverity/blob/main/evidence/public-verification-summary.json", label: { ko: "검증 요약", en: "Verification summary" } }, { href: "https://github.com/jgjoe/traceverity/blob/main/docs/ARCHITECTURE.md", label: { ko: "아키텍처", en: "Architecture" } }, { href: "https://github.com/jgjoe/traceverity/blob/main/docs/REPRODUCTION.md", label: { ko: "재현 가이드", en: "Reproduction guide" } }],
         media: { type: "browser-gallery", host: "TraceVerity / local", label: { ko: "TraceVerity 대표 화면 선택", en: "Choose a TraceVerity view" }, images: [
-          { src: "/traceverity-import.png", tab: { ko: "가져오기", en: "Import" }, alt: { ko: "TraceVerity 이벤트 로그 가져오기와 핵심 요약 화면", en: "TraceVerity event-log import and core summary" }, caption: { ko: "CSV/XES 파일을 가져와 검증한 뒤 같은 화면에서 핵심 지표를 확인합니다.", en: "Import and validate CSV/XES files, then review core metrics in the same workspace." } },
-          { src: "/traceverity-variants.png", tab: { ko: "프로세스 흐름", en: "Process flow" }, alt: { ko: "TraceVerity 주요 프로세스 흐름과 직접 전이 분석 화면", en: "TraceVerity process variants and direct-follow transitions" }, caption: { ko: "주요 업무 흐름과 단계 간 이동을 실제 데이터에서 비교합니다.", en: "Compare major process paths and direct transitions from real event data." } },
-          { src: "/traceverity-activity.png", tab: { ko: "활동 / 재작업", en: "Activity & rework" }, alt: { ko: "TraceVerity 활동별 재작업과 개별 케이스 조회 화면", en: "TraceVerity activity rework and case-trace lookup" }, caption: { ko: "활동별 재작업 수와 개별 케이스 흐름을 확인할 수 있습니다.", en: "Inspect rework by activity and drill into an individual case trace." } },
+          { src: "/traceverity-summary.jpg", tab: { ko: "핵심 지표", en: "Core metrics" }, alt: { ko: "TraceVerity BPI Challenge 2012 데이터의 핵심 분석 지표", en: "TraceVerity core metrics for BPI Challenge 2012" }, caption: { ko: "BPI Challenge 2012의 COMPLETE 관점에서 건수, 소요 시간과 재작업을 계산한 실제 로컬 화면입니다.", en: "Local analysis of BPI Challenge 2012 in the COMPLETE perspective: counts, cycle times, and rework." } },
+          { src: "/traceverity-variants.jpg", tab: { ko: "프로세스 흐름", en: "Process flow" }, alt: { ko: "TraceVerity 주요 업무 흐름별 건수와 비율", en: "TraceVerity case counts and shares by process variant" }, caption: { ko: "같은 데이터에서 업무 단계의 순서별 건수와 비율을 비교합니다.", en: "Compare case counts and shares for different activity sequences in the same dataset." } },
+          { src: "/traceverity-activity.jpg", tab: { ko: "활동 / 재작업", en: "Activity & rework" }, alt: { ko: "TraceVerity 활동별 이벤트, 케이스와 재작업 건수", en: "TraceVerity event, case, and rework counts by activity" }, caption: { ko: "활동별 발생 건수와 재작업 건수를 분리해 확인합니다.", en: "View event counts and rework counts separately for each activity." } },
         ] },
       },
       {
@@ -512,7 +512,10 @@ export const portfolio = {
           note: { ko: "같은 평가 문항으로 어휘 보정 전후와 리랭커 후보를 비교", en: "Lexical bias and reranker candidates compared on the same evaluation queries" },
         },
         links: [{ href: "https://jgjoe.github.io/benefit-compass", label: { ko: "데모 보기", en: "View demo" } }, { href: "https://github.com/jgjoe/benefit-compass", label: "GitHub" }, { href: "https://github.com/jgjoe/benefit-compass/tree/main/eval", label: { ko: "평가셋과 측정 스크립트", en: "Evaluation set & scripts" } }, { href: "https://github.com/jgjoe/benefit-compass/blob/main/docs/operations/PRODUCTION_LAB_2_2026-07-21.md", label: { ko: "운영 실험 기록", en: "Production lab record" } }, { href: "https://github.com/jgjoe/benefit-compass/blob/main/docs/operations/RUNBOOK.md", label: { ko: "운영 런북", en: "Runbook" } }],
-        media: { type: "image", src: "/benefit-compass-demo.png", host: "jgjoe.github.io/benefit-compass", alt: { ko: "혜택나침반의 월세 지원 검색 결과", en: "BenefitCompass search results for rental support" }, caption: { ko: "실제 배포 환경에서 확인한 검색 결과", en: "Search result captured from the live deployment" } },
+        media: { type: "browser-gallery", host: "jgjoe.github.io/benefit-compass", label: { ko: "혜택나침반 검색 화면 선택", en: "Choose a BenefitCompass search view" }, images: [
+          { src: "/benefit-compass-answer.jpg", tab: { ko: "검색과 답변", en: "Query & answer" }, alt: { ko: "혜택나침반의 월세 지원 검색어와 답변", en: "BenefitCompass rental-support query and answer" }, caption: { ko: "배포된 서비스에 ‘월세 지원’을 검색한 화면입니다. (2026.10.15)", en: "A rental-support query on the deployed service, captured on Oct 15, 2026." } },
+          { src: "/benefit-compass-source.jpg", tab: { ko: "답변의 근거", en: "Supporting source" }, alt: { ko: "혜택나침반 답변과 출처, 지원 조건, 공식 안내 링크", en: "BenefitCompass answer, source, eligibility details, and official link" }, caption: { ko: "답변 아래에서 정책의 출처, 지원 조건과 공식 안내 링크를 확인합니다.", en: "The policy card below the answer shows its source, eligibility details, and official link." } },
+        ] },
       },
       {
         anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }], period: { ko: "2025.09 — 진행 중", en: "2025.09 — Present" },
