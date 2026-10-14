@@ -412,6 +412,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 /* credentials */
 .credential-grid { margin-top: 2.4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.hero-approach { margin: .8rem 0 0; color: var(--muted); font-size: .95rem; line-height: 1.65; max-width: 44rem; word-break: keep-all; }
+.credential-evidence { display: inline-block; margin-top: .6rem; color: var(--accent); font-size: .82rem; font-weight: 700; }
 .credential-card { padding: 1.25rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
 .credential-card h3 { margin: 0; font-size: 1.05rem; font-weight: 700; }
 .credential-card ul { margin: 1rem 0 0; padding: 0; list-style: none; }
@@ -662,7 +664,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-contact-lines { display: grid; gap: 1.2mm; text-align: right; font-size: 8.6pt; }
   .print-contact-lines a { color: #ffffff; }
 
-  /* pages 2-6: one featured project each */
+  .print-summary-page .print-proof-card { padding: 3mm; }
+  .print-summary-page .print-proof-value { margin-top: 2mm; font-size: 11.5pt; }
+  .print-summary-page .print-proof-project { padding-top: 1.5mm; }
+  .print-summary-page .print-section-title { margin-top: 4mm; }
+  .print-summary-page .print-columns { margin-top: 4mm; }
+  .print-summary-page .print-credential + .print-credential { margin-top: 2.5mm; }
+  .print-summary-page .print-contact { margin-top: 3mm; padding: 3mm; }
+  .print-summary-page .print-contact-lines { width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; text-align: left; gap: 2mm; font-size: 8pt; }
+
+  /* Each featured project gets one page; page count follows the selected data. */
   .print-project-meta {
     margin: 0; display: flex; flex-wrap: wrap; gap: 4mm;
     color: var(--print-muted); font-size: 8pt; font-weight: 800; letter-spacing: .02em;
@@ -672,8 +683,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-project-subtitle { margin: 1.6mm 0 0; color: var(--print-blue); font-size: 9.5pt; font-weight: 800; }
   .print-project-lead { margin: 3mm 0 0; color: var(--print-muted); font-size: 9.2pt; line-height: 1.6; }
 
-  .print-project-body { margin-top: 6mm; display: grid; grid-template-columns: minmax(0, 57fr) minmax(0, 43fr); gap: 6mm; align-items: start; }
-  .print-detail { padding: 3.2mm 0; border-top: 1px solid var(--print-line); break-inside: avoid; }
+  .print-project-body { margin-top: 4mm; display: grid; grid-template-columns: minmax(0, 57fr) minmax(0, 43fr); gap: 6mm; align-items: start; }
+  .print-detail { padding: 2.8mm 0; border-top: 1px solid var(--print-line); break-inside: avoid; }
   .print-detail:first-child { padding-top: 0; border-top: 0; }
   .print-detail-label { margin: 0; font-size: 7.8pt; font-weight: 800; }
   .print-detail-copy { margin: 1.2mm 0 0; color: var(--print-muted); font-size: 9.2pt; line-height: 1.6; }
@@ -717,7 +728,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-flow-callouts span { display: block; margin-top: .6mm; color: var(--print-muted); font-size: 7.6pt; line-height: 1.35; }
   .print-caption { margin: 3mm 0 0; color: var(--print-muted); font-size: 7.6pt; line-height: 1.45; }
 
-  .print-evidence-band { margin-top: 6mm; padding-top: 4mm; border-top: 1px solid var(--print-line); }
+  .print-evidence-band { margin-top: 4mm; padding-top: 3mm; border-top: 1px solid var(--print-line); }
   .print-evidence-notes { display: grid; gap: 2mm; }
   .print-evidence-notes p { margin: 0; color: var(--print-muted); font-size: 8.2pt; line-height: 1.45; }
   .print-evidence-notes strong { color: var(--print-ink); }

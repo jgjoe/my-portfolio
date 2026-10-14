@@ -18,6 +18,7 @@ export default function CredentialsSection({ t }) {
             <ul>
               {group.items.map((item) => <li key={t(item)}>{t(item)}</li>)}
             </ul>
+            {group.link && <a className="credential-evidence" href={group.link.href} target="_blank" rel="noreferrer">{t(group.link.label)} ↗</a>}
           </motion.article>
         ))}
       </div>

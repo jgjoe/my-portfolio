@@ -45,12 +45,13 @@ function PageFooter({ t, page }) {
 
 function SummaryPage({ t }) {
   return (
-    <section className="print-page">
+    <section className="print-page print-summary-page">
       <div className="print-summary-top">
         <div className="print-summary-copy">
           <p className="print-eyebrow">{portfolio.hero.eyebrow.join(" · ")}</p>
           <h1 className="print-headline">{t(portfolio.hero.title)}</h1>
           <p className="print-summary-text">{t(portfolio.hero.summary)}</p>
+          <p className="print-summary-text">{t(portfolio.hero.approach)}</p>
         </div>
         <aside className="print-profile">
           <div className="print-profile-top">
@@ -102,6 +103,7 @@ function SummaryPage({ t }) {
                   <li key={t(item)}>{t(item)}</li>
                 ))}
               </ul>
+              {group.link && <a className="print-link" href={group.link.href}>{t(group.link.label)}</a>}
             </div>
           ))}
         </div>
@@ -121,10 +123,6 @@ function SummaryPage({ t }) {
       </div>
 
       <div className="print-contact">
-        <div>
-          <p className="print-contact-eyebrow">{t(portfolio.contact.eyebrow)}</p>
-          <h2 className="print-contact-title">{t(portfolio.contact.title)}</h2>
-        </div>
         <div className="print-contact-lines">
           <a href={`mailto:${portfolio.contact.email}`}>{portfolio.contact.email}</a>
           <a href={portfolio.contact.github}>{portfolio.contact.github}</a>

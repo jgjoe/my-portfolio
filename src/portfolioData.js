@@ -17,8 +17,9 @@ export const portfolio = {
   },
   hero: {
     eyebrow: ["BACKEND", "DATA ENGINEERING", "SOFTWARE QUALITY"],
-    title: { ko: "백엔드 API와 데이터\n파이프라인을 만듭니다", en: "I build backend APIs and data pipelines" },
-    summary: { ko: "차량 서비스의 API와 DB를 설계하고 서울 공공자전거 대여 기록 2억 4천만 건을 처리하는 파이프라인을 만든 신입 개발자입니다.", en: "A new-graduate developer who designed the APIs and database of a vehicle service and built a pipeline for 240 million Seoul bike rental records." },
+    title: { ko: "업무 시스템의 API와\n데이터 흐름을 만듭니다", en: "I build APIs and data flows\nfor business systems" },
+    summary: { ko: "Spring Boot로 차량 API와 실시간 알림을 구현하고, 주문 조회의 실행계획을 비교해 인덱스를 골랐습니다. 서울 공공자전거 대여 기록 약 2억 4천만 행을 정제하고 원본과 처리 결과를 대조한 신입 개발자입니다.", en: "A new-graduate developer who built vehicle APIs and real-time alerts with Spring Boot, selected indexes by comparing query plans, and reconciled cleaned data with about 240 million Seoul bike rental source rows." },
+    approach: { ko: "AI 코딩 도구를 활용하되 요구사항과 검증 기준을 먼저 정하고, 확인한 결과를 바탕으로 변경을 채택합니다.", en: "I use AI coding tools, define requirements and validation criteria first, and adopt changes based on checked results." },
     profileRole: "Backend & Data Engineer",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
@@ -28,60 +29,395 @@ export const portfolio = {
       { kind: "list", label: { ko: "어학", en: "Language" }, items: ["OPIc IH", "TOEIC 765"] },
     ],
   },
-  proof: { title: { ko: "핵심 성과", en: "Key outcomes" }, items: [
-    { kicker: { ko: "대용량 데이터 처리", en: "LARGE-SCALE DATA" }, value: { ko: "대용량 데이터도 검증합니다", en: "I verify data even at scale" }, label: { ko: "서울 공공자전거 대여 기록 2억 4천만 건을 다루며 원본이 바뀐 달만 다시 처리하고, 처리 결과와 원본의 건수를 대조했습니다.", en: "Processed 240 million Seoul public bike rental records, reprocessing only months whose source changed and reconciling record counts with the source." }, project: { ko: "서울 공공자전거", en: "Seoul Bike" }, target: "project-seoul-bike", projectAria: { ko: "서울 공공자전거 데이터 파이프라인 프로젝트로 이동", en: "Jump to the Seoul Public Bike data pipeline project" } },
-    { kicker: { ko: "AI 서비스 설계", en: "AI SERVICE DESIGN" }, value: { ko: "AI 답변에 근거를 담습니다", en: "I ground AI answers in shared results" }, label: { ko: "업무 기록 분석 도구에서 AI가 숫자를 직접 계산하지 않고, 화면과 같은 계산 결과를 바탕으로 답하도록 설계했습니다.", en: "In a workflow-log analysis tool, the AI does not calculate numbers itself; it answers from the same calculation results shown on screen." }, project: "TraceVerity", target: "project-traceverity", projectAria: { ko: "TraceVerity 프로젝트로 이동", en: "Jump to the TraceVerity project" } },
-    { kicker: { ko: "출시와 품질 관리", en: "SHIPPING AND QUALITY" }, value: { ko: "출시 후에도 개선합니다", en: "I keep improving after launch" }, label: { ko: "유통기한 인식 앱을 스토어에 출시한 뒤, 다음 버전의 인식 오류를 배포 전에 찾아 날짜 확인 단계를 추가하고 재출시했습니다.", en: "After launching an expiry-date reading app on the store, I caught recognition errors in the next version before release, added a date confirmation step, and re-released it." }, project: { ko: "오늘도 신선", en: "Fridge D-Day" }, target: "project-today-fresh", projectAria: { ko: "오늘도 신선 프로젝트로 이동", en: "Jump to the Fridge D-Day project" } },
-  ] },
+  proof: {
+    "title": {
+      "ko": "핵심 성과",
+      "en": "Key outcomes"
+    },
+    "items": [
+      {
+        "kicker": {
+          "ko": "백엔드 구현",
+          "en": "BACKEND DEVELOPMENT"
+        },
+        "value": {
+          "ko": "API와 실시간 알림",
+          "en": "APIs and real-time alerts"
+        },
+        "label": {
+          "ko": "6인 팀에서 차량 관련 5개 도메인의 API와 DB 모델, SSE 알림을 맡고 앱·장치 연동 규격을 공유했습니다.",
+          "en": "Owned APIs, DB models, and SSE alerts for five vehicle-related domains in a team of six, and shared app/device contracts."
+        },
+        "project": {
+          "ko": "길동이",
+          "en": "GildongE"
+        },
+        "target": "project-gildong",
+        "projectAria": {
+          "ko": "길동이 백엔드 프로젝트로 이동",
+          "en": "Jump to the GildongE backend project"
+        }
+      },
+      {
+        "kicker": {
+          "ko": "SQL 검증과 판단",
+          "en": "SQL VALIDATION"
+        },
+        "value": {
+          "ko": "읽기량으로 고른 인덱스",
+          "en": "Indexes chosen by read cost"
+        },
+        "label": {
+          "ko": "로컬 Oracle의 생성 주문 60만 건에서 상세 조회 논리 읽기 6,285에서 14를 검증하고 두 조회를 고려해 인덱스를 골랐습니다.",
+          "en": "Verified order-detail logical reads from 6,285 to 14 on 600K generated local Oracle orders; selected indexes for both queries."
+        },
+        "project": "Build Your Health",
+        "target": "project-build-health",
+        "projectAria": {
+          "ko": "주문 시스템 SQL 검증 프로젝트로 이동",
+          "en": "Jump to order-system SQL validation"
+        }
+      },
+      {
+        "kicker": {
+          "ko": "대용량 데이터 처리",
+          "en": "LARGE-SCALE DATA"
+        },
+        "value": {
+          "ko": "대용량 데이터도 검증합니다",
+          "en": "I verify data even at scale"
+        },
+        "label": {
+          "ko": "서울 공공자전거 대여 기록 2억 4천만 건을 다루며 원본이 바뀐 달만 다시 처리하고, 처리 결과와 원본의 건수를 대조했습니다.",
+          "en": "Processed 240 million Seoul public bike rental records, reprocessing only months whose source changed and reconciling record counts with the source."
+        },
+        "project": {
+          "ko": "서울 공공자전거",
+          "en": "Seoul Bike"
+        },
+        "target": "project-seoul-bike",
+        "projectAria": {
+          "ko": "서울 공공자전거 데이터 파이프라인 프로젝트로 이동",
+          "en": "Jump to the Seoul Public Bike data pipeline project"
+        }
+      }
+    ]
+  },
   projects: {
-    eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "구현하고 검증한 대표 프로젝트", en: "Selected projects I built and verified" },
-    copy: { ko: "개인 프로젝트는 혼자 기획하고 구현했고 6인 팀 프로젝트에서는 백엔드와 DB를 맡았습니다.", en: "I planned and built the solo projects on my own, and owned the backend and database in a six-person team project." },
+    eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "개발과 검증의 핵심 경험", en: "Selected development and validation work" },
+    copy: { ko: "팀 프로젝트에서는 차량 도메인 백엔드를 맡았습니다. 개인 프로젝트는 AI 코딩 도구와 함께 구현하며 요구사항, 검증 기준과 변경 채택을 판단했습니다.", en: "I owned the vehicle-domain backend in a team project. For personal projects, I worked with AI coding tools and made decisions on requirements, validation criteria, and which changes to adopt." },
     featured: [
       {
-        anchor: "project-traceverity", title: "TraceVerity", titleLines: ["TraceVerity"], subtitle: { ko: "업무 처리 기록 분석 도구", en: "Process Intelligence Workbench" }, type: [{ ko: "개인", en: "Personal" }, { ko: "프로세스 분석", en: "Process Intelligence" }], period: "2026.09",
-        lead: { ko: "기업 시스템에 쌓이는 업무 처리 기록을 읽어, 업무가 실제로 어떤 순서로 흐르고 어디서 반복되는지 보여 주는 분석 도구입니다. 기록 파일을 브라우저에 올리면 바로 분석합니다.", en: "An analysis tool that reads work records from business systems to show the order work actually follows and where it repeats. Upload a log file in the browser and it is analyzed right away." },
-        tech: ["Python", "DuckDB", "FastAPI", "React", "Power BI", "MCP"],
-        visibleDetailIndexes: [0, 1],
+        anchor: "project-gildong", title: "길동이 AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: [{ ko: "6인 팀", en: "Team of 6" }, { ko: "백엔드 / DB 담당", en: "Backend / DB owner" }], period: "2025.03 — 2025.06",
+        lead: { ko: "졸음 감지 장치와 모바일 앱 등에서 들어오는 차량 데이터를 사용자 단위로 관리하는 AI 차량 어시스턴트 백엔드입니다.", en: "The backend for an AI vehicle assistant that manages per-user vehicle data from sources such as a drowsiness-detection device and mobile app." },
+        tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
+        visibleDetailIndexes: [1, 3],
         details: [
-          { label: { ko: "문제", en: "Problem" }, copy: { ko: "웹 화면과 AI가 지표를 따로 계산하면 같은 데이터에서도 결과가 달라질 수 있습니다. 그래서 계산 기준을 한 곳에 두는 구조부터 만들었습니다.", en: "When the web view and AI compute metrics separately, the same data yields different numbers, so I started with one place that owns the calculation." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "기록 파일을 올리고 형식을 검사하는 기능을 만들고, 웹 화면과 AI 질의응답이 모두 Python/DuckDB로 만든 하나의 계산 모듈 결과만 쓰도록 연결했습니다.", en: "I built log upload and format checks, then connected the web view and AI question answering so both use only the results of one Python/DuckDB calculation module." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "핵심 지표는 Python/DuckDB Core에서 한 번만 계산하고 웹과 AI는 그 결과만 읽도록 설계했습니다.", en: "Core process metrics are calculated once in the Python/DuckDB Core, while the web and AI layers only consume those results." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "두 실제 데이터셋에서 회귀, UI, Agent/MCP 검증을 통과했고 결과 불일치는 0건이었습니다.", en: "Across two real datasets, regression, UI, and Agent/MCP checks passed with zero result mismatches." } },
+          { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
+          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "6인 팀에서 차량 관련 5개 도메인의 Spring Boot API와 MongoDB 모델을 담당했습니다. MongoDB 변경 감지와 SSE를 연결해 사용자별 여러 기기에 알림을 보내고 종료된 연결을 정리했습니다.", en: "In a team of six, I owned Spring Boot APIs and MongoDB models for five vehicle-related domains. I connected MongoDB change detection to SSE for multiple devices per user and cleaned up closed connections." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "장치와 기능마다 데이터 형태가 달라 5개 도메인으로 분리하고 MongoDB 문서 모델로 구조화했습니다.", en: "Because data shapes differed by device and feature, I split the backend into five domains and structured them as MongoDB documents." } },
+          { label: { ko: "팀 연동", en: "Team integration" }, copy: { ko: "장치와 앱 담당자가 같은 규격으로 연동할 수 있도록 요청·응답 스키마와 오류 응답을 OpenAPI로 문서화했습니다. 사용자별 주간 평균 집계와 카카오 사용자 조회·등록도 구현했습니다.", en: "I documented request/response schemas and errors with OpenAPI for device and app integration, and implemented per-user weekly aggregation plus Kakao user lookup and registration." } },
         ],
-        results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with one calculation rule" } }, { value: { ko: "190건 통과", en: "190 passed" }, label: { ko: "기존 기능 정상 동작 테스트", en: "tests that existing features still work" } }, { value: { ko: "AI 권한 제한", en: "Limited AI access" }, label: { ko: "계산 결과 조회만 허용", en: "may only read computed results" } }],
+        results: [{ value: { ko: "5개 도메인", en: "5 domains" }, label: { ko: "API·DB 모델 설계", en: "API and DB model design" } }, { value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "학회 논문 공저", en: "Conference paper co-author" }, label: { ko: "한국정보기술학회", en: "KIIT" } }],
         evidenceNotes: [
-          { label: { ko: "검증 대상", en: "What was checked" }, copy: { ko: "케이스 수, 이벤트 수, 주요 흐름, 단계 간 이동, 재작업 집계를 두 실제 이벤트 로그에서 독립 재계산해 Core 결과와 대조했습니다.", en: "Case counts, event counts, major paths, direct transitions, and rework aggregates were independently re-derived on two real event logs and compared with Core results." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "Python 회귀 테스트 190/190과 Direct/MCP 비교 22/22를 통과했고 결과 불일치는 0건이었습니다.", en: "Python regression passed 190/190 and Direct/MCP comparisons passed 22/22 with zero result mismatches." } },        ],
-        architecture: {
-          variant: "hub",
-          title: { ko: "하나의 공통 계산 기준", en: "One shared calculation path" },
-          sources: ["BPI Challenge 2012 XES", "Help Desk CSV", { ko: "로컬 CSV/XES 가져오기", en: "Local CSV/XES import" }],
-          hub: { name: "Python / DuckDB Core", copy: { ko: "핵심 프로세스 지표를 한 곳에서 계산", en: "calculates core process metrics once" } },
-          spokes: [
-            { name: { ko: "브라우저 가져오기", en: "Browser import" }, copy: { ko: "필드 매핑과 형식 검증", en: "field mapping and validation" } },
-            { name: "FastAPI / React", copy: { ko: "같은 결과를 웹에 표시", en: "shows the same results on the web" } },
-            { name: "Agent / MCP", copy: { ko: "검증된 분석 결과만 사용", en: "uses validated analysis results" } },
-            { name: "BPIC12 Power BI", copy: { ko: "별도 분석 화면", en: "separate analysis view" } },
-          ],
-          note: { ko: "핵심 계산은 Core가 담당하고 웹과 AI는 검증된 결과를 소비합니다.", en: "The Core owns metric calculation; the web and AI layers consume the verified results." },
+          { label: { ko: "개인 구현 범위", en: "My implementation scope" }, copy: { ko: "차량 관련 5개 도메인 REST API와 MongoDB 모델, 사용자별 주간 평균 집계, 카카오 사용자 흐름을 구현했습니다.", en: "I implemented REST APIs and MongoDB models across five vehicle-related domains, per-user weekly aggregates, and Kakao user flows." } },
+          { label: { ko: "팀 연동 기준", en: "Team integration" }, copy: { ko: "프론트와 장치가 맞춰 쓰도록 요청, 응답 스키마와 오류 응답을 OpenAPI 3.0 문서로 고정했습니다.", en: "Request/response schemas and error responses were fixed in OpenAPI 3.0 so frontend and device work could integrate against one contract." } },        ],
+        evidenceButtonLabel: { ko: "구현 범위와 연동 기준", en: "Implementation scope & integration" },
+        evidenceTitle: { ko: "구현 범위와 연동 기준", en: "Implementation scope & integration" },
+        links: [{ href: "https://github.com/jgjoe/gildonge-backend", label: { ko: "GitHub (백엔드)", en: "GitHub (backend)" } }],
+        media: { type: "poster", src: "/gildongE_poster.jpg", alt: { ko: "길동이 프로젝트 포스터", en: "GildongE project poster" } },
+      },
+      {
+        "anchor": "project-build-health",
+        "title": "Build Your Health",
+        "subtitle": {
+          "ko": "웹 주문 시스템 재구축과 SQL 인덱스 검증",
+          "en": "Order-system rebuild and SQL index validation"
         },
-        links: [{ href: "https://github.com/jgjoe/traceverity", label: "GitHub" }, { href: "https://github.com/jgjoe/traceverity/blob/main/evidence/public-verification-summary.json", label: { ko: "검증 요약", en: "Verification summary" } }, { href: "https://github.com/jgjoe/traceverity/blob/main/docs/ARCHITECTURE.md", label: { ko: "아키텍처", en: "Architecture" } }, { href: "https://github.com/jgjoe/traceverity/blob/main/docs/REPRODUCTION.md", label: { ko: "재현 가이드", en: "Reproduction guide" } }],
-        media: { type: "browser-gallery", host: "TraceVerity / local", label: { ko: "TraceVerity 대표 화면 선택", en: "Choose a TraceVerity view" }, images: [
-          { src: "/traceverity-import.png", tab: { ko: "가져오기", en: "Import" }, alt: { ko: "TraceVerity 이벤트 로그 가져오기와 핵심 요약 화면", en: "TraceVerity event-log import and core summary" }, caption: { ko: "CSV/XES 파일을 가져와 검증한 뒤 같은 화면에서 핵심 지표를 확인합니다.", en: "Import and validate CSV/XES files, then review core metrics in the same workspace." } },
-          { src: "/traceverity-variants.png", tab: { ko: "프로세스 흐름", en: "Process flow" }, alt: { ko: "TraceVerity 주요 프로세스 흐름과 직접 전이 분석 화면", en: "TraceVerity process variants and direct-follow transitions" }, caption: { ko: "주요 업무 흐름과 단계 간 이동을 실제 데이터에서 비교합니다.", en: "Compare major process paths and direct transitions from real event data." } },
-          { src: "/traceverity-activity.png", tab: { ko: "활동 / 재작업", en: "Activity & rework" }, alt: { ko: "TraceVerity 활동별 재작업과 개별 케이스 조회 화면", en: "TraceVerity activity rework and case-trace lookup" }, caption: { ko: "활동별 재작업 수와 개별 케이스 흐름을 확인할 수 있습니다.", en: "Inspect rework by activity and drill into an individual case trace." } },
-        ] },
+        "type": [
+          {
+            "ko": "개인",
+            "en": "Personal"
+          },
+          {
+            "ko": "측정 설계 / SQL 검증",
+            "en": "Measurement design / SQL validation"
+          }
+        ],
+        "period": {
+          "ko": "2024 원본 / 2026.10 재구축",
+          "en": "2024 original / Oct 2026 rebuild"
+        },
+        "lead": {
+          "ko": "JSP와 MySQL로 만든 웹 주문 시스템을 Spring Boot·MyBatis·Oracle로 옮기는 과정에서, 조회 쿼리와 인덱스 후보를 같은 기준으로 비교했습니다.",
+          "en": "During a rebuild from JSP/MySQL to Spring Boot, MyBatis, and Oracle, I compared query and index candidates under fixed criteria."
+        },
+        "tech": [
+          "Java 17",
+          "Spring Boot",
+          "MyBatis",
+          "Oracle",
+          "SQL",
+          "Docker"
+        ],
+        "visibleDetailIndexes": [
+          0,
+          1
+        ],
+        "details": [
+          {
+            "label": {
+              "ko": "본인 역할",
+              "en": "My role"
+            },
+            "copy": {
+              "ko": "AI 코딩 도구로 진행한 재구축에서 측정할 쿼리·데이터 분포·인덱스 후보와 반복 조건을 먼저 정했습니다. 테스트 기준 고정, 검증, 실행계획 해석과 채택 결정을 맡았습니다.",
+              "en": "For the AI-assisted rebuild, I defined queries, data distribution, index candidates, and repeated-run conditions first. My role was fixing test criteria, validating results, interpreting plans, and selecting indexes."
+            }
+          },
+          {
+            "label": {
+              "ko": "핵심 판단",
+              "en": "Key decision"
+            },
+            "copy": {
+              "ko": "주문 상세 조회의 외래 키 인덱스 누락을 확인했습니다. 회원별 조회에서는 복합 인덱스의 컬럼 순서와 정렬 여부를 비교해 두 조회에 함께 쓸 인덱스를 골랐고, 건수 조회에 조금 유리한 단일 인덱스는 중복돼 추가하지 않았습니다.",
+              "en": "I identified a missing foreign-key index in order-detail queries. For per-user queries, I compared composite-column order and sorting, selected one index for both queries, and omitted a slightly better count-only index because it was redundant."
+            }
+          },
+          {
+            "label": {
+              "ko": "측정 결과",
+              "en": "Measured result"
+            },
+            "copy": {
+              "ko": "로컬 Oracle에 생성한 주문 60만 건에서 상세 조회의 논리 블록 읽기, 즉 쿼리가 읽는 DB 블록 수가 6,285에서 14로 줄었습니다. 채택한 인덱스 2개의 앱 스키마 반영과 자동 적용도 확인했습니다.",
+              "en": "On 600,000 generated orders in local Oracle, logical block reads—the database blocks read by the query—fell from 6,285 to 14 for order details. I also checked schema integration and automatic application of the two selected indexes."
+            }
+          },
+          {
+            "label": {
+              "ko": "검증 조건",
+              "en": "Validation conditions"
+            },
+            "copy": {
+              "ko": "고정 시드 데이터로 쿼리 3종과 인덱스 후보 5개를 비교했습니다. 워밍업 5회 뒤 30회씩 두 회차를 측정한 웜 캐시 시험에서 논리 읽기와 실행계획은 두 회차가 같았습니다. 회차 간 편차가 있는 ms 수치 대신 이 근거로 선정했습니다.",
+              "en": "I compared three queries and five index candidates on fixed-seed data. Warm-cache runs used five warmups and 30 measurements in each of two rounds; logical reads and plans matched between rounds. These were the selection evidence instead of variable millisecond measurements."
+            }
+          }
+        ],
+        "results": [
+          {
+            "value": "6,285 → 14",
+            "label": {
+              "ko": "로컬 Oracle / 생성 주문 60만 건의 상세 조회 논리 블록 읽기",
+              "en": "Order-detail logical reads / local Oracle, 600K generated orders"
+            }
+          },
+          {
+            "value": {
+              "ko": "인덱스 2개 채택",
+              "en": "2 indexes selected"
+            },
+            "label": {
+              "ko": "두 조회를 함께 고려한 선정",
+              "en": "Selected for both query needs"
+            }
+          },
+          {
+            "value": {
+              "ko": "실행계획 비교",
+              "en": "Plan comparison"
+            },
+            "label": {
+              "ko": "외래 키와 복합 컬럼 순서 검증",
+              "en": "Foreign key and composite-column order"
+            }
+          }
+        ],
+        "evidenceNotes": [
+          {
+            "label": {
+              "ko": "측정 범위",
+              "en": "Measurement scope"
+            },
+            "copy": {
+              "ko": "결과는 로컬 Oracle의 생성 데이터와 지정 쿼리 범위입니다. 앱 API 응답시간이나 운영 DB 성능으로 확대하지 않습니다.",
+              "en": "Results cover designated queries and generated data in local Oracle, not app API latency or production-database performance."
+            }
+          },
+          {
+            "label": {
+              "ko": "채택 근거",
+              "en": "Selection evidence"
+            },
+            "copy": {
+              "ko": "원본 측정 CSV, 35케이스의 실행계획과 인덱스 적용 마이그레이션을 공개 저장소에서 확인할 수 있습니다.",
+              "en": "Raw measurement CSVs, execution plans for 35 cases, and the index migration are available in the public repository."
+            }
+          }
+        ],
+        "links": [
+          {
+            "href": "https://github.com/jgjoe/build-your-health",
+            "label": "GitHub"
+          },
+          {
+            "href": "https://github.com/jgjoe/build-your-health/blob/main/docs/db-tuning.md",
+            "label": {
+              "ko": "측정 설계와 선정 근거",
+              "en": "Measurement and selection criteria"
+            }
+          },
+          {
+            "href": "https://github.com/jgjoe/build-your-health/tree/main/remake/perf/results",
+            "label": {
+              "ko": "측정 원자료와 실행계획",
+              "en": "Raw results and query plans"
+            }
+          }
+        ],
+        "architecture": {
+          "variant": "decision",
+          "title": {
+            "ko": "측정으로 고른 조회 인덱스",
+            "en": "Choosing query indexes from measurements"
+          },
+          "sources": [
+            "Oracle",
+            {
+              "ko": "생성 주문 60만 건",
+              "en": "600K generated orders"
+            }
+          ],
+          "stages": [
+            {
+              "name": {
+                "ko": "기준 고정",
+                "en": "Fix criteria"
+              },
+              "copy": {
+                "ko": "쿼리 3종 / 후보 5개",
+                "en": "3 queries / 5 candidates"
+              }
+            },
+            {
+              "name": {
+                "ko": "계획과 읽기량 비교",
+                "en": "Compare plans and reads"
+              },
+              "copy": {
+                "ko": "외래 키와 컬럼 순서",
+                "en": "Foreign key and column order"
+              }
+            }
+          ],
+          "decision": {
+            "label": {
+              "ko": "인덱스 선정",
+              "en": "Index selection"
+            },
+            "result": {
+              "ko": "두 조회에 쓸 복합 인덱스",
+              "en": "Composite index for both queries"
+            },
+            "action": {
+              "ko": "중복 단일 인덱스는 제외",
+              "en": "Omit the redundant single-column index"
+            }
+          },
+          "note": {
+            "ko": "상세 조회의 외래 키 인덱스와 회원별 조회의 복합 인덱스 2개를 앱 스키마에 반영했습니다.",
+            "en": "The order-detail foreign-key index and per-user composite index were integrated into the app schema."
+          }
+        },
+        "media": {
+          "type": "data-flow",
+          "label": {
+            "ko": "SQL 검증과 반영 흐름",
+            "en": "SQL validation and integration"
+          },
+          "sources": [
+            "Oracle",
+            {
+              "ko": "생성 주문 60만 건",
+              "en": "600K generated orders"
+            }
+          ],
+          "steps": [
+            {
+              "name": {
+                "ko": "측정 범위 고정",
+                "en": "Fix scope"
+              },
+              "copy": {
+                "ko": "쿼리 3종과 인덱스 후보 5개",
+                "en": "3 queries and 5 index candidates"
+              }
+            },
+            {
+              "name": {
+                "ko": "실행계획과 읽기량 대조",
+                "en": "Compare plans and reads"
+              },
+              "copy": {
+                "ko": "외래 키, 컬럼 순서와 정렬 확인",
+                "en": "Check foreign keys, column order, sorting"
+              }
+            },
+            {
+              "name": {
+                "ko": "선정과 반영 확인",
+                "en": "Select and verify integration"
+              },
+              "copy": {
+                "ko": "2개 채택, 중복 후보 제외",
+                "en": "Adopt 2; omit a redundant candidate"
+              }
+            }
+          ],
+          "callouts": [
+            {
+              "value": "6,285 → 14",
+              "label": {
+                "ko": "상세 조회 논리 읽기",
+                "en": "Order-detail logical reads"
+              }
+            },
+            {
+              "value": {
+                "ko": "2개",
+                "en": "2"
+              },
+              "label": {
+                "ko": "채택 인덱스",
+                "en": "Selected indexes"
+              }
+            },
+            {
+              "value": "Oracle",
+              "label": {
+                "ko": "로컬 생성 데이터 시험",
+                "en": "Local generated-data test"
+              }
+            }
+          ],
+          "caption": {
+            "ko": "측정 설계·검증·해석·채택이 본인 기여이며, 쿼리 측정과 서비스 성능은 구분합니다.",
+            "en": "My contribution is measurement design, validation, interpretation, and selection; query measurements are distinct from service performance."
+          }
+        }
       },
       {
         anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 엔지니어링", en: "Data Engineering" }], period: "2026.09",
         lead: { ko: "서울 공공자전거 대여 기록 78개월, 2억 4천만 건을 정제해 분석용 데이터로 만드는 배치 파이프라인입니다.", en: "A batch pipeline that cleans 240 million Seoul Public Bike rental records across 78 months into analytical datasets." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
-        visibleDetailIndexes: [0, 1],
+        visibleDetailIndexes: [1, 2],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "서울시가 이미 올린 월별 파일을 나중에 고치기도 하고 대여소 정보는 시점별로만 제공돼서 무엇이 바뀌었는지 추적해 바뀐 달만 다시 처리해야 했습니다.", en: "The city sometimes revises monthly files it has already published, and station data is only available as point-in-time snapshots, so the pipeline had to track what changed and rebuild only those months." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "파일마다 버전과 해시를 기록해 바뀐 파일을 찾고, 품질 검사와 문제 데이터 분리, 분석용 집계 테이블까지 하나의 파이프라인으로 만들었습니다.", en: "I recorded a version and hash for every file to detect changes, then built quality checks, problem-data isolation, and analytical tables into one pipeline." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "원천이 바뀌면 해당 월만 재처리하고, 키 충돌 데이터는 분석 대상에서 분리했습니다. Airflow에 재처리와 재시도를 맡겼습니다.", en: "When a source changes, the pipeline rebuilds only that month and isolates key conflicts from analytical data. Airflow handles reprocessing and retries." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "78개월 2억 4,135만 행을 처리하고 품질 문제 29,666행을 별도로 분리했으며 대표 집계와 회귀 테스트 결과를 확인했습니다.", en: "Processed about 241.35M rows across 78 months, isolated 29,666 quality-issue rows, and verified representative aggregates and regression checks." } },
+          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "파일 버전과 해시로 원천 변경을 추적하고, 품질 검사에서 걸린 행을 분리했습니다. 정상 행과 문제 행의 합계가 원본과 일치하는지 대조한 뒤 분석용 집계에 연결했습니다.", en: "I tracked source changes with file versions and hashes, separated rows failing quality checks, and reconciled accepted plus quarantined counts with the source before downstream aggregation." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "바뀐 월이나 실패한 월만 다시 처리하고 검증을 마친 이전 결과는 보존했습니다. CLI와 Airflow가 같은 Python 처리 로직을 호출하도록 구성했습니다.", en: "I reprocessed only changed or failed months while preserving earlier verified results. The CLI and Airflow call the same Python processing logic." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "원천부터 정제까지 78개월 241,350,472행을 처리했습니다. 정상 241,320,806행과 문제 29,666행의 합계가 원본 건수와 일치했고 대표 월의 분석용 집계도 대조했습니다.", en: "Source-to-clean processing covered 78 months and 241,350,472 rows. The accepted 241,320,806 rows plus 29,666 quarantined rows matched the source count, and representative monthly aggregates were also checked." } },
         ],
         results: [{ value: { ko: "2억 4천만 건", en: "240M records" }, label: { ko: "원본부터 정제까지 처리", en: "processed from source to cleaned data" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "건수 일치", en: "Exact counts" }, label: { ko: "원본 = 정상 처리 + 문제 데이터", en: "source = clean + quarantined" } }],
         evidenceNotes: [
@@ -107,10 +443,45 @@ export const portfolio = {
         },
       },
       {
+        anchor: "project-traceverity", title: "TraceVerity", titleLines: ["TraceVerity"], subtitle: { ko: "업무 처리 기록 분석 도구", en: "Process Intelligence Workbench" }, type: [{ ko: "개인", en: "Personal" }, { ko: "프로세스 분석", en: "Process Intelligence" }], period: "2026.09",
+        lead: { ko: "기업 시스템에 쌓이는 업무 처리 기록을 읽어, 업무가 실제로 어떤 순서로 흐르고 어디서 반복되는지 보여 주는 분석 도구입니다. 기록 파일을 브라우저에 올리면 바로 분석합니다.", en: "An analysis tool that reads work records from business systems to show the order work actually follows and where it repeats. Upload a log file in the browser and it is analyzed right away." },
+        tech: ["Python", "DuckDB", "FastAPI", "React", "Power BI", "MCP"],
+        visibleDetailIndexes: [1, 2],
+        details: [
+          { label: { ko: "문제", en: "Problem" }, copy: { ko: "웹 화면과 AI가 지표를 따로 계산하면 같은 데이터에서도 결과가 달라질 수 있습니다. 그래서 계산 기준을 한 곳에 두는 구조부터 만들었습니다.", en: "When the web view and AI compute metrics separately, the same data yields different numbers, so I started with one place that owns the calculation." } },
+          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "업무 로그의 형식을 검사하고 핵심 지표를 하나의 계산 모듈에서 만들었습니다. 웹과 AI 질의응답이 같은 결과를 읽도록 연결했습니다.", en: "I validated uploaded log formats, calculated core metrics in one module, and connected the web and AI interfaces to the same results." } },
+          { label: { ko: "판단", en: "Decision" }, copy: { ko: "AI에는 정해진 계산 결과를 조회하는 도구만 제공했습니다. SQL 실행이나 파일·네트워크 접근, 쓰기 권한은 열지 않아 계산과 답변의 역할을 나눴습니다.", en: "I gave the AI only predefined tools for reading computed results, without direct SQL, filesystem, network, or write access, separating calculation from answering." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "두 실제 업무 데이터셋에서 Direct/MCP 연결 방식의 22개 비교 항목이 일치했습니다. 원본과 계산 규칙 검증에 실패하면 분석을 멈춥니다.", en: "All 22 Direct/MCP comparison checks matched across two real workflow datasets. Analysis stops when source or calculation-rule validation fails." } },
+        ],
+        results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with one calculation rule" } }, { value: { ko: "22개 항목 일치", en: "22 matching checks" }, label: { ko: "두 데이터셋의 Direct/MCP 비교", en: "Direct/MCP comparisons on two datasets" } }, { value: { ko: "AI 권한 제한", en: "Limited AI access" }, label: { ko: "계산 결과 조회만 허용", en: "may only read computed results" } }],
+        evidenceNotes: [
+          { label: { ko: "검증 대상", en: "What was checked" }, copy: { ko: "케이스 수, 이벤트 수, 주요 흐름, 단계 간 이동, 재작업 집계를 두 실제 이벤트 로그에서 독립 재계산해 Core 결과와 대조했습니다.", en: "Case counts, event counts, major paths, direct transitions, and rework aggregates were independently re-derived on two real event logs and compared with Core results." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "정본 독립 회귀 190/190과 공개 저장소 회귀 168/168은 서로 다른 검증 범위입니다. 두 데이터셋의 Direct/MCP 비교는 22/22 일치했으며 이 범위를 AI 전체의 정확성으로 확대하지 않습니다.", en: "Canonical independent regression passed 190/190 and public-repository regression passed 168/168 in separate scopes. Direct/MCP comparison passed 22/22 across two datasets; this does not establish universal AI accuracy." } },        ],
+        architecture: {
+          variant: "hub",
+          title: { ko: "하나의 공통 계산 기준", en: "One shared calculation path" },
+          sources: ["BPI Challenge 2012 XES", "Help Desk CSV", { ko: "로컬 CSV/XES 가져오기", en: "Local CSV/XES import" }],
+          hub: { name: "Python / DuckDB Core", copy: { ko: "핵심 프로세스 지표를 한 곳에서 계산", en: "calculates core process metrics once" } },
+          spokes: [
+            { name: { ko: "브라우저 가져오기", en: "Browser import" }, copy: { ko: "필드 매핑과 형식 검증", en: "field mapping and validation" } },
+            { name: "FastAPI / React", copy: { ko: "같은 결과를 웹에 표시", en: "shows the same results on the web" } },
+            { name: "Agent / MCP", copy: { ko: "검증된 분석 결과만 사용", en: "uses validated analysis results" } },
+            { name: "BPIC12 Power BI", copy: { ko: "별도 분석 화면", en: "separate analysis view" } },
+          ],
+          note: { ko: "핵심 계산은 Core가 담당하고 웹과 AI는 검증된 결과를 소비합니다.", en: "The Core owns metric calculation; the web and AI layers consume the verified results." },
+        },
+        links: [{ href: "https://github.com/jgjoe/traceverity", label: "GitHub" }, { href: "https://github.com/jgjoe/traceverity/blob/main/evidence/public-verification-summary.json", label: { ko: "검증 요약", en: "Verification summary" } }, { href: "https://github.com/jgjoe/traceverity/blob/main/docs/ARCHITECTURE.md", label: { ko: "아키텍처", en: "Architecture" } }, { href: "https://github.com/jgjoe/traceverity/blob/main/docs/REPRODUCTION.md", label: { ko: "재현 가이드", en: "Reproduction guide" } }],
+        media: { type: "browser-gallery", host: "TraceVerity / local", label: { ko: "TraceVerity 대표 화면 선택", en: "Choose a TraceVerity view" }, images: [
+          { src: "/traceverity-import.png", tab: { ko: "가져오기", en: "Import" }, alt: { ko: "TraceVerity 이벤트 로그 가져오기와 핵심 요약 화면", en: "TraceVerity event-log import and core summary" }, caption: { ko: "CSV/XES 파일을 가져와 검증한 뒤 같은 화면에서 핵심 지표를 확인합니다.", en: "Import and validate CSV/XES files, then review core metrics in the same workspace." } },
+          { src: "/traceverity-variants.png", tab: { ko: "프로세스 흐름", en: "Process flow" }, alt: { ko: "TraceVerity 주요 프로세스 흐름과 직접 전이 분석 화면", en: "TraceVerity process variants and direct-follow transitions" }, caption: { ko: "주요 업무 흐름과 단계 간 이동을 실제 데이터에서 비교합니다.", en: "Compare major process paths and direct transitions from real event data." } },
+          { src: "/traceverity-activity.png", tab: { ko: "활동 / 재작업", en: "Activity & rework" }, alt: { ko: "TraceVerity 활동별 재작업과 개별 케이스 조회 화면", en: "TraceVerity activity rework and case-trace lookup" }, caption: { ko: "활동별 재작업 수와 개별 케이스 흐름을 확인할 수 있습니다.", en: "Inspect rework by activity and drill into an individual case trace." } },
+        ] },
+      },
+      {
         title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
         lead: { ko: "온통청년과 정부24의 공식 정책을 한 번에 검색하고, 찾은 정책을 근거로 AI가 답하는 서비스(RAG)입니다.", en: "A service that searches official policies from Youth Policy and Gov24 in one place and has AI answer from the policies it finds (RAG)." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
-        visibleDetailIndexes: [0, 1],
+        visibleDetailIndexes: [1, 2],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "1만 개가 넘는 정책이 두 사이트에 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "More than 10,000 policies were spread across two sites, and keyword search made relevant programs hard to find." } },
           { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "두 사이트의 정책 13,589개를 하나로 합치고, 뜻으로 찾는 검색에 키워드 일치 점수를 더한 방식을 같은 평가셋으로 비교해 정확도가 오른 경우에만 적용했습니다.", en: "I merged 13,589 policies from the two sites, compared meaning-based search with an added keyword-match score on the same evaluation set, and shipped it only where accuracy improved." } },
@@ -147,18 +518,20 @@ export const portfolio = {
         anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }], period: { ko: "2025.09 — 진행 중", en: "2025.09 — Present" },
         lead: { ko: "유통기한을 촬영하거나 입력해 식품을 등록하고 D-Day, 알림, 위젯으로 관리하는 Android 앱입니다.", en: "An Android app for registering expiry dates by camera or manual entry, then managing them with D-Day status, notifications, and a widget." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
-        visibleDetailIndexes: [0, 1],
+        visibleDetailIndexes: [2, 4],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "기존 앱은 유통기한을 손으로 입력해야 해 번거롭고, 사진을 서버로 보내는 방식은 개인정보 수집 부담이 있었습니다.", en: "Existing apps required tedious manual entry of expiry dates, and sending photos to a server raised personal-data concerns." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "사진에서 유통기한을 읽는 기기 내 문자인식(OCR)과 알림·위젯·백업/복원까지 혼자 완성했습니다.", en: "I built on-device text recognition (OCR) that reads expiry dates from photos, plus notifications, widgets, and backup/restore, on my own." } },
+          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "기기 내 문자인식과 알림·위젯·백업 및 복원 기능을 만들었습니다. 촬영 이미지와 식품 기록은 기기에 저장하고 앱 자체 인터넷 권한 없이 처리합니다.", en: "I built on-device recognition, notifications, widgets, and backup/restore. Photos and food records remain on the device, and the app itself has no internet permission." } },
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "이미지는 기기 안에서 처리하고 OCR 결과는 사용자가 확인한 뒤 저장하도록 최종 흐름을 정했습니다. 남은 인식 오류가 확인된 버전은 이 흐름을 적용한 뒤 재출시했습니다.", en: "Images stay on-device, and users confirm recognized dates before saving. I applied this flow after residual OCR errors were found, then re-released the app." } },
           { label: { ko: "품질 검증", en: "Quality gate" }, copy: { ko: "55장 고정 회귀셋과 Galaxy A32 실기기 테스트로 OCR 변경과 주요 기능의 퇴행을 확인했습니다.", en: "A fixed 55-image regression set and Galaxy A32 device tests checked OCR changes and key flows for regressions." } },
-          { label: { ko: "결과", en: "Outcome" }, copy: { ko: "사용성 확인에서 반복된 불편을 고치고 다시 확인한 뒤 ONEstore와 Google Play에 출시했습니다.", en: "After fixing and retesting repeated usability friction, I shipped it on ONEstore and Google Play." } },
+          { label: { ko: "결과", en: "Outcome" }, copy: { ko: "4명의 32개 과업 관찰에서 반복된 소비 완료 복구와 직접 입력 경로의 불편을 고쳤습니다. 문제를 겪은 2명이 네 수정 흐름을 재확인한 8개 관찰에서 모두 완료했고, ONEstore와 Google Play에 정식 출시했습니다.", en: "I fixed repeated friction in consumed-item recovery and manual entry found across 32 task observations with four people. Two affected users completed all eight retest observations of four corrected flows. The app was released on ONEstore and Google Play." } },
         ],
-        results: [{ value: "ONEstore", label: { ko: "공개 배포", en: "public release" } }, { value: "Google Play", label: { ko: "정식 출시", en: "production release" } }, { value: { ko: "사용성 확인 후 개선", en: "Usability-tested improvements" }, label: { ko: "4명의 32개 과업 수행을 관찰하고 반복된 불편을 수정한 뒤 재확인", en: "observed 4 people across 32 tasks, fixed repeated friction, and rechecked" } }],
+        results: [{ value: "ONEstore", label: { ko: "공개 배포", en: "public release" } }, { value: "Google Play", label: { ko: "정식 출시", en: "production release" } }, { value: { ko: "사용성 확인 후 개선", en: "Usability-tested improvements" }, label: { ko: "4명 관찰 후, 문제를 겪은 2명의 네 수정 흐름을 재확인", en: "4 initial participants; four corrected flows retested by 2 affected users" } }],
         evidenceNotes: [
           { label: { ko: "OCR 확인", en: "OCR check" }, copy: { ko: "서로 다른 한국 식품 라벨 55장을 고정 회귀셋으로 사용해 OCR 변경 전후의 퇴행을 확인했습니다.", en: "A fixed regression set of 55 different Korean food labels was used to check OCR changes for regressions." } },
-          { label: { ko: "출시 판단", en: "Release decision" }, copy: { ko: "남은 오답과 표본 공백 때문에 후보 출시를 보류했고, 저장 전 사용자 확인 단계를 추가한 뒤 재배포했습니다.", en: "Residual errors and coverage gaps triggered a release hold; I added confirm-before-save before re-releasing." } },        ],
+          { label: { ko: "출시 판단", en: "Release decision" }, copy: { ko: "남은 오답과 표본 공백 때문에 후보 출시를 보류했고, 저장 전 사용자 확인 단계를 추가한 뒤 재배포했습니다.", en: "Residual errors and coverage gaps triggered a release hold; I added confirm-before-save before re-releasing." } },
+          { label: { ko: "사용성 재확인", en: "Usability retest" }, copy: { ko: "초기 4명 × 8과업의 32개 관찰 후 결함을 겪은 2명이 네 수정 흐름을 재수행했습니다. 8개 관찰의 완료는 해당 수정 범위의 결과이며 전체 사용자 성공률이 아닙니다.", en: "After 32 observations from 4 people × 8 tasks, two affected users repeated four corrected flows. Completion of those eight observations applies to the fixes, not an overall user success rate." } },
+        ],
         links: [{ href: "https://m.onestore.co.kr/v2/ko-kr/app/0001003331", label: { ko: "ONEstore에서 보기", en: "View on ONEstore" } }, { href: "https://play.google.com/store/apps/details?id=app.fridgedday", label: { ko: "Google Play에서 보기", en: "View on Google Play" } }, { href: "https://github.com/jgjoe/fridge-d-day", label: "GitHub" }, { href: "https://github.com/jgjoe/fridge-d-day/blob/main/QA_RELEASE_RECORD.md", label: { ko: "QA와 릴리스 기록", en: "QA & release record" } }, { href: "https://github.com/jgjoe/fridge-d-day/blob/main/docs/qa/OCR_BENCHMARK.md", label: { ko: "OCR 벤치마크", en: "OCR benchmark" } }, { href: "https://github.com/jgjoe/fridge-d-day/blob/main/.github/workflows/android-ci.yml", label: { ko: "CI 설정", en: "CI workflow" } }],
         media: { type: "gallery", label: { ko: "오늘도 신선 v2 대표 화면", en: "Fridge D-Day v2 highlights" }, images: [
           { src: "/today-fresh-1.png", alt: { ko: "오늘도 신선 v2 Today 화면", en: "Fridge D-Day v2 Today screen" } },
@@ -166,32 +539,11 @@ export const portfolio = {
           { src: "/today-fresh-3.png", alt: { ko: "오늘도 신선 v2 Record 화면", en: "Fridge D-Day v2 Record screen" } },
         ] },
       },
-      {
-        title: "길동이 AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: [{ ko: "6인 팀", en: "Team of 6" }, { ko: "백엔드 / DB 담당", en: "Backend / DB owner" }], period: "2025.03 — 2025.06",
-        lead: { ko: "졸음 감지 장치와 모바일 앱 등에서 들어오는 차량 데이터를 사용자 단위로 관리하는 AI 차량 어시스턴트 백엔드입니다.", en: "The backend for an AI vehicle assistant that manages per-user vehicle data from sources such as a drowsiness-detection device and mobile app." },
-        tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
-        visibleDetailIndexes: [0, 1],
-        details: [
-          { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "Spring Boot로 차량, 차종, 소모품, 주행 패턴, 사용자 정보를 다루는 API와 MongoDB 데이터 모델을 만들었습니다. 서버가 앱으로 보내는 실시간 알림(SSE)으로 소모품 교체 시기를 알렸습니다.", en: "As the backend and DB owner, I built APIs and MongoDB data models for five domains (vehicles, models, consumables, driving patterns, users) and server-pushed real-time alerts (SSE) that tell the app when a consumable is due." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "장치와 기능마다 데이터 형태가 달라 5개 도메인으로 분리하고 MongoDB 문서 모델로 구조화했습니다.", en: "Because data shapes differed by device and feature, I split the backend into five domains and structured them as MongoDB documents." } },
-          { label: { ko: "팀 연동", en: "Team integration" }, copy: { ko: "사용자별 주간 평균 집계와 카카오 사용자 흐름을 서버에 연결하고, 프론트와 장치가 맞춰 쓸 요청, 응답, 오류 계약을 OpenAPI 3.0으로 정리했습니다.", en: "I connected per-user weekly aggregates and Kakao user flows on the server, then fixed request, response, and error contracts in OpenAPI 3.0 for frontend and device integration." } },
-        ],
-        results: [{ value: { ko: "5개 도메인", en: "5 domains" }, label: { ko: "API·DB 모델 설계", en: "API and DB model design" } }, { value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "학회 논문 공저", en: "Conference paper co-author" }, label: { ko: "한국정보기술학회", en: "KIIT" } }],
-        evidenceNotes: [
-          { label: { ko: "개인 구현 범위", en: "My implementation scope" }, copy: { ko: "차량 관련 5개 도메인 REST API와 MongoDB 모델, 사용자별 주간 평균 집계, 카카오 사용자 흐름을 구현했습니다.", en: "I implemented REST APIs and MongoDB models across five vehicle-related domains, per-user weekly aggregates, and Kakao user flows." } },
-          { label: { ko: "팀 연동 기준", en: "Team integration" }, copy: { ko: "프론트와 장치가 맞춰 쓰도록 요청, 응답 스키마와 오류 응답을 OpenAPI 3.0 문서로 고정했습니다.", en: "Request/response schemas and error responses were fixed in OpenAPI 3.0 so frontend and device work could integrate against one contract." } },        ],
-        evidenceButtonLabel: { ko: "구현 범위와 연동 기준", en: "Implementation scope & integration" },
-        evidenceTitle: { ko: "구현 범위와 연동 기준", en: "Implementation scope & integration" },
-        links: [{ href: "https://github.com/jgjoe/gildonge-backend", label: { ko: "GitHub (백엔드)", en: "GitHub (backend)" } }],
-        media: { type: "poster", src: "/gildongE_poster.jpg", alt: { ko: "길동이 프로젝트 포스터", en: "GildongE project poster" } },
-      },
     ],
     posterOpen: { ko: "프로젝트 포스터 보기", en: "View project poster" },
     posterClose: { ko: "프로젝트 포스터 닫기", en: "Hide project poster" },
     moreEyebrow: { ko: "MORE WORK", en: "MORE WORK" }, moreTitle: { ko: "추가 프로젝트", en: "Additional projects" },
     more: [
-      { title: "Build Your Health", type: ["Spring Boot", "Oracle", "k6"], link: "https://github.com/jgjoe/build-your-health", copy: { ko: "JSP 주문 시스템을 Spring Boot·MyBatis·Oracle로 재구축하고, 인덱스 실측 비교로 주문 상세 조회 쿼리를 20.1ms에서 0.70ms로 줄였습니다(30회 중앙값). k6 부하 측정으로 처리 병목도 진단했습니다.", en: "I rebuilt a JSP order system on Spring Boot, MyBatis, and Oracle, cut the order-detail query from 20.1 ms to 0.70 ms by measuring index candidates (median of 30), and diagnosed the throughput bottleneck with k6." } },
       { title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "대화형 쓰레기통 로봇에서 실시간 객체 탐지와 로봇 연동을 맡아 2024 한국정보기술학회 대학생 논문경진대회 우수논문상을 받았습니다.", en: "I handled real-time object detection and robot integration for an interactive trash-bin robot that received a 2024 KIIT student paper award." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
       { title: "Movie Diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie-diary", copy: { ko: "일기에서 감정을 읽어 영화를 추천하는 서비스로, 백엔드는 Cloud Run에 배포하고 프론트엔드는 GitHub Actions로 자동 배포했습니다.", en: "I built an emotion-based film recommendation service with third-party APIs, deployed the backend on Cloud Run, and automated frontend deployment with GitHub Actions." } },
       { title: { ko: "Kubernetes 운영 실습", en: "Kubernetes Operations Lab" }, type: ["Kubernetes", "kind", "Docker"], link: "https://github.com/jgjoe/kubernetes-ops-lab", copy: { ko: "Kubernetes에서 Pod 장애와 잘못된 배포를 직접 재현하고, 상태 변화와 복구 과정을 확인한 운영 실습입니다.", en: "A local Kubernetes lab that reproduces pod failures and failed rollouts, then verifies state transitions and recovery." } },
@@ -203,7 +555,7 @@ export const portfolio = {
       { title: { ko: "학력", en: "Education" }, items: [{ ko: "경기대학교 컴퓨터공학부 졸업", en: "B.S. in Computer Engineering, Kyonggi University" }, { ko: "2020.03 — 2026.02 / 학점 4.04/4.5", en: "Mar. 2020 — Feb. 2026 / GPA 4.04/4.5" }] },
       { title: { ko: "자격증", en: "Certificates" }, items: [{ ko: "정보처리기사", en: "Engineer Information Processing" }, "SQLD", "ADsP", "CSTS Foundation Level"] },
       { title: { ko: "연구와 수상", en: "Research & awards" }, items: [{ ko: "한국정보기술학회 논문 2편 공저", en: "Co-author of 2 KIIT conference papers" }, { ko: "2025 산학협력 캡스톤디자인 경진대회 심화캡스톤디자인 부문 은상", en: "2025 Industry-Academia Capstone Design Competition, Advanced Division Silver Prize" }, { ko: "2024 한국정보기술학회 대학생 논문경진대회 우수논문상", en: "2024 KIIT Student Paper Competition, Outstanding Paper Award" }] },
-      { title: { ko: "오픈소스", en: "Open source" }, items: [{ ko: "pydantic/logfire PR #2260 병합 (2026.10)", en: "pydantic/logfire PR #2260 merged (Oct 2026)" }] },
+      { title: { ko: "오픈소스", en: "Open source" }, link: { href: "https://github.com/pydantic/logfire/pull/2260", label: { ko: "병합된 변경 보기", en: "View merged change" } }, items: [{ ko: "CLI 인증의 환경변수 서버 주소 반영, 테스트·문서 추가 — pydantic/logfire PR #2260 병합 (2026.10)", en: "CLI auth uses the environment-configured server URL; added tests and docs — pydantic/logfire PR #2260 merged (Oct 2026)" }] },
     ],
   },
   skills: [

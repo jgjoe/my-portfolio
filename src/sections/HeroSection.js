@@ -10,6 +10,7 @@ export default function HeroSection({ t }) {
         </p>
         <h1>{t(portfolio.hero.title)}</h1>
         <p className="hero-summary">{t(portfolio.hero.summary)}</p>
+        <p className="hero-approach">{t(portfolio.hero.approach)}</p>
         <div className="hero-actions">
           <a href="#projects" className="button button-primary">{t(portfolio.ui.viewWork)}</a>
           <a href={portfolio.contact.github} target="_blank" rel="noreferrer" className="button button-secondary">
