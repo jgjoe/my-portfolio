@@ -18,7 +18,7 @@ export const portfolio = {
   hero: {
     eyebrow: ["BACKEND", "DATA ENGINEERING", "SOFTWARE QUALITY"],
     title: { ko: "업무 시스템의 API와\n데이터 흐름을 만듭니다", en: "I build APIs and data flows\nfor business systems" },
-    summary: { ko: "Spring Boot로 차량 API와 실시간 알림을 구현한 신입 개발자입니다. 주문 조회의 실행계획을 비교해 인덱스를 고르고, 서울 공공자전거 대여 기록 약 2억 4천만 행을 정제해 원본과 대조했습니다.", en: "A new-graduate developer who built vehicle APIs and real-time alerts with Spring Boot. I compared query plans to select indexes and cleaned about 240 million Seoul bike rental rows, checking them against the source." },
+    summary: { ko: "Spring Boot로 차량 API와 실시간 알림을 구현한 신입 개발자입니다.\n주문 조회의 실행계획을 비교해 인덱스를 고르고, 서울 공공자전거 대여 기록 약 2억 4천만 행을 정제해 원본과 대조했습니다.", en: "A new-graduate developer who built vehicle APIs and real-time alerts with Spring Boot.\nI compared query plans to select indexes and cleaned about 240 million Seoul bike rental rows, checking them against the source." },
     profileRole: "Backend & Data Engineer",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [

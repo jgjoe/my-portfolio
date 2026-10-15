@@ -131,7 +131,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .hero-summary {
   max-width: 700px; margin: 1.35rem 0 0;
   color: var(--muted); font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-  line-height: 1.75; word-break: keep-all;
+  line-height: 1.75; word-break: keep-all; white-space: pre-line; text-wrap: pretty;
 }
 .hero-eyebrow { display: flex; flex-wrap: wrap; gap: .45rem .9rem; }
 .hero-eyebrow span { white-space: nowrap; }
@@ -254,13 +254,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .result-grid > div { min-height: 5.2rem; padding: .85rem; border-radius: .8rem; background: var(--surface-soft); }
 .result-grid strong { display: block; font-size: 1rem; font-weight: 700; letter-spacing: -.02em; word-break: keep-all; }
 .result-grid span { display: block; margin-top: .32rem; color: var(--muted); font-size: .75rem; line-height: 1.4; word-break: keep-all; white-space: pre-line; }
-.deep-dive { grid-column: 1 / -1; padding: 0 clamp(1.5rem, 3.6vw, 2.6rem); border-top: 1px solid var(--line); }
+.deep-dive { margin-top: 1rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .deep-dive summary {
   padding: .9rem 0; cursor: pointer; color: var(--blue); font-size: .8rem; font-weight: 850; list-style-position: inside;
 }
 .deep-dive-list { padding-bottom: .9rem; display: grid; gap: .8rem; }
-.deep-dive-list > div { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--line); }
-.deep-dive-list p { margin: 0; }
+.deep-dive-list > div { padding-left: 1rem; border-left: 2px solid var(--line); }
 .architecture-block {
   margin: .25rem 0 1rem; padding: 1rem;
   border: 1px solid var(--line); border-radius: .9rem;
@@ -501,7 +500,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .hero-copy h1 { font-size: clamp(2.55rem, 11vw, 3.55rem); }
   .proof-item strong { white-space: normal; }
   .quick-facts, .proof-grid, .archive-grid { grid-template-columns: 1fr 1fr; }
-  .deep-dive-list > div { grid-template-columns: 1fr; gap: .45rem; }
   .project-meta { flex-direction: column; gap: .35rem; }
   .result-grid { grid-template-columns: 1fr; }
   .evidence-result-grid { grid-template-columns: 1fr; }
