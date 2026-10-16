@@ -518,7 +518,7 @@ export const portfolio = {
         ] },
       },
       {
-        anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }], period: { ko: "2025.09 — 진행 중", en: "2025.09 — Present" },
+        anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }], period: { ko: "2025.09 — 2026.10", en: "2025.09 — 2026.10" },
         lead: { ko: "유통기한을 촬영하거나 입력해 식품을 등록하고 D-Day, 알림, 위젯으로 관리하는 Android 앱입니다.", en: "An Android app for registering expiry dates by camera or manual entry, then managing them with D-Day status, notifications, and a widget." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
         visibleDetailIndexes: [2, 4],
