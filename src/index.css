@@ -131,7 +131,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .hero-summary {
   max-width: 700px; margin: 1.35rem 0 0;
   color: var(--muted); font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-  line-height: 1.75; word-break: keep-all; white-space: pre-line; text-wrap: pretty;
+  line-height: 1.75; word-break: keep-all; white-space: pre-line; text-wrap: balance;
 }
 .hero-eyebrow { display: flex; flex-wrap: wrap; gap: .45rem .9rem; }
 .hero-eyebrow span { white-space: nowrap; }
@@ -183,7 +183,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 /* proof */
 .proof-section { padding-bottom: 0; }
 .proof-section + .section-gap { padding-top: 5.25rem; }
-.proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .85rem; }
+.proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .85rem; }
 .proof-item {
   min-height: 10.5rem; padding: 1.45rem;
   border: 1px solid var(--line); border-radius: 1.15rem; background: var(--surface);
@@ -195,7 +195,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   transition: color .18s ease, transform .18s ease;
 }
 .proof-project-link:hover { color: var(--blue-strong); transform: translateY(1px); }
-.proof-item strong { display: block; margin-top: 1.5rem; font-size: clamp(1.25rem, 2vw, 1.55rem); letter-spacing: -.035em; white-space: nowrap; }
+.proof-item strong { display: block; margin-top: 1.5rem; font-size: clamp(1.25rem, 2vw, 1.55rem); letter-spacing: -.035em; word-break: keep-all; text-wrap: balance; }
 .proof-item p { margin: .55rem 0 0; color: var(--muted); font-size: .84rem; line-height: 1.55; word-break: keep-all; }
 
 /* generic section */
@@ -665,9 +665,29 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-contact-lines { display: grid; gap: 1.2mm; text-align: right; font-size: 8.6pt; }
   .print-contact-lines a { color: #ffffff; }
 
-  .print-summary-page .print-proof-card { padding: 3mm; }
-  .print-summary-page .print-proof-value { margin-top: 2mm; font-size: 11.5pt; }
-  .print-summary-page .print-proof-project { padding-top: 1.5mm; }
+  .print-summary-page { padding: 11mm 14mm 9mm; }
+  .print-summary-page .print-summary-text { margin-top: 2mm; font-size: 8.8pt; line-height: 1.5; }
+  .print-summary-page .print-headline { margin-top: 2mm; font-size: 20pt; }
+  .print-summary-page .print-photo { width: 22mm; height: 22mm; }
+  .print-summary-page .print-profile { padding: 3mm; }
+  .print-summary-page .print-facts { margin-top: 2mm; }
+  .print-summary-page .print-proof-row { margin-top: 2mm; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5mm; }
+  .print-summary-page .print-proof-card { padding: 2.6mm 3mm; }
+  .print-summary-page .print-proof-value { margin-top: 1.2mm; font-size: 10.5pt; line-height: 1.3; }
+  .print-summary-page .print-proof-label { margin-top: 1mm; font-size: 7.6pt; line-height: 1.45; }
+  .print-summary-page .print-proof-project { padding-top: 1mm; }
+  .print-summary-page .print-credential li { font-size: 8pt; line-height: 1.4; }
+  .print-summary-page .print-credential ul { gap: .5mm; }
+  .print-summary-page .print-eyebrow { letter-spacing: .06em; }
+  .print-summary-page .print-credential + .print-credential { margin-top: 1.4mm; }
+  .print-summary-page .print-credential li::before { top: 1.5mm; }
+  .print-summary-page .print-columns { gap: 6mm; margin-top: 3mm; }
+  .print-summary-page .print-subtitle { font-size: 9pt; }
+  .print-summary-page .print-section-title { margin-top: 3mm; }
+  .print-summary-page .print-contact { margin-top: 2.5mm; padding: 2.5mm 3mm; }
+  .print-summary-page .print-credential ul { gap: 0; }
+  .print-summary-page .print-skill-group + .print-skill-group { margin-top: 1.8mm; }
+  .print-summary-page .print-tags span { font-size: 7.5pt; padding: .6mm 1.6mm; }
   .print-summary-page .print-section-title { margin-top: 4mm; }
   .print-summary-page .print-columns { margin-top: 4mm; }
   .print-summary-page .print-credential + .print-credential { margin-top: 2mm; }

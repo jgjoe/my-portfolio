@@ -16,10 +16,10 @@ export const portfolio = {
     evidenceModalIntro: { ko: "무엇을 어떻게 확인했는지 정리했습니다. 공개 검증 자료가 있으면 함께 연결합니다.", en: "See what was checked and how it was checked. Public validation sources are linked when available." },
   },
   hero: {
-    eyebrow: ["BACKEND", "DATA ENGINEERING", "SOFTWARE QUALITY"],
-    title: { ko: "업무 시스템의 API와\n데이터 흐름을 만듭니다", en: "I build APIs and data flows\nfor business systems" },
-    summary: { ko: "팀 프로젝트에서 차량 API와 DB 모델을 담당하고, 별도 개인 확장에서 SSE 알림을 구현한 신입 개발자입니다.\n주문 조회의 실행계획을 비교해 인덱스를 고르고, 서울 공공자전거 대여 기록 약 2억 4천만 행을 정제해 원본과 대조했습니다.", en: "A new-graduate developer who built vehicle APIs and DB models in a team project, then added SSE alerts in a separate individual extension.\nI compared query plans to select indexes and cleaned about 240 million Seoul bike rental rows, checking them against the source." },
-    profileRole: "Backend & Data Engineer",
+    eyebrow: ["AI-ASSISTED DEVELOPMENT", "DATA QUALITY", "SOFTWARE QUALITY", "BACKEND"],
+    title: { ko: "AI로 빠르게 만들고,\n테스트와 데이터로 판단합니다", en: "I build fast with AI,\nand decide with tests and data" },
+    summary: { ko: "AI 코딩 도구로 업무 시스템, 데이터 파이프라인, AI 서비스를 만든 신입 개발자입니다.\n무엇을 채택하고 배포할지는 테스트와 데이터로 결정했습니다.", en: "A new-graduate developer who used AI coding tools to build business systems, data pipelines, and AI services.\nI decided what to adopt and ship by tests and data." },
+    profileRole: "Software Engineer · AI & Data",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
       { value: "4.04 / 4.5", label: { ko: "학점", en: "GPA" } },
@@ -35,36 +35,46 @@ export const portfolio = {
     },
     "items": [
       {
-        "kicker": {
-          "ko": "백엔드 구현",
-          "en": "BACKEND DEVELOPMENT"
-        },
-        "value": {
-          "ko": "API와 실시간 알림",
-          "en": "APIs and real-time alerts"
-        },
+        "kicker": { "ko": "AI 응용", "en": "AI APPLICATIONS" },
+        "value": { "ko": "AI도 같은 계산 결과로 답하게", "en": "AI answers from the same calculations" },
         "label": {
-          "ko": "6인 팀에서 차량 관련 5개 도메인의 API와 MongoDB 모델을 담당했습니다. 이후 별도 개인 확장 저장소 gildonge-alert에 SSE 알림을 구현했습니다.",
-          "en": "Built vehicle-domain APIs and MongoDB models in a six-person team, then added SSE alerts in a separate individual extension, gildonge-alert."
+          "ko": "핵심 지표는 한 곳(Python/DuckDB Core)에서만 계산하고 AI 에이전트는 읽기 전용 도구 5개로만 답하게 했습니다. 직접 연결과 MCP 두 경로의 답 22건을 비교해 불일치 0건을 확인했습니다.",
+          "en": "Core metrics are calculated only in one place (Python/DuckDB Core) and the AI agent answers only through five read-only tools; 22 answers compared across the direct and MCP paths showed zero mismatches."
         },
-        "project": {
-          "ko": "길동이",
-          "en": "GildongE"
+        "project": "TraceVerity",
+        "target": "project-traceverity",
+        "projectAria": { "ko": "TraceVerity AI 응용 프로젝트로 이동", "en": "Jump to the TraceVerity AI application project" }
+      },
+      {
+        "kicker": { "ko": "데이터 품질", "en": "DATA QUALITY" },
+        "value": { "ko": "2억 4,135만 건, 원본과 정확히 일치", "en": "241.35M rows, exactly matching the source" },
+        "label": {
+          "ko": "서울 공공자전거 대여 기록을 정제해 정상 241,320,806건과 격리 29,666건의 합이 원본 241,350,472건과 맞는지 대조했습니다.",
+          "en": "Cleaned Seoul public bike rental records and reconciled that 241,320,806 accepted plus 29,666 quarantined rows equal the 241,350,472-row source."
         },
-        "target": "project-gildong",
-        "projectAria": {
-          "ko": "길동이 백엔드 프로젝트로 이동",
-          "en": "Jump to the GildongE backend project"
-        }
+        "project": { "ko": "서울 공공자전거", "en": "Seoul Bike" },
+        "target": "project-seoul-bike",
+        "projectAria": { "ko": "서울 공공자전거 데이터 품질 프로젝트로 이동", "en": "Jump to the Seoul Public Bike data quality project" }
+      },
+      {
+        "kicker": { "ko": "소프트웨어 품질", "en": "SOFTWARE QUALITY" },
+        "value": { "ko": "자동 검사를 다 통과해도 멈춘 배포", "en": "Holding a release that passed every automated check" },
+        "label": {
+          "ko": "개인 Android 앱 v1.1이 자동·회귀 검사를 통과했지만 고정 표본 55장 중 15장 오답이 남아 배포를 보류했고, 보류 사유를 제품 구조로 해결해 다시 출시했습니다.",
+          "en": "Personal Android app v1.1 passed automated and regression checks, but 15 of 55 fixed samples were still wrong, so I held the release, resolved the cause in the product design, and re-released."
+        },
+        "project": { "ko": "오늘도신선", "en": "Fridge D-Day" },
+        "target": "project-today-fresh",
+        "projectAria": { "ko": "오늘도신선 소프트웨어 품질 프로젝트로 이동", "en": "Jump to the Fridge D-Day software quality project" }
       },
       {
         "kicker": {
-          "ko": "SQL 검증과 판단",
+          "ko": "SQL 검증",
           "en": "SQL VALIDATION"
         },
         "value": {
-          "ko": "읽기량으로 고른 인덱스",
-          "en": "Indexes chosen by read cost"
+          "ko": "읽기량 6,285 → 14",
+          "en": "Reads 6,285 → 14"
         },
         "label": {
           "ko": "로컬 Oracle의 생성 주문 60만 건에서 상세 조회의 논리 블록 읽기가 6,285에서 14로 줄어든 것을 확인하고 두 조회를 고려해 인덱스를 골랐습니다.",
@@ -76,34 +86,11 @@ export const portfolio = {
           "ko": "주문 시스템 SQL 검증 프로젝트로 이동",
           "en": "Jump to order-system SQL validation"
         }
-      },
-      {
-        "kicker": {
-          "ko": "대용량 데이터 처리",
-          "en": "LARGE-SCALE DATA"
-        },
-        "value": {
-          "ko": "대용량 데이터도 검증합니다",
-          "en": "I verify data even at scale"
-        },
-        "label": {
-          "ko": "서울 공공자전거 대여 기록 2억 4천만 건을 다루며 원본이 바뀐 달만 다시 처리하고, 처리 결과와 원본의 건수를 대조했습니다.",
-          "en": "Processed 240 million Seoul public bike rental records, reprocessing only months whose source changed and reconciling record counts with the source."
-        },
-        "project": {
-          "ko": "서울 공공자전거",
-          "en": "Seoul Bike"
-        },
-        "target": "project-seoul-bike",
-        "projectAria": {
-          "ko": "서울 공공자전거 데이터 파이프라인 프로젝트로 이동",
-          "en": "Jump to the Seoul Public Bike data pipeline project"
-        }
       }
     ]
   },
   projects: {
-    eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "개발과 검증의 핵심 경험", en: "Selected development and validation work" },
+    eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "만들고 검증한 핵심 경험", en: "Selected work built and verified" },
     copy: { ko: "개인 프로젝트는 AI 코딩 도구를 활용하며 요구사항, 검증 기준과 변경 채택을 직접 판단했습니다.", en: "For personal projects, I used AI coding tools and decided the requirements, validation criteria, and changes to adopt." },
     featured: [
       {
@@ -409,7 +396,7 @@ export const portfolio = {
         }
       },
       {
-        anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 엔지니어링", en: "Data Engineering" }], period: "2026.09",
+        anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 품질 / 파이프라인", en: "Data quality / pipeline" }], period: "2026.09",
         lead: { ko: "서울 공공자전거 대여 기록 78개월, 2억 4천만 건을 정제해 분석용 데이터로 만드는 배치 파이프라인입니다.", en: "A batch pipeline that cleans 240 million Seoul Public Bike rental records across 78 months into analytical datasets." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
         visibleDetailIndexes: [1, 2],
@@ -562,9 +549,13 @@ export const portfolio = {
     ],
   },
   skills: [
+    { title: { ko: "AI 응용", en: "AI Applications" }, items: ["RAG", "Embedding · Vector Search (pgvector)", "Retrieval Evaluation (Recall · MRR)", "MCP", "LLM Agent Tool Restriction"] },
     { title: { ko: "언어와 백엔드", en: "Languages & Backend" }, items: ["Java", "Kotlin", "Python", "TypeScript", "SQL", "Spring Boot", "MyBatis", "FastAPI", "REST API", "OpenAPI"] },
     { title: { ko: "데이터 시스템", en: "Data & Systems" }, items: ["Oracle", "PostgreSQL / pgvector", "MySQL", "MongoDB", "DuckDB", "Parquet", "Apache Airflow"] },
     { title: { ko: "품질과 배포", en: "Quality & Delivery" }, items: ["Pytest", "Playwright", "JUnit", "GitHub Actions", "Docker", "Prometheus", "Google Cloud Run"] },
   ],
-  contact: { eyebrow: { ko: "LET'S TALK", en: "LET'S TALK" }, title: { ko: "안정적인 서비스를 함께 만듭니다", en: "Let's build reliable services together" }, copy: { ko: "프로젝트나 포지션 제안은 이메일로 연락해 주세요.", en: "For project or role opportunities, feel free to reach out by email." }, email: "jigwan.joe@gmail.com", github: "https://github.com/jgjoe" },
+  contact: { eyebrow: { ko: "LET'S TALK", en: "LET'S TALK" }, title: { ko: "검증된 결과물을 함께 만듭니다", en: "Let's build verified work together" }, copy: { ko: "프로젝트나 포지션 제안은 이메일로 연락해 주세요.", en: "For project or role opportunities, feel free to reach out by email." }, email: "jigwan.joe@gmail.com", github: "https://github.com/jgjoe" },
 };
+
+const featuredOrder = ["TraceVerity", "혜택나침반", "서울 공공자전거 데이터 파이프라인", "Build Your Health", "오늘도 신선", "길동이 AI 차량 어시스턴트"];
+portfolio.projects.featured.sort((a, b) => featuredOrder.indexOf(a.title) - featuredOrder.indexOf(b.title));
