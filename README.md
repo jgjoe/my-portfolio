@@ -1,6 +1,6 @@
 # My Portfolio — 개인 포트폴리오 사이트
 
-**백엔드와 데이터 프로젝트의 본인 역할, 핵심 판단과 검증 결과를 보여주는 포트폴리오 사이트**
+**AI로 빠르게 만들고, 테스트와 데이터로 검증한 프로젝트의 본인 역할, 핵심 판단과 결과를 보여주는 포트폴리오 사이트**
 
 [![Live](https://img.shields.io/badge/live-jgjoe.github.io-success)](https://jgjoe.github.io/my-portfolio/)
 [![Stack](https://img.shields.io/badge/React-Tailwind%20CSS-61DAFB?logo=react&logoColor=black)](#기술-스택)
@@ -11,12 +11,12 @@
 프로젝트를 나열하는 대신 어떤 문제를 맡았고, 무엇을 판단했고, 결과를 어떻게 검증했는지가 보이도록 구성했습니다.
 대표 프로젝트는 다음 순서로 배치했습니다.
 
-1. **길동이** — 6인 팀의 차량 도메인 API·DB 담당, 이후 개인 확장으로 SSE 알림 구현
-2. **Build Your Health** — 웹 주문 시스템 재구축의 측정 설계, SQL 검증과 인덱스 선정
+1. **TraceVerity** — 공통 계산 결과를 쓰는 웹과 AI, 조회 권한 범위 구분
+2. **혜택나침반** — 같은 평가 조건으로 검색 후보를 비교해 채택·보류
 3. **서울 공공자전거 데이터 파이프라인** — 원천 78개월 약 2.41억 행의 정제와 합계 대조, 변경 월 재처리
-4. **TraceVerity** — 공통 계산 결과를 쓰는 웹과 AI, 조회 권한 범위 구분
-5. **혜택나침반** — 같은 평가 조건으로 검색 후보를 비교해 채택·보류
-6. **오늘도 신선** — 확인 후 저장과 사용성 결함 수정, 한정 재확인 및 스토어 출시
+4. **Build Your Health** — 웹 주문 시스템 재구축의 측정 설계, SQL 검증과 인덱스 선정
+5. **오늘도 신선** — 확인 후 저장과 사용성 결함 수정, 한정 재확인 및 스토어 출시
+6. **길동이** — 6인 팀의 차량 도메인 API·DB 담당, 이후 개인 확장으로 SSE 알림 구현
 
 추가 프로젝트는 쓰담, Movie Diary와 Kubernetes 운영 실습입니다. AI 코딩 도구 활용은 요구사항·검증 기준·변경 채택 판단과 함께 설명하며, 프로젝트별 코드 작성과 본인 기여 범위를 구분합니다.
 
@@ -87,7 +87,7 @@ npm start
 
 ## 만든 사람
 
-**Jigwan Joe** — Backend · Data
+**Jigwan Joe** — Software Engineer · AI & Data
 
 - GitHub: [@jgjoe](https://github.com/jgjoe)
 - Email: jigwan.joe@gmail.com
