@@ -18,7 +18,7 @@ export const portfolio = {
   hero: {
     eyebrow: ["BACKEND", "DATA ENGINEERING", "SOFTWARE QUALITY"],
     title: { ko: "업무 시스템의 API와\n데이터 흐름을 만듭니다", en: "I build APIs and data flows\nfor business systems" },
-    summary: { ko: "Spring Boot로 차량 API와 실시간 알림을 구현한 신입 개발자입니다.\n주문 조회의 실행계획을 비교해 인덱스를 고르고, 서울 공공자전거 대여 기록 약 2억 4천만 행을 정제해 원본과 대조했습니다.", en: "A new-graduate developer who built vehicle APIs and real-time alerts with Spring Boot.\nI compared query plans to select indexes and cleaned about 240 million Seoul bike rental rows, checking them against the source." },
+    summary: { ko: "팀 프로젝트에서 차량 API와 DB 모델을 담당하고, 별도 개인 확장에서 SSE 알림을 구현한 신입 개발자입니다.\n주문 조회의 실행계획을 비교해 인덱스를 고르고, 서울 공공자전거 대여 기록 약 2억 4천만 행을 정제해 원본과 대조했습니다.", en: "A new-graduate developer who built vehicle APIs and DB models in a team project, then added SSE alerts in a separate individual extension.\nI compared query plans to select indexes and cleaned about 240 million Seoul bike rental rows, checking them against the source." },
     profileRole: "Backend & Data Engineer",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
@@ -44,8 +44,8 @@ export const portfolio = {
           "en": "APIs and real-time alerts"
         },
         "label": {
-          "ko": "6인 팀에서 차량 관련 5개 도메인의 API와 DB 모델, SSE 알림을 맡고 앱·장치 연동 규격을 공유했습니다.",
-          "en": "Owned APIs, DB models, and SSE alerts for five vehicle-related domains in a team of six, and shared app/device contracts."
+          "ko": "6인 팀에서 차량 관련 5개 도메인의 API와 MongoDB 모델을 담당했습니다. 이후 별도 개인 확장 저장소 gildonge-alert에 SSE 알림을 구현했습니다.",
+          "en": "Built vehicle-domain APIs and MongoDB models in a six-person team, then added SSE alerts in a separate individual extension, gildonge-alert."
         },
         "project": {
           "ko": "길동이",
@@ -113,7 +113,7 @@ export const portfolio = {
         visibleDetailIndexes: [1, 3],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "6인 팀에서 차량 관련 5개 도메인의 Spring Boot API와 MongoDB 모델을 담당했습니다. MongoDB 변경 감지와 SSE를 연결해 사용자별 여러 기기에 알림을 보내고 종료된 연결을 정리했습니다.", en: "In a team of six, I owned Spring Boot APIs and MongoDB models for five vehicle-related domains. I connected MongoDB change detection to SSE for multiple devices per user and cleaned up closed connections." } },
+          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "6인 팀에서 차량 관련 5개 도메인의 API와 MongoDB 모델을 담당했습니다. 이후 별도 개인 확장 저장소 gildonge-alert에 SSE 알림을 구현했습니다.", en: "Built vehicle-domain APIs and MongoDB models in a six-person team, then added SSE alerts in a separate individual extension, gildonge-alert." } },
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "장치와 기능마다 데이터 형태가 달라 5개 도메인으로 분리하고 MongoDB 문서 모델로 구조화했습니다.", en: "Because data shapes differed by device and feature, I split the backend into five domains and structured them as MongoDB documents." } },
           { label: { ko: "팀 연동", en: "Team integration" }, copy: { ko: "장치와 앱 담당자가 같은 규격으로 연동할 수 있도록 요청·응답 스키마와 오류 응답을 OpenAPI로 문서화했습니다. 사용자별 주간 평균 집계와 카카오 사용자 조회·등록도 구현했습니다.", en: "I documented request/response schemas and errors with OpenAPI for device and app integration, and implemented per-user weekly aggregation plus Kakao user lookup and registration." } },
         ],
@@ -123,7 +123,7 @@ export const portfolio = {
           { showInPrint: false, label: { ko: "팀 연동 기준", en: "Team integration" }, copy: { ko: "프론트와 장치가 맞춰 쓰도록 요청, 응답 스키마와 오류 응답을 OpenAPI 3.0 문서로 고정했습니다.", en: "Request/response schemas and error responses were fixed in OpenAPI 3.0 so frontend and device work could integrate against one contract." } },        ],
         evidenceButtonLabel: { ko: "구현 범위와 연동 기준", en: "Implementation scope & integration" },
         evidenceTitle: { ko: "구현 범위와 연동 기준", en: "Implementation scope & integration" },
-        links: [{ href: "https://github.com/jgjoe/gildonge-backend", label: { ko: "GitHub (백엔드)", en: "GitHub (backend)" } }],
+        links: [{ href: "https://github.com/jgjoe/gildonge-backend", label: { ko: "GitHub (백엔드)", en: "GitHub (backend)" } }, { href: "https://github.com/jgjoe/gildonge-alert", label: { ko: "GitHub (개인 확장)", en: "GitHub (individual extension)" } }],
         media: { type: "poster", src: "/gildongE_poster.jpg", alt: { ko: "길동이 프로젝트 포스터", en: "GildongE project poster" } },
       },
       {
@@ -419,7 +419,7 @@ export const portfolio = {
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "바뀐 월이나 실패한 월만 다시 처리하고 검증을 마친 이전 결과는 보존했습니다. CLI와 Airflow가 같은 Python 처리 로직을 호출하도록 구성했습니다.", en: "I reprocessed only changed or failed months while preserving earlier verified results. The CLI and Airflow call the same Python processing logic." } },
           { label: { ko: "결과", en: "Result" }, copy: { ko: "원천부터 정제까지 78개월 241,350,472행을 처리했습니다. 정상 241,320,806행과 문제 29,666행의 합계가 원본 건수와 일치했고 대표 월의 분석용 집계도 대조했습니다.", en: "Source-to-clean processing covered 78 months and 241,350,472 rows. The accepted 241,320,806 rows plus 29,666 quarantined rows matched the source count, and representative monthly aggregates were also checked." } },
         ],
-        results: [{ value: { ko: "2억 4천만 건", en: "240M records" }, label: { ko: "원본부터 정제까지 처리", en: "processed from source to cleaned data" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "건수 일치", en: "Exact counts" }, label: { ko: "원본 = 정상 처리 + 문제 데이터", en: "source = clean + quarantined" } }],
+        results: [{ value: { ko: "2억 4천만 건", en: "240M records" }, label: { ko: "원본부터 정제까지 처리", en: "processed from source to cleaned data" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "건수 일치", en: "Exact counts" }, label: { ko: "원본 = 정상 처리 + 문제 데이터", en: "source = trusted + quarantined" } }],
         evidenceNotes: [
           { label: { ko: "전 기간 확인", en: "Full-period check" }, copy: { ko: "2020-01~2026-06의 78개월 2억 4,135만 행을 정제했고, 품질 문제 29,666행을 분석 데이터와 분리했습니다.", en: "Across 78 months from 2020-01 to 2026-06, about 241.35M rows were cleaned and 29,666 quality-issue rows were isolated from analytical data." } },
           { label: { ko: "재처리 기준", en: "Reprocessing rule" }, copy: { ko: "원천 파일의 버전과 SHA-256을 기록해 변경된 월만 다시 처리하도록 구성했습니다.", en: "Source versions and SHA-256 hashes identify changed months so only affected periods are rebuilt." } },        ],
