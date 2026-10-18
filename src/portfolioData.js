@@ -46,7 +46,7 @@ export const portfolio = {
         },
         "stats": [
           { "ko": "정상 241,320,806 + 격리 29,666 = 원본 241,350,472건", "en": "241,320,806 accepted + 29,666 quarantined = 241,350,472 source rows" },
-          { "ko": "Build Your Health: 로컬 Oracle·생성 주문 60만 건, 상세 조회 읽기량 6,285 → 14 (인덱스 2개)", "en": "Build Your Health: local Oracle, 600K generated orders, order-detail reads 6,285 → 14 (2 indexes)" }
+          { "ko": "Build Your Health: 로컬 Oracle·생성 주문 60만 건, 상세 조회 DB 블록 읽기 6,285 → 14 (인덱스 2개)", "en": "Build Your Health: local Oracle, 600K generated orders, order-detail DB block reads 6,285 → 14 (2 indexes)" }
         ],
         "projects": [
           { "name": { "ko": "서울 공공자전거", "en": "Seoul Bike" }, "target": "project-seoul-bike", "aria": { "ko": "서울 공공자전거 프로젝트로 이동", "en": "Jump to the Seoul Public Bike project" } },
@@ -114,7 +114,7 @@ export const portfolio = {
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
           { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "6인 팀에서 차량 관련 5개 도메인(차량, 차량 모델, 소모품, 주행 패턴, 사용자)의 REST API와 MongoDB 모델을 맡았습니다. 데이터 형태가 장치와 기능마다 달라 도메인을 나눠 문서 모델로 구조화했습니다. 장치·앱 담당자가 같은 규격으로 연동하도록 요청·응답 스키마와 오류 응답을 OpenAPI로 문서화했고, 사용자별 주간 평균 집계와 카카오 사용자 조회·등록도 구현했습니다.", en: "In a team of 6, I built REST APIs and MongoDB models for five vehicle domains (car, car model, consumable, driving pattern, user). Because data shapes differed by device and feature, I split them into domains and structured them as document models. I documented request/response schemas and errors with OpenAPI so device and app teammates could integrate against one spec, and also implemented per-user weekly averages and Kakao user lookup and registration." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "5개 도메인의 API·DB 모델을 설계했습니다. 캡스톤디자인 경진대회 은상과 한국정보기술학회 논문 공저 이력이 있습니다. SSE 알림은 팀 프로젝트와 별도로 개인 확장 저장소 gildonge-alert에 구현했습니다.", en: "I designed the API and DB models for five domains. I also hold a Capstone Design award (Silver) and a co-authored KIIT conference paper for this project. The SSE alerts were built separately from the team project, in my individual extension repository gildonge-alert." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "5개 도메인의 API·DB 모델을 설계했습니다. 캡스톤디자인 경진대회 심화캡스톤디자인 부문 은상, 한국정보기술학회 논문 공저. SSE 알림은 팀 프로젝트와 별도로 개인 확장 저장소 gildonge-alert에 구현했습니다.", en: "I designed the API and DB models for five domains. Awards and papers: Capstone Design Competition (Advanced Division) Silver Prize; co-authored KIIT conference paper. The SSE alerts were built separately from the team project, in my individual extension repository gildonge-alert." } },
         ],
         results: [{ value: { ko: "5개 도메인", en: "5 domains" }, label: { ko: "API·DB 모델 설계", en: "API and DB model design" } }, { value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "학회 논문 공저", en: "Conference paper co-author" }, label: { ko: "한국정보기술학회", en: "KIIT" } }],
         evidenceNotes: [
@@ -163,14 +163,14 @@ export const portfolio = {
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "JSP·MySQL로 만든 웹 주문 시스템을 Spring Boot·MyBatis·Oracle로 옮기면서, 조회에 필요한 인덱스를 같은 기준으로 비교해 정해야 했습니다.", en: "While rebuilding a JSP/MySQL order system on Spring Boot, MyBatis, and Oracle, I had to choose indexes by comparing candidates under the same criteria." } },
           { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "AI 코딩 도구로 진행한 재구축에서 측정할 쿼리 3종, 데이터 분포, 인덱스 후보와 반복 조건을 먼저 정했고, 결과 검증과 실행계획 해석, 채택 결정을 맡았습니다. 주문 상세 조회에서 외래 키 인덱스가 빠진 것을 확인했고, 회원별 조회는 복합 인덱스의 컬럼 순서와 정렬을 비교해 두 조회에 함께 쓸 인덱스를 골랐습니다. 건수 조회에 조금 유리한 단일 인덱스는 중복이라 추가하지 않았습니다.", en: "In the AI-assisted rebuild, I first defined the three queries, data distribution, index candidates, and repeated-run conditions, then validated results, interpreted execution plans, and made the selection. I found a missing foreign-key index for order-detail queries; for per-user queries I compared composite-column order and sorting and picked one index serving both queries. I left out a single-column index that was slightly better for count queries because it was redundant." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "로컬 Oracle에 생성한 주문 60만 건에서 주문 상세 조회의 논리 블록 읽기(쿼리가 읽는 DB 블록 수)가 6,285에서 14로 줄었습니다. 채택한 인덱스 2개는 앱 스키마에 반영해 자동 적용까지 확인했습니다. 고정 시드 데이터에서 쿼리 3종을 인덱스 미적용 기준선 포함 5개 구성으로 비교했고, 워밍업 5회 뒤 30회씩 두 회차를 잰 웜 캐시 시험에서 논리 읽기와 실행계획이 두 회차 모두 같았습니다. 회차마다 달라지는 ms 수치 대신 이 값으로 선정했습니다.", en: "On 600,000 generated orders in local Oracle, logical block reads for the order-detail query (the DB blocks it reads) fell from 6,285 to 14. I confirmed the two selected indexes are in the app schema and applied automatically. On fixed-seed data I compared three queries across five configurations including a no-index baseline; in warm-cache runs (5 warmups, 30 measurements in each of two rounds) logical reads and plans matched between rounds. I selected on these values instead of millisecond timings, which vary between runs." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "로컬 Oracle에 생성한 주문 60만 건에서 주문 상세 조회의 DB 블록 읽기(논리 블록 읽기)가 6,285에서 14로 줄었습니다. 채택한 인덱스 2개는 앱 스키마에 반영해 자동 적용까지 확인했습니다.", en: "On 600,000 generated orders in local Oracle, DB block reads (logical block reads) for the order-detail query fell from 6,285 to 14. I confirmed the two selected indexes are in the app schema and applied automatically." } },
         ],
         "results": [
           {
             "value": "6,285 → 14",
             "label": {
-              "ko": "로컬 Oracle·생성 주문 60만 건에서 주문 상세 조회가 읽는 양",
-              "en": "Data read by the order-detail query / local Oracle, 600K generated orders"
+              "ko": "로컬 Oracle·생성 주문 60만 건에서 주문 상세 조회의 DB 블록 읽기 횟수",
+              "en": "DB block reads of the order-detail query / local Oracle, 600K generated orders"
             }
           },
           {
@@ -262,7 +262,7 @@ export const portfolio = {
             },
             {
               "name": {
-                "ko": "계획과 읽기량 비교",
+                "ko": "계획과 DB 블록 읽기 비교",
                 "en": "Compare plans and reads"
               },
               "copy": {
@@ -316,7 +316,7 @@ export const portfolio = {
             },
             {
               "name": {
-                "ko": "실행계획과 읽기량 대조",
+                "ko": "실행계획과 DB 블록 읽기 대조",
                 "en": "Compare plans and reads"
               },
               "copy": {
@@ -408,12 +408,12 @@ export const portfolio = {
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "웹 화면과 AI가 지표를 따로 계산하면 같은 데이터에서도 결과가 달라질 수 있습니다. 그래서 계산 기준을 한 곳에 두는 구조부터 만들었습니다.", en: "When the web view and AI compute metrics separately, the same data can yield different numbers, so I started with one place that owns the calculation." } },
           { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "업로드한 업무 기록의 형식을 검사하고 핵심 지표를 하나의 계산 모듈에서 만들어, 웹과 AI 질의응답이 같은 결과를 읽게 했습니다. AI에는 정해진 계산 결과를 조회하는 읽기 전용 도구만 제공하고, SQL 실행이나 파일·네트워크 접근, 쓰기 권한은 열지 않았습니다.", en: "I validated the format of uploaded work records and calculated core metrics in one module, so the web and the AI Q&A read the same results. The AI gets only read-only tools for looking up computed results, with no SQL execution, file or network access, or write access." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "공개 실데이터 2종에서 케이스 수, 이벤트 수, 주요 흐름, 단계 간 이동, 재작업 집계를 독립적으로 다시 계산해 대조했고, Direct/MCP 두 연결 방식의 답 22개 항목이 모두 일치했습니다. 회귀 테스트는 개발본 190/190, 공개 저장소 168/168을 통과했습니다. 원본이나 계산 규칙 검증에 실패하면 분석을 멈춥니다.", en: "On two public real-world datasets I independently re-derived case counts, event counts, major paths, direct transitions, and rework aggregates and compared them; all 22 comparison items matched across the Direct and MCP connection paths. Regression tests passed 190/190 on the development version and 168/168 in the public repository. Analysis stops when source or calculation-rule validation fails." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "공개 실데이터 2종에서 케이스 수, 이벤트 수, 주요 흐름, 단계 간 이동, 재작업 집계를 독립적으로 다시 계산해 대조했고, 같은 계산 도구에 직접 연결한 방식과 MCP를 거친 방식의 답 22개 항목이 모두 일치했습니다. 회귀 테스트는 개발본 190/190, 공개 저장소 168/168을 통과했습니다. 원본이나 계산 규칙 검증에 실패하면 분석을 멈춥니다.", en: "On two public real-world datasets I independently re-derived case counts, event counts, major paths, direct transitions, and rework aggregates and compared them; all 22 comparison items matched between connecting directly to the same calculation tool and going through MCP. Regression tests passed 190/190 on the development version and 168/168 in the public repository. Analysis stops when source or calculation-rule validation fails." } },
         ],
         results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with one calculation rule" } }, { value: { ko: "22개 항목 일치", en: "22 matching checks" }, label: { ko: "공개 데이터 2종에서 AI 연결 방식 두 가지의 답을 비교", en: "answers compared across two AI connection paths on 2 public datasets" } }, { value: { ko: "AI 권한 제한", en: "Limited AI access" }, label: { ko: "계산 결과 조회만 허용", en: "may only read computed results" } }],
         evidenceNotes: [
           { label: { ko: "검증 대상", en: "What was checked" }, copy: { ko: "케이스 수, 이벤트 수, 주요 흐름, 단계 간 이동, 재작업 집계를 두 실제 이벤트 로그에서 독립 재계산해 Core 결과와 대조했습니다.", en: "Case counts, event counts, major paths, direct transitions, and rework aggregates were independently re-derived on two real event logs and compared with Core results." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "개발본의 독립 회귀 테스트 190/190과 공개 저장소의 회귀 테스트 168/168을 각각 통과했습니다. 두 데이터셋에서 Direct/MCP 결과를 비교한 22개 항목은 모두 일치했습니다.", en: "Independent regression testing of the development version passed 190/190, and the public repository passed its 168/168 regression tests. All 22 Direct/MCP result comparisons matched across two datasets." } },        ],
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "개발본의 독립 회귀 테스트 190/190과 공개 저장소의 회귀 테스트 168/168을 각각 통과했습니다. 두 데이터셋에서 같은 계산 도구에 직접 연결한 방식과 MCP를 거친 방식의 결과를 비교한 22개 항목은 모두 일치했습니다.", en: "Independent regression testing of the development version passed 190/190, and the public repository passed its 168/168 regression tests. All 22 comparisons between connecting directly to the same calculation tool and going through MCP matched across two datasets." } },        ],
         architecture: {
           variant: "hub",
           title: { ko: "하나의 공통 계산 기준", en: "One shared calculation path" },
@@ -441,13 +441,13 @@ export const portfolio = {
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "1만 개가 넘는 정책이 두 사이트에 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "More than 10,000 policies were spread across two sites, and keyword search made relevant programs hard to find." } },
-          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "두 사이트의 정책 13,589개를 하나로 합쳐 17,609개 검색 단위로 만들고, 뜻으로 찾는 검색에 키워드 일치 점수를 더한 방식을 같은 평가셋으로 비교해 정확도가 오른 경우에만 적용했습니다. 검색 결과를 다시 정렬하는 리랭커 후보는 청년정책 평가에서 Recall@5, Recall@10, MRR이 나빠져 적용하지 않았고, 원본의 지역 정보를 적용 지역으로 신뢰하기 어려워 지역 필터도 공개하지 않았습니다.", en: "I merged 13,589 policies from the two sites into 17,609 search chunks, compared meaning-based search with an added keyword-match score on the same evaluation set, and applied it only where accuracy rose. I did not adopt the reranker candidate (which reorders search results) because it lowered Recall@5, Recall@10, and MRR on the Youth evaluation, and I kept the regional filter out because the source region data could not reliably identify where each policy applied." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "상위 10개 안 정답 포함률(Recall@10)이 직접 라벨링한 청년정책 60문항에서 46.7%에서 51.7%로, 정부24 21문항에서 61.9%에서 76.2%로 올랐습니다. 작은 평가셋 기준입니다. 후보 검증 뒤 API를 요청 10%에서 100%까지 단계적으로 전환했고, 요청 ID와 메트릭으로 API·검색·DB 구간을 나눠 관측했습니다.", en: "The share of queries with the correct policy in the top 10 (Recall@10) rose from 46.7% to 51.7% on 60 hand-labeled Youth queries and from 61.9% to 76.2% on 21 Gov24 queries; this is a small evaluation set. After validating the candidate, I rolled the API out from 10% to 100% of requests and used request IDs and metrics to observe API, retrieval, and DB segments separately." } },
+          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "두 사이트의 정책 13,589개를 하나로 합쳐 17,609개 검색 단위로 만들고, 뜻으로 찾는 검색에 키워드 일치 점수를 더한 방식을 같은 평가셋으로 비교해 정확도가 오른 경우에만 적용했습니다. 검색 결과를 다시 정렬하는 리랭커 후보는 청년정책 평가에서 정답 포함률과 정답 순위 지표가 나빠져 적용하지 않았고, 원본의 지역 정보를 적용 지역으로 신뢰하기 어려워 지역 필터도 공개하지 않았습니다.", en: "I merged 13,589 policies from the two sites into 17,609 search chunks, compared meaning-based search with an added keyword-match score on the same evaluation set, and applied it only where accuracy rose. I did not adopt the reranker candidate (which reorders search results) because it lowered answer-inclusion and answer-ranking metrics on the Youth policy evaluation, and I kept the regional filter out because the source region data could not reliably identify where each policy applied." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "상위 10개 안 정답 포함률(Recall@10)이 문서 기반 평가셋인 청년정책 60문항에서 46.7%에서 51.7%로, 정부24 21문항에서 61.9%에서 76.2%로 올랐습니다. 후보 검증 뒤 API를 요청 10%에서 100%까지 단계적으로 전환했고, 요청 ID와 메트릭으로 API·검색·DB 구간을 나눠 관측했습니다.", en: "The share of queries with the correct policy in the top 10 (Recall@10) rose from 46.7% to 51.7% on 60 Youth policy queries from a document-based evaluation set, and from 61.9% to 76.2% on 21 Gov24 queries. After validating the candidate, I rolled the API out from 10% to 100% of requests and used request IDs and metrics to observe API, retrieval, and DB segments separately." } },
         ],
         results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: { ko: "정답 검색률 상승", en: "Higher hit rate" }, label: { ko: "상위 10개 안 정답 포함률 청년 60문항 46.7%→51.7%, 정부24 21문항 61.9%→76.2%", en: "correct policy in the top 10: Youth 60 queries 46.7%→51.7%, Gov24 21 queries 61.9%→76.2%" } }, { value: "10% → 100%", label: { ko: "새 검색을 요청 일부부터 단계적으로 전환", en: "new search rolled out gradually from a share of requests" } }],
         evidenceNotes: [
           { label: { ko: "지표 뜻", en: "Metric meaning" }, copy: { ko: "Recall@10은 각 질문의 정답 정책이 상위 10개 검색 결과 안에 포함된 비율입니다.", en: "Recall@10 is the share of queries whose labeled gold policy appears within the top 10 search results." } },
-          { label: { ko: "비교 조건", en: "Comparison" }, copy: { ko: "직접 라벨링한 Youth 60문항과 Gov24 21문항에서 실서비스와 같은 검색 조건으로 어휘 보정 전후와 리랭커 후보를 비교했습니다.", en: "On 60 labeled Youth queries and 21 Gov24 queries, lexical-bias and reranker candidates were compared under production-parity retrieval conditions." } },
+          { label: { ko: "비교 조건", en: "Comparison" }, copy: { ko: "문서 기반 평가셋의 Youth 60문항과 Gov24 21문항에서 실서비스와 같은 검색 조건으로 어휘 보정 전후와 리랭커 후보를 비교했습니다.", en: "On the document-based evaluation set (60 Youth queries and 21 Gov24 queries), lexical-bias and reranker candidates were compared under the same retrieval conditions as the live service." } },
           { label: { ko: "채택한 변경", en: "Adopted change" }, copy: { ko: "최소 어휘 보정은 Recall@10을 Youth 46.7→51.7%, Gov24 61.9→76.2%로 높여 유지했습니다.", en: "The minimal lexical bias improved Recall@10 from 46.7→51.7% on Youth and 61.9→76.2% on Gov24, so it was kept." } },
           { label: { ko: "채택하지 않은 변경", en: "Rejected change" }, copy: { ko: "cross-encoder 리랭커는 Gov24 일부 지표를 개선했지만 Youth Recall@5, Recall@10, MRR을 악화시켜 적용하지 않기로 판정했습니다.", en: "The cross-encoder reranker improved some Gov24 metrics but hurt Youth Recall@5, Recall@10, and MRR, so I decided not to ship it." } },
         ],
@@ -462,7 +462,7 @@ export const portfolio = {
           ],
           decision: {
             label: { ko: "리랭커 실험", en: "Reranker experiment" },
-            result: { ko: "검증 결과: 뜻 기반 검색(bi-encoder)에 어휘 보정을 더한 방식 유지", en: "Result: keep meaning-based search (bi-encoder) with lexical bias" },
+            result: { ko: "검증 결과: 뜻 기반 검색에 어휘 보정을 더한 방식 유지", en: "Result: keep meaning-based search with lexical bias" },
             action: { ko: "리랭커는 배포하지 않음", en: "Do not ship the reranker" },
           },
           note: { ko: "같은 평가 문항으로 어휘 보정 전후와 리랭커 후보를 비교", en: "Lexical bias and reranker candidates compared on the same evaluation queries" },
@@ -479,9 +479,9 @@ export const portfolio = {
         lead: { ko: "유통기한을 촬영하거나 입력해 식품을 등록하고 D-Day, 알림, 위젯으로 관리하는 Android 앱입니다.", en: "An Android app for registering expiry dates by camera or manual entry, then managing them with D-Day status, notifications, and a widget." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
         details: [
-          { label: { ko: "문제", en: "Problem" }, copy: { ko: "기존 앱은 유통기한을 손으로 입력해야 해 번거롭고, 사진을 서버로 보내는 방식은 개인정보 수집 부담이 있었습니다.", en: "Existing apps required tedious manual entry of expiry dates, and sending photos to a server raised personal-data concerns." } },
-          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "기기 안에서 문자를 인식하고, 알림·위젯·백업 및 복원 기능을 만들었습니다. 사진과 식품 기록은 기기에만 저장하고 앱 자체에는 인터넷 권한이 없습니다. 서로 다른 한국 식품 라벨 55장의 고정 회귀셋과 Galaxy A32 실기기 테스트로 인식 변경의 퇴행을 확인했는데, 남은 오인식과 표본 공백이 있어 후보 출시를 보류했습니다. 그래서 인식된 날짜를 사용자가 확인한 뒤 저장하는 방식으로 바꿔 재출시했습니다.", en: "I built on-device text recognition, notifications, widgets, and backup/restore. Photos and food records stay on the device, and the app itself has no internet permission. A fixed set of 55 different Korean food labels and Galaxy A32 device tests checked recognition changes for regressions, but remaining misrecognitions and coverage gaps led me to hold a release candidate. I switched to a flow where users confirm the recognized date before saving, and re-released the app." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "재출시 뒤 4명이 8개 과업씩 수행한 32개 관찰에서 반복된 소비 완료 복구와 직접 입력 경로의 불편을 찾아 고쳤습니다. 불편을 겪은 2명이 수정된 4개 흐름을 다시 수행한 8개 관찰에서는 모두 완료했습니다. 이 확인은 수정한 흐름에 한정됩니다. ONEstore와 Google Play에 정식 출시했습니다.", en: "After the re-release, 32 task observations (4 people × 8 tasks) revealed repeated friction in consumed-item restore and manual entry, which I fixed. The 2 users who hit problems repeated the 4 corrected flows, and all 8 retest observations were completed; this check covers the corrected flows only. The app is released on ONEstore and Google Play." } },
+          { label: { ko: "문제", en: "Problem" }, copy: { ko: "유통기한을 직접 입력하는 번거로움과 식품 기록을 외부로 보내는 부담을 줄이고자 했습니다.", en: "I wanted to reduce the hassle of typing expiry dates by hand and the burden of sending food records off the device." } },
+          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "기기 안에서 문자를 인식하고, 알림·위젯·백업 및 복원 기능을 만들었습니다. 사진과 식품 기록은 기기에만 저장하고 앱 자체에는 인터넷 권한이 없습니다. 서로 다른 한국 식품 라벨 55장 평가에서 남은 날짜 오인식 때문에 후속 버전 배포를 보류했습니다. 저장 전 사용자 확인 단계를 넣어 재출시했고, 이후 Galaxy A32 실기기에서도 회귀 검사를 진행했습니다.", en: "I built on-device text recognition, notifications, widgets, and backup/restore. Photos and food records stay on the device, and the app itself has no internet permission. In an evaluation on 55 different Korean food labels, remaining date misrecognitions led me to hold the follow-up release. I added a confirm-before-save step and re-released, and afterwards also ran regression checks on a physical Galaxy A32." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "재출시 뒤 4명이 8개 과업씩 수행한 32개 관찰에서 반복된 소비 완료 복구와 직접 입력 경로의 불편을 찾아 고쳤습니다. 불편을 겪은 2명이 수정된 4개 흐름을 다시 수행한 8개 관찰에서는 모두 완료했습니다. ONEstore와 Google Play에 정식 출시했습니다.", en: "After the re-release, 32 task observations (4 people × 8 tasks) revealed repeated friction in consumed-item restore and manual entry, which I fixed. The 2 users who hit problems repeated the 4 corrected flows, and all 8 retest observations were completed. The app is released on ONEstore and Google Play." } },
         ],
         results: [{ value: "ONEstore", label: { ko: "공개 배포", en: "public release" } }, { value: "Google Play", label: { ko: "정식 출시", en: "production release" } }, { value: { ko: "사용성 확인 후 개선", en: "Usability-tested improvements" }, label: { ko: "4명 관찰 후, 문제를 겪은 2명의 네 수정 흐름을 재확인", en: "4 initial participants; four corrected flows retested by 2 affected users" } }],
         evidenceNotes: [
