@@ -8,7 +8,7 @@ export default function EvidenceModal({ project, t, onClose }) {
     ? project.titleLines.map((line) => t(line)).join(" ")
     : t(project.title);
   const evidenceTitle = t(project.evidenceTitle || portfolio.ui.evidenceLinks);
-  const evidenceLinks = project.links.slice(2);
+  const evidenceLinks = project.links.filter((link) => link.doc);
 
   return (
     <AccessibleModal

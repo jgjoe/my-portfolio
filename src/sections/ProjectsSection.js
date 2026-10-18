@@ -43,10 +43,9 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
   const visibleResultIndexes = project.visibleResultIndexes || [0, 1];
   const visibleResults = project.results.filter((_, resultIndex) => visibleResultIndexes.includes(resultIndex));
   const deepDetails = project.details;
-  const primaryLinks = project.links.slice(0, 2);
-  const extraLinks = project.links.slice(2);
+  const primaryLinks = project.links.filter((link) => !link.doc);
   const showDiagram = project.architectureInDetails !== false && Boolean(project.architecture);
-  const hasEvidence = project.evidenceNotes?.length > 0 || project.links.length > 2;
+  const hasEvidence = project.evidenceNotes?.length > 0 || project.links.some((link) => link.doc);
   const typeItems = Array.isArray(project.type) ? project.type : [project.type];
 
   return (
@@ -101,18 +100,6 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
                 <div>
                   <span>{t(portfolio.ui.projectDiagram)}</span>
                   <ArchitectureDiagram architecture={project.architecture} t={t} />
-                </div>
-              )}
-              {extraLinks.length > 0 && (
-                <div>
-                  <span>{t(portfolio.ui.projectEvidenceLinks)}</span>
-                  <p className="deep-dive-links">
-                    {extraLinks.map((link) => (
-                      <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                        {t(link.label)} <span aria-hidden="true">↗</span>
-                      </a>
-                    ))}
-                  </p>
                 </div>
               )}
             </div>
