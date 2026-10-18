@@ -236,7 +236,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .project-card h3 > span { display: block; }
 .project-subtitle { margin: .45rem 0 0; color: var(--blue); font-size: .9rem; font-weight: 800; letter-spacing: .01em; }
 .project-lead { margin: 1rem 0 0; color: var(--muted); line-height: 1.7; word-break: keep-all; }
-.tech-row { margin-top: 1.15rem; display: flex; flex-wrap: wrap; gap: .42rem; }
+.tech-row { margin-top: .9rem; display: flex; flex-wrap: wrap; gap: .42rem; }
 .tech-row span {
   padding: .33rem .55rem; border: 1px solid var(--line); border-radius: .55rem;
   color: var(--muted); font-size: .68rem; font-weight: 700;
@@ -263,6 +263,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .deep-dive-list { padding-bottom: .9rem; display: grid; gap: .8rem; }
 .deep-dive-list > div { padding-left: 1rem; border-left: 2px solid var(--line); }
+.deep-dive-list .architecture-block { margin: .5rem 0 0; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.deep-dive-list p.deep-dive-links { display: flex; flex-wrap: wrap; gap: .3rem 1rem; }
+.deep-dive-links a { color: var(--blue); font-weight: 700; text-decoration: none; }
+.deep-dive-links a:hover { text-decoration: underline; }
 .architecture-block {
   margin: .25rem 0 1rem; padding: 1rem;
   border: 1px solid var(--line); border-radius: .9rem;
@@ -423,7 +427,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .credential-card li { padding: .72rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; line-height: 1.5; word-break: keep-all; }
 .skills-panel { margin-top: .8rem; padding: 1.2rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
 .skills-panel > p { margin: 0; color: var(--blue); font-size: .68rem; font-weight: 900; letter-spacing: .14em; }
-.skill-groups { margin-top: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.skill-groups { margin-top: 1rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem 1.6rem; }
 .skill-groups h3 { margin: 0; font-size: .78rem; font-weight: 700; }
 .skill-row { margin-top: .65rem; display: flex; flex-wrap: wrap; gap: .38rem; }
 .skill-row span { padding: .36rem .55rem; border-radius: .5rem; background: var(--surface-soft); color: var(--muted); font-size: .68rem; }

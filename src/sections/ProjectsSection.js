@@ -42,9 +42,10 @@ export default function ProjectsSection({ t, onOpenMedia, onOpenEvidence }) {
 function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
   const visibleResultIndexes = project.visibleResultIndexes || [0, 1];
   const visibleResults = project.results.filter((_, resultIndex) => visibleResultIndexes.includes(resultIndex));
-  const deepResults = project.results.filter((_, resultIndex) => !visibleResultIndexes.includes(resultIndex));
   const deepDetails = project.details;
   const primaryLinks = project.links.slice(0, 2);
+  const extraLinks = project.links.slice(2);
+  const showDiagram = project.architectureInDetails !== false && Boolean(project.architecture);
   const hasEvidence = project.evidenceNotes?.length > 0 || project.links.length > 2;
   const typeItems = Array.isArray(project.type) ? project.type : [project.type];
 
@@ -82,6 +83,10 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
           ))}
         </div>
 
+        <div className="tech-row">
+          {project.tech.map((tech) => <span key={tech}>{tech}</span>)}
+        </div>
+
         {deepDetails.length > 0 && (
           <details className="deep-dive">
             <summary>{t(portfolio.ui.projectDeepDive)}</summary>
@@ -92,23 +97,25 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
                   <p>{t(detail.copy)}</p>
                 </div>
               ))}
+              {showDiagram && (
+                <div>
+                  <span>{t(portfolio.ui.projectDiagram)}</span>
+                  <ArchitectureDiagram architecture={project.architecture} t={t} />
+                </div>
+              )}
+              {extraLinks.length > 0 && (
+                <div>
+                  <span>{t(portfolio.ui.projectEvidenceLinks)}</span>
+                  <p className="deep-dive-links">
+                    {extraLinks.map((link) => (
+                      <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                        {t(link.label)} <span aria-hidden="true">↗</span>
+                      </a>
+                    ))}
+                  </p>
+                </div>
+              )}
             </div>
-            {deepResults.length > 0 && (
-              <div className="result-grid">
-                {deepResults.map((result) => (
-                  <div key={t(result.label)}>
-                    <strong>{t(result.value)}</strong>
-                    <span>{t(result.label)}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-            <div className="tech-row">
-              {project.tech.slice(0, 6).map((tech) => <span key={tech}>{tech}</span>)}
-            </div>
-            {project.architectureInDetails !== false && (
-              <ArchitectureDiagram architecture={project.architecture} t={t} />
-            )}
           </details>
         )}
 

@@ -11,6 +11,8 @@ export const portfolio = {
     closeDialog: { ko: "닫기", en: "Close dialog" },
     projectDeepDive: { ko: "프로젝트 상세 보기", en: "View project details" },
     projectRole: { ko: "내가 한 일", en: "My role" },
+    projectDiagram: { ko: "구조도", en: "Structure" },
+    projectEvidenceLinks: { ko: "근거 자료", en: "Evidence links" },
     enlargeHint: { ko: "눌러서 크게 보기", en: "Click to enlarge" },
     evidenceLinks: { ko: "검증 근거", en: "Evidence" },
     viewEvidence: { ko: "검증 근거 보기", en: "View evidence" },
@@ -102,19 +104,17 @@ export const portfolio = {
   },
   projects: {
     eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "만들고 검증한 핵심 경험", en: "Selected work built and verified" },
-    copy: { ko: "개인 프로젝트는 AI 코딩 도구를 활용하며 요구사항, 검증 기준과 변경 채택을 직접 판단했습니다.", en: "For personal projects, I used AI coding tools and decided the requirements, validation criteria, and changes to adopt." },
+    copy: { ko: "개인 프로젝트는 AI 코딩 도구로 구현하되, 요구사항과 검증 기준, 어떤 변경을 채택할지는 직접 정했습니다.", en: "In personal projects I built with AI coding tools, but I set the requirements and validation criteria and decided which changes to adopt." },
     featured: [
       {
         anchor: "project-gildong", title: "길동이 AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: [{ ko: "6인 팀", en: "Team of 6" }, { ko: "백엔드 / DB 담당", en: "Backend / DB owner" }], period: "2025.03 — 2025.06",
         lead: { ko: "졸음 감지 장치와 모바일 앱 등에서 들어오는 차량 데이터를 사용자 단위로 관리하는 AI 차량 어시스턴트 백엔드입니다.", en: "The backend for an AI vehicle assistant that manages per-user vehicle data from sources such as a drowsiness-detection device and mobile app." },
         tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
         role: { ko: "6인 팀에서 차량 관련 API와 MongoDB 데이터 모델을 맡았고, 장치·앱 담당자가 같은 규격으로 연동하도록 OpenAPI 문서를 작성했습니다.", en: "In a team of 6, I built the vehicle-related APIs and MongoDB data models, and wrote OpenAPI docs so device and app teammates could integrate against one spec." },
-        visibleDetailIndexes: [1, 3],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "6인 팀에서 차량 관련 5개 도메인의 API와 MongoDB 모델을 담당했습니다. 이후 별도 개인 확장 저장소 gildonge-alert에 SSE 알림을 구현했습니다.", en: "Built vehicle-domain APIs and MongoDB models in a six-person team, then added SSE alerts in a separate individual extension, gildonge-alert." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "장치와 기능마다 데이터 형태가 달라 5개 도메인으로 분리하고 MongoDB 문서 모델로 구조화했습니다.", en: "Because data shapes differed by device and feature, I split the backend into five domains and structured them as MongoDB documents." } },
-          { label: { ko: "팀 연동", en: "Team integration" }, copy: { ko: "장치와 앱 담당자가 같은 규격으로 연동할 수 있도록 요청·응답 스키마와 오류 응답을 OpenAPI로 문서화했습니다. 사용자별 주간 평균 집계와 카카오 사용자 조회·등록도 구현했습니다.", en: "I documented request/response schemas and errors with OpenAPI for device and app integration, and implemented per-user weekly aggregation plus Kakao user lookup and registration." } },
+          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "6인 팀에서 차량 관련 5개 도메인(차량, 차량 모델, 소모품, 주행 패턴, 사용자)의 REST API와 MongoDB 모델을 맡았습니다. 데이터 형태가 장치와 기능마다 달라 도메인을 나눠 문서 모델로 구조화했습니다. 장치·앱 담당자가 같은 규격으로 연동하도록 요청·응답 스키마와 오류 응답을 OpenAPI로 문서화했고, 사용자별 주간 평균 집계와 카카오 사용자 조회·등록도 구현했습니다.", en: "In a team of 6, I built REST APIs and MongoDB models for five vehicle domains (car, car model, consumable, driving pattern, user). Because data shapes differed by device and feature, I split them into domains and structured them as document models. I documented request/response schemas and errors with OpenAPI so device and app teammates could integrate against one spec, and also implemented per-user weekly averages and Kakao user lookup and registration." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "5개 도메인의 API·DB 모델을 설계했습니다. 캡스톤디자인 경진대회 은상과 한국정보기술학회 논문 공저 이력이 있습니다. SSE 알림은 팀 프로젝트와 별도로 개인 확장 저장소 gildonge-alert에 구현했습니다.", en: "I designed the API and DB models for five domains. I also hold a Capstone Design award (Silver) and a co-authored KIIT conference paper for this project. The SSE alerts were built separately from the team project, in my individual extension repository gildonge-alert." } },
         ],
         results: [{ value: { ko: "5개 도메인", en: "5 domains" }, label: { ko: "API·DB 모델 설계", en: "API and DB model design" } }, { value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "학회 논문 공저", en: "Conference paper co-author" }, label: { ko: "한국정보기술학회", en: "KIIT" } }],
         evidenceNotes: [
@@ -160,51 +160,10 @@ export const portfolio = {
           "SQL",
           "Docker"
         ],
-        "visibleDetailIndexes": [
-          0,
-          1
-        ],
-        "details": [
-          {
-            "label": {
-              "ko": "본인 역할",
-              "en": "My role"
-            },
-            "copy": {
-              "ko": "AI 코딩 도구로 진행한 재구축에서 측정할 쿼리·데이터 분포·인덱스 후보와 반복 조건을 먼저 정했습니다. 테스트 기준 고정, 검증, 실행계획 해석과 채택 결정을 맡았습니다.",
-              "en": "For the AI-assisted rebuild, I defined queries, data distribution, index candidates, and repeated-run conditions first. My role was fixing test criteria, validating results, interpreting plans, and selecting indexes."
-            }
-          },
-          {
-            "label": {
-              "ko": "핵심 판단",
-              "en": "Key decision"
-            },
-            "copy": {
-              "ko": "주문 상세 조회의 외래 키 인덱스 누락을 확인했습니다. 회원별 조회에서는 복합 인덱스의 컬럼 순서와 정렬 여부를 비교해 두 조회에 함께 쓸 인덱스를 골랐고, 건수 조회에 조금 유리한 단일 인덱스는 중복돼 추가하지 않았습니다.",
-              "en": "I identified a missing foreign-key index in order-detail queries. For per-user queries, I compared composite-column order and sorting, selected one index for both queries, and omitted a slightly better count-only index because it was redundant."
-            }
-          },
-          {
-            "label": {
-              "ko": "측정 결과",
-              "en": "Measured result"
-            },
-            "copy": {
-              "ko": "로컬 Oracle에 생성한 주문 60만 건에서 상세 조회의 논리 블록 읽기, 즉 쿼리가 읽는 DB 블록 수가 6,285에서 14로 줄었습니다. 채택한 인덱스 2개의 앱 스키마 반영과 자동 적용도 확인했습니다.",
-              "en": "On 600,000 generated orders in local Oracle, logical block reads—the database blocks read by the query—fell from 6,285 to 14 for order details. I also checked schema integration and automatic application of the two selected indexes."
-            }
-          },
-          {
-            "label": {
-              "ko": "검증 조건",
-              "en": "Validation conditions"
-            },
-            "copy": {
-              "ko": "고정 시드 데이터로 쿼리 3종을 인덱스 미적용 기준선을 포함한 다섯 구성에서 비교했습니다. 워밍업 5회 뒤 30회씩 두 회차를 측정한 웜 캐시 시험에서 논리 읽기와 실행계획은 두 회차가 같았습니다. 회차 간 편차가 있는 ms 수치 대신 이 근거로 선정했습니다.",
-              "en": "I compared three queries across five configurations, including a baseline without indexes, on fixed-seed data. Warm-cache runs used five warmups and 30 measurements in each of two rounds; logical reads and plans matched between rounds. These were the selection evidence instead of variable millisecond measurements."
-            }
-          }
+        details: [
+          { label: { ko: "문제", en: "Problem" }, copy: { ko: "JSP·MySQL로 만든 웹 주문 시스템을 Spring Boot·MyBatis·Oracle로 옮기면서, 조회에 필요한 인덱스를 같은 기준으로 비교해 정해야 했습니다.", en: "While rebuilding a JSP/MySQL order system on Spring Boot, MyBatis, and Oracle, I had to choose indexes by comparing candidates under the same criteria." } },
+          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "AI 코딩 도구로 진행한 재구축에서 측정할 쿼리 3종, 데이터 분포, 인덱스 후보와 반복 조건을 먼저 정했고, 결과 검증과 실행계획 해석, 채택 결정을 맡았습니다. 주문 상세 조회에서 외래 키 인덱스가 빠진 것을 확인했고, 회원별 조회는 복합 인덱스의 컬럼 순서와 정렬을 비교해 두 조회에 함께 쓸 인덱스를 골랐습니다. 건수 조회에 조금 유리한 단일 인덱스는 중복이라 추가하지 않았습니다.", en: "In the AI-assisted rebuild, I first defined the three queries, data distribution, index candidates, and repeated-run conditions, then validated results, interpreted execution plans, and made the selection. I found a missing foreign-key index for order-detail queries; for per-user queries I compared composite-column order and sorting and picked one index serving both queries. I left out a single-column index that was slightly better for count queries because it was redundant." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "로컬 Oracle에 생성한 주문 60만 건에서 주문 상세 조회의 논리 블록 읽기(쿼리가 읽는 DB 블록 수)가 6,285에서 14로 줄었습니다. 채택한 인덱스 2개는 앱 스키마에 반영해 자동 적용까지 확인했습니다. 고정 시드 데이터에서 쿼리 3종을 인덱스 미적용 기준선 포함 5개 구성으로 비교했고, 워밍업 5회 뒤 30회씩 두 회차를 잰 웜 캐시 시험에서 논리 읽기와 실행계획이 두 회차 모두 같았습니다. 회차마다 달라지는 ms 수치 대신 이 값으로 선정했습니다.", en: "On 600,000 generated orders in local Oracle, logical block reads for the order-detail query (the DB blocks it reads) fell from 6,285 to 14. I confirmed the two selected indexes are in the app schema and applied automatically. On fixed-seed data I compared three queries across five configurations including a no-index baseline; in warm-cache runs (5 warmups, 30 measurements in each of two rounds) logical reads and plans matched between rounds. I selected on these values instead of millisecond timings, which vary between runs." } },
         ],
         "results": [
           {
@@ -413,12 +372,10 @@ export const portfolio = {
         role: { ko: "개인 프로젝트로, 원천 변경 추적부터 품질 검사, 건수 대조까지 파이프라인을 직접 구성했습니다.", en: "A personal project: I built the pipeline myself, from tracking source changes to quality checks and row-count reconciliation." }, visibleResultIndexes: [0, 2],
         lead: { ko: "서울 공공자전거 대여 기록 78개월, 2억 4천만 건을 정제해 분석용 데이터로 만드는 배치 파이프라인입니다.", en: "A batch pipeline that cleans 240 million Seoul Public Bike rental records across 78 months into analytical datasets." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
-        visibleDetailIndexes: [1, 2],
         details: [
-          { label: { ko: "문제", en: "Problem" }, copy: { ko: "서울시가 이미 올린 월별 파일을 나중에 고치기도 하고 대여소 정보는 시점별로만 제공돼서 무엇이 바뀌었는지 추적해 바뀐 달만 다시 처리해야 했습니다.", en: "The city sometimes revises monthly files it has already published, and station data is only available as point-in-time snapshots, so the pipeline had to track what changed and rebuild only those months." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "파일 버전과 해시로 원천 변경을 추적하고, 품질 검사에서 걸린 행을 분리했습니다. 정상 행과 문제 행의 합계가 원본과 일치하는지 대조한 뒤 분석용 집계에 연결했습니다.", en: "I tracked source changes with file versions and hashes, separated rows failing quality checks, and reconciled accepted plus quarantined counts with the source before downstream aggregation." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "바뀐 월이나 실패한 월만 다시 처리하고 검증을 마친 이전 결과는 보존했습니다. CLI와 Airflow가 같은 Python 처리 로직을 호출하도록 구성했습니다.", en: "I reprocessed only changed or failed months while preserving earlier verified results. The CLI and Airflow call the same Python processing logic." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "원천부터 정제까지 78개월 241,350,472행을 처리했습니다. 정상 241,320,806행과 문제 29,666행의 합계가 원본 건수와 일치했고 대표 월의 분석용 집계도 대조했습니다.", en: "Source-to-clean processing covered 78 months and 241,350,472 rows. The accepted 241,320,806 rows plus 29,666 quarantined rows matched the source count, and representative monthly aggregates were also checked." } },
+          { label: { ko: "문제", en: "Problem" }, copy: { ko: "서울시가 이미 올린 월별 파일을 나중에 고치기도 하고 대여소 정보는 시점별로만 제공돼서, 무엇이 바뀌었는지 추적해 바뀐 달만 다시 처리해야 했습니다.", en: "The city sometimes revises monthly files it has already published, and station data is only available as point-in-time snapshots, so the pipeline had to track what changed and rebuild only those months." } },
+          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "파일 버전과 SHA-256 해시로 원천 변경을 추적하고, 품질 검사에 걸린 행은 분석 데이터와 분리했습니다. 바뀐 월이나 실패한 월만 다시 처리하고 검증을 마친 이전 결과는 보존했으며, CLI와 Airflow가 같은 Python 처리 로직을 호출하도록 구성했습니다.", en: "I tracked source changes with file versions and SHA-256 hashes and separated rows that failed quality checks from the analytical data. Only changed or failed months are reprocessed, earlier verified results are preserved, and the CLI and Airflow call the same Python processing logic." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "2020-01~2026-06의 78개월 전체를 원천부터 정제까지 처리했습니다(총 241,350,472행). 정상 241,320,806행과 문제 29,666행을 더하면 원본 건수가 되어, 행 수 기준으로 대조가 맞았습니다. 대표 월의 분석용 집계도 대조했습니다.", en: "All 78 months from 2020-01 to 2026-06 were processed from source to cleaned data (241,350,472 rows in total). Accepted 241,320,806 rows plus 29,666 quarantined rows equal the source row count, so the row-count reconciliation holds. Aggregates for a representative month were also checked." } },
         ],
         results: [{ value: { ko: "2억 4천만 건", en: "240M records" }, label: { ko: "78개월 원본부터 정제까지 처리", en: "processed from source to cleaned data across 78 months" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "건수 합 일치", en: "Row counts reconcile" }, label: { ko: "원본 = 정상 처리 + 문제 데이터", en: "source = trusted + quarantined" } }],
         evidenceNotes: [
@@ -448,12 +405,10 @@ export const portfolio = {
         role: { ko: "개인 프로젝트로, 계산 기준을 한 곳에 두는 구조와 AI에게 줄 권한의 범위를 직접 설계하고 검증했습니다.", en: "A personal project: I designed and verified a structure with one place for calculation and a limited scope of access for the AI." }, visibleResultIndexes: [1, 2],
         lead: { ko: "기업 시스템에 쌓이는 업무 처리 기록을 읽어, 업무가 실제로 어떤 순서로 흐르고 어디서 반복되는지 보여 주는 분석 도구입니다. 기록 파일을 브라우저에 올리면 바로 분석합니다.", en: "An analysis tool that reads work records from business systems to show the order work actually follows and where it repeats. Upload a log file in the browser and it is analyzed right away." },
         tech: ["Python", "DuckDB", "FastAPI", "React", "Power BI", "MCP"],
-        visibleDetailIndexes: [1, 2],
         details: [
-          { label: { ko: "문제", en: "Problem" }, copy: { ko: "웹 화면과 AI가 지표를 따로 계산하면 같은 데이터에서도 결과가 달라질 수 있습니다. 그래서 계산 기준을 한 곳에 두는 구조부터 만들었습니다.", en: "When the web view and AI compute metrics separately, the same data yields different numbers, so I started with one place that owns the calculation." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "업무 로그의 형식을 검사하고 핵심 지표를 하나의 계산 모듈에서 만들었습니다. 웹과 AI 질의응답이 같은 결과를 읽도록 연결했습니다.", en: "I validated uploaded log formats, calculated core metrics in one module, and connected the web and AI interfaces to the same results." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "AI에는 정해진 계산 결과를 조회하는 도구만 제공했습니다. SQL 실행이나 파일·네트워크 접근, 쓰기 권한은 열지 않아 계산과 답변의 역할을 나눴습니다.", en: "I gave the AI only predefined tools for reading computed results, without direct SQL, filesystem, network, or write access, separating calculation from answering." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "두 실제 업무 데이터셋에서 Direct/MCP 연결 방식의 22개 비교 항목이 일치했습니다. 원본과 계산 규칙 검증에 실패하면 분석을 멈춥니다.", en: "All 22 Direct/MCP comparison checks matched across two real workflow datasets. Analysis stops when source or calculation-rule validation fails." } },
+          { label: { ko: "문제", en: "Problem" }, copy: { ko: "웹 화면과 AI가 지표를 따로 계산하면 같은 데이터에서도 결과가 달라질 수 있습니다. 그래서 계산 기준을 한 곳에 두는 구조부터 만들었습니다.", en: "When the web view and AI compute metrics separately, the same data can yield different numbers, so I started with one place that owns the calculation." } },
+          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "업로드한 업무 기록의 형식을 검사하고 핵심 지표를 하나의 계산 모듈에서 만들어, 웹과 AI 질의응답이 같은 결과를 읽게 했습니다. AI에는 정해진 계산 결과를 조회하는 읽기 전용 도구만 제공하고, SQL 실행이나 파일·네트워크 접근, 쓰기 권한은 열지 않았습니다.", en: "I validated the format of uploaded work records and calculated core metrics in one module, so the web and the AI Q&A read the same results. The AI gets only read-only tools for looking up computed results, with no SQL execution, file or network access, or write access." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "공개 실데이터 2종에서 케이스 수, 이벤트 수, 주요 흐름, 단계 간 이동, 재작업 집계를 독립적으로 다시 계산해 대조했고, Direct/MCP 두 연결 방식의 답 22개 항목이 모두 일치했습니다. 회귀 테스트는 개발본 190/190, 공개 저장소 168/168을 통과했습니다. 원본이나 계산 규칙 검증에 실패하면 분석을 멈춥니다.", en: "On two public real-world datasets I independently re-derived case counts, event counts, major paths, direct transitions, and rework aggregates and compared them; all 22 comparison items matched across the Direct and MCP connection paths. Regression tests passed 190/190 on the development version and 168/168 in the public repository. Analysis stops when source or calculation-rule validation fails." } },
         ],
         results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with one calculation rule" } }, { value: { ko: "22개 항목 일치", en: "22 matching checks" }, label: { ko: "공개 데이터 2종에서 AI 연결 방식 두 가지의 답을 비교", en: "answers compared across two AI connection paths on 2 public datasets" } }, { value: { ko: "AI 권한 제한", en: "Limited AI access" }, label: { ko: "계산 결과 조회만 허용", en: "may only read computed results" } }],
         evidenceNotes: [
@@ -482,21 +437,19 @@ export const portfolio = {
       {
         anchor: "project-benefit-compass", title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
         role: { ko: "개인 프로젝트(공개 데모)로, 두 사이트의 정책 통합과 검색 개선안의 비교·채택 판단, 단계 배포를 직접 진행했습니다.", en: "A personal project (public demo): I unified policies from two sites, compared and decided which search improvements to adopt, and ran the staged rollout." },
-        lead: { ko: "온통청년과 정부24의 공식 정책을 한 번에 검색하고, 찾은 정책을 근거로 AI가 답하는 서비스(RAG)입니다.", en: "A service that searches official policies from Youth Policy and Gov24 in one place and has AI answer from the policies it finds (RAG)." },
+        lead: { ko: "온통청년과 정부24의 공식 정책을 한 번에 검색하고, 찾은 정책을 근거로 AI가 답하는 서비스입니다.", en: "A service that searches official policies from Youth Policy and Gov24 in one place and has AI answer from the policies it finds (RAG)." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
-        visibleDetailIndexes: [1, 2],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "1만 개가 넘는 정책이 두 사이트에 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "More than 10,000 policies were spread across two sites, and keyword search made relevant programs hard to find." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "두 사이트의 정책 13,589개를 하나로 합치고, 뜻으로 찾는 검색에 키워드 일치 점수를 더한 방식을 같은 평가셋으로 비교해 정확도가 오른 경우에만 적용했습니다.", en: "I merged 13,589 policies from the two sites, compared meaning-based search with an added keyword-match score on the same evaluation set, and shipped it only where accuracy improved." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "검색 결과를 다시 정렬하는 후보는 청년정책 평가에서 품질이 떨어져 적용하지 않았습니다. 원본의 지역 정보를 서비스 적용 지역으로 신뢰하기 어려워 지역 필터도 공개하지 않았습니다.", en: "I did not adopt the candidate that reordered search results because it reduced quality in the Youth Policy evaluation. I also kept the regional filter out of the public service because the source region data could not reliably identify where each policy applied." } },
-          { label: { ko: "배포와 운영", en: "Delivery & operations" }, copy: { ko: "후보 검증 후 API를 10%에서 100%로 단계 배포했고, 요청 ID와 메트릭으로 API, 검색, DB 구간을 나눠 관측했습니다.", en: "After candidate validation, I rolled the API from 10% to 100% and used request IDs and metrics to separate API, retrieval, and DB segments." } },
+          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "두 사이트의 정책 13,589개를 하나로 합쳐 17,609개 검색 단위로 만들고, 뜻으로 찾는 검색에 키워드 일치 점수를 더한 방식을 같은 평가셋으로 비교해 정확도가 오른 경우에만 적용했습니다. 검색 결과를 다시 정렬하는 리랭커 후보는 청년정책 평가에서 Recall@5, Recall@10, MRR이 나빠져 적용하지 않았고, 원본의 지역 정보를 적용 지역으로 신뢰하기 어려워 지역 필터도 공개하지 않았습니다.", en: "I merged 13,589 policies from the two sites into 17,609 search chunks, compared meaning-based search with an added keyword-match score on the same evaluation set, and applied it only where accuracy rose. I did not adopt the reranker candidate (which reorders search results) because it lowered Recall@5, Recall@10, and MRR on the Youth evaluation, and I kept the regional filter out because the source region data could not reliably identify where each policy applied." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "상위 10개 안 정답 포함률(Recall@10)이 직접 라벨링한 청년정책 60문항에서 46.7%에서 51.7%로, 정부24 21문항에서 61.9%에서 76.2%로 올랐습니다. 작은 평가셋 기준입니다. 후보 검증 뒤 API를 요청 10%에서 100%까지 단계적으로 전환했고, 요청 ID와 메트릭으로 API·검색·DB 구간을 나눠 관측했습니다.", en: "The share of queries with the correct policy in the top 10 (Recall@10) rose from 46.7% to 51.7% on 60 hand-labeled Youth queries and from 61.9% to 76.2% on 21 Gov24 queries; this is a small evaluation set. After validating the candidate, I rolled the API out from 10% to 100% of requests and used request IDs and metrics to observe API, retrieval, and DB segments separately." } },
         ],
         results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: { ko: "정답 검색률 상승", en: "Higher hit rate" }, label: { ko: "상위 10개 안 정답 포함률 청년 60문항 46.7%→51.7%, 정부24 21문항 61.9%→76.2%", en: "correct policy in the top 10: Youth 60 queries 46.7%→51.7%, Gov24 21 queries 61.9%→76.2%" } }, { value: "10% → 100%", label: { ko: "새 검색을 요청 일부부터 단계적으로 전환", en: "new search rolled out gradually from a share of requests" } }],
         evidenceNotes: [
           { label: { ko: "지표 뜻", en: "Metric meaning" }, copy: { ko: "Recall@10은 각 질문의 정답 정책이 상위 10개 검색 결과 안에 포함된 비율입니다.", en: "Recall@10 is the share of queries whose labeled gold policy appears within the top 10 search results." } },
-          { label: { ko: "비교 조건", en: "Comparison" }, copy: { ko: "직접 라벨링한 Youth 60문항과 Gov24 21문항에서 production과 같은 검색 조건으로 어휘 보정 전후와 리랭커 후보를 비교했습니다.", en: "On 60 labeled Youth queries and 21 Gov24 queries, lexical-bias and reranker candidates were compared under production-parity retrieval conditions." } },
+          { label: { ko: "비교 조건", en: "Comparison" }, copy: { ko: "직접 라벨링한 Youth 60문항과 Gov24 21문항에서 실서비스와 같은 검색 조건으로 어휘 보정 전후와 리랭커 후보를 비교했습니다.", en: "On 60 labeled Youth queries and 21 Gov24 queries, lexical-bias and reranker candidates were compared under production-parity retrieval conditions." } },
           { label: { ko: "채택한 변경", en: "Adopted change" }, copy: { ko: "최소 어휘 보정은 Recall@10을 Youth 46.7→51.7%, Gov24 61.9→76.2%로 높여 유지했습니다.", en: "The minimal lexical bias improved Recall@10 from 46.7→51.7% on Youth and 61.9→76.2% on Gov24, so it was kept." } },
-          { label: { ko: "채택하지 않은 변경", en: "Rejected change" }, copy: { ko: "cross-encoder 리랭커는 Gov24 일부 지표를 개선했지만 Youth Recall@5, Recall@10, MRR을 악화시켜 No-Go로 판정했습니다.", en: "The cross-encoder reranker improved some Gov24 metrics but hurt Youth Recall@5, Recall@10, and MRR, so it was a No-Go." } },
+          { label: { ko: "채택하지 않은 변경", en: "Rejected change" }, copy: { ko: "cross-encoder 리랭커는 Gov24 일부 지표를 개선했지만 Youth Recall@5, Recall@10, MRR을 악화시켜 적용하지 않기로 판정했습니다.", en: "The cross-encoder reranker improved some Gov24 metrics but hurt Youth Recall@5, Recall@10, and MRR, so I decided not to ship it." } },
         ],
         architecture: {
           variant: "decision",
@@ -509,7 +462,7 @@ export const portfolio = {
           ],
           decision: {
             label: { ko: "리랭커 실험", en: "Reranker experiment" },
-            result: { ko: "검증 결과: bi-encoder + 어휘 보정 유지", en: "Result: keep bi-encoder + lexical bias" },
+            result: { ko: "검증 결과: 뜻 기반 검색(bi-encoder)에 어휘 보정을 더한 방식 유지", en: "Result: keep meaning-based search (bi-encoder) with lexical bias" },
             action: { ko: "리랭커는 배포하지 않음", en: "Do not ship the reranker" },
           },
           note: { ko: "같은 평가 문항으로 어휘 보정 전후와 리랭커 후보를 비교", en: "Lexical bias and reranker candidates compared on the same evaluation queries" },
@@ -525,13 +478,10 @@ export const portfolio = {
         role: { ko: "개인 프로젝트로, 기획과 개발, 출시, 사용자 관찰 뒤 개선까지 직접 진행했습니다.", en: "A personal project: I handled planning, development, release, and improvements after user observation myself." }, visibleResultIndexes: [1, 2],
         lead: { ko: "유통기한을 촬영하거나 입력해 식품을 등록하고 D-Day, 알림, 위젯으로 관리하는 Android 앱입니다.", en: "An Android app for registering expiry dates by camera or manual entry, then managing them with D-Day status, notifications, and a widget." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
-        visibleDetailIndexes: [2, 4],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "기존 앱은 유통기한을 손으로 입력해야 해 번거롭고, 사진을 서버로 보내는 방식은 개인정보 수집 부담이 있었습니다.", en: "Existing apps required tedious manual entry of expiry dates, and sending photos to a server raised personal-data concerns." } },
-          { label: { ko: "해결 과정", en: "How I solved it" }, copy: { ko: "기기 내 문자인식과 알림·위젯·백업 및 복원 기능을 만들었습니다. 촬영 이미지와 식품 기록은 기기에 저장하고 앱 자체 인터넷 권한 없이 처리합니다.", en: "I built on-device recognition, notifications, widgets, and backup/restore. Photos and food records remain on the device, and the app itself has no internet permission." } },
-          { label: { ko: "판단", en: "Decision" }, copy: { ko: "이미지는 기기 안에서 처리하고 OCR 결과는 사용자가 확인한 뒤 저장하도록 최종 흐름을 정했습니다. 남은 인식 오류가 확인된 버전은 이 흐름을 적용한 뒤 재출시했습니다.", en: "Images stay on-device, and users confirm recognized dates before saving. I applied this flow after residual OCR errors were found, then re-released the app." } },
-          { label: { ko: "품질 검증", en: "Quality gate" }, copy: { ko: "55장 고정 회귀셋과 Galaxy A32 실기기 테스트로 OCR 변경과 주요 기능의 퇴행을 확인했습니다.", en: "A fixed 55-image regression set and Galaxy A32 device tests checked OCR changes and key flows for regressions." } },
-          { label: { ko: "결과", en: "Outcome" }, copy: { ko: "4명의 32개 과업 관찰에서 반복된 소비 완료 복구와 직접 입력 경로의 불편을 고쳤습니다. 문제를 겪은 2명이 네 수정 흐름을 재확인한 8개 관찰에서 모두 완료했고, ONEstore와 Google Play에 정식 출시했습니다.", en: "I fixed repeated friction in consumed-item recovery and manual entry found across 32 task observations with four people. Two affected users completed all eight retest observations of four corrected flows. The app was released on ONEstore and Google Play." } },
+          { label: { ko: "내가 한 일·판단", en: "What I did & decided" }, copy: { ko: "기기 안에서 문자를 인식하고, 알림·위젯·백업 및 복원 기능을 만들었습니다. 사진과 식품 기록은 기기에만 저장하고 앱 자체에는 인터넷 권한이 없습니다. 서로 다른 한국 식품 라벨 55장의 고정 회귀셋과 Galaxy A32 실기기 테스트로 인식 변경의 퇴행을 확인했는데, 남은 오인식과 표본 공백이 있어 후보 출시를 보류했습니다. 그래서 인식된 날짜를 사용자가 확인한 뒤 저장하는 방식으로 바꿔 재출시했습니다.", en: "I built on-device text recognition, notifications, widgets, and backup/restore. Photos and food records stay on the device, and the app itself has no internet permission. A fixed set of 55 different Korean food labels and Galaxy A32 device tests checked recognition changes for regressions, but remaining misrecognitions and coverage gaps led me to hold a release candidate. I switched to a flow where users confirm the recognized date before saving, and re-released the app." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "재출시 뒤 4명이 8개 과업씩 수행한 32개 관찰에서 반복된 소비 완료 복구와 직접 입력 경로의 불편을 찾아 고쳤습니다. 불편을 겪은 2명이 수정된 4개 흐름을 다시 수행한 8개 관찰에서는 모두 완료했습니다. 이 확인은 수정한 흐름에 한정됩니다. ONEstore와 Google Play에 정식 출시했습니다.", en: "After the re-release, 32 task observations (4 people × 8 tasks) revealed repeated friction in consumed-item restore and manual entry, which I fixed. The 2 users who hit problems repeated the 4 corrected flows, and all 8 retest observations were completed; this check covers the corrected flows only. The app is released on ONEstore and Google Play." } },
         ],
         results: [{ value: "ONEstore", label: { ko: "공개 배포", en: "public release" } }, { value: "Google Play", label: { ko: "정식 출시", en: "production release" } }, { value: { ko: "사용성 확인 후 개선", en: "Usability-tested improvements" }, label: { ko: "4명 관찰 후, 문제를 겪은 2명의 네 수정 흐름을 재확인", en: "4 initial participants; four corrected flows retested by 2 affected users" } }],
         evidenceNotes: [
@@ -551,7 +501,7 @@ export const portfolio = {
     posterClose: { ko: "프로젝트 포스터 닫기", en: "Hide project poster" },
     moreEyebrow: { ko: "MORE WORK", en: "MORE WORK" }, moreTitle: { ko: "추가 프로젝트", en: "Additional projects" },
     more: [
-      { anchor: "project-ssodam", title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "11인 융합전공 팀의 대화형 쓰레기통 로봇에서 인식 파트 2인 중 한 명으로 실시간 객체 탐지와 로봇 연동을 맡아 2024 한국정보기술학회 대학생 논문경진대회 우수논문상을 받았습니다. 학기 중 현장 데이터 수집이 불가능해 인식 파트와 주행 파트 연동이 막히자 TACO(넓은 범주)와 AI Hub 생활폐기물 일부(한국 폐기물 형태)를 결합한 공개 데이터셋 학습을 제안했습니다. 팀원들이 정확도와 일정을 우려해 함께 따져본 뒤 합의했고, YOLOv8 학습, OpenCV NDK 기반 태블릿 실시간 실행, 블루투스 로봇 연결, 주행 파트 통합을 거쳐 캡스톤 시연에서 선보였습니다.", en: "As one of two people on the recognition part in an 11-person mixed-major team, I handled real-time object detection and robot integration for an interactive trash-bin robot that received a 2024 KIIT student paper award. When field data collection was impossible during the semester and the recognition part and its integration with the driving part stalled, I proposed training on combined public datasets: TACO for broad categories and part of AI Hub household waste for Korean waste shapes. Teammates worried about accuracy and schedule; we examined those concerns together and agreed. I then trained YOLOv8, ran it in real time on a tablet via OpenCV NDK, linked robot and tablet over Bluetooth, integrated with the driving part, and showed it at the capstone demo." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
+      { anchor: "project-ssodam", title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "11인 융합전공 팀의 대화형 쓰레기통 로봇에서 인식 파트 2인 중 한 명으로 실시간 객체 탐지와 로봇 연동을 맡았습니다. 학기 중 현장 데이터 수집이 불가능해 인식 파트와 주행 파트 연동이 막히자, TACO(넓은 범주)와 AI Hub 생활폐기물 일부(한국 폐기물 형태)를 결합해 학습하자고 제안했습니다. 팀원들이 정확도와 일정을 우려해 함께 따져본 뒤 합의했고, YOLOv8 학습, 태블릿 실시간 실행(OpenCV NDK), 블루투스 로봇 연결, 주행 파트 통합을 거쳐 캡스톤 시연에서 선보였습니다. 이 작품은 2024 한국정보기술학회 대학생 논문경진대회에서 우수논문상을 받았습니다.", en: "In an 11-person mixed-major team building an interactive trash-bin robot, I was one of two people on the recognition part and handled real-time object detection and robot integration. When field data collection was impossible during the semester and the recognition part and its integration with the driving part stalled, I proposed training on combined public datasets: TACO for broad categories and part of AI Hub household waste for Korean waste shapes. Teammates worried about accuracy and schedule; we examined those concerns together and agreed. I then trained YOLOv8, ran it in real time on a tablet via OpenCV NDK, linked robot and tablet over Bluetooth, integrated with the driving part, and showed it at the capstone demo. The work received the Outstanding Paper Award at the 2024 KIIT Student Paper Competition." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
       { title: "Movie Diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie-diary", copy: { ko: "일기에서 감정을 읽어 영화를 추천하는 서비스로, 백엔드는 Cloud Run에 배포하고 프론트엔드는 GitHub Actions로 자동 배포했습니다.", en: "I built an emotion-based film recommendation service with third-party APIs, deployed the backend on Cloud Run, and automated frontend deployment with GitHub Actions." } },
       { title: { ko: "Kubernetes 운영 실습", en: "Kubernetes Operations Lab" }, type: ["Kubernetes", "kind", "Docker"], link: "https://github.com/jgjoe/kubernetes-ops-lab", copy: { ko: "Kubernetes에서 Pod 장애와 잘못된 배포를 직접 재현하고, 상태 변화와 복구 과정을 확인한 운영 실습입니다.", en: "A local Kubernetes lab that reproduces pod failures and failed rollouts, then verifies state transitions and recovery." } },
     ],
@@ -562,13 +512,13 @@ export const portfolio = {
       { title: { ko: "학력", en: "Education" }, items: [{ ko: "경기대학교 컴퓨터공학부 졸업", en: "B.S. in Computer Engineering, Kyonggi University" }, { ko: "2020.03 — 2026.02 / 학점 4.04/4.5", en: "Mar. 2020 — Feb. 2026 / GPA 4.04/4.5" }] },
       { title: { ko: "자격증", en: "Certificates" }, items: [{ ko: "정보처리기사", en: "Engineer Information Processing" }, "SQLD", "ADsP", "CSTS Foundation Level"] },
       { title: { ko: "연구와 수상", en: "Research & awards" }, items: [{ ko: "한국정보기술학회 논문 2편 공저", en: "Co-author of 2 KIIT conference papers" }, { ko: "2025 산학협력 캡스톤디자인 경진대회 심화캡스톤디자인 부문 은상", en: "2025 Industry-Academia Capstone Design Competition, Advanced Division Silver Prize" }, { ko: "2024 한국정보기술학회 대학생 논문경진대회 우수논문상", en: "2024 KIIT Student Paper Competition, Outstanding Paper Award" }] },
-      { title: { ko: "오픈소스", en: "Open source" }, link: { href: "https://github.com/pydantic/logfire/pull/2260", label: { ko: "병합된 변경 보기", en: "View merged change" } }, items: [{ ko: "CLI 인증의 환경변수 서버 주소 반영, 테스트·문서 추가 — pydantic/logfire PR #2260 병합 (2026.10)", en: "CLI auth uses the environment-configured server URL; added tests and docs — pydantic/logfire PR #2260 merged (Oct 2026)" }] },
+      { title: { ko: "오픈소스", en: "Open source" }, link: { href: "https://github.com/pydantic/logfire/pull/2260", label: { ko: "병합된 변경 보기", en: "View merged change" } }, items: [{ ko: "pydantic/logfire PR #2260 병합(2026.10): CLI 인증이 환경변수로 지정한 서버 주소를 쓰도록 수정하고 테스트·문서를 추가", en: "pydantic/logfire PR #2260 merged (Oct 2026): CLI auth now uses the server URL set by environment variable; added tests and docs" }] },
     ],
   },
   skills: [
-    { title: { ko: "AI 응용", en: "AI Applications" }, items: ["RAG", "Embedding · Vector Search (pgvector)", "Retrieval Evaluation (Recall · MRR)", "MCP", "LLM Agent Tool Restriction"] },
     { title: { ko: "언어와 백엔드", en: "Languages & Backend" }, items: ["Java", "Kotlin", "Python", "TypeScript", "SQL", "Spring Boot", "MyBatis", "FastAPI", "REST API", "OpenAPI"] },
     { title: { ko: "데이터 시스템", en: "Data & Systems" }, items: ["Oracle", "PostgreSQL / pgvector", "MySQL", "MongoDB", "DuckDB", "Parquet", "Apache Airflow"] },
+    { title: { ko: "AI 응용", en: "AI Applications" }, items: ["RAG", "Embedding · Vector Search (pgvector)", "Retrieval Evaluation (Recall · MRR)", "MCP", "LLM Agent Tool Restriction"] },
     { title: { ko: "품질과 배포", en: "Quality & Delivery" }, items: ["Pytest", "Playwright", "JUnit", "GitHub Actions", "Docker", "Prometheus", "Google Cloud Run"] },
   ],
   contact: { eyebrow: { ko: "LET'S TALK", en: "LET'S TALK" }, title: { ko: "검증된 결과물을 함께 만듭니다", en: "Let's build verified work together" }, copy: { ko: "프로젝트나 포지션 제안은 이메일로 연락해 주세요.", en: "For project or role opportunities, feel free to reach out by email." }, email: "jigwan.joe@gmail.com", github: "https://github.com/jgjoe" },
