@@ -10,16 +10,17 @@ export const portfolio = {
     mobileNavigation: { ko: "모바일 포트폴리오 메뉴", en: "Mobile portfolio navigation" },
     closeDialog: { ko: "닫기", en: "Close dialog" },
     projectDeepDive: { ko: "프로젝트 상세 보기", en: "View project details" },
+    projectRole: { ko: "내가 한 일", en: "My role" },
     enlargeHint: { ko: "눌러서 크게 보기", en: "Click to enlarge" },
     evidenceLinks: { ko: "검증 근거", en: "Evidence" },
     viewEvidence: { ko: "검증 근거 보기", en: "View evidence" },
     evidenceModalIntro: { ko: "무엇을 어떻게 확인했는지 정리했습니다. 공개 검증 자료가 있으면 함께 연결합니다.", en: "See what was checked and how it was checked. Public validation sources are linked when available." },
   },
   hero: {
-    eyebrow: ["AI-ASSISTED DEVELOPMENT", "DATA QUALITY", "SOFTWARE QUALITY", "BACKEND"],
-    title: { ko: "AI로 빠르게 만들고,\n테스트와 데이터로 판단합니다", en: "I build fast with AI,\nand decide with tests and data" },
-    summary: { ko: "AI 코딩 도구로 업무 시스템, 데이터 파이프라인, AI 서비스를 만든 신입 개발자입니다.\n무엇을 채택하고 배포할지는 테스트와 데이터로 결정했습니다.", en: "A new-graduate developer who used AI coding tools to build business systems, data pipelines, and AI services.\nI decided what to adopt and ship by tests and data." },
-    profileRole: "Software Engineer · AI & Data",
+    eyebrow: ["BACKEND", "DATA", "AI SERVICES", "VERIFIED BY TESTS"],
+    title: { ko: "업무 시스템과 데이터·AI 서비스를\n만드는 백엔드 개발자", en: "A backend developer building business systems\nand data & AI services" },
+    summary: { ko: "AI 코딩 도구로 빠르게 구현하고, 결과는 테스트와 데이터로 직접 검증합니다.", en: "I build fast with AI coding tools and verify the results myself with tests and data." },
+    profileRole: "Backend Engineer · Data & AI",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
       { value: "4.04 / 4.5", label: { ko: "학점", en: "GPA" } },
@@ -30,62 +31,72 @@ export const portfolio = {
   },
   proof: {
     "title": {
-      "ko": "핵심 성과",
-      "en": "Key outcomes"
+      "ko": "핵심 역량",
+      "en": "Core strengths"
     },
-    "items": [
+        "items": [
+      {
+        "kicker": { "ko": "데이터", "en": "DATA" },
+        "value": { "ko": "대용량 데이터를 정제하고 DB 조회를 개선합니다", "en": "I clean large datasets and speed up DB queries" },
+        "label": {
+          "ko": "78개월 공공자전거 기록 2억 4천만 건을 정제하고, 정상·격리 건수 합이 원본 건수와 맞는지 대조했습니다.",
+          "en": "I cleaned 240M public bike records across 78 months and reconciled that accepted plus quarantined row counts equal the source count."
+        },
+        "stats": [
+          { "ko": "정상 241,320,806 + 격리 29,666 = 원본 241,350,472건", "en": "241,320,806 accepted + 29,666 quarantined = 241,350,472 source rows" },
+          { "ko": "Build Your Health: 로컬 Oracle·생성 주문 60만 건, 상세 조회 읽기량 6,285 → 14 (인덱스 2개)", "en": "Build Your Health: local Oracle, 600K generated orders, order-detail reads 6,285 → 14 (2 indexes)" }
+        ],
+        "projects": [
+          { "name": { "ko": "서울 공공자전거", "en": "Seoul Bike" }, "target": "project-seoul-bike", "aria": { "ko": "서울 공공자전거 프로젝트로 이동", "en": "Jump to the Seoul Public Bike project" } },
+          { "name": "Build Your Health", "target": "project-build-health", "aria": { "ko": "Build Your Health 프로젝트로 이동", "en": "Jump to the Build Your Health project" } }
+        ]
+      },
       {
         "kicker": { "ko": "AI 응용", "en": "AI APPLICATIONS" },
-        "value": { "ko": "AI도 같은 계산 결과로 답하게", "en": "AI answers from the same calculations" },
+        "value": { "ko": "AI 기능을 서비스에 연결하고 결과를 점검합니다", "en": "I connect AI features to services and check the results" },
         "label": {
-          "ko": "핵심 지표는 한 곳(Python/DuckDB Core)에서만 계산하고 AI 에이전트는 읽기 전용 도구 5개로만 답하게 했습니다. 직접 연결과 MCP 두 경로의 답 22건을 비교해 불일치 0건을 확인했습니다.",
-          "en": "Core metrics are calculated only in one place (Python/DuckDB Core) and the AI agent answers only through five read-only tools; 22 answers compared across the direct and MCP paths showed zero mismatches."
+          "ko": "공식 정책 13,589개를 한 RAG 검색으로 통합하고, 키워드 보정은 정답 검색률이 오른 경우에만 적용했습니다.",
+          "en": "I unified 13,589 official policies into one RAG search and applied the keyword boost only where the hit rate rose."
         },
-        "project": "TraceVerity",
-        "target": "project-traceverity",
-        "projectAria": { "ko": "TraceVerity AI 응용 프로젝트로 이동", "en": "Jump to the TraceVerity AI application project" }
+        "stats": [
+          { "ko": "혜택나침반: 상위 10개 안 정답 포함률 청년 60문항 46.7% → 51.7%", "en": "BenefitCompass: correct policy in top 10, Youth 60 queries, 46.7% → 51.7%" },
+          { "ko": "TraceVerity: AI는 읽기 전용 도구로만 조회, 공개 데이터 2종에서 22개 항목 일치", "en": "TraceVerity: AI uses read-only tools only; 22 items matched on 2 public datasets" }
+        ],
+        "projects": [
+          { "name": { "ko": "혜택나침반", "en": "BenefitCompass" }, "target": "project-benefit-compass", "aria": { "ko": "혜택나침반 프로젝트로 이동", "en": "Jump to the BenefitCompass project" } },
+          { "name": "TraceVerity", "target": "project-traceverity", "aria": { "ko": "TraceVerity 프로젝트로 이동", "en": "Jump to the TraceVerity project" } }
+        ]
       },
       {
-        "kicker": { "ko": "데이터 품질", "en": "DATA QUALITY" },
-        "value": { "ko": "2억 4,135만 건, 원본과 정확히 일치", "en": "241.35M rows, exactly matching the source" },
+        "kicker": { "ko": "제품 개발", "en": "PRODUCT" },
+        "value": { "ko": "서비스를 끝까지 만들어 출시하고 개선합니다", "en": "I ship a service end to end and keep improving it" },
         "label": {
-          "ko": "서울 공공자전거 대여 기록을 정제해 정상 241,320,806건과 격리 29,666건의 합이 원본 241,350,472건과 맞는지 대조했습니다.",
-          "en": "Cleaned Seoul public bike rental records and reconciled that 241,320,806 accepted plus 29,666 quarantined rows equal the 241,350,472-row source."
+          "ko": "날짜 오인식 위험을 찾아 저장 전 확인 방식으로 바꿔 재출시했고, 이후 사용자 4명을 관찰해 반복된 불편을 고쳤습니다.",
+          "en": "I found a date-misrecognition risk, switched to confirm-before-save and re-released, then observed 4 users and fixed the repeated pain points."
         },
-        "project": { "ko": "서울 공공자전거", "en": "Seoul Bike" },
-        "target": "project-seoul-bike",
-        "projectAria": { "ko": "서울 공공자전거 데이터 품질 프로젝트로 이동", "en": "Jump to the Seoul Public Bike data quality project" }
+        "stats": [
+          { "ko": "4명·32개 과업 관찰 → 소비 완료 복구·직접 입력 경로 수정", "en": "4 users, 32 task observations → fixed consumed-item restore and manual-entry paths" },
+          { "ko": "불편을 겪은 2명이 수정한 4개 흐름 재확인, 8개 관찰 모두 완료", "en": "2 affected users re-checked the 4 fixed flows: all 8 observations completed" }
+        ],
+        "projects": [
+          { "name": { "ko": "오늘도 신선", "en": "Fridge D-Day" }, "target": "project-today-fresh", "aria": { "ko": "오늘도 신선 프로젝트로 이동", "en": "Jump to the Fridge D-Day project" } }
+        ]
       },
       {
-        "kicker": { "ko": "소프트웨어 품질", "en": "SOFTWARE QUALITY" },
-        "value": { "ko": "자동 검사를 다 통과해도 멈춘 배포", "en": "Holding a release that passed every automated check" },
+        "kicker": { "ko": "팀 협업", "en": "TEAMWORK" },
+        "value": { "ko": "팀에서 맡은 파트를 풀어 내고 연동합니다", "en": "I solve my part in a team and integrate it" },
         "label": {
-          "ko": "개인 Android 앱 v1.1이 자동·회귀 검사를 통과했지만 고정 표본 55장 중 15장 오답이 남아 배포를 보류했고, 보류 사유를 제품 구조로 해결해 다시 출시했습니다.",
-          "en": "Personal Android app v1.1 passed automated and regression checks, but 15 of 55 fixed samples were still wrong, so I held the release, resolved the cause in the product design, and re-released."
+          "ko": "11인 팀에서 인식 파트가 막히자 공개 데이터셋 조합을 제안하고, 팀원 우려를 함께 따져 합의한 뒤 로봇과 연동했습니다.",
+          "en": "In a team of 11, when the recognition part stalled I proposed combining public datasets, agreed after examining teammates' concerns together, then integrated it with the robot."
         },
-        "project": { "ko": "오늘도신선", "en": "Fridge D-Day" },
-        "target": "project-today-fresh",
-        "projectAria": { "ko": "오늘도신선 소프트웨어 품질 프로젝트로 이동", "en": "Jump to the Fridge D-Day software quality project" }
-      },
-      {
-        "kicker": {
-          "ko": "SQL 검증",
-          "en": "SQL VALIDATION"
-        },
-        "value": {
-          "ko": "읽기량 6,285 → 14",
-          "en": "Reads 6,285 → 14"
-        },
-        "label": {
-          "ko": "로컬 Oracle의 생성 주문 60만 건에서 상세 조회의 논리 블록 읽기가 6,285에서 14로 줄어든 것을 확인하고 두 조회를 고려해 인덱스를 골랐습니다.",
-          "en": "Confirmed that order-detail logical block reads fell from 6,285 to 14 on 600K generated local Oracle orders; selected indexes for both queries."
-        },
-        "project": "Build Your Health",
-        "target": "project-build-health",
-        "projectAria": {
-          "ko": "주문 시스템 SQL 검증 프로젝트로 이동",
-          "en": "Jump to order-system SQL validation"
-        }
+        "stats": [
+          { "ko": "쓰담: 캡스톤 시연, 2024 한국정보기술학회 대학생 논문경진대회 우수논문상", "en": "SSeudam: capstone demo; 2024 KIIT Student Paper Competition, Outstanding Paper Award" },
+          { "ko": "길동이(6인 팀): 차량 API·MongoDB 모델 구현, OpenAPI로 장치·앱 담당자와 규격 공유", "en": "GildongE (team of 6): vehicle APIs and MongoDB models; shared specs with device and app teammates via OpenAPI" }
+        ],
+        "projects": [
+          { "name": { "ko": "쓰담", "en": "SSeudam" }, "target": "project-ssodam", "aria": { "ko": "쓰담 프로젝트로 이동", "en": "Jump to the SSeudam project" } },
+          { "name": { "ko": "길동이", "en": "GildongE" }, "target": "project-gildong", "aria": { "ko": "길동이 프로젝트로 이동", "en": "Jump to the GildongE project" } }
+        ]
       }
     ]
   },
@@ -97,6 +108,7 @@ export const portfolio = {
         anchor: "project-gildong", title: "길동이 AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: [{ ko: "6인 팀", en: "Team of 6" }, { ko: "백엔드 / DB 담당", en: "Backend / DB owner" }], period: "2025.03 — 2025.06",
         lead: { ko: "졸음 감지 장치와 모바일 앱 등에서 들어오는 차량 데이터를 사용자 단위로 관리하는 AI 차량 어시스턴트 백엔드입니다.", en: "The backend for an AI vehicle assistant that manages per-user vehicle data from sources such as a drowsiness-detection device and mobile app." },
         tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
+        role: { ko: "6인 팀에서 차량 관련 API와 MongoDB 데이터 모델을 맡았고, 장치·앱 담당자가 같은 규격으로 연동하도록 OpenAPI 문서를 작성했습니다.", en: "In a team of 6, I built the vehicle-related APIs and MongoDB data models, and wrote OpenAPI docs so device and app teammates could integrate against one spec." },
         visibleDetailIndexes: [1, 3],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
@@ -116,6 +128,7 @@ export const portfolio = {
       {
         "anchor": "project-build-health",
         "architectureInDetails": false,
+        "role": { "ko": "개인 프로젝트로, 어떤 조회를 어떤 기준으로 측정할지 먼저 정하고 결과를 해석해 추가할 인덱스를 직접 골랐습니다.", "en": "A personal project: I first decided which queries to measure and by what criteria, then interpreted the results and chose the indexes to add." },
         "title": "Build Your Health",
         "subtitle": {
           "ko": "웹 주문 시스템 재구축과 SQL 인덱스 검증",
@@ -197,8 +210,8 @@ export const portfolio = {
           {
             "value": "6,285 → 14",
             "label": {
-              "ko": "로컬 Oracle / 생성 주문 60만 건의 상세 조회 논리 블록 읽기",
-              "en": "Order-detail logical reads / local Oracle, 600K generated orders"
+              "ko": "로컬 Oracle·생성 주문 60만 건에서 주문 상세 조회가 읽는 양",
+              "en": "Data read by the order-detail query / local Oracle, 600K generated orders"
             }
           },
           {
@@ -397,6 +410,7 @@ export const portfolio = {
       },
       {
         anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 품질 / 파이프라인", en: "Data quality / pipeline" }], period: "2026.09",
+        role: { ko: "개인 프로젝트로, 원천 변경 추적부터 품질 검사, 건수 대조까지 파이프라인을 직접 구성했습니다.", en: "A personal project: I built the pipeline myself, from tracking source changes to quality checks and row-count reconciliation." }, visibleResultIndexes: [0, 2],
         lead: { ko: "서울 공공자전거 대여 기록 78개월, 2억 4천만 건을 정제해 분석용 데이터로 만드는 배치 파이프라인입니다.", en: "A batch pipeline that cleans 240 million Seoul Public Bike rental records across 78 months into analytical datasets." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
         visibleDetailIndexes: [1, 2],
@@ -406,7 +420,7 @@ export const portfolio = {
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "바뀐 월이나 실패한 월만 다시 처리하고 검증을 마친 이전 결과는 보존했습니다. CLI와 Airflow가 같은 Python 처리 로직을 호출하도록 구성했습니다.", en: "I reprocessed only changed or failed months while preserving earlier verified results. The CLI and Airflow call the same Python processing logic." } },
           { label: { ko: "결과", en: "Result" }, copy: { ko: "원천부터 정제까지 78개월 241,350,472행을 처리했습니다. 정상 241,320,806행과 문제 29,666행의 합계가 원본 건수와 일치했고 대표 월의 분석용 집계도 대조했습니다.", en: "Source-to-clean processing covered 78 months and 241,350,472 rows. The accepted 241,320,806 rows plus 29,666 quarantined rows matched the source count, and representative monthly aggregates were also checked." } },
         ],
-        results: [{ value: { ko: "2억 4천만 건", en: "240M records" }, label: { ko: "원본부터 정제까지 처리", en: "processed from source to cleaned data" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "건수 일치", en: "Exact counts" }, label: { ko: "원본 = 정상 처리 + 문제 데이터", en: "source = trusted + quarantined" } }],
+        results: [{ value: { ko: "2억 4천만 건", en: "240M records" }, label: { ko: "78개월 원본부터 정제까지 처리", en: "processed from source to cleaned data across 78 months" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "건수 합 일치", en: "Row counts reconcile" }, label: { ko: "원본 = 정상 처리 + 문제 데이터", en: "source = trusted + quarantined" } }],
         evidenceNotes: [
           { label: { ko: "전 기간 확인", en: "Full-period check" }, copy: { ko: "2020-01~2026-06의 78개월 2억 4,135만 행을 정제했고, 품질 문제 29,666행을 분석 데이터와 분리했습니다.", en: "Across 78 months from 2020-01 to 2026-06, about 241.35M rows were cleaned and 29,666 quality-issue rows were isolated from analytical data." } },
           { label: { ko: "재처리 기준", en: "Reprocessing rule" }, copy: { ko: "원천 파일의 버전과 SHA-256을 기록해 변경된 월만 다시 처리하도록 구성했습니다.", en: "Source versions and SHA-256 hashes identify changed months so only affected periods are rebuilt." } },        ],
@@ -431,6 +445,7 @@ export const portfolio = {
       },
       {
         anchor: "project-traceverity", title: "TraceVerity", titleLines: ["TraceVerity"], subtitle: { ko: "업무 처리 기록 분석 도구", en: "Process Intelligence Workbench" }, type: [{ ko: "개인", en: "Personal" }, { ko: "프로세스 분석", en: "Process Intelligence" }], period: "2026.09",
+        role: { ko: "개인 프로젝트로, 계산 기준을 한 곳에 두는 구조와 AI에게 줄 권한의 범위를 직접 설계하고 검증했습니다.", en: "A personal project: I designed and verified a structure with one place for calculation and a limited scope of access for the AI." }, visibleResultIndexes: [1, 2],
         lead: { ko: "기업 시스템에 쌓이는 업무 처리 기록을 읽어, 업무가 실제로 어떤 순서로 흐르고 어디서 반복되는지 보여 주는 분석 도구입니다. 기록 파일을 브라우저에 올리면 바로 분석합니다.", en: "An analysis tool that reads work records from business systems to show the order work actually follows and where it repeats. Upload a log file in the browser and it is analyzed right away." },
         tech: ["Python", "DuckDB", "FastAPI", "React", "Power BI", "MCP"],
         visibleDetailIndexes: [1, 2],
@@ -440,7 +455,7 @@ export const portfolio = {
           { label: { ko: "판단", en: "Decision" }, copy: { ko: "AI에는 정해진 계산 결과를 조회하는 도구만 제공했습니다. SQL 실행이나 파일·네트워크 접근, 쓰기 권한은 열지 않아 계산과 답변의 역할을 나눴습니다.", en: "I gave the AI only predefined tools for reading computed results, without direct SQL, filesystem, network, or write access, separating calculation from answering." } },
           { label: { ko: "결과", en: "Result" }, copy: { ko: "두 실제 업무 데이터셋에서 Direct/MCP 연결 방식의 22개 비교 항목이 일치했습니다. 원본과 계산 규칙 검증에 실패하면 분석을 멈춥니다.", en: "All 22 Direct/MCP comparison checks matched across two real workflow datasets. Analysis stops when source or calculation-rule validation fails." } },
         ],
-        results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with one calculation rule" } }, { value: { ko: "22개 항목 일치", en: "22 matching checks" }, label: { ko: "두 데이터셋의 Direct/MCP 비교", en: "Direct/MCP comparisons on two datasets" } }, { value: { ko: "AI 권한 제한", en: "Limited AI access" }, label: { ko: "계산 결과 조회만 허용", en: "may only read computed results" } }],
+        results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with one calculation rule" } }, { value: { ko: "22개 항목 일치", en: "22 matching checks" }, label: { ko: "공개 데이터 2종에서 AI 연결 방식 두 가지의 답을 비교", en: "answers compared across two AI connection paths on 2 public datasets" } }, { value: { ko: "AI 권한 제한", en: "Limited AI access" }, label: { ko: "계산 결과 조회만 허용", en: "may only read computed results" } }],
         evidenceNotes: [
           { label: { ko: "검증 대상", en: "What was checked" }, copy: { ko: "케이스 수, 이벤트 수, 주요 흐름, 단계 간 이동, 재작업 집계를 두 실제 이벤트 로그에서 독립 재계산해 Core 결과와 대조했습니다.", en: "Case counts, event counts, major paths, direct transitions, and rework aggregates were independently re-derived on two real event logs and compared with Core results." } },
           { label: { ko: "결과", en: "Result" }, copy: { ko: "개발본의 독립 회귀 테스트 190/190과 공개 저장소의 회귀 테스트 168/168을 각각 통과했습니다. 두 데이터셋에서 Direct/MCP 결과를 비교한 22개 항목은 모두 일치했습니다.", en: "Independent regression testing of the development version passed 190/190, and the public repository passed its 168/168 regression tests. All 22 Direct/MCP result comparisons matched across two datasets." } },        ],
@@ -465,7 +480,8 @@ export const portfolio = {
         ] },
       },
       {
-        title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
+        anchor: "project-benefit-compass", title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
+        role: { ko: "개인 프로젝트(공개 데모)로, 두 사이트의 정책 통합과 검색 개선안의 비교·채택 판단, 단계 배포를 직접 진행했습니다.", en: "A personal project (public demo): I unified policies from two sites, compared and decided which search improvements to adopt, and ran the staged rollout." },
         lead: { ko: "온통청년과 정부24의 공식 정책을 한 번에 검색하고, 찾은 정책을 근거로 AI가 답하는 서비스(RAG)입니다.", en: "A service that searches official policies from Youth Policy and Gov24 in one place and has AI answer from the policies it finds (RAG)." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
         visibleDetailIndexes: [1, 2],
@@ -506,6 +522,7 @@ export const portfolio = {
       },
       {
         anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }], period: { ko: "2025.09 — 2026.10", en: "2025.09 — 2026.10" },
+        role: { ko: "개인 프로젝트로, 기획과 개발, 출시, 사용자 관찰 뒤 개선까지 직접 진행했습니다.", en: "A personal project: I handled planning, development, release, and improvements after user observation myself." }, visibleResultIndexes: [1, 2],
         lead: { ko: "유통기한을 촬영하거나 입력해 식품을 등록하고 D-Day, 알림, 위젯으로 관리하는 Android 앱입니다.", en: "An Android app for registering expiry dates by camera or manual entry, then managing them with D-Day status, notifications, and a widget." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
         visibleDetailIndexes: [2, 4],
@@ -534,7 +551,7 @@ export const portfolio = {
     posterClose: { ko: "프로젝트 포스터 닫기", en: "Hide project poster" },
     moreEyebrow: { ko: "MORE WORK", en: "MORE WORK" }, moreTitle: { ko: "추가 프로젝트", en: "Additional projects" },
     more: [
-      { title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "대화형 쓰레기통 로봇에서 실시간 객체 탐지와 로봇 연동을 맡아 2024 한국정보기술학회 대학생 논문경진대회 우수논문상을 받았습니다.", en: "I handled real-time object detection and robot integration for an interactive trash-bin robot that received a 2024 KIIT student paper award." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
+      { anchor: "project-ssodam", title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "11인 융합전공 팀의 대화형 쓰레기통 로봇에서 인식 파트 2인 중 한 명으로 실시간 객체 탐지와 로봇 연동을 맡아 2024 한국정보기술학회 대학생 논문경진대회 우수논문상을 받았습니다. 학기 중 현장 데이터 수집이 불가능해 인식 파트와 주행 파트 연동이 막히자 TACO(넓은 범주)와 AI Hub 생활폐기물 일부(한국 폐기물 형태)를 결합한 공개 데이터셋 학습을 제안했습니다. 팀원들이 정확도와 일정을 우려해 함께 따져본 뒤 합의했고, YOLOv8 학습, OpenCV NDK 기반 태블릿 실시간 실행, 블루투스 로봇 연결, 주행 파트 통합을 거쳐 캡스톤 시연에서 선보였습니다.", en: "As one of two people on the recognition part in an 11-person mixed-major team, I handled real-time object detection and robot integration for an interactive trash-bin robot that received a 2024 KIIT student paper award. When field data collection was impossible during the semester and the recognition part and its integration with the driving part stalled, I proposed training on combined public datasets: TACO for broad categories and part of AI Hub household waste for Korean waste shapes. Teammates worried about accuracy and schedule; we examined those concerns together and agreed. I then trained YOLOv8, ran it in real time on a tablet via OpenCV NDK, linked robot and tablet over Bluetooth, integrated with the driving part, and showed it at the capstone demo." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
       { title: "Movie Diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie-diary", copy: { ko: "일기에서 감정을 읽어 영화를 추천하는 서비스로, 백엔드는 Cloud Run에 배포하고 프론트엔드는 GitHub Actions로 자동 배포했습니다.", en: "I built an emotion-based film recommendation service with third-party APIs, deployed the backend on Cloud Run, and automated frontend deployment with GitHub Actions." } },
       { title: { ko: "Kubernetes 운영 실습", en: "Kubernetes Operations Lab" }, type: ["Kubernetes", "kind", "Docker"], link: "https://github.com/jgjoe/kubernetes-ops-lab", copy: { ko: "Kubernetes에서 Pod 장애와 잘못된 배포를 직접 재현하고, 상태 변화와 복구 과정을 확인한 운영 실습입니다.", en: "A local Kubernetes lab that reproduces pod failures and failed rollouts, then verifies state transitions and recovery." } },
     ],
@@ -557,5 +574,5 @@ export const portfolio = {
   contact: { eyebrow: { ko: "LET'S TALK", en: "LET'S TALK" }, title: { ko: "검증된 결과물을 함께 만듭니다", en: "Let's build verified work together" }, copy: { ko: "프로젝트나 포지션 제안은 이메일로 연락해 주세요.", en: "For project or role opportunities, feel free to reach out by email." }, email: "jigwan.joe@gmail.com", github: "https://github.com/jgjoe" },
 };
 
-const featuredOrder = ["TraceVerity", "혜택나침반", "서울 공공자전거 데이터 파이프라인", "Build Your Health", "오늘도 신선", "길동이 AI 차량 어시스턴트"];
+const featuredOrder = ["TraceVerity", "혜택나침반", "길동이 AI 차량 어시스턴트", "서울 공공자전거 데이터 파이프라인", "Build Your Health", "오늘도 신선"];
 portfolio.projects.featured.sort((a, b) => featuredOrder.indexOf(a.title) - featuredOrder.indexOf(b.title));

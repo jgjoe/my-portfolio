@@ -40,11 +40,10 @@ export default function ProjectsSection({ t, onOpenMedia, onOpenEvidence }) {
 }
 
 function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
-  const visibleIndexes = project.visibleDetailIndexes || (project.details.length > 2 ? [1, 2] : [0, 1]);
-  const visibleDetails = visibleIndexes
-    .map((detailIndex) => project.details[detailIndex])
-    .filter(Boolean);
-  const deepDetails = project.details.filter((_, detailIndex) => !visibleIndexes.includes(detailIndex));
+  const visibleResultIndexes = project.visibleResultIndexes || [0, 1];
+  const visibleResults = project.results.filter((_, resultIndex) => visibleResultIndexes.includes(resultIndex));
+  const deepResults = project.results.filter((_, resultIndex) => !visibleResultIndexes.includes(resultIndex));
+  const deepDetails = project.details;
   const primaryLinks = project.links.slice(0, 2);
   const hasEvidence = project.evidenceNotes?.length > 0 || project.links.length > 2;
   const typeItems = Array.isArray(project.type) ? project.type : [project.type];
@@ -68,25 +67,19 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
         <p className="project-lead">{t(project.lead)}</p>
 
         <div className="project-facts">
-          {visibleDetails.map((detail) => (
-            <div key={t(detail.label)}>
-              <span>{t(detail.label)}</span>
-              <p>{t(detail.copy)}</p>
-            </div>
-          ))}
+          <div>
+            <span>{t(portfolio.ui.projectRole)}</span>
+            <p>{t(project.role)}</p>
+          </div>
         </div>
 
         <div className="result-grid">
-          {project.results.map((result) => (
+          {visibleResults.map((result) => (
             <div key={t(result.label)}>
               <strong>{t(result.value)}</strong>
               <span>{t(result.label)}</span>
             </div>
           ))}
-        </div>
-
-        <div className="tech-row">
-          {project.tech.slice(0, 6).map((tech) => <span key={tech}>{tech}</span>)}
         </div>
 
         {deepDetails.length > 0 && (
@@ -99,6 +92,19 @@ function FeaturedProject({ project, index, t, onOpenMedia, onOpenEvidence }) {
                   <p>{t(detail.copy)}</p>
                 </div>
               ))}
+            </div>
+            {deepResults.length > 0 && (
+              <div className="result-grid">
+                {deepResults.map((result) => (
+                  <div key={t(result.label)}>
+                    <strong>{t(result.value)}</strong>
+                    <span>{t(result.label)}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="tech-row">
+              {project.tech.slice(0, 6).map((tech) => <span key={tech}>{tech}</span>)}
             </div>
             {project.architectureInDetails !== false && (
               <ArchitectureDiagram architecture={project.architecture} t={t} />
@@ -149,7 +155,7 @@ function ArchiveProject({ project, t, onOpenMedia }) {
   }
 
   return (
-    <article className="archive-card archive-static">
+    <article id={project.anchor} className="archive-card archive-static">
       {content}
       {project.media && (
         <button

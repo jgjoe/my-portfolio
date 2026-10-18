@@ -81,14 +81,14 @@ function SummaryPage({ t }) {
       </div>
 
       <h2 className="print-section-title">{t(portfolio.proof.title)}</h2>
-      <p className="print-summary-text">{t(portfolio.projects.copy)}</p>
       <div className="print-proof-row">
         {portfolio.proof.items.map((item) => (
-          <article className="print-proof-card" key={t(item.label)}>
+          <article className="print-proof-card" key={t(item.value)}>
             <p className="print-proof-kicker">{t(item.kicker)}</p>
             <p className="print-proof-value">{t(item.value)}</p>
             <p className="print-proof-label">{t(item.label)}</p>
-            <p className="print-proof-project">{t(item.project)}</p>
+            <ul className="print-proof-stats">{item.stats.map((stat) => <li key={t(stat)}>{t(stat)}</li>)}</ul>
+            <p className="print-proof-project">{item.projects.map((project) => t(project.name)).join(" · ")}</p>
           </article>
         ))}
       </div>

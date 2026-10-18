@@ -87,7 +87,7 @@ npm start
 
 ## 만든 사람
 
-**Jigwan Joe** — Software Engineer · AI & Data
+**Jigwan Joe** — Backend Engineer · Data & AI
 
 - GitHub: [@jgjoe](https://github.com/jgjoe)
 - Email: jigwan.joe@gmail.com
