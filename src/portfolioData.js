@@ -108,7 +108,7 @@ export const portfolio = {
       {
         anchor: "project-gildong", title: "길동이 AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: [{ ko: "6인 팀", en: "Team of 6" }, { ko: "백엔드 / DB 담당", en: "Backend / DB owner" }], period: "2025.03 — 2025.06",
         subtitle: { ko: "차량 데이터 API와 MongoDB 백엔드", en: "Vehicle data APIs and MongoDB backend" },
-        lead: { ko: "졸음 감지 장치와 모바일 앱에서 들어오는 차량, 소모품, 주행 패턴 데이터를 사용자별로 제공합니다. 캡스톤디자인 경진대회 은상을 받은 팀 프로젝트입니다.", en: "Serves vehicle, consumable, and driving-pattern data from a drowsiness-detection device and mobile app per user. A team project that won the silver prize at a capstone design competition." },
+        lead: { ko: "졸음 감지 장치와 모바일 앱에서 들어오는 차량, 소모품, 주행 패턴 데이터를 사용자별로 제공하는 팀 프로젝트입니다.", en: "A team project that serves vehicle, consumable, and driving-pattern data from a drowsiness-detection device and mobile app per user." },
         tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
         role: { ko: "6인 팀에서 차량 관련 API와 MongoDB 데이터 모델을 맡았고, 장치와 앱 담당자가 같은 규격으로 연동하도록 OpenAPI 문서를 작성했습니다.", en: "In a team of 6, I built the vehicle-related APIs and MongoDB data models, and wrote OpenAPI docs so device and app teammates could integrate against one spec." },
         details: [
@@ -149,8 +149,8 @@ export const portfolio = {
           "en": "2024 original / Oct 2026 rebuild"
         },
         "lead": {
-          "ko": "JSP와 MySQL로 만든 웹 주문 시스템을 Spring Boot, MyBatis, Oracle로 재구축하고, 주요 조회에 맞는 인덱스를 측정으로 골라 반영했습니다.",
-          "en": "Rebuilt a JSP/MySQL web order system with Spring Boot, MyBatis, and Oracle, then chose and applied indexes for key queries based on measurements."
+          "ko": "JSP와 MySQL로 만든 웹 주문 시스템의 상품 조회, 로그인, 주문 흐름을 Spring Boot, MyBatis, Oracle로 재구축했습니다.",
+          "en": "Rebuilt the product browsing, login, and ordering flows of a JSP/MySQL web order system with Spring Boot, MyBatis, and Oracle."
         },
         "tech": [
           "Java 17",
@@ -371,7 +371,7 @@ export const portfolio = {
         anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 품질 / 파이프라인", en: "Data quality / pipeline" }], period: "2026.09",
         role: { ko: "변경되거나 실패한 달만 다시 처리하고, 이전 검증 결과를 보존하는 처리 흐름을 설계하고 구현했습니다.", en: "I designed and implemented a processing flow that reprocesses only changed or failed months and preserves previously validated results." }, visibleResultIndexes: [0, 2],
         subtitle: { ko: "대여 기록 정제와 월별 재처리 파이프라인", en: "Rental data cleaning and monthly reprocessing pipeline" },
-        lead: { ko: "서울 공공자전거 대여 기록 78개월, 약 2억 4천만 행을 월별로 정제하고 정상 데이터와 격리 데이터의 합계를 원본 건수와 대조했습니다.", en: "Cleans 78 months of Seoul Public Bike rental records, about 240 million rows, month by month, and reconciles clean plus quarantined rows with the source count." },
+        lead: { ko: "서울 공공자전거 대여 기록을 월 ���위로 정제하고, 같은 이동인데 값이 서로 다른 기록 묶음은 따로 격리하는 배치 파이프라인입니다.", en: "A batch pipeline that cleans Seoul Public Bike rental records month by month and quarantines record groups for the same trip whose values disagree." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "서울시는 이미 올린 월별 파일을 나중에 고치기도 하고, 대여소 정보도 시점별로만 제공합니다. 그래서 무엇이 바뀌었는지 추적해 바뀐 달만 다시 처리해야 했습니다.", en: "Seoul sometimes corrects monthly files after publishing them, and station information is provided only as per-date snapshots. I therefore had to track what changed and reprocess only the changed months." } },
@@ -439,7 +439,7 @@ export const portfolio = {
         anchor: "project-benefit-compass", title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
         role: { ko: "두 사이트의 정책 통합과 검색 개선안 비교, 채택 판단과 단계 배포를 직접 진행했습니다.", en: "I unified policies from two sites, compared and decided which search improvements to adopt, and ran the staged rollout." },
         subtitle: { ko: "정부 정책 통합 검색과 질의응답 서비스", en: "Unified government policy search and Q&A" },
-        lead: { ko: "온통청년과 정부24의 공식 정책 13,589개를 한 번에 검색하고, 찾은 정책을 근거로 AI가 답합니다. 공개 데모로 배포했습니다.", en: "Searches 13,589 official policies from Youth Policy and Gov24 in one place and answers from the policies it finds (RAG). Deployed as a public demo." },
+        lead: { ko: "온통청년과 정부24의 공식 정책을 한 번에 검색하고, 찾은 정책을 근거로 AI가 답합니다. 공개 데모로 배포했습니다.", en: "Searches official policies from Youth Policy and Gov24 in one place and answers from the policies it finds (RAG). Deployed as a public demo." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "1만 개가 넘는 정책이 두 사이트에 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "More than 10,000 policies were spread across two sites, and keyword search made relevant programs hard to find." } },
@@ -479,7 +479,7 @@ export const portfolio = {
         anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "개인", en: "Solo" }, { ko: "Android 공개 출시", en: "Android release" }], period: { ko: "2025.09~2026.10", en: "2025.09 — 2026.10" },
         role: { ko: "기획과 개발, 출시, 사용자 관찰 뒤 개선까지 직접 진행했습니다.", en: "I handled planning, development, release, and improvements after user observation myself." }, visibleResultIndexes: [1, 2],
         subtitle: { ko: "식품 유통기한 관리 Android 앱", en: "Food expiry tracking Android app" },
-        lead: { ko: "유통기한을 촬영하거나 입력해 식품을 등록하고 D-Day, 알림, 위젯으로 관리합니다. ONEstore와 Google Play에 정식 출시했습니다.", en: "Register foods by photographing or typing expiry dates, then manage them with D-Day status, notifications, and a widget. Released on ONEstore and Google Play." },
+        lead: { ko: "유통기한을 촬영하거나 입력해 식품을 등록하고 D-Day, 알림, 위젯으로 관리합니다. 사진은 서버로 보내지 않고 기기 안에서 글자를 인식합니다.", en: "Register foods by photographing or typing expiry dates, then manage them with D-Day status, notifications, and a widget. Text recognition runs on the device without sending photos to a server." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "유통기한을 직접 입력하는 번거로움과 식품 기록을 외부로 보내는 부담을 줄이고자 했습니다.", en: "I wanted to reduce the hassle of typing expiry dates by hand and the burden of sending food records off the device." } },
