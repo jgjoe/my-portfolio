@@ -371,7 +371,7 @@ export const portfolio = {
         anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 품질 / 파이프라인", en: "Data quality / pipeline" }], period: "2026.09",
         role: { ko: "변경되거나 실패한 달만 다시 처리하고, 이전 검증 결과를 보존하는 처리 흐름을 설계하고 구현했습니다.", en: "I designed and implemented a processing flow that reprocesses only changed or failed months and preserves previously validated results." }, visibleResultIndexes: [0, 2],
         subtitle: { ko: "대여 기록 정제와 월별 재처리 파이프라인", en: "Rental data cleaning and monthly reprocessing pipeline" },
-        lead: { ko: "서울 공공자전거 대여 기록을 월 ���위로 정제하고, 같은 이동인데 값이 서로 다른 기록 묶음은 따로 격리하는 배치 파이프라인입니다.", en: "A batch pipeline that cleans Seoul Public Bike rental records month by month and quarantines record groups for the same trip whose values disagree." },
+        lead: { ko: "서울 공공자전거 대여 기록을 월 단위로 정제하고, 같은 이동인데 값이 서로 다른 기록 묶음은 따로 격리하는 배치 파이프라인입니다.", en: "A batch pipeline that cleans Seoul Public Bike rental records month by month and quarantines record groups for the same trip whose values disagree." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "서울시는 이미 올린 월별 파일을 나중에 고치기도 하고, 대여소 정보도 시점별로만 제공합니다. 그래서 무엇이 바뀌었는지 추적해 바뀐 달만 다시 처리해야 했습니다.", en: "Seoul sometimes corrects monthly files after publishing them, and station information is provided only as per-date snapshots. I therefore had to track what changed and reprocess only the changed months." } },
