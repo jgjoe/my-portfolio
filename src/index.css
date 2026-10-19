@@ -673,6 +673,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-contact-lines a { color: #ffffff; }
 
   .print-summary-page { padding: 11mm 14mm 9mm; }
+  /* English needs more lines; retain the shared type sizes and Korean layout. */
+  html[lang="en"] .print-summary-page { padding-top: 7mm; padding-bottom: 6mm; }
+  html[lang="en"] .print-summary-page .print-proof-card { padding-top: 1.5mm; padding-bottom: 1.5mm; }
+  html[lang="en"] .print-summary-page .print-columns { margin-top: 2mm; }
+  html[lang="en"] .print-summary-page .print-contact { margin-top: 2mm; padding-top: 2mm; padding-bottom: 2mm; }
   .print-summary-page .print-summary-text { margin-top: 2mm; font-size: 8.8pt; line-height: 1.5; }
   .print-summary-page .print-headline { margin-top: 2mm; font-size: 20pt; }
   .print-summary-page .print-photo { width: 22mm; height: 22mm; }
