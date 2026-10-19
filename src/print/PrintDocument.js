@@ -34,7 +34,7 @@ function PageFooter({ t, page }) {
   return (
     <footer className="print-footer">
       <span>
-        {t(portfolio.name)} · {PORTFOLIO_URL}
+        {t(portfolio.name)}, {PORTFOLIO_URL}
       </span>
       <span>
         {page} / {PAGE_COUNT}
