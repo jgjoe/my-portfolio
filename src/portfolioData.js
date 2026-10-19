@@ -163,7 +163,7 @@ export const portfolio = {
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "JSP·MySQL로 만든 웹 주문 시스템을 Spring Boot·MyBatis·Oracle로 옮기면서, 조회에 필요한 인덱스를 같은 기준으로 비교해 정해야 했습니다.", en: "While rebuilding a JSP/MySQL order system on Spring Boot, MyBatis, and Oracle, I had to choose indexes by comparing candidates under the same criteria." } },
           { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "측정할 쿼리 3종과 데이터 분포, 인덱스 후보, 반복 조건을 먼저 정하고 결과 검증과 실행계획 해석을 맡았습니다. 주문 상세 조회에는 외래 키 인덱스를, 회원별 조회 두 종류에는 함께 사용할 복합 인덱스를 선정했습니다. 재구축에는 AI 코딩 도구를 활용했습니다.", en: "I defined three queries, the data distribution, index candidates, and repeat conditions, then validated results and interpreted execution plans. I selected a foreign-key index for order-detail queries and one composite index for both per-user queries. I used AI coding tools in the rebuild." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "상세 조회의 DB 블록 읽기가 6,285에서 14로 줄었습니다(Oracle 생성 주문 60만 건 시험). 선정한 인덱스 2개는 앱 스키마에 반영해 자동 적용을 확인했습니다.", en: "Order-detail DB block reads fell from 6,285 to 14 (Oracle test, 600K generated orders). I confirmed automatic application of the two selected indexes in the app schema." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "상세 조회의 DB 블록 읽기가 6,285에서 14로 줄었습니다(Oracle 생성 주문 60만 건 시험). 선정한 인덱스 2개는 앱 스키마에 반영해 자동 적용을 확인했습니다. 이후 부하 원인을 분석해 로그인 과부하 보호를 적용했습니다.", en: "Order-detail DB block reads fell from 6,285 to 14 (Oracle test, 600K generated orders). I confirmed automatic application of the two selected indexes in the app schema. I later analyzed the load bottleneck and added login overload protection." } },
         ],
         "results": [
           {
