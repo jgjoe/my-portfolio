@@ -719,6 +719,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-project-title { margin: 3mm 0 0; font-size: 21pt; font-weight: 800; line-height: 1.12; letter-spacing: -.025em; }
   .print-project-subtitle { margin: 1.6mm 0 0; color: var(--print-blue); font-size: 9.5pt; font-weight: 800; }
   html[lang="en"] .print-project-page { padding-top: 10mm; padding-bottom: 8mm; }
+  html[lang="en"] .print-project-page .print-detail-copy { line-height: 1.45; }
+  html[lang="en"] .print-project-page .print-evidence-band { margin-top: 3mm; padding-top: 2.4mm; }
+  html[lang="en"] .print-project-page .print-evidence-links { margin-top: 2mm; row-gap: 1mm; }
   .print-project-lead { margin: 3mm 0 0; color: var(--print-muted); font-size: 9.2pt; line-height: 1.6; }
 
   .print-project-body { margin-top: 4mm; display: grid; grid-template-columns: minmax(0, 57fr) minmax(0, 43fr); gap: 6mm; align-items: start; }
