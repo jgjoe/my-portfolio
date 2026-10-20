@@ -38,7 +38,7 @@ export const portfolio = {
         "items": [
       {
         "kicker": { "ko": "백엔드와 데이터", "en": "BACKEND & DATA" },
-        "value": { "ko": "대용량 데이터를 정제하고 DB 조회를 개선합니다", "en": "I clean large data and improve DB queries" },
+        "value": { "ko": "대용량 데이터를 정제하고 DB 조회를 개선합니다", "en": "I clean big datasets and tune DB queries" },
         "label": {
           "ko": "주문 상세 조회의 DB 블록 읽기를 측정해 인덱스를 고르고, 78개월 공공자전거 기록 2억 4천만 건의 정상 기록과 격리 기록의 건수 합을 원본과 대조했습니다.",
           "en": "I chose indexes by measuring DB block reads, and reconciled 240M bike records over 78 months, accepted plus quarantined, with the source."
