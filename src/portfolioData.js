@@ -20,7 +20,7 @@ export const portfolio = {
   hero: {
     eyebrow: ["BACKEND", "DATA", "AI SERVICES", "VERIFIED BY TESTS"],
     title: { ko: "측정으로 고르고 검증해\n출시까지 마치는 신입 개발자", en: "A new developer who decides by measurement\nand ships verified work" },
-    summary: { ko: "DB 조회 개선, 2억 4천만 건 데이터 검증, 앱 정식 출시를 해냈습니다. AI 코딩 도구를 활용하되 요구사항과 검증 기준을 정하고 테스트로 반영 여부를 판단합니다.", en: "I have improved DB queries, verified 240M records, and released an app to production. I use AI coding tools, but I set the requirements and validation criteria and decide by tests what gets adopted." },
+    summary: { ko: "DB 조회 개선, 2억 4천만 건 데이터 검증, 앱 정식 출시를 해냈습니다. AI 코딩 도구를 활용하되 요구사항과 검증 기준을 정하고 테스트로 반영 여부를 판단합니다.", en: "I improved DB queries, verified 240M records, and shipped an app to production. I use AI coding tools, but I set requirements and validation criteria and let tests decide what is adopted." },
     profileRole: "Software Developer, Backend & Data",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
@@ -38,10 +38,10 @@ export const portfolio = {
         "items": [
       {
         "kicker": { "ko": "백엔드와 데이터", "en": "BACKEND & DATA" },
-        "value": { "ko": "대용량 데이터를 정제하고 DB 조회를 개선합니다", "en": "I clean large datasets and reduce DB query reads." },
+        "value": { "ko": "대용량 데이터를 정제하고 DB 조회를 개선합니다", "en": "I clean large data and improve DB queries" },
         "label": {
           "ko": "주문 상세 조회의 DB 블록 읽기를 측정해 인덱스를 고르고, 78개월 공공자전거 기록 2억 4천만 건의 정상 기록과 격리 기록의 건수 합을 원본과 대조했습니다.",
-          "en": "I chose indexes by measuring order-detail DB block reads, and reconciled accepted plus quarantined counts of 240M bike records across 78 months with the source."
+          "en": "I chose indexes by measuring DB block reads, and reconciled 240M bike records over 78 months, accepted plus quarantined, with the source."
         },
         "stats": [
           { "ko": "정상 241,320,806 + 격리 29,666 = 원본 241,350,472건", "en": "241,320,806 accepted + 29,666 quarantined = 241,350,472 source rows" },
@@ -72,11 +72,11 @@ export const portfolio = {
         "value": { "ko": "AI 기능은 시험으로 확인한 뒤 반영합니다", "en": "I ship AI features only after testing them" },
         "label": {
           "ko": "정책 검색은 출처별 시험 질문으로, 업무 로그 AI 답변은 고정 질문으로 평가해 결과가 나아진 개선안만 반영했습니다.",
-          "en": "I evaluated policy search with per-source test queries and the log-analysis AI with fixed questions, and adopted only changes that improved results."
+          "en": "I evaluated policy search and the log-analysis AI on fixed test questions and adopted only changes that improved results."
         },
         "stats": [
           { "ko": "혜택나침반: 상위 10개 안 정답 포함률 청년 60문항 46.7% → 51.7%", "en": "BenefitCompass: correct policy in top 10, Youth 60 queries, 46.7% → 51.7%" },
-          { "ko": "TraceVerity: 안내문 수정안 채택 후 고정 질문 12개 시험에서 수치와 근거 기록 번호까지 맞은 답이 두 연결 방식 모두 36회 중 24회에서 35회 이상", "en": "TraceVerity: after adopting revised tool guidance, answers with correct numbers and evidence record IDs rose from 24 to 35 or more of 36 runs on both connection methods (12 fixed questions)" }
+          { "ko": "TraceVerity: 안내문 수정안 채택 후 고정 질문 12개 시험에서 수치와 근거 기록 번호까지 맞은 답이 두 연결 방식 모두 36회 중 24회에서 35회 이상", "en": "TraceVerity: on 12 fixed questions, fully correct answers rose from 24 to 35+ of 36 runs on both connection methods" }
         ],
         "projects": [
           { "name": { "ko": "혜택나침반", "en": "BenefitCompass" }, "target": "project-benefit-compass", "aria": { "ko": "혜택나침반 프로젝트로 이동", "en": "Jump to the BenefitCompass project" } },
@@ -85,10 +85,10 @@ export const portfolio = {
       },
       {
         "kicker": { "ko": "팀 협업", "en": "TEAMWORK" },
-        "value": { "ko": "설계를 문서로 공유하고 제안은 합의로 반영합니다", "en": "I document designs and put proposals into practice through team agreement." },
+        "value": { "ko": "설계를 문서로 공유하고 제안은 합의로 반영합니다", "en": "I document designs and build team agreement" },
         "label": {
           "ko": "11인 팀에서 공개 학습 자료와 국내 생활폐기물 자료 일부를 함께 쓰자고 제안하고 팀원들과 정확도와 일정을 검토해 합의한 뒤 학습한 모델을 로봇과 연동했습니다.",
-          "en": "In a team of 11, I proposed combining public training data with a subset of a Korean household-waste dataset, reached agreement after reviewing accuracy and timing with teammates, and integrated the trained model with the robot."
+          "en": "In a team of 11, I proposed adding a subset of Korean household-waste data to public training data, reached agreement, and integrated the trained model with the robot."
         },
         "stats": [
           { "ko": "쓰담: 캡스톤 시연, 2024 한국정보기술학회 대학생 논문경진대회 우수논문상", "en": "SSeudam: capstone demo; 2024 KIIT Student Paper Competition, Outstanding Paper Award" },
