@@ -62,79 +62,42 @@ function SummaryPage({ t }) {
     <section className="print-page print-summary-page">
       <div className="print-summary-top">
         <div className="print-summary-copy">
-          <p className="print-eyebrow">{portfolio.hero.eyebrow.join(" · ")}</p>
-          <h1 className="print-headline">{t(portfolio.hero.title)}</h1>
-          <p className="print-summary-text">{t(portfolio.hero.summary)}</p>
-          <div className="print-credential-pair">
-            {portfolio.credentials.groups.slice(0, 2).map((group) => <CredentialGroup key={t(group.title)} group={group} t={t} />)}
+          <h1 className="print-headline">{t(portfolio.siteTitle)}</h1>
+          <p className="print-role">{t(portfolio.hero.subtitle)}</p>
+          <div className="print-contact-lines">
+            <a href={`mailto:${portfolio.contact.email}`}>{portfolio.contact.email}</a>
+            <a href={portfolio.contact.github}>{displayUrl(portfolio.contact.github)}</a>
+            <a href={PORTFOLIO_URL}>{displayUrl(PORTFOLIO_URL)}</a>
           </div>
         </div>
-        <aside className="print-profile">
-          <div className="print-profile-top">
-            <img className="print-photo" src={profileImage} alt={t(portfolio.hero.photoAlt)} />
-            <div>
-              <p className="print-name">{t(portfolio.name)}</p>
-              <p className="print-role">{portfolio.hero.profileRole}</p>
-            </div>
-          </div>
-          <div className="print-facts">
-            {portfolio.hero.quickFacts.map((fact) => (
-              <div className="print-fact" key={t(fact.label)}>
-                {fact.kind === "list" ? (
-                  <>
-                    <strong>{t(fact.label)}</strong>
-                    <span>{fact.items.map((item) => t(item)).join(" · ")}</span>
-                  </>
-                ) : (
-                  <>
-                    <strong>{t(fact.value)}</strong>
-                    <span>{t(fact.label)}</span>
-                  </>
-                )}
-              </div>
-            ))}
-          </div>
-        </aside>
+        <img className="print-photo" src={profileImage} alt={t(portfolio.hero.photoAlt)} />
       </div>
+      <p className="print-summary-text">{t(portfolio.hero.summary)}</p>
 
       <h2 className="print-section-title">{t(portfolio.proof.title)}</h2>
       <div className="print-proof-row">
-        {portfolio.proof.items.map((item) => (
-          <article className="print-proof-card" key={t(item.value)}>
-            <p className="print-proof-kicker">{t(item.kicker)}</p>
-            <p className="print-proof-value">{t(item.value)}</p>
-            <p className="print-proof-label">{t(item.label)}</p>
-            <ul className="print-proof-stats">{item.stats.map((stat) => <li key={t(stat)}>{t(stat)}</li>)}</ul>
-            <p className="print-proof-project">{item.projects.map((project) => t(project.name)).join(" · ")}</p>
+        {portfolio.printSummary.cards.map((item) => (
+          <article className="print-proof-card" key={t(item.title)}>
+            <h3 className="print-proof-value">{t(item.title)}</h3>
+            <p className="print-proof-label">{t(item.copy)}</p>
+            <p className="print-proof-project">
+              {t({ ko: "상세", en: "Details" })}{" "}
+              {item.targets.map((target) => `p.${portfolio.projects.featured.findIndex((project) => project.anchor === target) + 2}`).join(", ")}
+            </p>
           </article>
         ))}
       </div>
 
-      <div className="print-columns">
-        <div className="print-credentials">
-          {portfolio.credentials.groups.slice(2).map((group) => <CredentialGroup key={t(group.title)} group={group} t={t} />)}
-        </div>
-        <div className="print-skills">
-          <h3 className="print-subtitle">{t(portfolio.credentials.skillsTitle)}</h3>
-          {portfolio.skills.map((group) => (
-            <div className="print-skill-group" key={t(group.title)}>
-              <p className="print-skill-title">{t(group.title)}</p>
-              <div className="print-tags">
-                {group.items.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </div>
-          ))}
+      <div className="print-skills">
+        <h2 className="print-section-title">{t(portfolio.credentials.skillsTitle)}</h2>
+        <div className="print-tags">
+          {portfolio.printSummary.skills.map((item) => <span key={item}>{item}</span>)}
         </div>
       </div>
 
-      <div className="print-contact">
-        <div className="print-contact-lines">
-          <a href={`mailto:${portfolio.contact.email}`}>{portfolio.contact.email}</a>
-          <a href={portfolio.contact.github}>{portfolio.contact.github}</a>
-          <a href={PORTFOLIO_URL}>{PORTFOLIO_URL}</a>
-        </div>
+      <div className="print-credentials">
+        {portfolio.credentials.groups.map((group) => <CredentialGroup key={t(group.title)} group={group} t={t} />)}
+        <p className="print-language">OPIc IH</p>
       </div>
 
       <PageFooter t={t} page={1} />

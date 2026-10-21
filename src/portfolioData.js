@@ -2,6 +2,8 @@ export const pick = (value, lang) => value && typeof value === "object" && !Arra
 
 export const portfolio = {
   name: { ko: "조지관", en: "Jigwan Joe" },
+  siteTitle: { ko: "조지관 | 신입 개발자 포트폴리오", en: "Jigwan Joe | Junior Software Developer Portfolio" },
+  description: { ko: "신입 개발자 조지관의 백엔드·데이터·AI 응용 프로젝트. 요구사항과 검증 기준을 정하고 측정 결과로 판단한 경험을 소개합니다.", en: "Backend, data, and applied AI projects by Jigwan Joe, a junior software developer. Explore how I set requirements and validation criteria and make decisions from measured results." },
   ui: {
     projects: { ko: "프로젝트", en: "Projects" }, credentials: { ko: "이력", en: "Credentials" }, contact: { ko: "연락", en: "Contact" },
     viewWork: { ko: "대표 프로젝트 보기", en: "View selected work" }, resume: { ko: "PDF로 저장", en: "Save as PDF" }, skipToContent: { ko: "본문으로 바로가기", en: "Skip to content" }, languageLabel: { ko: "영문으로 보기", en: "View in Korean" },
@@ -18,10 +20,11 @@ export const portfolio = {
     evidenceModalIntro: { ko: "무엇을 어떻게 확인했는지 정리했습니다. 공개 검증 자료가 있으면 함께 연결합니다.", en: "See what was checked and how it was checked. Public validation sources are linked when available." },
   },
   hero: {
+    subtitle: { ko: "백엔드·데이터·AI 응용 프로젝트", en: "Backend, data, and applied AI projects" },
     eyebrow: ["BACKEND", "DATA", "AI SERVICES", "VERIFIED BY TESTS"],
     title: { ko: "측정으로 고르고 검증해\n출시까지 마치는 신입 개발자", en: "I make evidence-based decisions\nand test before release" },
     summary: { ko: "DB 조회 개선, 2억 4천만 건 데이터 검증, 앱 정식 출시를 해냈습니다. AI 코딩 도구를 활용하되 요구사항과 검증 기준을 정하고 테스트로 반영 여부를 판단합니다.", en: "I improved DB queries, verified 240M records, and shipped an app to production. I use AI coding tools, but I set requirements and validation criteria and let tests decide what is adopted." },
-    profileRole: "Early-career Software Developer",
+    profileRole: { ko: "신입 개발자", en: "Junior Software Developer" },
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
       { value: "4.04 / 4.5", label: { ko: "학점", en: "GPA" } },
@@ -54,7 +57,7 @@ export const portfolio = {
       },
       {
         "kicker": { "ko": "제품 개발", "en": "PRODUCT" },
-        "value": { "ko": "서비스를 끝까지 만들어 출시하고 개선합니다", "en": "I ship a service end to end and keep improving it" },
+        "value": { "ko": "서비스를 끝까지 만들어 출시하고 개선합니다", "en": "I build applications and data pipelines, test my decisions, and improve what I release." },
         "label": {
           "ko": "학부 과제에서 이어 간 식품 유통기한 관리 앱 오늘도 신선을 ONEstore와 Google Play에 정식 출시했고, 사용자 4명의 관찰로 직접 입력과 소비 완료 복구 흐름을 개선했습니다.",
           "en": "I took the food expiry tracking app Fridge D-Day from a course project to production on ONEstore and Google Play, and improved manual entry and restoring consumed items based on observations with 4 users."
@@ -101,6 +104,31 @@ export const portfolio = {
       }
     ]
   },
+  printSummary: {
+    skills: ["Java", "Kotlin", "Python", "SQL", "Spring Boot", "Android (Jetpack Compose)", "Oracle", "MongoDB", "DuckDB", "Apache Airflow", "BigQuery"],
+    cards: [
+      {
+        title: { ko: "측정으로 DB와 데이터를 검증합니다", en: "Measure queries and reconcile data" },
+        copy: { ko: "건강 기록과 상품 주문 웹앱 Build Your Health에서 Oracle 생성 주문 60만 건을 시험해 상세 조회 DB 블록 읽기를 6,285에서 14로 줄인 인덱스를 선정했습니다. 대여 기록 정제 프로젝트 서울 공공자전거 데이터 파이프라인에서는 78개월 약 2억 4천만 건의 정상·격리 기록 합계를 원본과 대조했습니다.", en: "For the health-record and shopping web app Build Your Health, I selected an index that reduced order-detail DB block reads from 6,285 to 14 in an Oracle test with 600K generated orders. In the rental-data cleaning project Seoul Public Bike Data Pipeline, I reconciled accepted plus quarantined records against about 240M source records across 78 months." },
+        targets: ["project-build-health", "project-seoul-bike"]
+      },
+      {
+        title: { ko: "출시 후 사용자 관찰로 개선합니다", en: "Release and improve with users" },
+        copy: { ko: "학부 과제에서 이어 간 식품 유통기한 관리 앱 오늘도 신선을 정식 출시했습니다. 사용자 4명을 관찰해 입력·복구 흐름을 고쳤고, 불편을 겪은 2명이 수정한 흐름 4개를 재시험해 8건 모두 완료했습니다.", en: "I released the food expiry tracking app Fridge D-Day, which began as a course project. After observing four users, I improved entry and restore flows; the two affected users retried the four corrected flows and completed all eight attempts." },
+        targets: ["project-today-fresh"]
+      },
+      {
+        title: { ko: "AI 개선안은 평가로 고릅니다", en: "Evaluate AI changes before adoption" },
+        copy: { ko: "지원 정책 검색 서비스 혜택나침반은 출처별 고정 질문으로 후보를 비교했습니다. 업무 이벤트 로그 분석 도구 TraceVerity의 AI는 고정 12문항을 연결 방식별로 3회씩 평가해, 수치와 근거 기록 번호가 맞는 답이 늘어난 안내문을 채택했습니다.", en: "I compared candidates for the policy search service BenefitCompass using fixed questions for each source. For the AI in the business event-log analysis tool TraceVerity, I evaluated 12 fixed questions three times per connection method and adopted guidance that improved answers with correct values and evidence IDs." },
+        targets: ["project-benefit-compass", "project-traceverity"]
+      },
+      {
+        title: { ko: "규격을 공유하고 함께 합의합니다", en: "Share specifications and reach agreement" },
+        copy: { ko: "AI 차량 어시스턴트 길동이 팀에서는 요청·응답 규격을 OpenAPI로 공유했습니다. 대화형 쓰레기통 로봇 쓰담 팀에서는 공개 학습 자료 조합을 제안하고 정확도·일정을 검토해 합의한 뒤 모델을 연동했습니다.", en: "In the AI vehicle assistant GildongE team, I shared API specifications through OpenAPI. In the interactive trash-bin robot SSeudam team, I proposed a combination of training datasets, reached agreement after reviewing accuracy and schedule, and integrated the model." },
+        targets: ["project-gildong"]
+      }
+    ]
+  },
   projects: {
     eyebrow: { ko: "SELECTED WORK", en: "SELECTED WORK" }, title: { ko: "만들고 검증한 핵심 경험", en: "Selected work built and verified" },
     copy: { ko: "각 프로젝트에서 무엇을 정하고 어떻게 확인했는지, 결과와 근거를 함께 정리했습니다.", en: "For each project: what I decided, how I verified it, and the results with evidence." },
@@ -110,7 +138,7 @@ export const portfolio = {
         subtitle: { ko: "차량 데이터 API와 MongoDB 백엔드", en: "Vehicle data APIs and MongoDB backend" },
         lead: { ko: "졸음 감지 장치와 모바일 앱의 차량 데이터를 사용자별로 제공하는 6인 팀 프로젝트에서 백엔드와 DB를 담당했습니다. 장치와 앱 담당자가 같은 규격으로 연동하도록 요청 및 응답 스키마와 오류 응답을 OpenAPI로 문서화했습니다.", en: "I was responsible for the backend and database in a six-person project serving per-user vehicle data from a drowsiness-detection device and mobile app. I documented request/response schemas and error responses in OpenAPI so device and app teammates could integrate against the same specification." },
         tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
-        role: { ko: "6인 팀에서 차량 관련 API와 MongoDB 데이터 모델을 맡았고, 장치와 앱 담당자가 같은 규격으로 연동하도록 OpenAPI 문서를 작성했습니다.", en: "In a team of 6, I built the vehicle-related APIs and MongoDB data models, and wrote OpenAPI docs so device and app teammates could integrate against one spec." },
+        role: { ko: "형태가 다른 차량 데이터를 5개 도메인으로 나누고, 사용자별 주간 평균 집계와 카카오 사용자 조회·등록을 구현했습니다.", en: "I organized differently shaped vehicle data into five domains and implemented per-user weekly averages and Kakao user lookup and registration." },
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
           { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "데이터 형태가 장치와 기능마다 달라 차량 관련 5개 도메인(차량, 차량 모델, 소모품, 주행 패턴, 사용자)으로 나눠 REST API와 MongoDB 문서 모델로 구조화했습니다. 사용자별 주간 평균 집계와 카카오 사용자 조회와 등록도 구현했습니다.", en: "Because data shapes differed by device and feature, I split the vehicle data into five domains (car, car model, consumable, driving pattern, user) and structured them as REST APIs and MongoDB document models. I also implemented per-user weekly averages and Kakao user lookup and registration." } },
@@ -260,7 +288,7 @@ export const portfolio = {
             {
               "name": {
                 "ko": "기준 고정",
-                "en": "Fix criteria"
+                "en": "Set measurement criteria"
               },
               "copy": {
                 "ko": "쿼리 3종 / 미적용 기준선 포함 5개 구성",
@@ -415,7 +443,7 @@ export const portfolio = {
         tech: ["Python", "DuckDB", "FastAPI", "React", "Power BI", "MCP", "PM4Py"],
         details: [
           { label: { ko: "계산 경로 통일", en: "One calculation path" }, copy: { ko: "계산이 갈라지지 않도록 Python과 DuckDB로 만든 공통 계산 엔진에서 지표를 만들고 웹과 AI가 읽게 했습니다. 업무 로그 분석 라이브러리 PM4Py로 실제 로그 2종의 처리 경로, 단계 간 이동, 소요 시간과 재작업을 독립 계산해 정의를 맞춘 뒤 대조했습니다.", en: "To prevent divergent calculations, I required the web and AI to read metrics from a shared Python/DuckDB calculation engine. PM4Py, a business-event-log analysis library, independently recalculated paths, transitions, durations, and rework on two real logs for comparison after aligning definitions." } },
-          { label: { ko: "AI 답변 검증", en: "AI verification" }, copy: { ko: "AI에는 읽기 전용 조회만 허용했습니다. 외부 도구 호출의 표준 연결 방식인 MCP와 직접 연결을 비교하고 Qwen3-8B 도구 안내 개선안을 채택했습니다. 같은 질문 12개를 실행 조건 3가지(난수 설정)로 평가한 구조화된 답의 수치와 근거 기록 번호 정답은 직접 연결 24/36에서 35/36, MCP 24/36에서 36/36으로 늘었습니다.", en: "I limited AI access to read-only lookups and compared direct calls with MCP, a standard for calling external tools. After I adopted revised Qwen3-8B tool guidance, structured answers with correct values and evidence IDs rose from 24/36 to 35/36 on the direct route and from 24/36 to 36/36 on MCP, using 12 fixed questions with three random seeds." } },
+          { label: { ko: "AI 답변 검증", en: "AI verification" }, copy: { ko: "AI에는 읽기 전용 조회만 허용했습니다. 외부 도구 호출의 표준 연결 방식인 MCP와 직접 연결을 비교하고 Qwen3-8B 도구 안내 개선안을 채택했습니다. 고정 질문 12개를 연결 방식별로 3회씩 평가한 구조화된 답의 수치와 근거 기록 번호 정답은 직접 연결 24/36에서 35/36, MCP 24/36에서 36/36으로 늘었습니다.", en: "I limited AI access to read-only lookups and compared direct calls with MCP, a standard for calling external tools. After I adopted revised Qwen3-8B tool guidance, structured answers with correct values and evidence IDs rose from 24/36 to 35/36 on the direct route and from 24/36 to 36/36 on MCP, using 12 fixed questions repeated three times per connection method, with seeds 1, 2, and 3." } },
           { label: { ko: "측정한 성능", en: "Measured performance" }, copy: { ko: "200만 이벤트 실험 데이터를 같은 PC의 새 프로세스에서 예열 1회 후 5회 측정해 불러오기 중앙값이 24.1초에서 14.8초로 줄어든 것을 확인했습니다. 집계가 가장 느릴 것이라는 예상과 달리 불러오기가 가장 느려 원본을 두 번 읽는 작업과 반복되는 시각 변환을 줄이는 수정안을 채택했습니다.", en: "On a 2-million-event synthetic log, the median import time fell from 24.1 s to 14.8 s on the same workstation, using a fresh process per run, one warmup and five measured runs. I had predicted aggregation would be slowest; measurements instead identified import. I adopted changes that removed duplicate source scans and repeated timestamp-conversion work." } },
         ],
         results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with shared metric definitions" } }, { value: { ko: "독립 대조 불일치 0", en: "Zero cross-check mismatches" }, label: { ko: "정의를 맞춘 지표 비교 결과", en: "after aligning metric definitions" } }, { value: { ko: "금지 동작 0건", en: "Zero forbidden actions" }, label: { ko: "활동명에 심은 지시문 별도 시험, 연결 방식별 36회 노출", en: "separate embedded-instruction test, 36 exposures per route" } }],
@@ -469,7 +497,7 @@ export const portfolio = {
           ],
           decision: {
             label: { ko: "검색 방식 선정", en: "Search method selection" },
-            result: { ko: "검증 결과: 뜻 기반 검색에 어휘 보정을 더한 방식 유지", en: "Result: keep meaning-based search with lexical bias" },
+            result: { ko: "검증 결과: 뜻 기반 검색에 어휘 보정을 더한 방식 유지", en: "Result: keep semantic search with a small keyword-match boost" },
             action: { ko: "키워드 보정 적용", en: "Apply keyword boosting" },
           },
           note: { ko: "같은 평가 문항으로 어휘 보정 전후와 리랭커 후보를 비교", en: "Lexical bias and reranker candidates compared on the same evaluation queries" },
@@ -529,7 +557,7 @@ export const portfolio = {
     { title: { ko: "AI 응용", en: "AI Applications" }, items: ["RAG", "Embedding · Vector Search (pgvector)", "Retrieval Evaluation (Recall · MRR)", "MCP", "LLM Agent Tool Restriction"] },
     { title: { ko: "품질과 배포", en: "Quality & Delivery" }, items: ["Pytest", "Playwright", "JUnit", "GitHub Actions", "Docker", "Prometheus", "Google Cloud Run"] },
   ],
-  contact: { eyebrow: { ko: "LET'S TALK", en: "LET'S TALK" }, title: { ko: "검증된 결과물을 함께 만듭니다", en: "Let's build verified work together" }, copy: { ko: "프로젝트나 포지션 제안은 이메일로 연락해 주세요.", en: "For project or role opportunities, feel free to reach out by email." }, email: "jigwan.joe@gmail.com", github: "https://github.com/jgjoe" },
+  contact: { eyebrow: { ko: "LET'S TALK", en: "LET'S TALK" }, title: { ko: "검증된 결과물을 함께 만듭니다", en: "Get in touch" }, copy: { ko: "프로젝트나 포지션 제안은 이메일로 연락해 주세요.", en: "Interested in my work? I'd be happy to discuss junior developer opportunities." }, email: "jigwan.joe@gmail.com", github: "https://github.com/jgjoe" },
 };
 
 const featuredOrder = ["Build Your Health", "서울 공공자전거 데이터 파이프라인", "오늘도 신선", "혜택나침반", "TraceVerity", "길동이 AI 차량 어시스턴트"];

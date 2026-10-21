@@ -25,8 +25,12 @@ function App() {
 
   useEffect(() => {
     document.documentElement.lang = lang;
+    document.title = t(portfolio.siteTitle);
+    document.querySelector('meta[property="og:title"]').content = t(portfolio.siteTitle);
+    document.querySelector('meta[name="description"]').content = t(portfolio.description);
+    document.querySelector('meta[property="og:description"]').content = t(portfolio.description);
     localStorage.setItem("portfolio-demo-lang", lang);
-  }, [lang]);
+  }, [lang, t]);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");

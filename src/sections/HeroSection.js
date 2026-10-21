@@ -6,7 +6,7 @@ export default function HeroSection({ t }) {
     <section id="top" className="section-shell hero-section">
       <div className="hero-copy">
         <p className="eyebrow hero-eyebrow">
-          {portfolio.hero.eyebrow.map((item) => <span key={item}>{item}</span>)}
+          {t(portfolio.hero.subtitle)}
         </p>
         <h1>{t(portfolio.hero.title)}</h1>
         <p className="hero-summary">{t(portfolio.hero.summary)}</p>
