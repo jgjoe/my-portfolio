@@ -76,7 +76,7 @@ export const portfolio = {
         },
         "stats": [
           { "ko": "혜택나침반: 상위 10개 안 정답 포함률 청년 60문항 46.7% → 51.7%", "en": "BenefitCompass: correct policy in top 10, Youth 60 queries, 46.7% → 51.7%" },
-          { "ko": "TraceVerity: 안내문 수정안 채택 후 고정 질문 12개 시험에서 수치와 근거 기록 번호까지 맞은 답이 두 연결 방식 모두 36회 중 24회에서 35회 이상", "en": "TraceVerity: on 12 fixed questions, fully correct answers rose from 24 to 35+ of 36 runs on both connection methods" }
+          { "ko": "TraceVerity: AI 도구 안내문 개선 후, 수치와 근거 기록 번호까지 맞은 답이 두 연결 방식 모두 36회 중 24회에서 35회 이상으로 증가(고정 질문 12개 × 3번)", "en": "TraceVerity: After I adopted revised AI tool instructions, answers with correct values and evidence IDs rose from 24/36 to at least 35/36 on each connection method (12 fixed questions × 3 runs)." }
         ],
         "projects": [
           { "name": { "ko": "혜택나침반", "en": "BenefitCompass" }, "target": "project-benefit-compass", "aria": { "ko": "혜택나침반 프로젝트로 이동", "en": "Jump to the BenefitCompass project" } },
@@ -445,13 +445,13 @@ export const portfolio = {
       },
       {
         anchor: "project-benefit-compass", title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
-        role: { ko: "두 사이트의 정책 통합과 검색 개선안 비교, 채택 판단과 단계 배포를 직접 진행했습니다.", en: "I unified policies from two sites, compared and decided which search improvements to adopt, and ran the staged rollout." },
+        role: { ko: "두 사이트의 정책을 통합하기 위한 요구사항과 검색 개선안의 비교 기준을 정하고, 적용할 개선안을 선택해 단계적으로 배포했습니다.", en: "I set the requirements for merging policies from two sites and the criteria for comparing search improvements, then decided what to adopt and rolled it out in stages." },
         subtitle: { ko: "정부 정책 통합 검색과 질의응답 서비스", en: "Unified government policy search and Q&A" },
         lead: { ko: "온통청년과 정부24의 공식 정책을 한 번에 검색하고, 찾은 정책을 근거로 AI가 답합니다. 공개 데모로 배포했습니다.", en: "Searches official policies from Youth Policy and Gov24 in one place and answers from the policies it finds (RAG). Deployed as a public demo." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "1만 개가 넘는 정책이 두 사이트에 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "More than 10,000 policies were spread across two sites, and keyword search made relevant programs hard to find." } },
-          { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "두 사이트의 정책 13,589개를 통합해 17,609개 검색 단위로 만들었습니다. 출처별 평가에서 상위 10개 결과의 정답 포함률을 높이는 키워드 보정을 적용했습니다. 뜻으로 찾는 검색에 키워드 일치 점수를 더하는 방식입니다.", en: "I unified 13,589 policies from two sites into 17,609 search chunks. In evaluations for each source, I improved top-10 recall by adding a keyword-match boost to semantic search." } },
+          { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "두 사이트의 정책 13,589개를 통합해 17,609개 검색 단위로 만들었습니다. 출처별 평가에서 상위 10개 결과의 정답 포함률을 높이는 키워드 보정을 적용했습니다. 뜻으로 찾는 검색에 키워드 일치 점수를 더하는 방식입니다.", en: "I defined the requirements for merging 13,589 policies from two sites into 17,609 search chunks. After evaluating each source separately, I adopted a keyword-match boost for semantic search, which raised top-10 recall." } },
           { label: { ko: "결과", en: "Result" }, copy: { ko: "상위 10개 안 정답 포함률이 문서 기반 평가셋인 청년정책 60문항에서는 46.7%에서 51.7%로, 정부24 21문항에서는 61.9%에서 76.2%로 올랐습니다. 후보 검증 뒤 API를 요청 10%에서 100%까지 단계적으로 전환했고, 요청 ID와 메트릭으로 API, 검색, DB 구간을 나눠 관측했습니다.", en: "The share of queries with the correct policy in the top 10 rose from 46.7% to 51.7% on 60 Youth policy queries from a document-based evaluation set, and from 61.9% to 76.2% on 21 Gov24 queries. After validating the candidate, I rolled the API out from 10% to 100% of requests and used request IDs and metrics to observe API, retrieval, and DB segments separately." } },
         ],
         results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: { ko: "정답 검색률 상승", en: "Higher hit rate" }, label: { ko: "상위 10개 안 정답 포함률 청년 60문항 46.7%→51.7%, 정부24 21문항 61.9%→76.2%", en: "correct policy in the top 10: Youth 60 queries 46.7%→51.7%, Gov24 21 queries 61.9%→76.2%" } }, { value: "10% → 100%", label: { ko: "새 검색을 요청 일부부터 단계적으로 전환", en: "new search rolled out gradually from a share of requests" } }],
