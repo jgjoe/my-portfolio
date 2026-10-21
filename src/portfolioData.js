@@ -19,9 +19,9 @@ export const portfolio = {
   },
   hero: {
     eyebrow: ["BACKEND", "DATA", "AI SERVICES", "VERIFIED BY TESTS"],
-    title: { ko: "측정으로 고르고 검증해\n출시까지 마치는 신입 개발자", en: "A new developer who decides by measurement\nand ships verified work" },
+    title: { ko: "측정으로 고르고 검증해\n출시까지 마치는 신입 개발자", en: "I make evidence-based decisions\nand test before release" },
     summary: { ko: "DB 조회 개선, 2억 4천만 건 데이터 검증, 앱 정식 출시를 해냈습니다. AI 코딩 도구를 활용하되 요구사항과 검증 기준을 정하고 테스트로 반영 여부를 판단합니다.", en: "I improved DB queries, verified 240M records, and shipped an app to production. I use AI coding tools, but I set requirements and validation criteria and let tests decide what is adopted." },
-    profileRole: "Software Developer, Backend & Data",
+    profileRole: "Early-career Software Developer",
     photoAlt: { ko: "조지관 프로필 사진", en: "Portrait of Jigwan Joe" },
     quickFacts: [
       { value: "4.04 / 4.5", label: { ko: "학점", en: "GPA" } },
@@ -40,11 +40,11 @@ export const portfolio = {
         "kicker": { "ko": "백엔드와 데이터", "en": "BACKEND & DATA" },
         "value": { "ko": "대용량 데이터를 정제하고 DB 조회를 개선합니다", "en": "I clean big datasets and tune DB queries" },
         "label": {
-          "ko": "주문 상세 조회의 DB 블록 읽기를 측정해 인덱스를 고르고, 78개월 공공자전거 기록 2억 4천만 건의 정상 기록과 격리 기록의 건수 합을 원본과 대조했습니다.",
-          "en": "I chose indexes by measuring DB block reads, and reconciled 240M bike records over 78 months, accepted plus quarantined, with the source."
+          "ko": "주문 상세 조회의 DB 블록 읽기로 인덱스를 고르고, 공공자전거 기록의 정상 기록과 격리 기록 합계를 원본과 대조했습니다.",
+          "en": "I selected indexes by measuring DB block reads and reconciled accepted plus quarantined bike records with the source."
         },
         "stats": [
-          { "ko": "정상 241,320,806 + 격리 29,666 = 원본 241,350,472건", "en": "241,320,806 accepted + 29,666 quarantined = 241,350,472 source rows" },
+          { "ko": "78개월 약 2억 4천만 건, 정상 기록과 격리 기록의 합계가 원본과 일치", "en": "About 240M records across 78 months; accepted plus quarantined counts match the source" },
           { "ko": "Build Your Health: 상세 조회 DB 블록 읽기 6,285 → 14 (Oracle 생성 주문 60만 건 시험)", "en": "Build Your Health: order-detail DB block reads 6,285 → 14 (Oracle test, 600K generated orders)" }
         ],
         "projects": [
@@ -61,7 +61,7 @@ export const portfolio = {
         },
         "stats": [
           { "ko": "4명, 32개 과업 관찰 → 소비 완료 복구와 직접 입력 경로 수정", "en": "4 users, 32 task observations → fixed consumed-item restore and manual-entry paths" },
-          { "ko": "불편을 겪은 2명이 수정한 흐름 4개를 다시 수행해 8건 모두 완료", "en": "The 2 users who hit problems redid the 4 corrected flows; all 8 observations completed" }
+          { "ko": "불편을 겪은 2명이 수정한 흐름 4개를 다시 수행해 8건 모두 완료", "en": "The 2 affected users retried the 4 corrected flows and completed all 8 attempts" }
         ],
         "projects": [
           { "name": { "ko": "오늘도 신선", "en": "Fridge D-Day" }, "target": "project-today-fresh", "aria": { "ko": "오늘도 신선 프로젝트로 이동", "en": "Jump to the Fridge D-Day project" } }
@@ -75,8 +75,8 @@ export const portfolio = {
           "en": "I evaluated policy search and the log-analysis AI on fixed test questions and adopted only changes that improved results."
         },
         "stats": [
-          { "ko": "혜택나침반: 상위 10개 안 정답 포함률 청년 60문항 46.7% → 51.7%", "en": "BenefitCompass: correct policy in top 10, Youth 60 queries, 46.7% → 51.7%" },
-          { "ko": "TraceVerity: AI 도구 안내문 개선 후, 수치와 근거 기록 번호까지 맞은 답이 두 연결 방식 모두 36회 중 24회에서 35회 이상으로 증가(고정 질문 12개 × 3번)", "en": "TraceVerity: After I adopted revised AI tool instructions, answers with correct values and evidence IDs rose from 24/36 to at least 35/36 on each connection method (12 fixed questions × 3 runs)." }
+          { "ko": "혜택나침반: 출처별 고정 질문으로 검색 후보를 비교해 두 출처 모두 나아진 보정 채택", "en": "BenefitCompass: compared search candidates on fixed questions for each source; adopted the boost that improved both" },
+          { "ko": "TraceVerity: 도구 안내 수정 후 두 연결 방식 모두 수치와 근거 기록 번호가 맞는 답이 증가", "en": "TraceVerity: revised tool guidance increased answers with correct values and evidence IDs on both connection methods" }
         ],
         "projects": [
           { "name": { "ko": "혜택나침반", "en": "BenefitCompass" }, "target": "project-benefit-compass", "aria": { "ko": "혜택나침반 프로젝트로 이동", "en": "Jump to the BenefitCompass project" } },
@@ -88,7 +88,7 @@ export const portfolio = {
         "value": { "ko": "설계를 문서로 공유하고 제안은 합의로 반영합니다", "en": "I document designs and build team agreement" },
         "label": {
           "ko": "11인 팀에서 공개 학습 자료와 국내 생활폐기물 자료 일부를 함께 쓰자고 제안하고 팀원들과 정확도와 일정을 검토해 합의한 뒤 학습한 모델을 로봇과 연동했습니다.",
-          "en": "In a team of 11, I proposed adding a subset of Korean household-waste data to public training data, reached agreement, and integrated the trained model with the robot."
+          "en": "In an 11-person team, I proposed adding some Korean household-waste data, agreed on it after weighing accuracy and schedule, and integrated the model with the robot."
         },
         "stats": [
           { "ko": "쓰담: 캡스톤 시연, 2024 한국정보기술학회 대학생 논문경진대회 우수논문상", "en": "SSeudam: capstone demo; 2024 KIIT Student Paper Competition, Outstanding Paper Award" },
@@ -108,13 +108,13 @@ export const portfolio = {
       {
         anchor: "project-gildong", title: "길동이 AI 차량 어시스턴트", titleLines: [{ ko: "길동이", en: "GildongE" }, { ko: "AI 차량 어시스턴트", en: "AI Vehicle Assistant" }], type: [{ ko: "6인 팀", en: "Team of 6" }, { ko: "백엔드 / DB 담당", en: "Backend / DB owner" }], period: "2025.03 — 2025.06",
         subtitle: { ko: "차량 데이터 API와 MongoDB 백엔드", en: "Vehicle data APIs and MongoDB backend" },
-        lead: { ko: "졸음 감지 장치와 모바일 앱에서 들어오는 차량, 소모품, 주행 패턴 데이터를 사용자별로 제공하는 팀 프로젝트입니다.", en: "A team project that serves vehicle, consumable, and driving-pattern data from a drowsiness-detection device and mobile app per user." },
+        lead: { ko: "졸음 감지 장치와 모바일 앱의 차량 데이터를 사용자별로 제공하는 6인 팀 프로젝트에서 백엔드와 DB를 담당했습니다. 장치와 앱 담당자가 같은 규격으로 연동하도록 요청 및 응답 스키마와 오류 응답을 OpenAPI로 문서화했습니다.", en: "I was responsible for the backend and database in a six-person project serving per-user vehicle data from a drowsiness-detection device and mobile app. I documented request/response schemas and error responses in OpenAPI so device and app teammates could integrate against the same specification." },
         tech: ["Java 17", "Spring Boot", "MongoDB", "Spring Data MongoDB", "Kakao OAuth API", "OpenAPI"],
         role: { ko: "6인 팀에서 차량 관련 API와 MongoDB 데이터 모델을 맡았고, 장치와 앱 담당자가 같은 규격으로 연동하도록 OpenAPI 문서를 작성했습니다.", en: "In a team of 6, I built the vehicle-related APIs and MongoDB data models, and wrote OpenAPI docs so device and app teammates could integrate against one spec." },
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "장치와 기능마다 형태가 다른 차량 데이터를 사용자 단위로 일관되게 다룰 서버가 필요했습니다.", en: "The team needed a backend that could handle differently shaped vehicle data consistently per user." } },
-          { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "데이터 형태가 장치와 기능마다 달라 차량 관련 5개 도메인(차량, 차량 모델, 소모품, 주행 패턴, 사용자)으로 나눠 REST API와 MongoDB 문서 모델로 구조화했습니다. 장치와 앱 담당자가 같은 규격으로 연동하도록 요청 및 응답 스키마와 오류 응답을 OpenAPI로 문서화했고, 사용자별 주간 평균 집계와 카카오 사용자 조회와 등록도 구현했습니다.", en: "Because data shapes differed by device and feature, I split the vehicle data into five domains (car, car model, consumable, driving pattern, user) and structured them as REST APIs and MongoDB document models. I documented request/response schemas and error responses with OpenAPI so device and app teammates could integrate against one spec, and also implemented per-user weekly averages and Kakao user lookup and registration." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "프로젝트는 캡스톤디자인 경진대회 심화캡스톤디자인 부문 은상을 받았고, 한국정보기술학회 논문으로 공저했습니다. SSE 알림은 팀 프로젝트와 별도로 개인 확장으로 구현했습니다.", en: "The project won the Silver Prize in the Capstone Design Competition (Advanced Division), and I co-authored a KIIT conference paper on it. The SSE alerts were built separately from the team project as an individual extension." } },
+          { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "데이터 형태가 장치와 기능마다 달라 차량 관련 5개 도메인(차량, 차량 모델, 소모품, 주행 패턴, 사용자)으로 나눠 REST API와 MongoDB 문서 모델로 구조화했습니다. 사용자별 주간 평균 집계와 카카오 사용자 조회와 등록도 구현했습니다.", en: "Because data shapes differed by device and feature, I split the vehicle data into five domains (car, car model, consumable, driving pattern, user) and structured them as REST APIs and MongoDB document models. I also implemented per-user weekly averages and Kakao user lookup and registration." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "프로젝트는 캡스톤디자인 경진대회 심화캡스톤디자인 부문 은상을 받았고, 한국정보기술학회 학술대회 논문을 공동 집필했습니다. SSE 알림은 팀 프로젝트와 별도로 개인 확장으로 구현했습니다.", en: "The project won the Silver Prize in the Capstone Design Competition (Advanced Division), and I co-authored a KIIT conference paper on it. The SSE alerts were built separately from the team project as an individual extension." } },
         ],
         results: [{ value: { ko: "5개 도메인", en: "5 domains" }, label: { ko: "API와 DB 모델 설계", en: "API and DB model design" } }, { value: { ko: "은상", en: "Silver" }, label: { ko: "캡스톤디자인 경진대회", en: "Capstone Design award" } }, { value: { ko: "학회 논문 공저", en: "Conference paper co-author" }, label: { ko: "한국정보기술학회", en: "KIIT" } }],
         evidenceNotes: [
@@ -149,8 +149,8 @@ export const portfolio = {
           "en": "2024 course project / personal rebuild in Oct 2026"
         },
         "lead": {
-          "ko": "JSP와 MySQL로 만든 웹 주문 시스템의 상품 조회, 로그인, 주문 흐름을 Spring Boot, MyBatis, Oracle로 재구축했습니다.",
-          "en": "Rebuilt the product browsing, login, and ordering flows of a JSP/MySQL web order system with Spring Boot, MyBatis, and Oracle."
+          "ko": "웹 주문 흐름을 재구축하고 Oracle 생성 주문 60만 건에서 인덱스 후보를 비교해 골랐습니다. 선정한 인덱스로 상세 조회의 DB 블록 읽기가 6,285에서 14로 줄었습니다.",
+          "en": "I rebuilt the order flows and selected indexes by comparing candidates on 600,000 generated Oracle orders. The selected index reduced order-detail DB block reads from 6,285 to 14."
         },
         "tech": [
           "Java 17",
@@ -161,9 +161,9 @@ export const portfolio = {
           "Docker"
         ],
         details: [
-          { label: { ko: "문제", en: "Problem" }, copy: { ko: "JSP와 MySQL로 만든 웹 주문 시스템을 Spring Boot, MyBatis, Oracle로 옮기면서, 조회에 필요한 인덱스를 같은 기준으로 비교해 정해야 했습니다.", en: "While rebuilding a JSP/MySQL order system on Spring Boot, MyBatis, and Oracle, I had to choose indexes by comparing candidates under the same criteria." } },
+          { label: { ko: "비교 기준", en: "Comparison criteria" }, copy: { ko: "JSP와 MySQL 주문 시스템을 Spring Boot, MyBatis, Oracle로 옮기며 인덱스를 비교했습니다. DB 블록 읽기는 쿼리 한 번에 읽은 논리 블록 수로, 같은 조회에 읽는 데이터가 줄었는지 확인하는 지표입니다.", en: "While rebuilding a JSP/MySQL order system on Spring Boot, MyBatis, and Oracle, I compared indexes using DB block reads: logical blocks read per query, showing how much data the same query reads." } },
           { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "측정할 쿼리 3종과 데이터 분포, 인덱스 후보, 반복 조건을 먼저 정하고 결과 검증과 실행계획 해석을 맡았습니다. 주문 상세 조회에는 외래 키 인덱스를, 회원별 조회 두 종류에는 함께 사용할 복합 인덱스를 선정했습니다.", en: "I defined three queries, the data distribution, index candidates, and repeat conditions, then validated results and interpreted execution plans. I selected a foreign-key index for order-detail queries and one composite index for both per-user queries." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "Oracle 생성 주문 60만 건 시험에서 상세 조회의 DB 블록 읽기는 6,285에서 14로 줄었고 선정한 인덱스 2개의 앱 반영을 확인했습니다. 후속 개선에서는 계획과 계정 잠금 정책을 승인했습니다. 주문 1만 건 회원의 내역 첫 페이지 DB 읽기는 8,113에서 55블록으로 줄었습니다.", en: "In an Oracle test with 600,000 generated orders, order-detail DB block reads fell from 6,285 to 14, and I verified integration of the two selected indexes. For the follow-up changes, I approved the plan and account-lockout policy. For a user with 10,000 orders, DB block reads on the first order-history page fell from 8,113 to 55." } },
+          { label: { ko: "결과와 후속 작업", en: "Results and follow-up" }, copy: { ko: "선정한 인덱스 2개의 앱 반영을 확인했습니다. 후속 쿼리 개선은 계획을 승인했으며, 첫 페이지에서 ROWNUM으로 주문 10건을 읽으면 멈추도록 바뀌었습니다. 같은 생성 데이터에서 주문 1만 건 회원의 첫 페이지 DB 블록 읽기는 8,113에서 55로 줄었습니다. 계정 잠금 정책도 별도로 검토해 승인했습니다.", en: "I verified that both selected indexes were integrated into the app. I approved the follow-up query plan: ROWNUM now stops the first-page query after 10 orders. On the same generated dataset, first-page DB block reads for a user with 10,000 orders fell from 8,113 to 55. Separately, I reviewed and approved the account-lockout policy." } },
         ],
         "results": [
           {
@@ -378,7 +378,7 @@ export const portfolio = {
         anchor: "project-seoul-bike", title: "서울 공공자전거 데이터 파이프라인", titleLines: [{ ko: "서울 공공자전거", en: "Seoul Public Bike" }, { ko: "데이터 파이프라인", en: "Data Pipeline" }], type: [{ ko: "개인", en: "Personal" }, { ko: "데이터 품질 / 파이프라인", en: "Data quality / pipeline" }], period: { ko: "2026.09~2026.10", en: "2026.09 — 2026.10" },
         role: { ko: "처리 규칙과 검증 기준을 정하고, 바뀌거나 실패한 달만 다시 처리하며 기존 정상 결과를 보존하는지 검증했습니다.", en: "I set the processing rules and validation criteria, and verified that only changed or failed months are reprocessed while earlier valid results are preserved." }, visibleResultIndexes: [0, 2],
         subtitle: { ko: "대여 기록 정제와 월별 재처리 파이프라인", en: "Rental data cleaning and monthly reprocessing pipeline" },
-        lead: { ko: "서울 공공자전거 대여 기록을 월 단위로 정제하고, 같은 이동인데 값이 서로 다른 기록 묶음은 따로 격리하는 배치 파이프라인입니다.", en: "A batch pipeline that cleans Seoul Public Bike rental records month by month and quarantines record groups for the same trip whose values disagree." },
+        lead: { ko: "같은 이동인데 값이 충돌하는 기록은 임의로 고르지 않고 묶음 전체를 격리하도록 정했습니다. 78개월 약 2억 4천만 건에서 정상 기록과 격리 기록의 합이 원본과 일치하는지 검증했습니다.", en: "I chose to quarantine entire groups of conflicting records for the same trip rather than pick one arbitrarily. Across 78 months and about 240M records, I verified that accepted plus quarantined counts matched the source." },
         tech: ["Python", "DuckDB", "Parquet", "SQL", "Apache Airflow", "Google Cloud Storage", "BigQuery"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "서울시는 이미 올린 월별 파일을 나중에 고치기도 하고, 대여소 정보도 시점별로만 제공합니다. 그래서 무엇이 바뀌었는지 추적해 바뀐 달만 다시 처리해야 했습니다.", en: "Seoul sometimes corrects monthly files after publishing them, and station information is provided only as per-date snapshots. I therefore had to track what changed and reprocess only the changed months." } },
@@ -387,7 +387,7 @@ export const portfolio = {
         ],
         results: [{ value: { ko: "2억 4천만 건", en: "240M records" }, label: { ko: "78개월 원본부터 정제까지 처리", en: "processed from source to cleaned data across 78 months" } }, { value: "78 / 78", label: { ko: "정제 완료 월", en: "months cleaned" } }, { value: { ko: "건수 합 일치", en: "Row counts reconcile" }, label: { ko: "원본 = 정상 기록 + 격리 기록", en: "source = trusted + quarantined" } }],
         evidenceNotes: [
-          { label: { ko: "전 기간 확인", en: "Full-period check" }, copy: { ko: "2020-01~2026-06의 78개월 2억 4,135만 행을 정제했고, 격리 기록 29,666행을 분석 데이터와 분리했습니다.", en: "Across 78 months from 2020-01 to 2026-06, about 241.35M rows were cleaned, and 29,666 rows were quarantined and excluded from analytical data." } },
+          { label: { ko: "전 기간 건수 검증", en: "Full-period count check" }, copy: { ko: "2020-01~2026-06의 78개월에서 정상 241,320,806 + 격리 29,666 = 원본 241,350,472행을 확인했습니다. 격리한 행은 분석에 쓰지 않았습니다.", en: "For January 2020 through June 2026: 241,320,806 accepted + 29,666 quarantined = 241,350,472 source rows. Quarantined rows were excluded from analysis." } },
           { label: { ko: "재처리 기준", en: "Reprocessing rule" }, copy: { ko: "원천 파일의 버전과 SHA-256을 기록해 변경된 월만 다시 처리하도록 구성했습니다.", en: "Source versions and SHA-256 hashes identify changed months so only affected periods are rebuilt." } },        ],
         links: [{ href: "https://github.com/jgjoe/seoul-bike-data-pipeline", label: "GitHub" }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/production-validation.md", doc: true, label: { ko: "실데이터 규모 검증", en: "Real-data scale validation" } }, { href: "https://github.com/jgjoe/seoul-bike-data-pipeline/blob/main/docs/prd-v1.0-final.md", doc: true, label: { ko: "설계 기준 문서", en: "Design specification" } }],
         media: {
@@ -398,7 +398,7 @@ export const portfolio = {
             { name: { ko: "원천 보관", en: "Raw source" }, copy: { ko: "파일 버전과 SHA-256 기록", en: "file version and SHA-256" } },
             { name: { ko: "정리와 품질 검사", en: "Clean & quality check" }, copy: { ko: "문제 행과 충돌 묶음 격리", en: "quarantine invalid rows and conflicting groups" } },
             { name: { ko: "신뢰 데이터 저장", en: "Trusted warehouse" }, copy: { ko: "분석 가능한 데이터만 저장", en: "store validated analytical data" } },
-            { name: { ko: "분석용 집계", en: "Analytical marts" }, copy: { ko: "이동 구간, 대여소 일별, 품질", en: "OD, station/day, quality" } },
+            { name: { ko: "분석용 집계", en: "Analytical marts" }, copy: { ko: "이동 구간, 대여소 일별, 품질", en: "origin-to-destination trips, station/day, quality" } },
           ],
           callouts: [
             { value: "SHA-256", label: { ko: "원천 변경 추적", en: "source change tracking" } },
@@ -410,16 +410,15 @@ export const portfolio = {
       },
       {
         anchor: "project-traceverity", title: "TraceVerity", titleLines: ["TraceVerity"], subtitle: { ko: "업무 이벤트 로그에서 처리 시간과 재작업을 조회하는 분석 도구", en: "Analyze processing times and rework in business event logs" }, type: [{ ko: "개인", en: "Personal" }, { ko: "프로세스 분석", en: "Process Intelligence" }], period: { ko: "2026.09~2026.10", en: "2026.09 — 2026.10" },
-        role: { ko: "계산 기준과 AI 조회 범위를 정하고 성능 개선의 사전 기준을 세웠습니다. AI 코딩 도구의 구현 제안을 검토하고 측정과 검증 결과를 채택했습니다.", en: "I set calculation and AI-access requirements and pre-registered the performance criteria. AI coding tools implemented the changes; I reviewed the proposals and accepted the measured and verified results." }, visibleResultIndexes: [1, 2],
-        lead: { ko: "CSV와 XES 업무 로그를 가져와 처리 순서, 소요 시간과 재작업을 조회합니다. 브라우저에서 필드를 매핑하고 검증한 뒤 분석 화면으로 이어집니다.", en: "Import CSV or XES business event logs to explore activity sequences, processing times, and rework. Map fields and validate the log in the browser before opening the analysis view." },
+        role: { ko: "계산 기준과 AI 조회 권한을 정하고, 도구 안내와 성능 수정안을 검토해 검증 결과를 바탕으로 채택했습니다.", en: "I set calculation rules and AI-access limits, then reviewed and adopted tool-guidance and performance changes based on verification results." }, visibleResultIndexes: [1, 2],
+        lead: { ko: "업무 로그의 지표를 한 곳에서 계산하고 웹과 AI가 같은 결과만 쓰도록 정했습니다. AI 도구 안내는 고정 질문으로 검증하고, 성능 수정은 측정으로 병목을 찾은 뒤 채택했습니다.", en: "I chose one shared calculation path for business-log metrics so the web and AI use the same results. I evaluated AI tool guidance on fixed questions and adopted performance changes after measuring the bottleneck." },
         tech: ["Python", "DuckDB", "FastAPI", "React", "Power BI", "MCP", "PM4Py"],
         details: [
-          { label: { ko: "문제", en: "Problem" }, copy: { ko: "웹 화면과 AI가 지표를 따로 계산하면 같은 데이터에서도 결과가 달라질 수 있습니다. 그래서 계산 기준을 한 곳에 두는 구조부터 만들었습니다.", en: "When the web view and AI compute metrics separately, the same data can yield different numbers, so I started with one place that owns the calculation." } },
-          { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "업로드한 업무 기록의 형식을 검사하고 핵심 지표를 하나의 계산 모듈에서 만들어, 웹과 AI 질의응답이 같은 결과를 읽게 했습니다. AI에는 정해진 계산 결과를 조회하는 읽기 전용 도구만 제공하고, SQL 실행이나 파일 및 네트워크 접근, 쓰기 권한은 열지 않았습니다. 로그 활동명에 심은 지시문을 연결 방식별 36회 노출한 별도 시험에서 금지 동작 0건을 확인했습니다.", en: "I validated the format of uploaded work records and calculated core metrics in one module, so the web and the AI Q&A read the same results. The AI gets only read-only tools for looking up computed results, with no SQL execution, file or network access, or write access. In separate tests, instructions embedded in activity names were exposed in 36 runs per route; zero forbidden actions were observed." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "실제 로그 2종의 처리 경로, 단계 간 이동, 소요 시간과 재작업을 PM4Py로 독립 대조해 정의를 맞춘 뒤 불일치 0을 확인했습니다. 로컬 LLM Qwen3-8B의 도구 안내 개선안을 검토해 채택했습니다. 같은 질문 12개를 실행 조건 3가지로 시험해 답의 수치와 근거 기록 번호를 대조했습니다. 두 연결 방식의 정답 수는 각각 36회 중 24회였고, 수정 후에는 35회와 36회였습니다.", en: "After aligning definitions, an independent PM4Py calculation found zero mismatches in paths, transitions, durations, and rework on two real-world logs. I reviewed and adopted tool-guidance changes for the local Qwen3-8B model. I tested the same 12 questions under three run conditions and checked the numbers and evidence record IDs in each answer. Each connection method started at 24 correct answers out of 36 runs; after the change, the counts were 35 and 36, respectively." } },
+          { label: { ko: "계산 경로 통일", en: "One calculation path" }, copy: { ko: "계산이 갈라지지 않도록 Python과 DuckDB로 만든 공통 계산 엔진에서 지표를 만들고 웹과 AI가 읽게 했습니다. 업무 로그 분석 라이브러리 PM4Py로 실제 로그 2종의 처리 경로, 단계 간 이동, 소요 시간과 재작업을 독립 계산해 정의를 맞춘 뒤 대조했습니다.", en: "To prevent divergent calculations, I required the web and AI to read metrics from a shared Python/DuckDB calculation engine. PM4Py, a business-event-log analysis library, independently recalculated paths, transitions, durations, and rework on two real logs for comparison after aligning definitions." } },
+          { label: { ko: "AI 답변 검증", en: "AI verification" }, copy: { ko: "AI에는 읽기 전용 조회만 허용했습니다. 외부 도구 호출의 표준 연결 방식인 MCP와 직접 연결을 비교하고 Qwen3-8B 도구 안내 개선안을 채택했습니다. 같은 질문 12개를 실행 조건 3가지(난수 설정)로 평가한 구조화된 답의 수치와 근거 기록 번호 정답은 직접 연결 24/36에서 35/36, MCP 24/36에서 36/36으로 늘었습니다.", en: "I limited AI access to read-only lookups and compared direct calls with MCP, a standard for calling external tools. After I adopted revised Qwen3-8B tool guidance, structured answers with correct values and evidence IDs rose from 24/36 to 35/36 on the direct route and from 24/36 to 36/36 on MCP, using 12 fixed questions with three random seeds." } },
           { label: { ko: "측정한 성능", en: "Measured performance" }, copy: { ko: "200만 이벤트 실험 데이터를 같은 PC의 새 프로세스에서 예열 1회 후 5회 측정해 불러오기 중앙값이 24.1초에서 14.8초로 줄어든 것을 확인했습니다. 집계가 가장 느릴 것이라는 예상과 달리 불러오기가 가장 느려 원본을 두 번 읽는 작업과 반복되는 시각 변환을 줄이는 수정안을 채택했습니다.", en: "On a 2-million-event synthetic log, the median import time fell from 24.1 s to 14.8 s on the same workstation, using a fresh process per run, one warmup and five measured runs. I had predicted aggregation would be slowest; measurements instead identified import. I adopted changes that removed duplicate source scans and repeated timestamp-conversion work." } },
         ],
-        results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with one calculation rule" } }, { value: { ko: "독립 대조 불일치 0", en: "Zero cross-check mismatches" }, label: { ko: "실제 로그 2종의 지표를 PM4Py로 독립 계산해 비교", en: "Metrics independently recalculated with PM4Py on two real-world logs" } }, { value: { ko: "정답 24/36 → 35/36과 36/36", en: "24/36 → 35/36 and 36/36 correct" }, label: { ko: "고정 질문 12개, 실행 조건 3가지, 두 연결 방식 각 36회", en: "12 fixed questions, 3 run conditions, 36 runs per connection method" } }],
+        results: [{ value: { ko: "공개 실데이터 2종", en: "2 public datasets" }, label: { ko: "같은 계산 기준으로 분석", en: "analyzed with shared metric definitions" } }, { value: { ko: "독립 대조 불일치 0", en: "Zero cross-check mismatches" }, label: { ko: "정의를 맞춘 지표 비교 결과", en: "after aligning metric definitions" } }, { value: { ko: "금지 동작 0건", en: "Zero forbidden actions" }, label: { ko: "활동명에 심은 지시문 별도 시험, 연결 방식별 36회 노출", en: "separate embedded-instruction test, 36 exposures per route" } }],
         evidenceNotes: [
           { label: { ko: "분석 결과", en: "Analysis finding" }, copy: { ko: "Help Desk 로그에서 상위 3개 활동이 재작업 이벤트 1,905개 중 1,632개인 85.67%를 차지했습니다. 기록상 소요 시간이 긴 경로도 찾아 추가 확인할 업무 가설을 정리했습니다.", en: "Three activities accounted for 1,632 of 1,905 rework events (85.67%) in the Help Desk log. I also identified paths associated with longer recorded case durations and documented hypotheses for further investigation." } },
           { label: { ko: "결과", en: "Result" }, copy: { ko: "성능 수정 후 실제 로그 2종과 실험 로그의 가져오기 보고서 및 정해진 입력의 조회 도구 응답이 수정 전과 같은지 확인했습니다. 원본 로그와 평가용 라이브러리가 있는 환경에서 전체 회귀 시험 235건과 웹 빌드, 브라우저 시험 2건을 통과했습니다.", en: "After the performance change, the import reports and query-tool responses for fixed inputs matched the pre-change outputs on both real logs and the synthetic logs. With the original datasets and evaluation dependencies installed, all 235 regression tests, the web build and both browser tests passed." } },        ],
@@ -427,14 +426,14 @@ export const portfolio = {
           variant: "hub",
           title: { ko: "하나의 공통 계산 기준", en: "One shared calculation path" },
           sources: ["BPI Challenge 2012 XES", "Help Desk CSV", { ko: "로컬 CSV/XES 가져오기", en: "Local CSV/XES import" }],
-          hub: { name: "Python / DuckDB Core", copy: { ko: "핵심 프로세스 지표를 한 곳에서 계산", en: "calculates core process metrics once" } },
+          hub: { name: { ko: "Python / DuckDB 계산 엔진", en: "Python / DuckDB engine" }, copy: { ko: "핵심 프로세스 지표를 한 곳에서 계산", en: "calculates core process metrics once" } },
           spokes: [
             { name: { ko: "브라우저 가져오기", en: "Browser import" }, copy: { ko: "필드 매핑과 형식 검증", en: "field mapping and validation" } },
             { name: "FastAPI / React", copy: { ko: "같은 결과를 웹에 표시", en: "shows the same results on the web" } },
             { name: "Agent / MCP", copy: { ko: "검증된 분석 결과만 사용", en: "uses validated analysis results" } },
             { name: "BPIC12 Power BI", copy: { ko: "별도 분석 화면", en: "separate analysis view" } },
           ],
-          note: { ko: "핵심 계산은 Core가 담당하고 웹과 AI는 검증된 결과를 소비합니다.", en: "The Core owns metric calculation; the web and AI layers consume the verified results." },
+          note: { ko: "CSV와 XES 업무 로그를 가져와 필드를 연결하고 형식을 검사한 뒤 분석합니다.", en: "Import CSV or XES business logs, map fields, and validate their format before analysis." },
         },
         links: [{ href: "https://github.com/jgjoe/traceverity", label: "GitHub" }, { href: "https://github.com/jgjoe/traceverity/blob/main/evidence/public-verification-summary.json", doc: true, label: { ko: "검증 요약", en: "Verification summary" } }, { href: "https://github.com/jgjoe/traceverity/blob/main/docs/ARCHITECTURE.md", doc: true, label: { ko: "아키텍처", en: "Architecture" } }, { href: "https://github.com/jgjoe/traceverity/blob/main/docs/REPRODUCTION.md", doc: true, label: { ko: "재현 가이드", en: "Reproduction guide" } }, { href: "https://github.com/jgjoe/traceverity/blob/ecb7504/docs/V2-VERIFICATION.md", doc: true, label: { ko: "지표와 AI 검증", en: "Metrics & AI verification" } }, { href: "https://github.com/jgjoe/traceverity/blob/ecb7504/docs/HELPDESK-ANALYSIS.md", doc: true, label: { ko: "분석 리포트", en: "Analysis report" } }, { href: "https://github.com/jgjoe/traceverity/pull/4", doc: true, label: { ko: "성능 검증 PR #4", en: "Performance PR #4" } }, { href: "https://github.com/jgjoe/traceverity/blob/98c78981c2d22e49e7fbe3e9fc82646bb0a811a1/evidence/performance/README.md", doc: true, label: { ko: "성능 측정", en: "Performance measurements" } }],
         media: { type: "browser-gallery", host: "TraceVerity / local", label: { ko: "TraceVerity 대표 화면 선택", en: "Choose a TraceVerity view" }, images: [
@@ -447,24 +446,22 @@ export const portfolio = {
         anchor: "project-benefit-compass", title: "혜택나침반", titleLines: [{ ko: "혜택나침반", en: "BenefitCompass" }], type: [{ ko: "개인", en: "Personal" }, { ko: "RAG 시스템", en: "RAG system" }], period: "2026.06 — 2026.09",
         role: { ko: "두 사이트의 정책을 통합하기 위한 요구사항과 검색 개선안의 비교 기준을 정하고, 적용할 개선안을 선택해 단계적으로 배포했습니다.", en: "I set the requirements for merging policies from two sites and the criteria for comparing search improvements, then decided what to adopt and rolled it out in stages." },
         subtitle: { ko: "정부 정책 통합 검색과 질의응답 서비스", en: "Unified government policy search and Q&A" },
-        lead: { ko: "온통청년과 정부24의 공식 정책을 한 번에 검색하고, 찾은 정책을 근거로 AI가 답합니다. 공개 데모로 배포했습니다.", en: "Searches official policies from Youth Policy and Gov24 in one place and answers from the policies it finds (RAG). Deployed as a public demo." },
+        lead: { ko: "온통청년과 정부24 검색 후보를 출처별로 비교해 두 출처 모두 정답 검색률이 나아진 키워드 보정을 채택했습니다. 검색한 공식 정책을 근거로 답하는 RAG 서비스를 공개 데모로 배포했습니다.", en: "I compared search candidates for Youth Policy and Gov24 separately and adopted keyword boosting because it improved top-10 recall on both sources. I released a public RAG demo that answers using retrieved official policies." },
         tech: ["Spring Boot", "FastAPI", "pgvector", "React", "E5", "Prometheus"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "1만 개가 넘는 정책이 두 사이트에 흩어져 있고, 키워드 검색만으로는 자신에게 맞는 제도를 찾기 어려웠습니다.", en: "More than 10,000 policies were spread across two sites, and keyword search made relevant programs hard to find." } },
-          { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "두 사이트의 정책 13,589개를 통합해 17,609개 검색 단위로 만들었습니다. 출처별 평가에서 상위 10개 결과의 정답 포함률을 높이는 키워드 보정을 적용했습니다. 뜻으로 찾는 검색에 키워드 일치 점수를 더하는 방식입니다.", en: "I defined the requirements for merging 13,589 policies from two sites into 17,609 search chunks. After evaluating each source separately, I adopted a keyword-match boost for semantic search, which raised top-10 recall." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "상위 10개 안 정답 포함률이 문서 기반 평가셋인 청년정책 60문항에서는 46.7%에서 51.7%로, 정부24 21문항에서는 61.9%에서 76.2%로 올랐습니다. 후보 검증 뒤 API를 요청 10%에서 100%까지 단계적으로 전환했고, 요청 ID와 메트릭으로 API, 검색, DB 구간을 나눠 관측했습니다.", en: "The share of queries with the correct policy in the top 10 rose from 46.7% to 51.7% on 60 Youth policy queries from a document-based evaluation set, and from 61.9% to 76.2% on 21 Gov24 queries. After validating the candidate, I rolled the API out from 10% to 100% of requests and used request IDs and metrics to observe API, retrieval, and DB segments separately." } },
+          { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "정책 13,589개를 17,609개 검색 단위로 통합하도록 요구사항을 정했습니다. 후보 문서를 다시 정렬하는 재순위 모델은 온통청년 검색 지표가 나빠져 제외했습니다. 뜻으로 찾는 검색에 단어 일치 점수를 조금 더하는 보정은 두 출처의 상위 10개 안 정답 포함률이 모두 올라 채택했습니다.", en: "I set requirements to combine 13,589 policies into 17,609 search chunks. I rejected a reranker that reordered candidate documents because it worsened Youth Policy retrieval metrics. A small keyword-match boost to semantic search improved top-10 recall on both sources, so I adopted it." } },
+          { label: { ko: "배포와 관측", en: "Rollout and observation" }, copy: { ko: "후보 검증 뒤 API를 요청 10%에서 100%까지 단계적으로 전환했습니다. 요청 ID와 메트릭으로 API, 검색, DB 구간을 나눠 관측했습니다.", en: "After validating the candidate, I rolled the API out from 10% to 100% of requests. Request IDs and metrics let me observe the API, retrieval, and DB segments separately." } },
         ],
-        results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: { ko: "정답 검색률 상승", en: "Higher hit rate" }, label: { ko: "상위 10개 안 정답 포함률 청년 60문항 46.7%→51.7%, 정부24 21문항 61.9%→76.2%", en: "correct policy in the top 10: Youth 60 queries 46.7%→51.7%, Gov24 21 queries 61.9%→76.2%" } }, { value: "10% → 100%", label: { ko: "새 검색을 요청 일부부터 단계적으로 전환", en: "new search rolled out gradually from a share of requests" } }],
+        results: [{ value: "13,589", label: { ko: "통합한 공식 정책", en: "official policies unified" } }, { value: { ko: "정답 검색률 상승", en: "Higher top-10 recall" }, label: { ko: "문서 기반 평가: 온통청년 60문항 46.7%→51.7%, 정부24 21문항 61.9%→76.2%", en: "Document-based evaluation: Youth Policy, 60 queries, 46.7%→51.7%; Gov24, 21 queries, 61.9%→76.2%" } }, { value: { ko: "구간별 관측", en: "Segment-level metrics" }, label: { ko: "API, 검색, DB를 나눠 확인", en: "API, retrieval, and DB measured separately" } }],
         evidenceNotes: [
           { label: { ko: "지표 뜻", en: "Metric meaning" }, copy: { ko: "Recall@10은 각 질문의 정답 정책이 상위 10개 검색 결과 안에 포함된 비율입니다.", en: "Recall@10 is the share of queries whose labeled gold policy appears within the top 10 search results." } },
-          { label: { ko: "비교 조건", en: "Comparison" }, copy: { ko: "문서 기반 평가셋의 Youth 60문항과 Gov24 21문항에서 실서비스와 같은 검색 조건으로 어휘 보정 전후와 리랭커 후보를 비교했습니다.", en: "On the document-based evaluation set (60 Youth queries and 21 Gov24 queries), lexical-bias and reranker candidates were compared under the same retrieval conditions as the live service." } },
-          { label: { ko: "채택한 변경", en: "Adopted change" }, copy: { ko: "최소 어휘 보정은 Recall@10을 Youth 46.7→51.7%, Gov24 61.9→76.2%로 높여 유지했습니다.", en: "The minimal lexical bias improved Recall@10 from 46.7→51.7% on Youth and 61.9→76.2% on Gov24, so it was kept." } },
-          { label: { ko: "선정 기준", en: "Selection criteria" }, copy: { ko: "출처별 평가 문항을 고정해 검색 방식을 비교하고 상위 10개 결과의 정답 포함률을 높인 키워드 보정을 선정했습니다.", en: "Using a fixed query set for each source, I compared search variants and selected keyword boosting that improved top-10 recall on both." } },
+          { label: { ko: "비교 조건", en: "Comparison" }, copy: { ko: "문서 기반 평가셋의 온통청년 60문항과 정부24 21문항을 고정하고, 실서비스와 같은 검색 조건에서 키워드 보정 전후와 재순위 모델 후보를 비교했습니다.", en: "Using fixed document-based sets of 60 Youth Policy queries and 21 Gov24 queries, I compared keyword boosting and reranker candidates under the same retrieval conditions as the live service." } },
         ],
         architecture: {
           variant: "decision",
           title: { ko: "검색 품질을 확인하고 더 나은 경로만 배포", en: "Measure retrieval quality before shipping changes" },
-          sources: [{ ko: "온통청년", en: "Youth policies" }, { ko: "정부24", en: "Gov24" }],
+          sources: [{ ko: "온통청년", en: "Youth Policy" }, { ko: "정부24", en: "Gov24" }],
           stages: [
             { name: { ko: "정책 정리", en: "Prepare policies" }, copy: { ko: "13,589개 정책 / 17,609개 검색 단위", en: "13,589 policies / 17,609 search chunks" } },
             { name: { ko: "검색 품질 평가", en: "Evaluate retrieval" }, copy: { ko: "같은 조건에서 결과 비교", en: "compare under the same conditions" } },
@@ -487,12 +484,12 @@ export const portfolio = {
         anchor: "project-today-fresh", title: "오늘도 신선", titleLines: [{ ko: "오늘도 신선", en: "Fridge D-Day" }], type: [{ ko: "학부 과제 후 개인", en: "Course project continued independently" }, { ko: "Android 공개 출시", en: "Android release" }], period: { ko: "2025.09~2026.10", en: "2025.09 — 2026.10" },
         role: { ko: "기획과 구현안 검토, 출시 검증을 맡고 사용자 관찰을 바탕으로 개선안을 채택했습니다.", en: "I handled planning, implementation review, and release validation, and adopted improvements based on user observations." }, visibleResultIndexes: [1, 2],
         subtitle: { ko: "식품 유통기한 관리 Android 앱", en: "Food expiry tracking Android app" },
-        lead: { ko: "유통기한을 촬영하거나 입력해 식품을 등록하고 D-Day, 알림, 위젯으로 관리합니다. 사진은 서버로 보내지 않고 기기 안에서 글자를 인식합니다.", en: "Register foods by photographing or typing expiry dates, then manage them with D-Day status, notifications, and a widget. Text recognition runs on the device without sending photos to a server." },
+        lead: { ko: "날짜 인식 오류가 남아 저장 전에 사용자가 확인하도록 바꿔 재출시했습니다. 이후 사용자 4명의 과업 관찰로 소비 완료 복구와 직접 입력 흐름을 개선했습니다.", en: "Because date-recognition errors remained, I required user confirmation before saving and re-released the app. I then improved consumed-item restoration and manual entry through task observations with four users." },
         tech: ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "ML Kit OCR", "MVVM"],
         details: [
           { label: { ko: "문제", en: "Problem" }, copy: { ko: "유통기한을 직접 입력하는 번거로움과 식품 기록을 외부로 보내는 부담을 줄이고자 했습니다.", en: "I wanted to reduce the hassle of typing expiry dates by hand and the burden of sending food records off the device." } },
-          { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "기기 내 문자인식과 알림, 위젯, 백업 및 복원 기능의 요구사항을 정하고 동작을 검증했습니다. 저장 전 사용자 확인 단계를 넣어 재출시했고 이후 Galaxy A32 실기기에서 회귀 검사를 수행했습니다. 사진과 식품 기록은 기기에 저장하며 앱 자체에는 인터넷 권한이 없습니다.", en: "I defined requirements for on-device text recognition, notifications, widgets, and backup and restore, and verified these features. I re-released with a confirm-before-save step and then ran regression checks on a physical Galaxy A32. Photos and food records stay on the device, and the app itself has no internet permission." } },
-          { label: { ko: "결과", en: "Result" }, copy: { ko: "ONEstore와 Google Play에 정식 출시했습니다. 재출시 뒤 4명이 각 8개 과업을 수행한 32건의 관찰로 소비 완료 복구와 직접 입력 흐름을 개선했습니다. 해당 불편을 겪은 2명이 수정한 흐름 4개를 다시 수행한 8건의 관찰에서 모두 과업을 완료했습니다.", en: "The app is officially released on ONEstore and Google Play. After the re-release, I improved consumed-item restore and manual-entry flows through 32 observations with 4 users performing 8 tasks each. The 2 users affected repeated the 4 corrected flows and completed all 8 task observations." } },
+          { label: { ko: "내가 한 일과 판단", en: "What I did & decided" }, copy: { ko: "날짜 오인식이 남아 배포를 보류했습니다. 확인하지 않은 날짜가 저장되지 않도록 사용자 확인 단계를 넣고 검증한 뒤 재출시했습니다. 기기 내 문자인식과 알림, 위젯, 백업 및 복원을 검증했고 Galaxy A32에서 회귀 검사도 수행했습니다. 사진과 식품 기록은 기기에 저장하며 앱 자체에는 인터넷 권한이 없습니다.", en: "Because date-recognition errors remained, I held the release. I required users to confirm dates before saving, verified the change, and re-released the app. I validated on-device text recognition, notifications, widgets, backup and restore, and ran regression checks on a Galaxy A32. Photos and food records stay on the device; the app has no internet permission." } },
+          { label: { ko: "결과", en: "Result" }, copy: { ko: "ONEstore와 Google Play에 정식 출시했습니다. 재출시 뒤 4명이 각 8개 과업을 수행한 32건의 관찰로 소비 완료 복구와 직접 입력 흐름을 개선했습니다. 해당 불편을 겪은 2명이 수정한 흐름 4개를 다시 수행한 8건의 관찰에서 모두 과업을 완료했습니다.", en: "The app is officially released on ONEstore and Google Play. After the re-release, I improved consumed-item restoration and manual entry through 32 observations with 4 users performing 8 tasks each. The 2 affected users retried the 4 corrected flows and completed all 8 attempts." } },
         ],
         results: [{ value: "ONEstore", label: { ko: "공개 배포", en: "public release" } }, { value: "Google Play", label: { ko: "정식 출시", en: "production release" } }, { value: { ko: "사용자 관찰 후 개선", en: "Improved after user observation" }, label: { ko: "4명 관찰로 찾은 불편을 고치고 재확인", en: "Fixed issues found with 4 users, then re-checked" } }],
         evidenceNotes: [
@@ -512,9 +509,9 @@ export const portfolio = {
     posterClose: { ko: "프로젝트 포스터 닫기", en: "Hide project poster" },
     moreEyebrow: { ko: "MORE WORK", en: "MORE WORK" }, moreTitle: { ko: "추가 프로젝트", en: "Additional projects" },
     more: [
-      { anchor: "project-ssodam", title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "11인 팀에서 공개 학습 자료와 국내 생활폐기물 자료 일부를 함께 쓰자고 제안하고 정확도와 일정을 함께 검토해 합의했습니다. 대화형 쓰레기통 로봇의 객체 탐지와 로봇 연동을 담당했으며 공동 논문은 대학생 논문경진대회 우수논문상을 받았습니다.", en: "In a team of 11, I proposed combining public training data with a subset of a Korean household-waste dataset and reached agreement after reviewing accuracy and timing together. I handled object detection and integration for the interactive trash-bin robot. Our co-authored paper received an Outstanding Paper Award at a student paper competition." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
+      { anchor: "project-ssodam", title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "사람이 쓰레기를 줍도록 유도하는 대화형 쓰레기통 로봇으로, 11인 팀에서 객체 탐지와 로봇 연동을 담당했습니다. 공개 학습 자료와 국내 생활폐기물 자료 일부를 함께 쓰자고 제안하고 팀원들과 정확도와 일정 우려를 검토해 합의했습니다. 공동 논문은 대학생 논문경진대회 우수논문상을 받았습니다.", en: "An interactive trash-bin robot that encourages people to pick up litter; I handled object detection and robot integration in an 11-person team. I proposed combining public training data with a subset of Korean household-waste data and reached agreement after reviewing accuracy and schedule concerns with teammates. Our co-authored paper received an Outstanding Paper Award at a student paper competition." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
       { title: "Movie Diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie-diary", copy: { ko: "일기에서 감정을 읽어 영화를 추천하는 서비스로, 백엔드는 Cloud Run에 배포하고 프론트엔드는 GitHub Actions로 자동 배포했습니다.", en: "I built an emotion-based film recommendation service with third-party APIs, deployed the backend on Cloud Run, and automated frontend deployment with GitHub Actions." } },
-      { title: { ko: "Kubernetes 운영 실습", en: "Kubernetes Operations Lab" }, type: ["Kubernetes", "kind", "Docker"], link: "https://github.com/jgjoe/kubernetes-ops-lab", copy: { ko: "Kubernetes에서 Pod 장애와 잘못된 배포를 직접 재현하고, 상태 변화와 복구 과정을 확인한 운영 실습입니다.", en: "A local Kubernetes lab that reproduces pod failures and failed rollouts, then verifies state transitions and recovery." } },
+      { title: { ko: "Kubernetes 운영 실습", en: "Kubernetes Operations Lab" }, type: ["Kubernetes", "kind", "Docker"], link: "https://github.com/jgjoe/kubernetes-ops-lab", copy: { ko: "kind로 로컬에 구성한 Kubernetes 실습 환경에서 컨테이너를 실행하는 단위인 파드의 장애와 잘못된 배포를 재현했습니다. 설정한 목표 상태로 복구되는지 상태 변화를 확인했습니다.", en: "In a local Kubernetes cluster built with kind, I reproduced failures of pods, the units that run containers, and failed rollouts, then checked state changes and recovery to the configured target state." } },
     ],
   },
   credentials: {
