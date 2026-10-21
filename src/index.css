@@ -708,6 +708,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .print-summary-page .print-credential + .print-credential { margin-top: 2mm; }
   .print-summary-page .print-credential .print-subtitle { margin-bottom: 1.5mm; }
   .print-summary-page .print-contact { margin-top: 3mm; padding: 3mm; }
+  .print-summary-page { padding-top: 8mm; padding-bottom: 6mm; }
+  html[lang="en"] .print-summary-page { padding-top: 5.5mm; padding-bottom: 3.5mm; }
+  html[lang="en"] .print-summary-page .print-proof-label { font-size: 7.4pt; line-height: 1.26; }
+  .print-summary-page .print-section-title { margin-top: 2.5mm; }
+  .print-summary-page .print-columns { margin-top: 2.5mm; }
+  .print-summary-page .print-contact { margin-top: 2mm; padding-top: 2.5mm; padding-bottom: 2.5mm; }
   .print-summary-page .print-contact-lines { width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; text-align: left; gap: 2mm; font-size: 8pt; }
 
   /* Each featured project gets one page; page count follows the selected data. */

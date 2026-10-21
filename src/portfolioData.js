@@ -40,8 +40,8 @@ export const portfolio = {
         "kicker": { "ko": "백엔드와 데이터", "en": "BACKEND & DATA" },
         "value": { "ko": "대용량 데이터를 정제하고 DB 조회를 개선합니다", "en": "I clean big datasets and tune DB queries" },
         "label": {
-          "ko": "주문 상세 조회의 DB 블록 읽기로 인덱스를 고르고, 공공자전거 기록의 정상 기록과 격리 기록 합계를 원본과 대조했습니다.",
-          "en": "I selected indexes by measuring DB block reads and reconciled accepted plus quarantined bike records with the source."
+          "ko": "건강 기록과 상품 주문 웹앱 Build Your Health에서 주문 상세 조회의 DB 블록 읽기로 인덱스를 골랐습니다. 대여 기록 정제 프로젝트 서울 공공자전거 데이터 파이프라인에서는 정상 기록과 격리 기록의 합계를 원본과 대조했습니다.",
+          "en": "For the health-record and shopping web app Build Your Health, I selected indexes by measuring DB block reads. In the rental-data cleaning project Seoul Public Bike Data Pipeline, I reconciled accepted plus quarantined records with the source."
         },
         "stats": [
           { "ko": "78개월 약 2억 4천만 건, 정상 기록과 격리 기록의 합계가 원본과 일치", "en": "About 240M records across 78 months; accepted plus quarantined counts match the source" },
@@ -56,8 +56,8 @@ export const portfolio = {
         "kicker": { "ko": "제품 개발", "en": "PRODUCT" },
         "value": { "ko": "서비스를 끝까지 만들어 출시하고 개선합니다", "en": "I ship a service end to end and keep improving it" },
         "label": {
-          "ko": "학부 과제에서 이어 간 앱을 ONEstore와 Google Play에 정식 출시했고, 사용자 4명의 관찰로 직접 입력과 소비 완료 복구 흐름을 개선했습니다.",
-          "en": "I took a course-project app to production on ONEstore and Google Play, and improved manual entry and restoring consumed items based on observations with 4 users."
+          "ko": "학부 과제에서 이어 간 식품 유통기한 관리 앱 오늘도 신선을 ONEstore와 Google Play에 정식 출시했고, 사용자 4명의 관찰로 직접 입력과 소비 완료 복구 흐름을 개선했습니다.",
+          "en": "I took the food expiry tracking app Fridge D-Day from a course project to production on ONEstore and Google Play, and improved manual entry and restoring consumed items based on observations with 4 users."
         },
         "stats": [
           { "ko": "4명, 32개 과업 관찰 → 소비 완료 복구와 직접 입력 경로 수정", "en": "4 users, 32 task observations → fixed consumed-item restore and manual-entry paths" },
@@ -71,8 +71,8 @@ export const portfolio = {
         "kicker": { "ko": "AI 응용", "en": "AI APPLICATIONS" },
         "value": { "ko": "AI 기능은 시험으로 확인한 뒤 반영합니다", "en": "I ship AI features only after testing them" },
         "label": {
-          "ko": "정책 검색은 출처별 시험 질문으로, 업무 로그 AI 답변은 고정 질문으로 평가해 결과가 나아진 개선안만 반영했습니다.",
-          "en": "I evaluated policy search and the log-analysis AI on fixed test questions and adopted only changes that improved results."
+          "ko": "지원 정책 검색 서비스 혜택나침반은 출처별 시험 질문으로, 업무 이벤트 로그 분석 도구 TraceVerity의 AI 답변은 고정 질문으로 평가해 결과가 나아진 개선안만 반영했습니다.",
+          "en": "I evaluated the policy search service BenefitCompass and the AI in the business event-log analysis tool TraceVerity on fixed test questions and adopted only changes that improved results."
         },
         "stats": [
           { "ko": "혜택나침반: 출처별 고정 질문으로 검색 후보를 비교해 두 출처 모두 나아진 보정 채택", "en": "BenefitCompass: compared search candidates on fixed questions for each source; adopted the boost that improved both" },
@@ -87,12 +87,12 @@ export const portfolio = {
         "kicker": { "ko": "팀 협업", "en": "TEAMWORK" },
         "value": { "ko": "설계를 문서로 공유하고 제안은 합의로 반영합니다", "en": "I document designs and build team agreement" },
         "label": {
-          "ko": "11인 팀에서 공개 학습 자료와 국내 생활폐기물 자료 일부를 함께 쓰자고 제안하고 팀원들과 정확도와 일정을 검토해 합의한 뒤 학습한 모델을 로봇과 연동했습니다.",
-          "en": "In an 11-person team, I proposed adding some Korean household-waste data, agreed on it after weighing accuracy and schedule, and integrated the model with the robot."
+          "ko": "대화형 쓰레기통 로봇 쓰담의 11인 팀에서 공개 학습 자료와 국내 생활폐기물 자료 일부를 함께 쓰자고 제안하고 팀원들과 정확도와 일정을 검토해 합의한 뒤 학습한 모델을 로봇과 연동했습니다.",
+          "en": "In an 11-person team building the interactive trash-bin robot SSeudam, I proposed adding some Korean household-waste data, agreed on it after weighing accuracy and schedule, and integrated the model with the robot."
         },
         "stats": [
           { "ko": "쓰담: 캡스톤 시연, 2024 한국정보기술학회 대학생 논문경진대회 우수논문상", "en": "SSeudam: capstone demo; 2024 KIIT Student Paper Competition, Outstanding Paper Award" },
-          { "ko": "길동이(6인 팀): 차량 API와 MongoDB 모델 구현, OpenAPI로 장치와 앱 담당자와 규격 공유", "en": "GildongE (team of 6): vehicle APIs and MongoDB models; shared specs with device and app teammates via OpenAPI" }
+          { "ko": "AI 차량 어시스턴트 길동이(6인 팀): 차량 API와 MongoDB 모델 구현, OpenAPI로 장치와 앱 담당자와 규격 공유", "en": "AI vehicle assistant GildongE (team of 6): vehicle APIs and MongoDB models; shared specs with device and app teammates via OpenAPI" }
         ],
         "projects": [
           { "name": { "ko": "쓰담", "en": "SSeudam" }, "target": "project-ssodam", "aria": { "ko": "쓰담 프로젝트로 이동", "en": "Jump to the SSeudam project" } },
@@ -510,8 +510,8 @@ export const portfolio = {
     moreEyebrow: { ko: "MORE WORK", en: "MORE WORK" }, moreTitle: { ko: "추가 프로젝트", en: "Additional projects" },
     more: [
       { anchor: "project-ssodam", title: { ko: "쓰담", en: "SSeudam" }, type: ["YOLOv8", "Android", "Robot"], link: null, copy: { ko: "사람이 쓰레기를 줍도록 유도하는 대화형 쓰레기통 로봇으로, 11인 팀에서 객체 탐지와 로봇 연동을 담당했습니다. 공개 학습 자료와 국내 생활폐기물 자료 일부를 함께 쓰자고 제안하고 팀원들과 정확도와 일정 우려를 검토해 합의했습니다. 공동 논문은 대학생 논문경진대회 우수논문상을 받았습니다.", en: "An interactive trash-bin robot that encourages people to pick up litter; I handled object detection and robot integration in an 11-person team. I proposed combining public training data with a subset of Korean household-waste data and reached agreement after reviewing accuracy and schedule concerns with teammates. Our co-authored paper received an Outstanding Paper Award at a student paper competition." }, media: { src: "/ssodam_poster.jpg", alt: { ko: "쓰담 프로젝트 포스터", en: "SSeudam project poster" } } },
-      { title: "Movie Diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie-diary", copy: { ko: "일기에서 감정을 읽어 영화를 추천하는 서비스로, 백엔드는 Cloud Run에 배포하고 프론트엔드는 GitHub Actions로 자동 배포했습니다.", en: "I built an emotion-based film recommendation service with third-party APIs, deployed the backend on Cloud Run, and automated frontend deployment with GitHub Actions." } },
-      { title: { ko: "Kubernetes 운영 실습", en: "Kubernetes Operations Lab" }, type: ["Kubernetes", "kind", "Docker"], link: "https://github.com/jgjoe/kubernetes-ops-lab", copy: { ko: "kind로 로컬에 구성한 Kubernetes 실습 환경에서 컨테이너를 실행하는 단위인 파드의 장애와 잘못된 배포를 재현했습니다. 설정한 목표 상태로 복구되는지 상태 변화를 확인했습니다.", en: "In a local Kubernetes cluster built with kind, I reproduced failures of pods, the units that run containers, and failed rollouts, then checked state changes and recovery to the configured target state." } },
+      { title: "Movie Diary", type: ["React", "FastAPI", "Cloud Run"], link: "https://github.com/jgjoe/movie-diary", copy: { ko: "일기 감정 기반 영화 추천 서비스 Movie Diary로, 백엔드는 Cloud Run에 배포하고 프론트엔드는 GitHub Actions로 자동 배포했습니다.", en: "I built the diary-based film recommendation service Movie Diary with third-party APIs, deployed the backend on Cloud Run, and automated frontend deployment with GitHub Actions." } },
+      { title: { ko: "Kubernetes 운영 실습", en: "Kubernetes Operations Lab" }, type: ["Kubernetes", "kind", "Docker"], link: "https://github.com/jgjoe/kubernetes-ops-lab", copy: { ko: "로컬 배포 장애 재현 프로젝트 Kubernetes 운영 실습에서 kind로 로컬 클러스터를 구성했습니다. 컨테이너를 실행하는 단위인 파드의 장애와 잘못된 배포를 재현했습니다. 설정한 목표 상태로 복구되는지 상태 변화를 확인했습니다.", en: "In the local deployment-failure reproduction project Kubernetes Operations Lab, I built a local cluster with kind. I reproduced failures of pods, the units that run containers, and failed rollouts, then checked state changes and recovery to the configured target state." } },
     ],
   },
   credentials: {
@@ -520,7 +520,7 @@ export const portfolio = {
       { title: { ko: "학력", en: "Education" }, items: [{ ko: "경기대학교 컴퓨터공학부 졸업", en: "B.S. in Computer Engineering, Kyonggi University" }, { ko: "2020.03 — 2026.02 / 학점 4.04/4.5", en: "Mar. 2020 — Feb. 2026 / GPA 4.04/4.5" }] },
       { title: { ko: "자격증", en: "Certificates" }, items: [{ ko: "정보처리기사", en: "Engineer Information Processing" }, "SQLD", "ADsP", "CSTS Foundation Level"] },
       { title: { ko: "연구와 수상", en: "Research & awards" }, items: [{ ko: "한국정보기술학회 논문 2편 공저", en: "Co-author of 2 KIIT conference papers" }, { ko: "2025 산학협력 캡스톤디자인 경진대회 심화캡스톤디자인 부문 은상", en: "2025 Industry-Academia Capstone Design Competition, Advanced Division Silver Prize" }, { ko: "2024 한국정보기술학회 대학생 논문경진대회 우수논문상", en: "2024 KIIT Student Paper Competition, Outstanding Paper Award" }] },
-      { title: { ko: "오픈소스", en: "Open source" }, link: { href: "https://github.com/pydantic/logfire/pull/2260", label: { ko: "병합된 변경 보기", en: "View merged change" } }, items: [{ ko: "pydantic/logfire PR #2260 병합(2026.10): CLI 인증이 환경변수로 지정한 서버 주소를 쓰도록 수정하고 테스트와 문서를 추가", en: "pydantic/logfire PR #2260 merged (Oct 2026): CLI auth now uses the server URL set by environment variable; added tests and docs" }] },
+      { title: { ko: "오픈소스", en: "Open source" }, link: { href: "https://github.com/pydantic/logfire/pull/2260", label: { ko: "병합된 변경 보기", en: "View merged change" } }, items: [{ ko: "로그와 실행 흐름을 확인하는 도구 logfire의 PR #2260 병합(2026.10): CLI 인증이 환경변수로 지정한 서버 주소를 쓰도록 수정하고 테스트와 문서를 추가", en: "PR #2260 merged into the logging and execution-tracing tool logfire (Oct 2026): CLI auth now uses the server URL set by environment variable; added tests and docs" }] },
     ],
   },
   skills: [
