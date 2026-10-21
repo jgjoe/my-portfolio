@@ -43,6 +43,20 @@ function PageFooter({ t, page }) {
   );
 }
 
+function CredentialGroup({ group, t }) {
+  return (
+    <div className="print-credential">
+      <h3 className="print-subtitle">{t(group.title)}</h3>
+      <ul>
+        {group.items.map((item) => (
+          <li key={t(item)}>{t(item)}</li>
+        ))}
+      </ul>
+      {group.link && <a className="print-link" href={group.link.href}>{t(group.link.label)}</a>}
+    </div>
+  );
+}
+
 function SummaryPage({ t }) {
   return (
     <section className="print-page print-summary-page">
@@ -51,6 +65,9 @@ function SummaryPage({ t }) {
           <p className="print-eyebrow">{portfolio.hero.eyebrow.join(" · ")}</p>
           <h1 className="print-headline">{t(portfolio.hero.title)}</h1>
           <p className="print-summary-text">{t(portfolio.hero.summary)}</p>
+          <div className="print-credential-pair">
+            {portfolio.credentials.groups.slice(0, 2).map((group) => <CredentialGroup key={t(group.title)} group={group} t={t} />)}
+          </div>
         </div>
         <aside className="print-profile">
           <div className="print-profile-top">
@@ -95,17 +112,7 @@ function SummaryPage({ t }) {
 
       <div className="print-columns">
         <div className="print-credentials">
-          {portfolio.credentials.groups.map((group) => (
-            <div className="print-credential" key={t(group.title)}>
-              <h3 className="print-subtitle">{t(group.title)}</h3>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={t(item)}>{t(item)}</li>
-                ))}
-              </ul>
-              {group.link && <a className="print-link" href={group.link.href}>{t(group.link.label)}</a>}
-            </div>
-          ))}
+          {portfolio.credentials.groups.slice(2).map((group) => <CredentialGroup key={t(group.title)} group={group} t={t} />)}
         </div>
         <div className="print-skills">
           <h3 className="print-subtitle">{t(portfolio.credentials.skillsTitle)}</h3>
